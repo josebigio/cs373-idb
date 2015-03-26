@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{#---------Title---------#}
+{% block title %}Period 1{% endblock %}
+{#---------Header---------#}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/group.css">
+{% endblock %}
+{#---------Content---------#}
+{% block content %}
+<div class="bg" style="background: url('/static/images/period1/helium_background.jpg') no-repeat center center;"></div>
+<div class="jumbotron">
+  <h1 style="text-align:center">Period 1</h1>
+</div>
+<div class="container">
+	<div class="row">
+  			<div class="col-md-3" id="leftCol">
+              
+              	<ul class="nav nav-stacked" id="sidebar">
+                  <li><a href="#sec1">Properties</a></li>
+                  <li><a href="#sec2">Elements</a></li>
+              	</ul>
+              
+      		</div>  
+      		<div class="col-md-9">
+                <hr>
+              	<h2 id="sec1">Properties</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                    <p>The first period contains fewer elements than any other, with only two, hydrogen and helium. They therefore do not follow the octet rule. Chemically, helium behaves as a noble gas, and thus is taken to be part of the group 18 elements. However, in terms of its nuclear structure it belongs to the s block, and is therefore sometimes classified as a group 2 element, or simultaneously both 2 and 18. Hydrogen readily loses and gains an electron, and so behaves chemically as both a group 1 and a group 17 element.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/static/images/period1/period1.png" style="margin-top:20px;" class="img-responsive" alt="images">
+                    </div>
+                    
+                </div>
+                <hr>
+              	<h2 id="sec2">Elements</h2>
+                <div class="row">
+              		<div class="col-md-4"><img src="/static/images/period1/hydrogen.jpg" class="img-responsive"><p>Hydrogen</p></div>
+                  <div class="col-md-4"><img src="/static/images/period1/helium.jpg" class="img-responsive"><p>Helium</p></div>
+                  	
+              	</div>
+
+              
+              	<hr>
+              
+              	
+              	
+              	
+      		</div> 
+  	</div>
+</div>
+{% endblock %}
+{#---------Scripts---------#}
+{% block scripts %}
+<script src="/static/scripts/jumbotron.js"></script>
+{% endblock %}

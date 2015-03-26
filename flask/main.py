@@ -43,6 +43,18 @@ def element(name=None):
     else:
         return "Page not found!"
 
+
+@app.route('/period/<name>')
+def period(name=None):
+    if name == '1':
+        return render_template('periodOneLayout.html', name=name)
+    elif name == '2':
+        return render_template('periodTwoLayout.html', name=name)
+    elif name == '3':
+        return render_template('periodThreeLayout.html', name=name)
+    else:
+        return "Page not found!"
+
 # @app.route('/css/<name>')
 # def sstatic(name=None):
 #     return send_from_directory('css', filename=name)
