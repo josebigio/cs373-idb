@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{#---------Title---------#}
+{% block title %}Hydrogen{% endblock %}
+{#---------Header---------#}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/group.css">
+    <link rel="stylesheet" href="/static/css/elements.css">
+{% endblock %}
+{#---------Content---------#}
+{% block content %}
+<div class="bg"></div>
+
+<div class="jumbotron">
+    <h1 style="text-align:center">The Elements</h1>
+</div>
+<div class = "container">
+
+    <div class = "row">
+        <div style="height: 100px; overflow:auto; margin-top: -25px">
+            <div class = "col-md-6" id = "leftCol"><a class="btn btn-danger btn-lg btn-block" href="#" role="button"> <h3 style="text-align:center"><i>Previous Element</i></h3></a></div>
+            <div class = "col-md-6" id = "leftCol"><a class="btn btn-primary btn-lg btn-block" href="#" role="button"> <h3 style="text-align:center"><i>Next Element</i></h3></a></div>
+        </div>
+    </div>
+
+    <div class = "row">
+        <div class ="col-md-4" id="leftCol">
+            <div class="main">
+                <div data-pos="1" data-nb="1.0079" class="type-1 cat-2">H<span>Hydrogen</span></div>
+            </div>
+        </div>
+
+    <div class = "col-md-8">
+            <h2><b>History</b></h2>
+            <p>Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the universe, constituting roughly 75% of all baryonic mass. Non-remnant stars are mainly composed of hydrogen in its plasma state. The most common isotope of hydrogen, termed protium (name rarely used, symbol 1H), has a single proton and zero neutrons.</p>
+
+            <p>The universal emergence of atomic hydrogen first occurred during the recombination epoch. At standard temperature and pressure, hydrogen is a colorless, odorless, tasteless, non-toxic, nonmetallic, highly combustible diatomic gas with the molecular formula H2. Since hydrogen readily forms covalent compounds with most non-metallic elements, most of the hydrogen on Earth exists in molecular forms such as in the form of water or organic compounds. Hydrogen plays a particularly important role in acid–base reactions as many acid-base reactions involve the exchange of protons between soluble molecules. In ionic compounds, hydrogen can take the form of a negative charge (i.e., anion) known as a hydride, or as a positively charged (i.e., cation) species denoted by the symbol H+. The hydrogen cation is written as though composed of a bare proton, but in reality, hydrogen cations in ionic compounds are always more complex species than that would suggest. As the only neutral atom for which the Schrödinger equation can be solved analytically, study of the energetics and bonding of the hydrogen atom has played a key role in the development of quantum mechanics.</p>
+
+    </div>
+    </div>
+    <div class="row">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/1920px-Hydrogen_discharge_tube.jpg" alt="Hydrogen Plasma" class="img-rounded" width="95%" height="95%">
+    </div>
+    <div class="row">
+        "<a href="http://commons.wikimedia.org/wiki/File:Hydrogen_discharge_tube.jpg#/media/File:Hydrogen_discharge_tube.jpg">Hydrogen discharge tube</a>" by <a href="//commons.wikimedia.org/wiki/User:Alchemist-hp" title="User:Alchemist-hp">Alchemist-hp</a> (<a href="//commons.wikimedia.org/wiki/User_talk:Alchemist-hp" title="User talk:Alchemist-hp"><span class="signature-talk">talk</span></a>) (<a rel="nofollow" class="external text" href="http://www.pse-mendelejew.de">www.pse-mendelejew.de</a>) - <span class="int-own-work" lang="en">Own work</span>. Licensed under <a title="Free Art License" href="http://artlibre.org/licence/lal/en">FAL</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.
+    </div>
+</div>
+{% endblock %}
