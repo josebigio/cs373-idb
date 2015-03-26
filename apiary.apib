@@ -1,0 +1,263 @@
+FORMAT: 1A
+
+# Periodic Table
+The Elementalists' <b> Periodic Table API </b>provides information about standard periodic table elements, groups, and periods. 
+
+# Group Elements
+## Elements Collection [/element]
+### List all Elements [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, 
+          "symbol": "H",
+          "name": "Hydrogen",
+          "atomic_mass": 1.00794,
+          "history": "was discovered in 1867"
+          "group_id": 1,
+          "period_id": 1
+        }, {
+          "id": 2, 
+          "symbol": "He",
+          "name": "Helium",
+          "atomic_mass": 4.003,
+          "history": "was discovered in 1867"
+          "group_id": 18,
+          "period_id": 1          
+        }]
+        
+            
+
+## Element [/element/{element_id}]
+A single element with all of its details
+
++ Parameters
+    + element_id (required, int, `11`) ... Numeric `id` of the element representing atomic number. Has example value.
+    
+### Retrieve an Element [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+
+            {
+                "id": 2, 
+                "symbol": "He",
+                "name": "Helium",
+                "atomic_mass": 4.003,
+                "history": "was discovered in 1867"
+                "group_id": 18,
+                "period_id": 1          
+            }
+
++ Response 404 (application/json)
+
+    + Header
+    
+    + Body
+    
+            {
+                "error": "the element does not exist"
+            }
+
+
+# Group Groups
+## Groups Collection [/group]
+### List all Groups [GET]
++ Response 200 (application/json)
+
+        [{
+            "group_id": 1,
+            "name": "Alkali Metals",
+            "information": "The alkali metals, found in group 1 of the periodic table (formerly known as group IA), are very reactive metals that do not occur freely in nature. These metals have only one electron in their outer shell. Therefore, they are ready to lose that one electron in ionic bonding with other elements. As with all metals, the alkali metals are malleable, ductile, and are good conductors of heat and electricity. The alkali metals are softer than most other metals. Cesium and francium are the most reactive elements in this group. Alkali metals can explode if they are exposed to water.",
+            "properties" : "Lower densities than other metals, One loosely bound valence electron,
+                            Largest atomic radii in their periods, Low ionization energies,Low electronegativities,
+                            Highly reactive"
+        },
+        {
+            "group_id": 3,
+            "name": "N/A",
+            "information": "Group 3 is a group of elements in the periodic table. This group, like other d-block groups, 
+                            should contain four elements, but it is not agreed what elements belong in the group. 
+                            Scandium (Sc) and yttrium  are always included, but the other two spaces are usually occupied by lanthanum (La) and actinium (Ac), 
+                            or by lutetium (Lu) and lawrencium (Lr); less frequently, it is considered the group should be expanded to 32 elements 
+                            (with all the lanthanides and actinides included) or contracted to contain only scandium and yttrium. 
+                            The group itself has not acquired a trivial name; however, scandium, yttrium and the lanthanides are sometimes called rare earth metals",
+            "properties": "They are usually oxidized to the +3 oxidation state, even through scandium, yttrium and lanthanum can form lower oxidation states. 
+                            The reactivity of the elements, especially yttrium, is not always obvious due to the formation of a stable oxide layer, 
+                            which prevents further reactions. Scandium(III) oxide, yttrium(III) oxide, lanthanum(III) oxide and lutetium(III) oxide are white high-temperature-melting solids. 
+                            Yttrium(III) oxide and lutetium(III) oxide exhibit weak basic character, but scandium(III) oxide is amphoteric.[35] Lanthanum(III) oxide is strongly basic"
+        }]
+        
+        
+        
+## Group [/group/{group_id}]
+A single group with all of its details
+
++ Parameters
+    + group_id (required, int, `1`) ... Numeric `id` of the group representing group number. Has example value.
+    
+### Retrieve a Group [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+
+            {
+                "group_id": 1,
+                "name": "Alkali Metals",
+                "information": "The alkali metals, found in group 1 of the periodic table (formerly known as group IA), are very reactive metals that do not occur freely in nature. These metals have only one electron in their outer shell. Therefore, they are ready to lose that one electron in ionic bonding with other elements. As with all metals, the alkali metals are malleable, ductile, and are good conductors of heat and electricity. The alkali metals are softer than most other metals. Cesium and francium are the most reactive elements in this group. Alkali metals can explode if they are exposed to water.",
+                "properties" : "Lower densities than other metals, One loosely bound valence electron,
+                                Largest atomic radii in their periods, Low ionization energies,Low electronegativities,
+                                Highly reactive"       
+            }
+            
++ Response 404 (application/json)
+
+    + Header
+    
+    + Body
+    
+            {
+                "error": "the group does not exist"
+            }
+        
+        
+            
+# Group Period
+## Periods Collection [/period]
+### List all periods [GET]
++ Response 200 (application/json)
+
+    + Header
+    
+    + Body
+    
+            [{
+               "period_id": 2,
+               "description": "The period 2 elements are the chemical elements in the second row (or period) of the periodic table. 
+                                Period 2 elements obey the octet rule in that they need eight electrons to complete their valence shell. 
+                                The maximum number of electrons that these elements can accommodate is ten, two in the 1s orbital, two in the 2s orbital and six in the 2p orbital. 
+                                All of the elements in the period can form diatomic molecules except beryllium and neon.",
+                "properties": "[1]Period 2 is the first period in the periodic table that periodic trends can be drawn from. 
+                                Period 1, which only contains two elements (hydrogen and helium) is too small to draw any conclusive trends from it, 
+                                especially because the two elements behave nothing like other s-block elements.
+                                [2]Period 2 has much more conclusive trends. For all elements in period 2, as the atomic number increases, the atomic radius of the elements decreases, 
+                                the electronegativity increases, and the ionization energy increases.Period 2 only has two metals (lithium and beryllium), 
+                                making it the least metallic period (period 1 has no metals, but as mentioned above, only has two elements, 
+                                so it would be impossible to have more metals) and the most nonmetals, with four. 
+                                The elements in period 2 often have the most extreme properties in their respective groups; for example, 
+                                fluorine is the most reactive halogen, neon is the most inert noble gas, and lithium is the least reactive alkali metal.
+                                [4]All period 2 elements completely obey the Madelung rule; in period 2s, lithium and beryllium fill the 2s subshell, and boron, carbon, nitrogen, oxygen, fluorine, and neon fill the 2p subshell. The period shares this trait with periods 1 and 3, none of which contain transition elements or inner transition elements, which often vary from the rule.[4]"
+            },
+            {
+                "period_id": 3,
+                "description":" All period three elements occur in nature and have at least one stable isotope. 
+                                All but the noble gas argon are essential to basic geology and biology.", 
+                "properties": " The third period contains eight elements: sodium, magnesium, aluminium, silicon, phosphorus, sulfur, chlorine, and argon. 
+                                The first two, sodium and magnesium, are members of the s-block of the periodic table, while the others are members of the p-block. 
+                                Note that there is a 3d orbital, but it is not filled until Period 4, such giving the period table its characteristic shape of "two rows at a time". 
+                                All of the period 3 elements occur in nature and have at least one stable isotope"
+            }]
+            
+            
+
+
+## Period [/period/{period_id}]
+A single period and all of ots details
+
++ Parameters
+    + period_id (required, int, `1`) ... Numeric `id` of the period representing period number. Has example value.
+
+### Retrieve a period [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+    
+            {
+                "group_id": 2,
+                "description": ""
+                "properties":
+            }
+
++ Response 404 (application/json)
+
+    + Header
+    
+    + Body
+    
+            {
+                "error": "period does not exist "
+            }
+
+
+
+# Group Trivia
+## Trivia Collection [/trivia]
+### List all trivias [GET]
++ Response 200 (application/json)
+
+    + Header
+    
+    + Body
+    
+            [{
+                "trivia_id": 1,
+                "title": "Francium-223, the only naturally occurring isotope of francium.",
+                "description": "Francium-223 is the product of the alpha decay of actinium-227 and can be found in trace amounts in uranium and thorium minerals. 
+                                In a given sample of uranium, there is estimated to be only one francium atom for every 1018 uranium atoms. 
+                                It has been calculated that there is at most 30 g of francium in the earth's crust at any time, due to its extremely short half-life of 22 minutes.",
+                "element_id": 87,
+                "period_id": 7,
+                "group_id": 1
+            },
+            {
+                "trivia_id": 2,
+                "title":"Pure potassium was first isolated in 1807 in England by Sir Humphry Davy.",
+                "description": "Sir Humphry Davy derived it from caustic potash (KOH, potassium hydroxide) by the use of electrolysis of the molten salt with the newly invented voltaic pile. 
+                                Previous attempts at electrolysis of the aqueous salt were unsuccessful due to potassium's extreme reactivity",
+                "element_id": 19,
+                "period_id": 4,
+                "group_id": 1
+            }
+            ]
+            
+
+
+## Trivia [/trivia/{trivia_id}]
+A single period and all of ots details
+
++ Parameters
+    + trivia_id (required, int, `1`) ... Numeric `id` of the trivia representing trivia number. Has example value.
+
+### Retrieve a Trivia [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+    
+            {
+                "trivia_id": 1,
+                "title": "Francium-223, the only naturally occurring isotope of francium.",
+                "description": "Francium-223 is the product of the alpha decay of actinium-227 and can be found in trace amounts in uranium and thorium minerals. 
+                                In a given sample of uranium, there is estimated to be only one francium atom for every 1018 uranium atoms. 
+                                It has been calculated that there is at most 30 g of francium in the earth's crust at any time, due to its extremely short half-life of 22 minutes.",
+                "element_id": 87,
+                "period_id": 7,
+                "group_id": 1
+            }
+
++ Response 404 (application/json)
+
+    + Header
+    
+    + Body
+    
+            {
+                "error": "trivia does not exist "
+            }
