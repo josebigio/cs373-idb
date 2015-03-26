@@ -33,12 +33,13 @@ td.img{
     height:140px;
 }
 td.bio{
+    vertical-align: top;
     text-align: left;
     padding-left: 8px;
     padding-right: 5px;
-    padding-top: 4px;
+    padding-top: 0px;
     width:440px;
-    height:140px;
+
 }
 
 img{
