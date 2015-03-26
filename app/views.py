@@ -1,5 +1,8 @@
 from flask import render_template
 from app import app
+import os
+import sys
+import subprocess
 
 @app.route('/')
 @app.route('/index')
@@ -46,3 +49,11 @@ def period(name=None):
         return render_template('periodThreeLayout.html', name=name)
     else:
         return "Page not found!"
+
+@app.route('/tests/')
+def run_tests(name="hello"):
+    #os.system("./tests.py 2> output.txt")
+    p = subprocess.Popen(['./tests.py'],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    out,err = p.communicate()
+    return render_template('tests.html',name=err)
+

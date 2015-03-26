@@ -153,8 +153,6 @@ class TestCase(unittest.TestCase):
         trivias = list(element.trivias)
         assert trivias == [trivia1,trivia2]
 
-def main():
-    unittest.main()
 
 if __name__ == '__main__':
-    main()
+    unittest.main()
