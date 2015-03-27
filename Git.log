@@ -1,0 +1,372 @@
+commit ed4a28807e45e7c44e957b6f8abbec36997ab554
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 20:39:47 2015 -0500
+
+    Update README.md
+
+commit 6192176a295e45c7aa05c9282401c4615ed4c804
+Author: Logan D.C. Bishop <ldcbishop@gmail.com>
+Date:   Thu Mar 26 20:13:06 2015 -0500
+
+    Periodic Table Pic
+
+commit 8ea522110a41aa748762097cd23b54346662b341
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 20:09:32 2015 -0500
+
+    Update Index.html
+
+commit 471c5adeac5c7becfd428ca409a874ced2a96c7f
+Merge: f28220c b49dc7f
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 19:53:13 2015 -0500
+
+    merged baby blue changes
+
+commit f28220cbf36eb02be0fdefb6925cff52c536a41b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 19:49:45 2015 -0500
+
+    removed baby-blue color scheme from Logan's despite his protests
+
+commit b49dc7f42d688af908d8cef87c578e97acc7e13c
+Merge: c8c50a9 6cbfe53
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Mar 26 19:39:50 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit c8c50a90380f3e5bfbb9cd313472442404fb2ad6
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Mar 26 19:39:21 2015 -0500
+
+    Fixed broken image link in period two
+
+commit 6cbfe53e9e082601b41a449a9eb6478b16ba463d
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 19:37:01 2015 -0500
+
+    Update elements.css
+
+commit b2532780f2b083e64e082f6cf9ec2116f594f3f1
+Merge: 168dac1 e78d949
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 19:36:35 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit e78d9494035ba828887ed87025157fddccb2bb95
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 19:36:10 2015 -0500
+
+    Update periodic-table.css
+
+commit 168dac1b83f49fc199d44bc4b8596e7677fae5f8
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 19:36:06 2015 -0500
+
+    added unit test page
+
+commit 4296548c34adffd8f7b1bf2352d88ffa25d86f83
+Author: Logan D.C. Bishop <ldcbishop@gmail.com>
+Date:   Thu Mar 26 19:01:40 2015 -0500
+
+    Add Folder with Technical report images
+
+commit 461884aba8309af59ebcf26b53f61934d12039fe
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 18:57:50 2015 -0500
+
+    removed flask dir from github
+
+commit 80c6aae9884f217631c7117206565497916a7d73
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 18:55:22 2015 -0500
+
+    fixed gitignore
+
+commit 0b1c311f8629f0c08f408777a898df571a763d97
+Merge: 731c657 e118d1a
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 18:49:43 2015 -0500
+
+    wtf
+
+commit 731c6574b44f1c27991c0e3849317c54450cea7b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 18:23:37 2015 -0500
+
+    added gitignore
+
+commit e118d1aa310cf15f9e86841d7a11770235a467ab
+Author: tfsyed <tehreemsyed@wireless-10-147-29-175.public.utexas.edu>
+Date:   Thu Mar 26 17:57:22 2015 -0500
+
+    moving Splash page files to app folder
+
+commit 0f523934f9e30cfc8ca191fc8b390c0689be0f13
+Merge: ea9d17a a38c2cb
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 17:55:28 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit ea9d17a41e1d09b0a45b609a8e5242fbe9a40c6d
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 17:55:19 2015 -0500
+
+    made tests.py run on /tests
+
+commit a38c2cbff8d852265ee3a32c7e496a5acc4e36fd
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 17:53:20 2015 -0500
+
+    Update groups.css
+
+commit efbe8c03eb6915a49bbfc2188d0a24a4a7c13f4e
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 17:52:43 2015 -0500
+
+    Update Groups.html
+
+commit 0a5560d196d5502e2f4a30a27e2155b3a385f836
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Mar 26 17:49:04 2015 -0500
+
+    Updated halogen images, correct directory this time
+
+commit bee183e27ff3787d6b51c486cabcb6017fe087ff
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 17:37:04 2015 -0500
+
+    Update Groups.html
+
+commit 40c856590fe1e72901e20247b1721afec6cd74e5
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 17:36:23 2015 -0500
+
+    Update groups.css
+
+commit 99389e78993fe0f130ea2e8d4ddbaa85d319b40e
+Author: tfsyed <tehreemsyed@wireless-10-147-29-175.public.utexas.edu>
+Date:   Thu Mar 26 17:34:41 2015 -0500
+
+    responsive periodic table added to the splash page
+
+commit 4880e97cc89919abfb288e86bea00d106385af65
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Mar 26 17:27:09 2015 -0500
+
+    Updated images to halogen layout
+
+commit f43d3ff2313e0d13ac6ae2fe87a56c60e138592e
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 16:13:08 2015 -0500
+
+    changed the directory structure
+
+commit 75ee7baf2ea0e3348ce89acdacb896682f1727a0
+Merge: 590ab76 8337dc5
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 16:12:18 2015 -0500
+
+    Merge branch 'Jose'
+
+commit 8337dc50587141192dd2ade0d3f5a8f080ad2875
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 16:07:42 2015 -0500
+
+    pushing all changes
+
+commit cae592c030ac4ee7c3eafc2a705ba337c19a14f2
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Mar 26 16:03:06 2015 -0500
+
+    changed the file directory structure
+
+commit 590ab76867c4a3593380cc76ecec4e1ee3268b73
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 15:57:45 2015 -0500
+
+    Update Groups.html
+
+commit dfe1c60d9a3d3d87d5c966206c6fa33dc982790b
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 15:30:25 2015 -0500
+
+    final about page
+
+commit 17af37f9cae70ef4d195c62803761e77c107c453
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Mar 26 15:27:25 2015 -0500
+
+    final about page
+
+commit 90fa9b61261c98f86029e65c4bbbd567e62ded8d
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Mar 26 14:11:42 2015 -0500
+
+    small revisions to main page.
+
+commit 53d7b76ec1522fb0393ee073a8cd90fd85c955de
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Mar 25 22:44:50 2015 -0500
+
+    added new images from nathan, testing carousel on home page
+
+commit 3452e1f825ba63ba037041e907a7b5312aeec829
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Mar 25 14:51:19 2015 -0500
+
+    added tests.out
+
+commit 0719beef6a2f99c9937e86236ab110784759aa20
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Mar 25 14:31:02 2015 -0500
+
+    wrote models.html
+
+commit ed630e5987917f177fa21da2aa4b1e6e3cbbf7a9
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Tue Mar 24 22:58:57 2015 -0500
+
+    cleaned up models.py
+
+commit 34fd7693f06f3d3debe4daac75ca8ad840cfc9e9
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Tue Mar 24 21:38:26 2015 -0500
+
+    added 11 test cases for models.py
+
+commit 8aca7dec2e4072c6bf52ff60de6ddb4b1fc8ba13
+Merge: 12cc6d2 348c9b5
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Mar 24 21:15:51 2015 -0500
+
+    Merging in colin branch into master
+
+commit 12cc6d2906ade4f04922d4304ee3f490ebacd6f9
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Mar 24 21:06:29 2015 -0500
+
+    added groups page fixes
+
+commit f3ecb11f3d0b7a77c0dfe22880af8323cf1c7609
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Mar 24 20:39:26 2015 -0500
+
+    added several group member's static html pages
+
+commit ff018c5abd295451a4f1ab731155069797659dce
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Tue Mar 24 19:47:26 2015 -0500
+
+    got the database setup
+
+commit 348c9b530a1d66c5a941b121bd53dcce408a946b
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Tue Mar 24 19:47:01 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 33b3695edd9ed902d56ee34cda09a1fb1e8c8f3e
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Tue Mar 24 19:01:41 2015 -0500
+
+    checkpoint
+
+commit 5f110bc7ed38ba852014d83aa44dcb5029d5406d
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Mar 24 18:58:24 2015 -0500
+
+    changed to run on 0.0.0.0
+
+commit 587d155eb5abc976c5df99f0d9685b2308f66e94
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Tue Mar 24 16:22:42 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 7f1de1f217e1231ab4a0fe8f0289a7631b9d21e9
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Tue Mar 24 16:21:44 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit f2d6bbbeedd434d8985364f73abd706d2b9569b7
+Author: tfsyed <fatima.tehreem@gmail.com>
+Date:   Tue Mar 24 16:21:29 2015 -0500
+
+    Delete apiary.apib
+
+commit 08f475dffaf863b12f6e0e16476bfb125c063b3d
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Tue Mar 24 16:21:10 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 64d2ce2205ac92347305582c6069c0afc9c7a0f9
+Author: tfsyed <tehreemsyed@utexas.edu>
+Date:   Mon Mar 23 22:29:51 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit c1c5d012cf77983359fcb476ed4c630d898c69bd
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Mar 22 23:12:20 2015 -0500
+
+    added the trivias model
+
+commit 7eebae447db698d87350d1df7b559f09634d9b79
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Mar 22 22:34:14 2015 -0500
+
+    made sure relationships are working
+
+commit ed883a13ceff9992d60a5c225d33df4c2aaeaf06
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Mar 22 20:34:34 2015 -0500
+
+    added the group model
+
+commit 8c530c51ab43c029c18662531336e729e618582c
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Mar 22 20:28:23 2015 -0500
+
+    added the Period model
+
+commit b58ee4d17fbdac1ed91629fec46db415e52abe7c
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Mar 22 20:18:34 2015 -0500
+
+    added the elements model
+
+commit 5069957b38f4e7ef2ee7f32eb13f3a2f680a99c1
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Mar 22 19:42:20 2015 -0500
+
+    set up template to modify
+
+commit e0daafde084fa446ccf59026a7ac5cee9a728362
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sat Mar 21 00:01:49 2015 -0500
+
+    cleaned up code, flask templates working with 2 group pages
+
+commit 0e13d2992f5d6b015227ec9dff5b1411d26c160b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Fri Mar 20 22:24:48 2015 -0500
+
+    added some stuff
+
+commit d1d70c0fef2fda7accd2a8c1f0fb9f597827b929
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Mar 11 21:59:44 2015 -0500
+
+    added Alkali metals page
+
+commit ce5cd4f7388612decdbfd78f8ebf209640772396
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Tue Feb 24 02:39:34 2015 -0600
+
+    Initial commit
