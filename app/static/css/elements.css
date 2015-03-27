@@ -1,7 +1,6 @@
 * { box-sizing: border-box; padding:0; margin:0; }
 
 body {
-  /*background:linear-gradient(#dbeaf8, #dbeaf8);*/
   padding: 0px;
   font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
@@ -88,5 +87,4 @@ body {
 .cat-1 { color:#0000dc; }
 .cat-2 { color:#b10601; }
 .cat-3 { color:#555; }
-
 
