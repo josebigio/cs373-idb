@@ -50,10 +50,16 @@ def period(name=None):
     else:
         return "Page not found!"
 
+
 @app.route('/tests/')
-def run_tests(name="hello"):
+def run_tests_executor():
+    return render_template("tests_executor.html")
+
+@app.route('/testexecute/')
+def run_tests():
     #os.system("./tests.py 2> output.txt")
-    p = subprocess.Popen(['./tests.py'],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    p = subprocess.Popen(['./tests.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out,err = p.communicate()
-    return render_template('tests.html',name=err)
+    print(err)
+    return render_template('tests.html', name=err)
 

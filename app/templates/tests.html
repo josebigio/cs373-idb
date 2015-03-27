@@ -4,5 +4,8 @@
   {{ super() }}
 {% endblock %}
 {% block content %}
-{% print(name) %}
+<h1>Unit Tests: </h1>
+{% autoescape false %}
+    <p>{% print(name.replace("\n", "<br />")) %}</p>
+{% endautoescape %}
 {% endblock %}

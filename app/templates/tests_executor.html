@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Tests{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<h3>Running unit tests...</h3>
+<p>Please wait, it may take a moment.</p>
+<script type="text/javascript">
+<!--
+window.location = "/testexecute"
+//-->
+</script>
+{% endblock %}
