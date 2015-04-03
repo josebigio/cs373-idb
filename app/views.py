@@ -29,14 +29,16 @@ def group(name=None):
 
 @app.route('/element/<name>')
 def element(name=None):
+    return render_template('element.html', name=name.capitalize())
+    '''
     if name == 'helium':
         return render_template('Helium.html', name=name)
-    elif name == 'hydrogen':
+    elif name == 'hydrogen':render_
         return render_template('Hydrogen.html', name=name)
     elif name == 'fluorine':
         return render_template('Fluorine.html', name=name)
     else:
-        return "Page not found!"
+        return "Page not found!"'''
 
 
 @app.route('/period/<name>')

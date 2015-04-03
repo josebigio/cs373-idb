@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{#---------Title---------#}
+{% block title %}{% endblock %}
+{#---------Header---------#}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/group.css">
+{% endblock %}
+{#---------Content---------#}
+{% block content %}
+<div class="bg" style="background: url('/static/images/elements/{{name}}.jpg') no-repeat center center;"></div>
+<div class="jumbotron">
+  <h1 style="text-align:center">{{name}}</h1>
+</div>
+<div class="container">
+	<div class="row">
+  			<div class="col-md-3" id="leftCol">
+              
+              	<ul class="nav nav-stacked" id="sidebar">
+                  <li><a href="#sec0">History</a></li>
+                  <li><a href="#sec1">Properties</a></li>
+                  <li><a href="#sec3">Applications</a></li>
+                  <li><a href="#sec4">Trivia</a></li>
+              	</ul>
+       </div>
+      		<div class="col-md-9">
+                <div class="row">
+                    <h2 id="sec0">History</h2>
+                    <p> Element History goes here. </p>
+                    <div class="col-md-12">
+                       <p> Positional Image of element in the periodic table goes here.</p>
+                    </div>
+                </div>
+                <hr>
+              	<h2 id="sec1">Properties</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p> atomic number: <br>
+                            symbol: <br>
+                            name: <br>
+                            atomic_mass: <br>
+                            history: <br>
+                            group_column: <br>
+                            period_number: <br>
+                            </p>
+                    </div>
+
+                </div>
+                <hr>
+              	<h2 id="sec2">Elements</h2>
+
+              	<hr>
+
+              	<h2 id="sec3">Applications</h2>
+      			Most alkali metals have many different applications. Two of the most well-known applications of the pure elements are rubidium and caesium atomic clocks, of which caesium atomic clocks are the most accurate and precise representation of time. A common application of the compounds of sodium is the sodium-vapour lamp, which emits very efficient light. Table salt, or sodium chloride, has been used since antiquity. Sodium and potassium are also essential elements, having major biological roles as electrolytes, and although the other alkali metals are not essential, they also have various effects on the body, both beneficial and harmful.
+
+              	<h2 id="sec4">Trivia</h2>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Francium-223, the only naturally occurring isotope of francium.</h3>
+                  </div>
+                  <div class="panel-body">
+                    Francium-223 is the product of the alpha decay of actinium-227 and can be found in trace amounts in uranium and thorium minerals. In a given sample of uranium, there is estimated to be only one francium atom for every 1018 uranium atoms. It has been calculated that there is at most 30 g of francium in the earth's crust at any time, due to its extremely short half-life of 22 minutes.
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Pure potassium was first isolated in 1807 in England by Sir Humphry Davy.</h3>
+                  </div>
+                  <div class="panel-body">
+                    Sir Humphry Davy derived it from caustic potash (KOH, potassium hydroxide) by the use of electrolysis of the molten salt with the newly invented voltaic pile. Previous attempts at electrolysis of the aqueous salt were unsuccessful due to potassium's extreme reactivity.
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Lithium naturally only occurs in traces in biological systems and has no known biological role.</h3>
+                  </div>
+                  <div class="panel-body">
+                    Lithium does have effects on the body when ingested. Lithium carbonate is used as a mood stabiliser in psychiatry to treat bipolar disorder (manic-depression) in daily doses of about 0.5 to 2 grams, although there are side-effects. Excessive ingestion of lithium causes drowsiness, slurred speech and vomiting, among other symptoms, and poisons the central nervous system, which is dangerous as the required dosage of lithium to treat bipolar disorder is only slightly lower than the toxic dosage.
+                  </div>
+                </div>
+              	<hr>
+
+
+      		</div>
+  	</div>
+</div>
+
+
+
+{% endblock %}
+{#---------Scripts---------#}
+{% block scripts %}
+<script src="/static/scripts/jumbotron.js"></script>
+{% endblock %}
