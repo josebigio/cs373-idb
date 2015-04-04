@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "./db_create.py", line 7, in <module>
+    db.create_all()
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py", line 895, in create_all
+    self._execute_for_all_tables(app, bind, 'create_all')
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py", line 887, in _execute_for_all_tables
+    op(bind=self.get_engine(app, bind), **extra)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3420, in create_all
+    tables=tables)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1727, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1720, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1910, in contextual_connect
+    self.pool.connect(),
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 645, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 964, in _do_get
+    return self._create_connection()
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/pool.py", line 539, in __connect
+    connection = self.__pool._creator()
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/Users/josebigio/swe/cs373-idb/flask/lib/python2.7/site-packages/psycopg2/__init__.py", line 164, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, async=async)
+sqlalchemy.exc.OperationalError: (OperationalError) FATAL:  database "/Users/josebigio/swe/cs373-idb/app.db" does not exist
+ None None
