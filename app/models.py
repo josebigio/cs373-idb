@@ -15,7 +15,6 @@ class Element(db.Model):
     element = db.Column(db.String(60))
     symbol = db.Column(db.String(3))
     period_number = db.Column(db.Integer)
-    group_number = db.Column(db.Integer)
     phase = db.Column(db.String(12))
     most_stable_crystal = db.Column(db.String(10))
     type = db.Column(db.String(30))
@@ -31,6 +30,8 @@ class Element(db.Model):
     year_of_discovery = db.Column(db.Integer)
     specific_heat_capacity = db.Column(db.Float)
     electron_configuration = db.Column(db.String(50))
+    description = db.Column(db.Text)
+    group_number = db.Column(db.Integer)
 
     # name = db.Column(db.String(50))
     # atomic_mass = db.Column(db.Float)
@@ -48,6 +49,9 @@ class Element(db.Model):
 #     """
 #     Represents a period in the period table. A period can be though of the row number in the period table
 #     """
+
+#     __tablename__ = 'periods'
+
 #     row = db.Column(db.Integer, primary_key=True)
 #     description = db.Column(db.Text)
 #     properties = db.Column(db.Text)
@@ -69,7 +73,11 @@ class Element(db.Model):
 #     """
 #     Represents a group in the period table. For example alkali metals, alkaline metals, etc.
 #     """
+#     __tablename__ = 'groups'
+
 #     column = db.Column(db.Integer, primary_key=True)
+#     group_number = db.Column(db.Integer)
+#     description = db.Column(db.String)
 #     name = db.Column(db.String(50))
 #     information = db.Column(db.Text)
 #     elements = db.relationship('Element',backref='group',lazy='dynamic')
@@ -89,6 +97,9 @@ class Element(db.Model):
 #     Represents a Trivia or cool snippet of information about an element, group or period. For example 
 #     did you know hydrogen is made in the sun?
 #     """
+
+#     __tablename__ = 'trivia'
+
 #     id = db.Column(db.Integer, primary_key=True)
 #     title = db.Column(db.String(50))
 #     description = db.Column(db.Text)
@@ -99,3 +110,11 @@ class Element(db.Model):
     
 #     def __repr__(self):
 #         return '<Group %s>' % self.name
+
+# class Image(db.Model):
+#     """
+#     Represents a Trivia or cool snippet of information about an element, group or period. For example 
+#     did you know hydrogen is made in the sun?
+#     """
+
+#     __tablename__ = 'images'
