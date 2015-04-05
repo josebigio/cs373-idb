@@ -1,0 +1,3 @@
+The carbon group is a periodic table group consisting of carbon (C), silicon (Si), germanium (Ge), tin (Sn), lead (Pb), and flerovium (Fl).
+
+In modern IUPAC notation, it is called Group 14. In the field of semiconductor physics, it is still universally called Group IV. The group was once also known as the tetrels (from Greek tetra, four), stemming from the Roman numeral IV in the group names, or (not coincidentally) from the fact that these elements have four valence electrons. The group is sometimes also referred to as tetragens or crystallogens.
