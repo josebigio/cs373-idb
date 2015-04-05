@@ -1,0 +1,5 @@
+A pnictogen is one of the chemical elements in group 15 of the periodic table. This group is also known as the nitrogen family. It consists of the elements nitrogen (N), phosphorus (P), arsenic (As), antimony (Sb), bismuth (Bi) and the synthetic element ununpentium (Uup) (unconfirmed).
+
+In modern IUPAC notation, it is called Group 15. In CAS and the old IUPAC systems it was called Group VA and Group VB, respectively (pronounced "group five A" and "group five B", "V" for the Roman numeral 5). In the field of semiconductor physics, it is still usually called Group V. The "five" ("V") in the historical names comes from the "pentavalency" of nitrogen, reflected by the stoichiometry of compounds such as N2O5.
+
+The term "pnictogen" (or "pnigogen") is derived from an Ancient Greek word meaning to choke, referring to the choking or stifling property of nitrogen gas.
