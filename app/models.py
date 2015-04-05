@@ -31,7 +31,9 @@ class Element(db.Model):
     specific_heat_capacity = db.Column(db.Float)
     electron_configuration = db.Column(db.String(50))
     description = db.Column(db.Text)
-    group_number = db.Column(db.Integer)
+    
+    group_number = db.Column(db.Integer, db.ForeignKey('groups.group_number'))
+
 
     # name = db.Column(db.String(50))
     # atomic_mass = db.Column(db.Float)
@@ -71,8 +73,7 @@ class Group(db.Model):
     properties = db.Column(db.Text)
     applications = db.Column(db.Text)
     name = db.Column(db.Text)
-    # information = db.Column(db.Text)
-    # elements = db.relationship('Element',backref='group',lazy='dynamic')
+    elements = db.relationship('Element',backref='group',lazy='dynamic')
     # trivias = db.relationship('Trivia',backref='group',lazy='dynamic')
 
     def __repr__(self):
