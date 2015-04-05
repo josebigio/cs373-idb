@@ -45,76 +45,72 @@ class Element(db.Model):
         """
         return '<Element %s. atomic_number = %d, symbol %s, group = %s, period = %d>' % (self.element, self.atomic_number,self.symbol,self.group_number,self.period_number)
 
-# class Period(db.Model):
-#     """
-#     Represents a period in the period table. A period can be though of the row number in the period table
-#     """
+class Period(db.Model):
+    """
+    Represents a period in the period table. A period can be though of the row number in the period table
+    """
+    __tablename__ = 'periods'
 
-#     __tablename__ = 'periods'
+    period_number = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.Text)
 
-#     row = db.Column(db.Integer, primary_key=True)
-#     description = db.Column(db.Text)
-#     properties = db.Column(db.Text)
-#     elements = db.relationship('Element',backref='period',lazy='dynamic')
-#     trivias = db.relationship('Trivia',backref='period',lazy='dynamic')
+    def __repr__(self):
+        """
+        Returns a string with the row this period represents
+        """
+        return '<Period period_number: %d>' % self.period_number
 
-#     def __init__(self, row, description="None", properties="None"):
-#         self.row = row
-#         self.description = description
-#         self.properties = properties
+class Group(db.Model):
+    """
+    Represents a group in the period table. For example alkali metals, alkaline metals, etc.
+    """
+    __tablename__ = 'groups'
 
-#     def __repr__(self):
-#         """
-#         Returns a string with the row this period represents
-#         """
-#         return '<Period %s>' % self.row
+    group_number = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.Text)
+    properties = db.Column(db.Text)
+    applications = db.Column(db.Text)
+    name = db.Column(db.Text)
+    # information = db.Column(db.Text)
+    # elements = db.relationship('Element',backref='group',lazy='dynamic')
+    # trivias = db.relationship('Trivia',backref='group',lazy='dynamic')
 
-# class Group(db.Model):
-#     """
-#     Represents a group in the period table. For example alkali metals, alkaline metals, etc.
-#     """
-#     __tablename__ = 'groups'
+    def __repr__(self):
+        return '<Group name: %s>' % self.name
 
-#     column = db.Column(db.Integer, primary_key=True)
-#     group_number = db.Column(db.Integer)
-#     description = db.Column(db.String)
-#     name = db.Column(db.String(50))
-#     information = db.Column(db.Text)
-#     elements = db.relationship('Element',backref='group',lazy='dynamic')
-#     trivias = db.relationship('Trivia',backref='group',lazy='dynamic')
+class Trivia(db.Model):
+    """
+    Represents a Trivia or cool snippet of information about an element, group or period. For example 
+    did you know hydrogen is made in the sun?
+    """
+
+    __tablename__ = 'trivia'
+
+    trivia_id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.Text)
+    period_number = db.Column(db.Integer)
+    group_number = db.Column(db.Integer)
+    element_number = db.Column(db.Integer)
+
+    #period_number = db.Column(db.Integer, db.ForeignKey('group.column'))
+    #period_row = db.Column(db.Integer, db.ForeignKey('period.row'))
+    #element_atomic_number = db.Column(db.Integer, db.ForeignKey('element.atomic_number'))
     
-#     def __init__(self, column,name, description="None", properties="None"):
-#         self.column = column
-#         self.name = name
-#         self.description = description
-#         self.properties = properties
+    def __repr__(self):
+        return '<Trivia id: %d>' % self.trivia_id
 
-#     def __repr__(self):
-#         return '<Group %s>' % self.name
+class Image(db.Model):
+    """
+    Represents an image. They will be used through out the website, so they will have forein keys for 
+    each of our 3 primary data tables (Elements, Groups and Periods)
+    """
 
-# class Trivia(db.Model):
-#     """
-#     Represents a Trivia or cool snippet of information about an element, group or period. For example 
-#     did you know hydrogen is made in the sun?
-#     """
+    __tablename__ = 'images'
 
-#     __tablename__ = 'trivia'
+    image_path = db.Column(db.Text, primary_key=True)
+    type = db.Column(db.Text)
+    period_number = db.Column(db.Integer)
+    group_number = db.Column(db.Integer)
+    element_number = db.Column(db.Integer)
 
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(50))
-#     description = db.Column(db.Text)
-#     group_column = db.Column(db.Integer, db.ForeignKey('group.column'))
-#     period_row = db.Column(db.Integer, db.ForeignKey('period.row'))
-#     element_atomic_number = db.Column(db.Integer, db.ForeignKey('element.atomic_number'))
-    
-    
-#     def __repr__(self):
-#         return '<Group %s>' % self.name
 
-# class Image(db.Model):
-#     """
-#     Represents a Trivia or cool snippet of information about an element, group or period. For example 
-#     did you know hydrogen is made in the sun?
-#     """
-
-#     __tablename__ = 'images'
