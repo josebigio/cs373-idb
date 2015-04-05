@@ -1,0 +1,25 @@
+CREATE TABLE elements(
+Atomic_Number INT NOT NULL,
+Element CHAR(60),
+Symbol CHAR(2), 
+Atomic_Weight double precision,
+Period_Number INT,
+Group_Number INT,
+Phase CHAR(12),
+Most_Stable_Crystal	CHAR(10),
+Type CHAR(30),
+Ionic_Radius double precision,
+Atomic_Radius double precision,
+Electronegativity double precision,
+First_Ionization_Potential double precision,
+Density	double precision,
+Melting_Point_K double precision,
+Boiling_Point_K double precision,
+Isotopes INT,
+Discoverer CHAR(50),
+Year_of_Discovery INT,
+Specific_Heat_Capacity double precision,
+Electron_Configuration CHAR(50),
+PRIMARY KEY(Atomic_Number)
+);
+

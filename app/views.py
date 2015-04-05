@@ -1,7 +1,6 @@
 from flask import render_template
-from app import app
-import os
-import sys
+from app import app, db, models
+from .models import Element
 import subprocess
 
 @app.route('/')
@@ -9,6 +8,11 @@ import subprocess
 def index():
     return render_template('Index.html')
 
+
+@app.route('/models/<name>')
+def models(name=1):
+    e = Element.query.get(1)
+    return e.element
 
 @app.route('/about')
 def about():
