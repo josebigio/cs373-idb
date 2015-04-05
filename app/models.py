@@ -31,7 +31,7 @@ class Element(db.Model):
     specific_heat_capacity = db.Column(db.Float)
     electron_configuration = db.Column(db.String(50))
     description = db.Column(db.Text)
-    group_number = db.Column(db.Integer, db.ForeignKey('group.column'))
+    group_number = db.Column(db.Integer)
 
     # name = db.Column(db.String(50))
     # atomic_mass = db.Column(db.Float)
