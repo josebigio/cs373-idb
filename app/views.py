@@ -46,11 +46,21 @@ def element(name=None):
 @app.route('/period/<name>')
 def period(name=None):
     if name == '1':
-        return render_template('periodOneLayout.html', name=name)
+        return render_template('periodLayout.html', name=name, period_num=name)
     elif name == '2':
-        return render_template('periodTwoLayout.html', name=name)
+        return render_template('periodLayout.html', name=name, period_num=name)
     elif name == '3':
-        return render_template('periodThreeLayout.html', name=name)
+        return render_template('periodLayout.html', name=name, period_num=name)    
+    if name == '4':
+        return render_template('periodLayout.html', name=name, period_num=name)
+    elif name == '5':
+        return render_template('periodLayout.html', name=name, period_num=name)
+    elif name == '6':
+        return render_template('periodLayout.html', name=name, period_num=name)    
+    if name == '7':
+        return render_template('periodLayout.html', name=name, period_num=name)
+    elif name == '8':
+        return render_template('periodLayout.html', name=name, period_num=name)
     else:
         return "Page not found!"
 
