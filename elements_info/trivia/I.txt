@@ -1,0 +1,14 @@
+@@ The production of ethylenediamine dihydroiodide, provided as a nutritional supplement for livestock, consumes a large fraction of available iodine. ##
+
+@@ Elemental iodine is used as a disinfectant in various forms. The iodine exists as the element, or as the water-soluble triiodide anion I3− generated in situ by adding iodide to poorly water-soluble elemental iodine (the reverse chemical reaction makes some free elemental iodine available for antisepsis). ##
+
+
+@@ Iodine is useful in analytical chemistry because of its reactions with alkenes, starch and oxidizing and reducing agents. The highly colored species involved in these reactions make it easy to detect the endpoints in many analytical determinations. ##
+
+@@ Potassium iodide has been used as an expectorant, although this use is increasingly uncommon. In medicine, potassium iodide is usually used to treat acute thyrotoxicosis, usually as a saturated solution of potassium iodide called SSKI. It is also used to block uptake of iodine-131 in the thyroid gland (see isotopes section above), when this isotope is used as part of radiopharmaceuticals (such as iobenguane) that are not targeted to the thyroid or thyroid-type tissues. ##
+
+
+@@ The breast strongly and actively concentrates iodine into breast-milk for the benefit of the developing infant, and may develop a goiter-like hyperplasia, sometimes manifesting as fibrocystic breast disease, when iodine level is low. Studies indicate that iodine deficiency, either dietary or pharmacologic, can lead to breast atypia and increased incidence of malignancy in animal models, while iodine treatment can reverse dysplasia,[36][37][38] with elemental iodine (I2) having been found to be more effective in reducing ductal hyperplasias and perilobular fibrosis in iodine-deficient rats than iodide (I−). ##
+
+@@ The breast strongly and actively concentrates iodine into breast-milk for the benefit of the developing infant, and may develop a goiter-like hyperplasia, sometimes manifesting as fibrocystic breast disease, when iodine level is low. Studies indicate that iodine deficiency, either dietary or pharmacologic, can lead to breast atypia and increased incidence of malignancy in animal models, while iodine treatment can reverse dysplasia,[36][37][38] with elemental iodine (I2) having been found to be more effective in reducing ductal hyperplasias and perilobular fibrosis in iodine-deficient rats than iodide (I−). ##
+

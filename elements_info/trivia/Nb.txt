@@ -1,0 +1,9 @@
+@@ t is estimated that out of 44,500 metric tons of niobium mined in 2006, 90% was used in the production of high-grade structural steel, followed by its use in superalloys. The use of niobium alloys for superconductors and in electronic components account only for a small share of the production ## 
+
+
+@@ Niobium is an effective microalloying element for steel. The niobium compounds improve the grain refining, retardation of recrystallization, and precipitation hardening of the steel. These effects in turn increase the toughness, strength, formability, and weldability of the microalloyed steel. ##
+
+
+@@ The high sensitivity of superconducting niobium nitride bolometers make them an ideal detector for electromagnetic radiation in the THz frequency band. These detectors were tested at the Heinrich Hertz Submillimeter Telescope, the South Pole Telescope, the Receiver Lab Telescope, and at APEX and are now used in the HIFI instrument on board the Herschel Space Observatory.##
+
+@@ Niobium and some niobium alloys are physiologically inert and thus hypoallergenic. For this reason, niobium is found in many medical devices such as pacemakers. ## 

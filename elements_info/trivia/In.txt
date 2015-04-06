@@ -1,0 +1,5 @@
+@@ Indium is not known to have any metabolic role in any organism. In a similar way to aluminium salts, indium(III) ions can be toxic to the kidney when given by injection, but oral indium compounds do not have the chronic toxicity of salts of heavy metals, probably due to poor absorption in basic conditions. Radioactive indium-111 (in very small amounts on a chemical basis) is used. ## 
+
+
+
+@@ The first large-scale application for indium was as a coating for bearings in high-performance aircraft engines during World War II. Afterward, production gradually increased as new uses were found in fusible alloys, solders, and electronics. In the 1950s, tiny beads of it were used for the emitters and collectors of PNP alloy junction transistors. In the middle and late 1980s, the development of indium phosphide semiconductors and indium tin oxide thin films for liquid crystal displays (LCD) aroused much interest. By 1992, the thin-film application had become the largest end use. ##
