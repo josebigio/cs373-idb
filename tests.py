@@ -115,6 +115,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         elements = list(group.elements)
+        print(elements)
         assert elements == [element1,element2]
 
 
