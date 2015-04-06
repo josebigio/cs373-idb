@@ -1,0 +1,5 @@
+@@ Only minute traces of technetium occur naturally in the Earth's crust. This is due to the fact that technetium's half-life is only 4.2 million years. ##
+
+@@ Technetium is produced in quantity by nuclear fission, and spreads more readily than many radionuclides. It appears to have low chemical toxicity. For example, no significant change in blood formula, body and organ weights, and food consumption could be detected for rats which ingested up to 15 µg of technetium-99 per gram of food for several weeks. ##
+
+@@ Technetium-99m ("m" indicates that this is a metastable nuclear isomer) is used in radioactive isotope medical tests, for example as the radioactive part of a radioactive tracer that medical equipment can detect in the human body. ##
