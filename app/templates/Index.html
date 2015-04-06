@@ -5,8 +5,8 @@
     {% block head %}
       {{ super() }}
       <link rel="stylesheet" href="/static/css/index.css">
-      <link rel="stylesheet" href="/static/css/periodic-table.css">
-
+      <link rel="stylesheet/less" type = "text/css" href="/static/css/periodic-table.less">
+      <link rel="stylesheet/css" type="text/css" href="/static/css/periodic-table.css">
     {% endblock %}
     {#---------Content---------#}
     {% block content %}
@@ -982,4 +982,6 @@
     {#---------Scripts---------#}
 {% block scripts %}
 <script src="/static/scripts/periodictable.js"></script>
+    <script> src = "/static/scripts/less.js"</script>
+    <script src="less.js" type="text/javascript"></script>
 {% endblock %}
