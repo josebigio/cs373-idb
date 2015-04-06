@@ -10,7 +10,7 @@ class TestCase(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/testing-db'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///testing_db'
         self.app = app.test_client()
         db.create_all()
 
@@ -19,78 +19,98 @@ class TestCase(unittest.TestCase):
         db.drop_all()
 
     def test_create_group(self):
-        group = Group(1,"Alkali","They are awesome","It has many properties")
+        group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
         db.session.add(group)
         db.session.commit()
-        assert(group.column == 1)
+        assert(group.group_number == 1)
         assert(group.description == "They are awesome")
         assert(group.properties == "It has many properties")
+        assert(group.applications == "has bunch of applications")
+        assert(group.name == "Super name")
 
     def test_change_variables_group(self):
-        group = Group(1,"Alkali","They are awesome","It has many properties")
-        group.information = "They have many informations"
+        group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
+        group.applications = "They have different applications"
         db.session.add(group)
         db.session.commit()
-        assert(group.information == "They have many informations")
+        assert(group.information == "They have different applications")
         
-    def test_create_period(self):
-        period = Period(1,"They are awesome","It has many properties")
-        db.session.add(period)
-        db.session.commit()
-        assert(period.row == 1)
-        assert(period.description == "They are awesome")
-        assert(period.properties == "It has many properties")
+    # def test_create_period(self):
+    #     period = Period(1,"They are awesome","It has many properties")
+    #     db.session.add(period)
+    #     db.session.commit()
+    #     assert(period.row == 1)
+    #     assert(period.description == "They are awesome")
+    #     assert(period.properties == "It has many properties")
 
-    def test_change_variables_period(self):
-        period = Period(1,"They are awesome","It has many properties")
-        period.row = 2
-        db.session.add(period)
-        db.session.commit()
-        assert(period.row == 2)
+    # def test_change_variables_period(self):
+    #     period = Period(1,"They are awesome","It has many properties")
+    #     period.row = 2
+    #     db.session.add(period)
+    #     db.session.commit()
+    #     assert(period.row == 2)
 
-    def test_change_variables_period(self):
-        period = Period(1,"They are awesome","It has many properties")
-        period.row = 2
-        db.session.add(period)
-        db.session.commit()
-        assert(period.row == 2)
+    # def test_change_variables_period(self):
+    #     period = Period(1,"They are awesome","It has many properties")
+    #     period.row = 2
+    #     db.session.add(period)
+    #     db.session.commit()
+    #     assert(period.row == 2)
 
-    def test_create_element(self):        
-        element = Element(atomic_number=1,symbol='H',name="Hydrogen",atomic_mass=1.001,history="it is forged in the sun")
+    def test_create_element(self):  
+    
+        element = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="most_stable_crystal",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element)
         db.session.commit()
         assert(element.atomic_number == 1)
         assert(element.symbol == 'H')
-        assert(element.name == "Hydrogen")
-        assert(element.atomic_mass == 1.001)
-        assert(element.history == "it is forged in the sun")
+        assert(element.element == "Hydrogen")
+        assert(element.period_number == 1)
+        assert(element.phase == "phase")
+        assert(element.most_stable_crystal = "most_stable_crystal")
+        assert(element.type = "type")
+        assert(element.ionic_radius = 1.1)
+        assert(element.atomic_radius = 1.2)
+        assert(element.electronegativity = 2.0
+        assert(element.first_ionization_potential = 3.0
+        assert(element.density = 1.0
+        assert(element.melting_point_k = 100.100
+        assert(element.boiling_point_k = 100.100
+        assert(element.isotopes = 4
+        assert(element.discoverer = "Downing"
+        assert(element.year_of_discovery = 100
+        assert(element.specific_heat_capacity = 100.100
+        assert(element.electron_configuration = "electron_configuration"
+        assert(element.description = "description"
 
-    def test_add_elements_to_period(self):
-        period = Period(1,"They are awesome","It has many properties")
-        db.session.add(period)
-        db.session.commit()
 
-        element1 = Element(atomic_number=1,symbol='H',name="Hydrogen",atomic_mass=1.001,history="it is forged in the sun",period=period)
-        db.session.add(element1)
-        db.session.commit()
+    # def test_add_elements_to_period(self):
+    #     period = Period(1,"They are awesome","It has many properties")
+    #     db.session.add(period)
+    #     db.session.commit()
 
-        element2 = Element(atomic_number=2,symbol='He',name="Helium",atomic_mass=4.002,history="it makes balloons fly",period=period)
-        db.session.add(element2)
-        db.session.commit()
+    #     element1 = Element(atomic_number=1,symbol='H',name="Hydrogen",atomic_mass=1.001,history="it is forged in the sun",period=period)
+    #     db.session.add(element1)
+    #     db.session.commit()
 
-        elements = list(period.elements)
-        assert elements == [element1,element2]
+    #     element2 = Element(atomic_number=2,symbol='He',name="Helium",atomic_mass=4.002,history="it makes balloons fly",period=period)
+    #     db.session.add(element2)
+    #     db.session.commit()
+
+    #     elements = list(period.elements)
+    #     assert elements == [element1,element2]
 
     def test_add_elements_to_group(self):
-        group = Group(1,"Alkali","They are awesome","It has many properties")
+        group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
+
         db.session.add(group)
         db.session.commit()
 
-        element1 = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e",group=group)
+        element1 = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="most_stable_crystal",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element1)
         db.session.commit()
 
-        element2 = Element(atomic_number=11,symbol='Na',name="Sodium",atomic_mass=22.989,history="its salty",group=group)
+        element2 = Element(atomic_number=2,symbol='He',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="most_stable_crystal",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element2)
         db.session.commit()
 
@@ -98,60 +118,60 @@ class TestCase(unittest.TestCase):
         assert elements == [element1,element2]
 
 
-    def test_create_trivia(self):   
-        trivia = Trivia(title="Super Hard",description="Very hard trivia")
-        db.session.add(trivia)
-        db.session.commit()
-        assert(trivia.title == "Super Hard")
-        assert(trivia.description == "Very hard trivia")
+    # def test_create_trivia(self):   
+    #     trivia = Trivia(title="Super Hard",description="Very hard trivia")
+    #     db.session.add(trivia)
+    #     db.session.commit()
+    #     assert(trivia.title == "Super Hard")
+    #     assert(trivia.description == "Very hard trivia")
     
-    def test_add_trivias_to_group(self):   
-        group = Group(1,"Alkali","They are awesome","It has many properties")
-        db.session.add(group)
-        db.session.commit()
+    # def test_add_trivias_to_group(self):   
+    #     group = Group(1,"Alkali","They are awesome","It has many properties")
+    #     db.session.add(group)
+    #     db.session.commit()
 
-        trivia1 = Trivia(title="Super Hard",description="Very hard trivia",group=group)
-        db.session.add(trivia1)
-        db.session.commit()
+    #     trivia1 = Trivia(title="Super Hard",description="Very hard trivia",group=group)
+    #     db.session.add(trivia1)
+    #     db.session.commit()
 
-        trivia2 = Trivia(title="Super Easy",description="Very easy trivia",group=group)
-        db.session.add(trivia2)
-        db.session.commit()
+    #     trivia2 = Trivia(title="Super Easy",description="Very easy trivia",group=group)
+    #     db.session.add(trivia2)
+    #     db.session.commit()
 
-        trivias = list(group.trivias)
-        assert trivias == [trivia1,trivia2]
+    #     trivias = list(group.trivias)
+    #     assert trivias == [trivia1,trivia2]
 
-    def test_add_trivias_to_period(self):   
-        period = Period(1,"They are awesome","It has many properties")
-        db.session.add(period)
-        db.session.commit()
+    # def test_add_trivias_to_period(self):   
+    #     period = Period(1,"They are awesome","It has many properties")
+    #     db.session.add(period)
+    #     db.session.commit()
 
-        trivia1 = Trivia(title="Super Hard",description="Very hard trivia",period=period)
-        db.session.add(trivia1)
-        db.session.commit()
+    #     trivia1 = Trivia(title="Super Hard",description="Very hard trivia",period=period)
+    #     db.session.add(trivia1)
+    #     db.session.commit()
 
-        trivia2 = Trivia(title="Super Easy",description="Very easy trivia",period=period)
-        db.session.add(trivia2)
-        db.session.commit()
+    #     trivia2 = Trivia(title="Super Easy",description="Very easy trivia",period=period)
+    #     db.session.add(trivia2)
+    #     db.session.commit()
 
-        trivias = list(period.trivias)
-        assert trivias == [trivia1,trivia2]
+    #     trivias = list(period.trivias)
+    #     assert trivias == [trivia1,trivia2]
 
-    def test_add_trivias_to_element(self):   
-        element = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e")
-        db.session.add(element)
-        db.session.commit()
+    # def test_add_trivias_to_element(self):   
+    #     element = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e")
+    #     db.session.add(element)
+    #     db.session.commit()
 
-        trivia1 = Trivia(title="Super Hard",description="Very hard trivia",element=element)
-        db.session.add(trivia1)
-        db.session.commit()
+    #     trivia1 = Trivia(title="Super Hard",description="Very hard trivia",element=element)
+    #     db.session.add(trivia1)
+    #     db.session.commit()
 
-        trivia2 = Trivia(title="Super Easy",description="Very easy trivia",element=element)
-        db.session.add(trivia2)
-        db.session.commit()
+    #     trivia2 = Trivia(title="Super Easy",description="Very easy trivia",element=element)
+    #     db.session.add(trivia2)
+    #     db.session.commit()
 
-        trivias = list(element.trivias)
-        assert trivias == [trivia1,trivia2]
+    #     trivias = list(element.trivias)
+    #     assert trivias == [trivia1,trivia2]
 
 def main():
     unittest.main()
