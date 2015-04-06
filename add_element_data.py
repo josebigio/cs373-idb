@@ -16,6 +16,7 @@ def stripWikiCitations(str):
 def main():
     curdir = "/home/elementalists/cs373-idb/"
     generalinfo = "elements_info/general_info/"
+    triviapath = "elements_info/trivia/"
     for i in range(1, 119):
         e = models.Element.query.get(i)
         symbol = e.symbol
@@ -25,7 +26,7 @@ def main():
                 if filename.startswith(symbol):
                     desc_file = filename
             if desc_file == '':
-                desc = open(curdir + "elements_info/general_info/%s%s" % (symbol.strip(), ".txt"))
+                desc = open(curdir + generalinfo + "%s%s" % (symbol.strip(), ".txt"))
             else:
                 desc = open(curdir + generalinfo + desc_file)
         except IOError as e:
@@ -42,9 +43,9 @@ def main():
                 if filename.startswith(symbol):
                     triv_file = filename
             if desc_file == '':
-                trivia = open(curdir + "elements_info/trivia/%s%s" % (symbol.strip(), ".txt"))
+                trivia = open(curdir + triviapath + "%s%s" % (symbol.strip(), ".txt"))
             else:
-                trivia = open(curdir + generalinfo + triv_file)
+                trivia = open(curdir + triviapath + triv_file)
         except IOError as e:
             print("Missing trivia for element: " + symbol)
             print(e)
