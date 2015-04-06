@@ -7,6 +7,11 @@ def getTrivia(trivia):
     return result
 
 
+def stripWikiCitations(str):
+    pattern = re.compile(r'\[(.)\]')
+    return re.sub(pattern, str, '')
+
+
 
 def main():
     curdir = "/home/elementalists/cs373-idb/"
@@ -19,7 +24,7 @@ def main():
             print("Missing descrption on element: " + symbol)
             print(e)
         else:
-            desc_text = desc.read()
+            desc_text = stripWikiCitations(desc.read())
             e.description = desc_text
             db.session.add(e)
             db.session.commit()
@@ -29,7 +34,7 @@ def main():
             print("Missing trivia for element: " + symbol)
             print(e)
         finally:
-            trivia_text = trivia.read()
+            trivia_text = stripWikiCitations(trivia.read())
             if trivia_text is not None and trivia_text != "":
                 trivia_list = getTrivia(trivia_text)
                 for trivia_snippet in trivia_list:
