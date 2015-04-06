@@ -23,7 +23,7 @@ def main():
         try:
             desc_file = ''
             for filename in os.listdir(curdir + generalinfo):
-                if filename.startswith(symbol):
+                if filename.startswith(symbol.strip()):
                     desc_file = filename
             if desc_file == '':
                 desc = open(curdir + generalinfo + "%s%s" % (symbol.strip(), ".txt"))
@@ -40,10 +40,10 @@ def main():
             db.session.commit()
         try:
             triv_file = ''
-            for filename in os.listdir(curdir + generalinfo):
-                if filename.startswith(symbol):
+            for filename in os.listdir(curdir + triviapath):
+                if filename.startswith(symbol.strip()):
                     triv_file = filename
-            if desc_file == '':
+            if triv_file == '':
                 trivia = open(curdir + triviapath + "%s%s" % (symbol.strip(), ".txt"))
             else:
                 print("trying to get desc from: " + curdir + triviapath + triv_file)
