@@ -49,7 +49,7 @@ def main():
         except IOError as e:
             print("Missing trivia for element: " + symbol)
             print(e)
-        finally:
+        else:
             trivia_text = stripWikiCitations(trivia.read())
             if trivia_text is not None and trivia_text != "":
                 trivia_list = getTrivia(trivia_text)
