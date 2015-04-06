@@ -28,6 +28,7 @@ def main():
             if desc_file == '':
                 desc = open(curdir + generalinfo + "%s%s" % (symbol.strip(), ".txt"))
             else:
+                print("trying to get desc from: " + curdir + generalinfo + desc_file)
                 desc = open(curdir + generalinfo + desc_file)
         except IOError as e:
             print("Missing descrption on element: " + symbol)
@@ -45,7 +46,9 @@ def main():
             if desc_file == '':
                 trivia = open(curdir + triviapath + "%s%s" % (symbol.strip(), ".txt"))
             else:
+                print("trying to get desc from: " + curdir + triviapath + triv_file)
                 trivia = open(curdir + triviapath + triv_file)
+
         except IOError as e:
             print("Missing trivia for element: " + symbol)
             print(e)
