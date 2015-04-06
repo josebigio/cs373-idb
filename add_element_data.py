@@ -9,7 +9,7 @@ def getTrivia(trivia):
 
 def stripWikiCitations(str):
     pattern = re.compile(r'\[(.)\]')
-    return re.sub(pattern, str, '')
+    return re.sub(pattern, '', str)
 
 
 
