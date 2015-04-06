@@ -32,6 +32,7 @@ periods,&nbsp;groups&nbsp;and&nbsp;trivias</tt></p>
 <dl>
 <dt><font face="helvetica, arial"><a href="models.html#Element">Element</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Group">Group</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Image">Image</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Period">Period</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Trivia">Trivia</a>
 </font></dt></dl>
@@ -67,29 +68,55 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 
 <hr>
 Data descriptors defined here:<br>
-<dl><dt><strong>atomic_mass</strong></dt>
-</dl>
 <dl><dt><strong>atomic_number</strong></dt>
 </dl>
-<dl><dt><strong>group_column</strong></dt>
+<dl><dt><strong>atomic_radius</strong></dt>
 </dl>
-<dl><dt><strong>history</strong></dt>
+<dl><dt><strong>boiling_point_k</strong></dt>
 </dl>
-<dl><dt><strong>name</strong></dt>
+<dl><dt><strong>density</strong></dt>
 </dl>
-<dl><dt><strong>period_row</strong></dt>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>discoverer</strong></dt>
+</dl>
+<dl><dt><strong>electron_configuration</strong></dt>
+</dl>
+<dl><dt><strong>electronegativity</strong></dt>
+</dl>
+<dl><dt><strong>element</strong></dt>
+</dl>
+<dl><dt><strong>first_ionization_potential</strong></dt>
+</dl>
+<dl><dt><strong>group_number</strong></dt>
+</dl>
+<dl><dt><strong>ionic_radius</strong></dt>
+</dl>
+<dl><dt><strong>isotopes</strong></dt>
+</dl>
+<dl><dt><strong>melting_point_k</strong></dt>
+</dl>
+<dl><dt><strong>most_stable_crystal</strong></dt>
+</dl>
+<dl><dt><strong>period_number</strong></dt>
+</dl>
+<dl><dt><strong>phase</strong></dt>
+</dl>
+<dl><dt><strong>specific_heat_capacity</strong></dt>
 </dl>
 <dl><dt><strong>symbol</strong></dt>
 </dl>
-<dl><dt><strong>trivias</strong></dt>
+<dl><dt><strong>type</strong></dt>
+</dl>
+<dl><dt><strong>year_of_discovery</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10fced590; Element&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea4ed50; Element&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('element', MetaData(bind=None), Column('at...Key('period.row'), table=&lt;element&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('elements', MetaData(bind=None), Column('a...s.group_number'), table=&lt;elements&gt;), schema=None)</dl>
 
-<dl><dt><strong>__tablename__</strong> = 'element'</dl>
+<dl><dt><strong>__tablename__</strong> = 'elements'</dl>
 
 <hr>
 Methods inherited from flask_sqlalchemy.Model:<br>
@@ -132,29 +159,109 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Group-__init__"><strong>__init__</strong></a>(self, column, name, description<font color="#909090">='None'</font>, properties<font color="#909090">='None'</font>)</dt></dl>
+<dl><dt><a name="Group-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
 
 <dl><dt><a name="Group-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
-<dl><dt><strong>column</strong></dt>
+<dl><dt><strong>applications</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
 </dl>
 <dl><dt><strong>elements</strong></dt>
 </dl>
-<dl><dt><strong>information</strong></dt>
+<dl><dt><strong>group_number</strong></dt>
 </dl>
 <dl><dt><strong>name</strong></dt>
 </dl>
-<dl><dt><strong>trivias</strong></dt>
+<dl><dt><strong>properties</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10fcf8390; Group&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea5c690; Group&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('group', MetaData(bind=None), Column('colu...nformation', Text(), table=&lt;group&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('groups', MetaData(bind=None), Column('gro...umn('name', Text(), table=&lt;groups&gt;), schema=None)</dl>
 
-<dl><dt><strong>__tablename__</strong> = 'group'</dl>
+<dl><dt><strong>__tablename__</strong> = 'groups'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Image">class <strong>Image</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;an&nbsp;image.&nbsp;They&nbsp;will&nbsp;be&nbsp;used&nbsp;through&nbsp;out&nbsp;the&nbsp;website,&nbsp;so&nbsp;they&nbsp;will&nbsp;have&nbsp;forein&nbsp;keys&nbsp;for&nbsp;<br>
+each&nbsp;of&nbsp;our&nbsp;3&nbsp;primary&nbsp;data&nbsp;tables&nbsp;(Elements,&nbsp;Groups&nbsp;and&nbsp;Periods)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Image">Image</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Image-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>element_number</strong></dt>
+</dl>
+<dl><dt><strong>group_number</strong></dt>
+</dl>
+<dl><dt><strong>image_path</strong></dt>
+</dl>
+<dl><dt><strong>period_number</strong></dt>
+</dl>
+<dl><dt><strong>type</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea66290; Image&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('images', MetaData(bind=None), Column('ima...number', Integer(), table=&lt;images&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'images'</dl>
 
 <hr>
 Methods inherited from flask_sqlalchemy.Model:<br>
@@ -197,7 +304,14 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Period-__init__"><strong>__init__</strong></a>(self, row, description<font color="#909090">='None'</font>, properties<font color="#909090">='None'</font>)</dt></dl>
+<dl><dt><a name="Period-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
 
 <dl><dt><a name="Period-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;string&nbsp;with&nbsp;the&nbsp;row&nbsp;this&nbsp;period&nbsp;represents</tt></dd></dl>
 
@@ -205,21 +319,15 @@ Methods defined here:<br>
 Data descriptors defined here:<br>
 <dl><dt><strong>description</strong></dt>
 </dl>
-<dl><dt><strong>elements</strong></dt>
-</dl>
-<dl><dt><strong>properties</strong></dt>
-</dl>
-<dl><dt><strong>row</strong></dt>
-</dl>
-<dl><dt><strong>trivias</strong></dt>
+<dl><dt><strong>period_number</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10fcf16d0; Period&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea58a50; Period&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('period', MetaData(bind=None), Column('row...roperties', Text(), table=&lt;period&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('periods', MetaData(bind=None), Column('pe...cription', Text(), table=&lt;periods&gt;), schema=None)</dl>
 
-<dl><dt><strong>__tablename__</strong> = 'period'</dl>
+<dl><dt><strong>__tablename__</strong> = 'periods'</dl>
 
 <hr>
 Methods inherited from flask_sqlalchemy.Model:<br>
@@ -278,27 +386,19 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 Data descriptors defined here:<br>
 <dl><dt><strong>description</strong></dt>
 </dl>
-<dl><dt><strong>element</strong></dt>
+<dl><dt><strong>element_number</strong></dt>
 </dl>
-<dl><dt><strong>element_atomic_number</strong></dt>
-</dl>
-<dl><dt><strong>group</strong></dt>
-</dl>
-<dl><dt><strong>group_column</strong></dt>
+<dl><dt><strong>group_number</strong></dt>
 </dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
-<dl><dt><strong>period</strong></dt>
-</dl>
-<dl><dt><strong>period_row</strong></dt>
-</dl>
-<dl><dt><strong>title</strong></dt>
+<dl><dt><strong>period_number</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10fcfc350; Trivia&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea60490; Trivia&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('trivia', MetaData(bind=None), Column('id'...nt.atomic_number'), table=&lt;trivia&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('trivia', MetaData(bind=None), Column('id'...number', Integer(), table=&lt;trivia&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'trivia'</dl>
 
