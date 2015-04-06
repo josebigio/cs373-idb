@@ -72,7 +72,7 @@ class TestCase(unittest.TestCase):
         assert(element.ionic_radius == 1.1)
         assert(element.atomic_radius == 1.2)
         assert(element.electronegativity == 2.0)
-        assert(element.first_ionization_potential = 3.0)
+        assert(element.first_ionization_potential == 3.0)
         assert(element.density == 1.0)
         assert(element.melting_point_k == 100.100)
         assert(element.boiling_point_k == 100.100)
