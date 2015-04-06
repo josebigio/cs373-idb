@@ -28,11 +28,11 @@ def main():
             if desc_file == '':
                 desc = open(curdir + generalinfo + "%s%s" % (symbol.strip(), ".txt"))
             else:
-                print("trying to get desc from: " + curdir + generalinfo + desc_file)
+                # print("trying to get desc from: " + curdir + generalinfo + desc_file)
                 desc = open(curdir + generalinfo + desc_file)
         except IOError as e:
             print("Missing descrption on element: " + symbol)
-            print(e)
+            # print(e)
         else:
             desc_text = stripWikiCitations(desc.read())
             e.description = desc_text
@@ -46,12 +46,12 @@ def main():
             if triv_file == '':
                 trivia = open(curdir + triviapath + "%s%s" % (symbol.strip(), ".txt"))
             else:
-                print("trying to get desc from: " + curdir + triviapath + triv_file)
+                # print("trying to get desc from: " + curdir + triviapath + triv_file)
                 trivia = open(curdir + triviapath + triv_file)
 
         except IOError as e:
             print("Missing trivia for element: " + symbol)
-            print(e)
+            # print(e)
         else:
             trivia_text = stripWikiCitations(trivia.read())
             if trivia_text is not None and trivia_text != "":
