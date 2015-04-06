@@ -33,7 +33,7 @@ class TestCase(unittest.TestCase):
         group.applications = "They have different applications"
         db.session.add(group)
         db.session.commit()
-        assert(group.information == "They have different applications")
+        assert(group.applications == "They have different applications")
         
     # def test_create_period(self):
     #     period = Period(1,"They are awesome","It has many properties")
@@ -59,7 +59,7 @@ class TestCase(unittest.TestCase):
 
     def test_create_element(self):  
     
-        element = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="most_stable_crystal",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+        element = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element)
         db.session.commit()
         assert(element.atomic_number == 1)
@@ -67,7 +67,7 @@ class TestCase(unittest.TestCase):
         assert(element.element == "Hydrogen")
         assert(element.period_number == 1)
         assert(element.phase == "phase")
-        assert(element.most_stable_crystal == "most_stable_crystal")
+        assert(element.most_stable_crystal == "msc")
         assert(element.type == "type")
         assert(element.ionic_radius == 1.1)
         assert(element.atomic_radius == 1.2)
@@ -106,11 +106,11 @@ class TestCase(unittest.TestCase):
         db.session.add(group)
         db.session.commit()
 
-        element1 = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="most_stable_crystal",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+        element1 = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element1)
         db.session.commit()
 
-        element2 = Element(atomic_number=2,symbol='He',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="most_stable_crystal",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+        element2 = Element(atomic_number=2,symbol='He',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element2)
         db.session.commit()
 
