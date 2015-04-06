@@ -14,7 +14,7 @@ def main():
         e = models.Element.query.get(i)
         symbol = e.symbol
         try:
-            desc = open(curdir + "elements_info/general_info/%s%s" % (symbol.strip(), ".txt"))
+            desc = open(curdir + "elements_info/general_info/%s%s" % (symbol.strip(), ".*"))
         except IOError as e:
             print("Missing descrption on element: " + symbol)
             print(e)
@@ -24,7 +24,7 @@ def main():
             db.session.add(e)
             db.session.commit()
         try:
-            trivia = open(curdir + "elements_info/trivia/%s%s" % (symbol.strip(), ".txt"))
+            trivia = open(curdir + "elements_info/trivia/%s%s" % (symbol.strip(), ".*"))
         except IOError as e:
             print("Missing trivia for element: " + symbol)
             print(e)
