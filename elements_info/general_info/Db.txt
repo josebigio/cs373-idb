@@ -1,1 +1,5 @@
-Db.txt
+Dubnium is a chemical element with symbol Db and atomic number 105. It is named after the town of Dubna in Russia, where it was first produced. It is a synthetic element (an element that can be created in a laboratory but is not found in nature) and radioactive; the most stable known isotope, dubnium-268, has a half-life of approximately 28 hours.[8]
+
+In the periodic table of the elements, it is a d-block element and in the transactinide elements. It is a member of the 7th period and belongs to Group 5. Chemistry experiments have confirmed that dubnium behaves as the heavier homologue to tantalum in group 5. The chemical properties of dubnium are characterized only partly. They are similar to those of other group 5 elements.
+
+In the 1960s and 1970s, microscopic amounts of dubnium were produced in laboratories in the former Soviet Union and in California. The priority of the discovery and therefore the naming of the element was disputed between Soviet and American scientists, and it was not until 1997 that IUPAC established "dubnium" as the official name for the element.

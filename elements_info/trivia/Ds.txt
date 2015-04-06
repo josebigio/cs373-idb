@@ -1,1 +1,1 @@
-Ds.txt 
+@@ The name Darmstadtium (Ds) was suggested by the GSI team in honor of the city of Darmstadt, where the element was discovered. ##

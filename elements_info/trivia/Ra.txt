@@ -1,1 +1,8 @@
-Ra.txt
+@@ Radium is the heaviest known alkaline earth metal and is the only radioactive member of its group. ##
+
+
+@@ Radium was formerly used in self-luminous paints for watches, nuclear panels, aircraft switches, clocks, and instrument dials. ##
+
+@@ Radium was once an additive in products such as toothpaste, hair creams, and even food items due to its supposed curative powers. Such products soon fell out of vogue and were prohibited by authorities in many countries after it was discovered they could have serious adverse health effects. ## 
+
+@@ Radium is highly radioactive and its immediate daughter, radon gas, is also radioactive. When ingested, 80% of the ingested radium leaves the body through the feces, while the other 20% goes into the bloodstream, mostly accumulating in the bones. Exposure to radium, internal or external, can cause cancer and other disorders, because radium and radon emit alpha and gamma rays upon their decay, which kill and mutate cells. At the time of the Manhattan Project in 1944, the "tolerance dose" for workers was set at 0.1 microgram of ingested radium. ##
