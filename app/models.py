@@ -87,7 +87,7 @@ class Trivia(db.Model):
 
     __tablename__ = 'trivia'
 
-    trivia_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.Text)
     period_number = db.Column(db.Integer)
     group_number = db.Column(db.Integer)

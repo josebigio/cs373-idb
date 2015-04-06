@@ -67,21 +67,21 @@ class TestCase(unittest.TestCase):
         assert(element.element == "Hydrogen")
         assert(element.period_number == 1)
         assert(element.phase == "phase")
-        assert(element.most_stable_crystal = "most_stable_crystal")
-        assert(element.type = "type")
-        assert(element.ionic_radius = 1.1)
-        assert(element.atomic_radius = 1.2)
-        assert(element.electronegativity = 2.0
-        assert(element.first_ionization_potential = 3.0
-        assert(element.density = 1.0
-        assert(element.melting_point_k = 100.100
-        assert(element.boiling_point_k = 100.100
-        assert(element.isotopes = 4
-        assert(element.discoverer = "Downing"
-        assert(element.year_of_discovery = 100
-        assert(element.specific_heat_capacity = 100.100
-        assert(element.electron_configuration = "electron_configuration"
-        assert(element.description = "description"
+        assert(element.most_stable_crystal == "most_stable_crystal")
+        assert(element.type == "type")
+        assert(element.ionic_radius == 1.1)
+        assert(element.atomic_radius == 1.2)
+        assert(element.electronegativity == 2.0)
+        assert(element.first_ionization_potential = 3.0)
+        assert(element.density == 1.0)
+        assert(element.melting_point_k == 100.100)
+        assert(element.boiling_point_k == 100.100)
+        assert(element.isotopes == 4)
+        assert(element.discoverer == "Downing")
+        assert(element.year_of_discovery == 100)
+        assert(element.specific_heat_capacity == 100.100)
+        assert(element.electron_configuration == "electron_configuration")
+        assert(element.description == "description")
 
 
     # def test_add_elements_to_period(self):
