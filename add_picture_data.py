@@ -20,7 +20,7 @@ def main():
         if element_dir_name != '':
             for imagefilename in os.listdir(curdir+element_dir_name):
                 print("--- Examining: " + imagefilename)
-                path = staticimagespath + imagefilename
+                path = staticimagespath + element_dir_name + '/' + imagefilename
                 print(path)
                 imageType = None
                 if firstImageInFolder:
