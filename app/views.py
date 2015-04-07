@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, jsonify
 from app import app, db, models
 from .models import Element
 import subprocess
@@ -11,8 +11,8 @@ def index():
 
 @app.route('/api/<name>')
 def api_handling(name):
-    e = Element.query.get(1)
-    return name
+    if name == 'element':
+        return handleElement()
 
 @app.route('/models/<name>')
 def models(name=1):
@@ -82,4 +82,10 @@ def run_tests():
     out,err = p.communicate()
     print(err)
     return render_template('tests.html', name=err)
+
+
+#api handlers
+def handleElements():
+    elements = Element.query.all()
+    return elements
 
