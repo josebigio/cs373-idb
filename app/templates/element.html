@@ -9,7 +9,7 @@
 {% endblock %}
 {#---------Content---------#}
 {% block content %}
-<div class="bg" style="background: url({{path.image_path}}) no-repeat center center;"></div>
+<div class="bg" style="background: url({{default_image.image_path}}) no-repeat center center;"></div>
 
 <div class="jumbotron">
     <h1 style="text-align:center">{{element.element}}</h1>
@@ -61,8 +61,10 @@
             </div>
             <div class = "row">
                 <!--images go here-->
-                {% for img_path in path.image_path %}
-
+                {% for image in images %}
+                    {% if image.image_type!="default"%}
+                        <div class="col-md-4"><img src={{image.image_path}} class="img-responsive"></div>
+                    {% endif%}
                 {% endfor %}
             </div>
             <div class = "row">
@@ -70,8 +72,8 @@
             </div>
             <div class = "row">
                 <!-- trivia for loop goes here-->
-                {% for trivia in element.trivias %}
-                    <div class = "row"><p>trivia</p></div>
+                {% for trivia in trivias %}
+                    <div class = "row"><p>trivia.description</p></div>
                 {% endfor %}
             </div>
 
