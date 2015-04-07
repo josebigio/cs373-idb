@@ -48,10 +48,7 @@ def element(atomic_number_str=None):
     e = Element.query.get(atomic_number)
     images = list(Image.query.filter_by(element_number=atomic_number).all())
     default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
-    returnStr = ""
-    for image in images:
-        returnStr += image.image_path + "\n"
-    return returnStr + "default: " + default_image.image_path
+    return render_template('element.html', element=e, images=images, default_image=default_image)
 
 
 
