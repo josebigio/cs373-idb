@@ -1,6 +1,7 @@
-from flask import render_template, jsonify
+from flask import render_template, json
 from app import app, db, models
 from .models import Element
+from sqlalchemy import func
 import subprocess
 
 @app.route('/')
@@ -10,9 +11,13 @@ def index():
 
 
 @app.route('/api/<name>')
+@app.route('/api/element/<name>')
 def api_handling(name):
     if name == 'element':
-        return handleElement()
+        return handle_element()
+    else:
+        return handle_individual_element(name)
+
 
 @app.route('/models/<name>')
 def models(name=1):
@@ -85,7 +90,32 @@ def run_tests():
 
 
 #api handlers
-def handleElement():
-    elements = Element.query.all()
-    return elements
+def handle_element():
+    elements = list(Element.query.all())
+    result_list = []
+    column_names = []
+    for c in Element.__table__.columns:
+        column_names.append(str(c).split("elements.")[1])    
 
+    for element in elements:
+        d = dict()
+        for c_name in column_names:
+            d[c_name] = element.__dict__[c_name]
+        result_list.append(d)
+    
+    return json.dumps(result_list)
+        
+def handle_individual_element(element_symbol):
+    element = Element.query.filter(func.lower(Element.symbol)==func.lower(element_symbol)).first()
+    result_list = []    
+
+    column_names = []
+    for c in Element.__table__.columns:
+        column_names.append(str(c).split("elements.")[1])
+        
+    d = dict()
+    for c_name in column_names:
+        d[c_name] = element.__dict__[c_name]
+
+    result_list.append(d)
+    return json.dumps(result_list)
