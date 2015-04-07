@@ -85,7 +85,7 @@ def run_tests():
 
 
 #api handlers
-def handleElements():
+def handleElement():
     elements = Element.query.all()
     return elements
 
