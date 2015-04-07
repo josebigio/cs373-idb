@@ -1,0 +1,5 @@
+@@In accordance with magnetic data, electrical resistivity of curium increases with temperature – about twice between 4 and 60 K – and then remains nearly constant up to room temperature. There is a significant increase in resistvity over time due to self-damage of the crystal lattice by alpha radiation. This makes uncertain the absolute resistivity value for curium. The resistivity of curium is similar to that of gadolinium and of the actinides plutonium and neptunium, but is significantly higher than that of americium, uranium, polonium and thorium.##
+
+@@Currently, curium is not used as a nuclear fuel owing to its low availability and high price. 245Cm and 247Cm have a very small critical mass and therefore could be used in portable nuclear weapons, but none have been reported thus far. Curium-243 is not suitable for this purpose because of its short half-life and strong a emission which would result in excessive heat. Curium-247 would be highly suitable, having a half-life 647 times that of plutonium-239.##
+
+@@A few atoms of curium can be produced by neutron capture reactions and beta decay in very highly concentrated uranium-bearing deposits.##
