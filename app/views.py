@@ -10,7 +10,7 @@ def index():
 
 
 @app.route('/api/<name>')
-def api_handling(name=name):
+def api_handling(name):
     e = Element.query.get(1)
     return name
 
