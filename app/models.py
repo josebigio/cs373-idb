@@ -5,6 +5,40 @@ periods, groups and trivias
 
 from app import db
 
+class MockElement():
+    atomic_number = 1
+    element = "TestElement"
+    symbol = "Te"
+    period_number = 1
+    phase = "l"
+    most_stable_crystal = "none"
+    type = "stuff"
+    ionic_radius = 123
+    atomic_radius = 123
+    electronegativity = -2.34
+    first_ionization_potential = 1.3
+    density = 1.3
+    melting_point_k = -124.5
+    boiling_point_k = -123.3
+    isotopes = 5
+    discoverer = "Colin Murray"
+    year_of_discovery = 1992
+    specific_heat_capacity = 123.4
+    electron_configuration = "sp3"
+    description = "The best element ever!"
+
+
+class MockImage():
+    """
+    Represents an image. They will be used through out the website, so they will have forein keys for
+    each of our 3 primary data tables (Elements, Groups and Periods)
+    """
+    image_path = '/static/images/hydrogen/hydrogen.jpg'
+    image_type = 'default'
+    period_number = 3
+    group_number = 3
+    element_number = 1
+
 class Element(db.Model):
     """
     Represents an element on the period table. Eg: Hydrogen, Nitrogen, etc.

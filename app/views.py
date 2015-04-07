@@ -1,6 +1,6 @@
 from flask import render_template, json
 from app import app, db, models
-from .models import Element
+from .models import Element, MockElement, MockImage
 from sqlalchemy import func
 import subprocess
 
@@ -44,11 +44,13 @@ def group(name=None):
 
 @app.route('/element/<atomic_number>')
 def element(atomic_number=None):
-    e = models.Element.query.get(atomic_number)
+    e = MockElement()
+    p = MockImage()
+    #e = models.Element.query.get(atomic_number)
     # picture = models.Image.query.get()
     # name = e.element
     # descrption = e.description
-    return render_template('element.html', element=e)
+    return render_template('element.html', element=e, path = p)
 
 
 

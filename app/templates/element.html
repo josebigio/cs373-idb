@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{#---------Title---------#}
+{% block title %}{{element.element}}{% endblock %}
+{#---------Header---------#}
+{% block head %}
+  {{ super() }}
+    <link rel="stylesheet" href="/static/css/group.css">
+    <link rel="stylesheet" href="/static/css/elements.css">
+{% endblock %}
+{#---------Content---------#}
+{% block content %}
+<div class="bg" style="background: url({{path.image_path}}) no-repeat center center;"></div>
+
+<div class="jumbotron">
+    <h1 style="text-align:center">{{element.element}}</h1>
+</div>
+<div class = "container">
+    <div class = "row">
+        <div class="col-md-3" id="leftCol">
+            <ul class="nav nav-stacked" id="sidebar">
+                  <li><a href="#sec0">Description</a></li>
+                  <li><a href="#sec1">Properties</a></li>
+                  <li><a href="#sec2">Trivia</a></li>
+            </ul>
+        </div>
+
+        <div class = "col-md-9">
+            <div class = "row">
+                <h2 id="sec0">Description</h2>
+                    <p>{{element.description}}</p>
+            </div>
+            <div class = "row">
+                <h2 id="sec1">Properties</h2>
+            </div>
+            <div class = "row">
+                <div class = "col-md-3">
+                    <ul>
+                    <li>Symbol : {{element.symbol}}</li>
+                    <li>Period number : {{element.period_number}}</li>
+                    <li>Phase : {{element.phase}}</li>
+                    <li>Most_stable_crystal : {{element.most_stable_crystal}}</li>
+                    <li>Type : {{element.type}}</li>
+                    <li>Ionic_radius : {{element.ionic_radius}}</li>
+                    <li>Atomic_radius : {{element.atomic_radius}}</li>
+                    <li>Electronegativity : {{element.electronegativity}}</li>
+                    <li>First_ionization_potential : {{element.first_ionization_potential}}</li>
+                    </ul>
+                </div>
+                <div class = "col-md-9">
+                    <ul>
+                        <li>Density : {{element.density}}</li>
+                        <li>Melting_point_k : {{element.melting_point_k}}</li>
+                        <li>Boiling_point_k : {{element.boiling_point_k}}</li>
+                        <li>Isotopes : {{element.isotopes}}</li>
+                        <li>Discoverer : {{element.discoverer}}</li>
+                        <li>Year_of_discovery : {{element.year_of_discovery}}</li>
+                        <li>Specific_heat_capacity : {{element.specific_heat_capacity}}</li>
+                        <li>Electron_configuration : {{element.electron_configuration}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "row">
+                <!--images go here-->
+                {% for img_path in path.image_path %}
+
+                {% endfor %}
+            </div>
+            <div class = "row">
+                <h2 id="sec2">Trivia</h2>
+            </div>
+            <div class = "row">
+                <!-- trivia for loop goes here-->
+                {% for trivia in element.trivias %}
+                    <div class = "row"><p>trivia</p></div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+{#---------Scripts---------#}
+{% block scripts %}
+<script src="/static/scripts/jumbotron.js"></script>
+{% endblock %}
