@@ -13,7 +13,7 @@ def main():
         element_dir_name = ''
         print("element: " + element_name)
         for filename in os.listdir(curdir):
-            print("checking : " + filename)
+            # print("checking : " + filename)
             if filename.lower().startswith(element_name.lower()):
                 print("Found Dir: " + curdir+filename)
                 element_dir_name = filename
@@ -29,10 +29,9 @@ def main():
                     firstImageInFolder = False
                 image = models.Image(image_path=path, element_number=i, image_type=imageType)
                 db.session.add(image)
+                db.session.commit()
         else:
             print("Could not find image folder for " + element_name)
-    db.session.commit()
-
 
 if __name__ == "__main__":
     main()
