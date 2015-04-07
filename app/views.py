@@ -43,12 +43,14 @@ def group(name=None):
 
 
 @app.route('/element/<atomic_number>')
-def element(atomic_number=None):
+def element(atomic_number_str=None):
+    atomic_number = int(atomic_number_str)
     e = models.Element.query.get(atomic_number)
     # picture = models.Image.query.get()
     # name = e.element
     # descrption = e.description
-    return render_template('element.html', element=e)
+    # return render_template('element.html', element=e)
+    return models.Image.query.filter_by(element_number=atomic_number).first().path
 
 
 
