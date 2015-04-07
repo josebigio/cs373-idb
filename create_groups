@@ -1,0 +1,25 @@
+from app import db, models
+import re, os
+
+
+def stripWikiCitations(str):
+    pattern = re.compile(r'\[.{1,3}\]')
+    return re.sub(pattern, '', str)
+
+
+def main():
+    for i in range(1, 119):
+        # Altering an existing element
+        e = models.Element.query.get(i)
+        symbol = e.symbol
+        e.symbol = "He"
+        db.session.add(e)
+        db.session.commit()
+
+        group = models.Group(group_number=123, element_number=i)
+        db.session.add(group)
+        db.session.commit()
+
+
+if __name__ == "__main__":
+    main()
