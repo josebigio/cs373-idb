@@ -1,6 +1,6 @@
 from flask import render_template, json
 from app import app, db, models
-from .models import Element
+from .models import Element, Image
 from sqlalchemy import func
 import subprocess
 
@@ -35,22 +35,20 @@ def group(name=None):
     if name == 'alkali':
         return render_template('alkaliLayout.html', name=name)
     elif name == 'alkaline-earth':
-        return render_template('alkalinearthLayout.html', name=name)
+        return render_template('alkalinearthLayout.html', name=name)atomnum
     elif name == 'halogen':
         return render_template('halogenLayout.html', name=name)
     else:
         return "Page not found!"
 
 
-@app.route('/element/<atomic_number>')
+@app.route('/element/<atomic_number_str>')
 def element(atomic_number_str=None):
     atomic_number = int(atomic_number_str)
-    e = models.Element.query.get(atomic_number)
-    # picture = models.Image.query.get()
-    # name = e.element
-    # descrption = e.description
-    # return render_template('element.html', element=e)
-    return models.Image.query.filter_by(element_number=atomic_number).first().path
+    e = Element.query.get(atomic_number)
+    images = list(Image.query.filter_by(element_number=atomic_number).all())
+    default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first().path
+    return str(images) + "\n" + "default: " + default_image
 
 
 
