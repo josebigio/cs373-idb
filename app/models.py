@@ -108,10 +108,16 @@ class Image(db.Model):
 
     __tablename__ = 'images'
 
-    image_path = db.Column(db.Text, primary_key=True)
-    type = db.Column(db.Text)
+    image_path = db.Column(db.String, primary_key=True)
+    image_type = db.Column(db.String)
     period_number = db.Column(db.Integer)
     group_number = db.Column(db.Integer)
     element_number = db.Column(db.Integer)
+
+    def __repr__(self):
+        """
+        Returns a string with the row this period represents
+        """
+        return '<Image image_path: %s>' % self.image_path
 
 
