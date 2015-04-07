@@ -9,10 +9,16 @@ def index():
     return render_template('Index.html')
 
 
+@app.route('/api/<name>')
+def api_handling(name=name):
+    e = Element.query.get(1)
+    return name
+
 @app.route('/models/<name>')
 def models(name=1):
     e = Element.query.get(1)
     return e.element
+
 
 @app.route('/about')
 def about():
