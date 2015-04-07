@@ -35,7 +35,7 @@ def group(name=None):
     if name == 'alkali':
         return render_template('alkaliLayout.html', name=name)
     elif name == 'alkaline-earth':
-        return render_template('alkalinearthLayout.html', name=name)atomnum
+        return render_template('alkalinearthLayout.html', name=name)
     elif name == 'halogen':
         return render_template('halogenLayout.html', name=name)
     else:
@@ -47,8 +47,11 @@ def element(atomic_number_str=None):
     atomic_number = int(atomic_number_str)
     e = Element.query.get(atomic_number)
     images = list(Image.query.filter_by(element_number=atomic_number).all())
-    default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first().path
-    return str(images) + "\n" + "default: " + default_image
+    default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
+    returnStr = ""
+    for image in images:
+        returnStr += image.image_path + "\n"
+    return returnStr + "default: " + default_image.image_path
 
 
 
