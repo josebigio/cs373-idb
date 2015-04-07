@@ -42,16 +42,14 @@ def group(name=None):
         return "Page not found!"
 
 
-@app.route('/element/<name>')
-def element(name=None):
-    if name == 'helium':
-        return render_template('Helium.html', name=name)
-    elif name == 'hydrogen':
-        return render_template('Hydrogen.html', name=name)
-    elif name == 'fluorine':
-        return render_template('Fluorine.html', name=name)
-    else:
-        return "Page not found!"
+@app.route('/element/<atomic_number>')
+def element(atomic_number=None):
+    e = models.Element.query.get(atomic_number)
+    # picture = models.Image.query.get()
+    # name = e.element
+    # descrption = e.description
+    return render_template('element.html', element=e)
+
 
 
 @app.route('/period/<name>')
