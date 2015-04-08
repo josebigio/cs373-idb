@@ -1,6 +1,6 @@
 from flask import render_template, json
 from app import app, db, models
-from .models import Element, Image
+from .models import Element, Image, Trivia
 from sqlalchemy import func
 import subprocess
 
@@ -47,8 +47,9 @@ def element(atomic_number_str=None):
     atomic_number = int(atomic_number_str)
     e = Element.query.get(atomic_number)
     images = list(Image.query.filter_by(element_number=atomic_number).all())
+    trivias = list(Trivia.query.filter_by(element_number=atomic_number).all())
     default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
-    return render_template('element.html', element=e, images=images, default_image=default_image)
+    return render_template('element.html', element=e, images=images, default_image=default_image, trivias=trivias)
 
 
 
