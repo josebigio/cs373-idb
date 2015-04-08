@@ -117,6 +117,9 @@ class Image(db.Model):
 
     image_path = db.Column(db.Text, primary_key=True)
     type = db.Column(db.Text)
-    period_number = db.Column(db.Integer)
-    group_number = db.Column(db.Integer)
-    element_number = db.Column(db.Integer)
+
+    period_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'), nullable=True)
+    group_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'), nullable=True)
+    element_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'), nullable=True)
+
+

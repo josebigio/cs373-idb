@@ -36,7 +36,6 @@ class Element(db.Model):
     atomic_number = db.Column(db.Integer, primary_key=True)
     element = db.Column(db.String(60))
     symbol = db.Column(db.String(3))
-    period_number = db.Column(db.Integer)
     phase = db.Column(db.String(12))
     most_stable_crystal = db.Column(db.String(10))
     type = db.Column(db.String(30))
@@ -55,14 +54,10 @@ class Element(db.Model):
     description = db.Column(db.Text)
     
     group_number = db.Column(db.Integer, db.ForeignKey('groups.group_number'))
+    period_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'))
+    
+    images = db.relationship('Image',backref='element',lazy='dynamic')
 
-
-    # name = db.Column(db.String(50))
-    # atomic_mass = db.Column(db.Float)
-    # history = db.Column(db.Text)
-    #group_column = db.Column(db.Integer, db.ForeignKey('group.column'))
-    #period_row = db.Column(db.Integer, db.ForeignKey('period.row'))
-    #trivias = db.relationship('Trivia',backref='element',lazy='dynamic')
     def __repr__(self):
         """
         Returns a string with information about the element such as atomic number, symbol, atomic mass, group and period
@@ -77,6 +72,10 @@ class Period(db.Model):
 
     period_number = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.Text)
+    elements = db.relationship('Element',backref='period',lazy='dynamic')    
+    trivias = db.relationship('Trivia',backref='period',lazy='dynamic')
+    images = db.relationship('Image',backref='period',lazy='dynamic')
+
 
     def __repr__(self):
         """
@@ -96,7 +95,8 @@ class Group(db.Model):
     applications = db.Column(db.Text)
     name = db.Column(db.Text)
     elements = db.relationship('Element',backref='group',lazy='dynamic')
-    # trivias = db.relationship('Trivia',backref='group',lazy='dynamic')
+    trivias = db.relationship('Trivia',backref='group',lazy='dynamic')
+    images = db.relationship('Image',backref='group',lazy='dynamic')
 
     def __repr__(self):
         return '<Group name: %s>' % self.name
@@ -111,16 +111,12 @@ class Trivia(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.Text)
-    period_number = db.Column(db.Integer)
-    group_number = db.Column(db.Integer)
-    element_number = db.Column(db.Integer)
+    period_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'))
+    group_number = db.Column(db.Integer, db.ForeignKey('groups.group_number'))
+    element_number = db.Column(db.Integer, db.ForeignKey('elements.atomic_number'))
 
-    #period_number = db.Column(db.Integer, db.ForeignKey('group.column'))
-    #period_row = db.Column(db.Integer, db.ForeignKey('period.row'))
-    #element_atomic_number = db.Column(db.Integer, db.ForeignKey('element.atomic_number'))
-    
     def __repr__(self):
-        return '<Trivia id: %d>' % self.trivia_id
+        return '<Trivia id: %d>' % self.id
 
 class Image(db.Model):
     """
@@ -132,10 +128,9 @@ class Image(db.Model):
 
     image_path = db.Column(db.String, primary_key=True)
     image_type = db.Column(db.String)
-    period_number = db.Column(db.Integer)
-    group_number = db.Column(db.Integer)
-    element_number = db.Column(db.Integer)
-
+    period_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'), nullable=True)
+    group_number = db.Column(db.Integer, db.ForeignKey('groups.group_number'), nullable=True)
+    element_number = db.Column(db.Integer, db.ForeignKey('elements.atomic_number'), nullable=True)
     def __repr__(self):
         """
         Returns a string with the row this period represents
