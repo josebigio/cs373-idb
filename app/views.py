@@ -1,6 +1,6 @@
 from flask import render_template, json
 from app import app, db, models
-from .models import Element, Image
+from .models import Element, Image, Trivia
 from sqlalchemy import func
 import subprocess
 
