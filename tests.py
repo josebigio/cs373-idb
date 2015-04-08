@@ -34,38 +34,31 @@ class TestCase(unittest.TestCase):
         db.session.add(group)
         db.session.commit()
         assert(group.applications == "They have different applications")
-        
-    # def test_create_period(self):
-    #     period = Period(1,"They are awesome","It has many properties")
-    #     db.session.add(period)
-    #     db.session.commit()
-    #     assert(period.row == 1)
-    #     assert(period.description == "They are awesome")
-    #     assert(period.properties == "It has many properties")
+    
+    def test_create_period(self):
+         period = Period(period_number=1,description="description")
+         db.session.add(period)
+         db.session.commit()
+         assert(period.period_number == 1)
+         assert(period.description == "description")
 
-    # def test_change_variables_period(self):
-    #     period = Period(1,"They are awesome","It has many properties")
-    #     period.row = 2
-    #     db.session.add(period)
-    #     db.session.commit()
-    #     assert(period.row == 2)
 
-    # def test_change_variables_period(self):
-    #     period = Period(1,"They are awesome","It has many properties")
-    #     period.row = 2
-    #     db.session.add(period)
-    #     db.session.commit()
-    #     assert(period.row == 2)
+    def test_change_variables_period(self):
+        period = Period(period_number=1,description="description")
+        db.session.add(period)
+        db.session.commit()
+
+        period.description = "different"
+        db.session.commit()
+        assert(period.description == "different")
 
     def test_create_element(self):  
-    
-        element = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+        element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element)
         db.session.commit()
         assert(element.atomic_number == 1)
         assert(element.symbol == 'H')
         assert(element.element == "Hydrogen")
-        assert(element.period_number == 1)
         assert(element.phase == "phase")
         assert(element.most_stable_crystal == "msc")
         assert(element.type == "type")
@@ -84,46 +77,47 @@ class TestCase(unittest.TestCase):
         assert(element.description == "description")
 
 
-    # def test_add_elements_to_period(self):
-    #     period = Period(1,"They are awesome","It has many properties")
-    #     db.session.add(period)
-    #     db.session.commit()
+    def test_add_elements_to_period(self):
+        
+        period = Period(period_number=1,description="description")
+        db.session.add(period)
+        db.session.commit()    
+    
+        element1 = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description",period=period)
+        db.session.add(element1)
+        db.session.commit()
+ 
+        element2 = Element(atomic_number=2,symbol='He',element="Helium",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description",period=period)
 
-    #     element1 = Element(atomic_number=1,symbol='H',name="Hydrogen",atomic_mass=1.001,history="it is forged in the sun",period=period)
-    #     db.session.add(element1)
-    #     db.session.commit()
+        db.session.add(element2)
+        db.session.commit()
 
-    #     element2 = Element(atomic_number=2,symbol='He',name="Helium",atomic_mass=4.002,history="it makes balloons fly",period=period)
-    #     db.session.add(element2)
-    #     db.session.commit()
-
-    #     elements = list(period.elements)
-    #     assert elements == [element1,element2]
-
+        elements = list(period.elements) 
+        assert(elements == [element1,element2])  
+    
     def test_add_elements_to_group(self):
         group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
 
         db.session.add(group)
         db.session.commit()
 
-        element1 = Element(atomic_number=1,symbol='H',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description",group=group)
+        element1 = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description",group=group)
         db.session.add(element1)
         db.session.commit()
 
-        element2 = Element(atomic_number=2,symbol='He',element="Hydrogen",period_number=1,phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description",group=group)
+        element2 = Element(atomic_number=2,symbol='He',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description",group=group)
         db.session.add(element2)
         db.session.commit()
 
         elements = list(group.elements)
         assert elements == [element1,element2]
 
-
-    # def test_create_trivia(self):   
-    #     trivia = Trivia(title="Super Hard",description="Very hard trivia")
-    #     db.session.add(trivia)
-    #     db.session.commit()
-    #     assert(trivia.title == "Super Hard")
-    #     assert(trivia.description == "Very hard trivia")
+    
+    def test_create_trivia(self):   
+        trivia = Trivia(description="Very hard trivia")
+        db.session.add(trivia)
+        db.session.commit()
+        assert(trivia.description == "Very hard trivia")
     
     # def test_add_trivias_to_group(self):   
     #     group = Group(1,"Alkali","They are awesome","It has many properties")
