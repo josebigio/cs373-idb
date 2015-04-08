@@ -22,3 +22,24 @@
     });
 
 });
+
+var l = document.getElementById('periodic-table').getElementsByTagName('li');
+for(var i=0; i< l.length; i++){
+    var element = l[i];
+    if (element.className == 'empty'){
+        continue;
+    } else {
+        element.onclick = onClick(element);
+    }
+}
+
+function onClick(element){
+    return function () {
+        var substring = element.innerHTML.split('<span>');
+        var elementName = substring[1];
+        elementName = elementName.replace("</span>", "").toLowerCase();
+
+    window.open("element/"+ elementName, "_self");
+    }
+
+}
