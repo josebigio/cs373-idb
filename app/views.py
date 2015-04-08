@@ -138,7 +138,7 @@ def about():
 
 @app.route('/group/<name>')
 def group(name=None):
-    group_num = name
+    group_num = int(name)
     g = Group.query.get(group_num)
     elements = list(Element.query.filter_by(group_number=group_num).all())
     image_dict = {}
