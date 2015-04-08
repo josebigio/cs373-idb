@@ -60,7 +60,7 @@
 
                     <!-- periodic table -->
                     <div class="wrapper">
-                        <ul class="main">
+                        <ul id="periodic-table" class="main">
 
                            <!-- ROW 1 -->
 
@@ -230,6 +230,30 @@
                           <li data-pos="115" data-nb="(289)" class="type-0 cat-3">Uus<span>Ununseptum</span></li>
                           <li data-pos="115" data-nb="(289)" class="type-2 cat-3">Uuo<span>Ununoctium</span></li>
                         </ul>
+
+                        <script>
+                            var l = document.getElementById('periodic-table').getElementsByTagName('li');
+                            for(var i=0; i< l.length; i++){
+                                var element = l[i];
+                                if (element.className == 'empty'){
+                                    continue;
+                                } else {
+                                    element.onclick = onClick(element);
+                                }
+                            }
+
+                            function onClick(element){
+                                return function () {
+                                    var substring = element.innerHTML.split('<span>');
+                                    var elementName = substring[1];
+                                    elementName = elementName.replace("</span>", "").toLowerCase();
+
+                                window.open("element/"+ elementName, "_self");
+                                }
+
+                            }
+
+                        </script>
 
                     <div class="legend">
                           <ul class="list-1">
