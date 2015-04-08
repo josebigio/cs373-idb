@@ -1,6 +1,6 @@
 from flask import render_template, json
 from app import app, db, models
-from .models import Element, Image, Trivia
+from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
 import subprocess
 
@@ -55,25 +55,13 @@ def element(atomic_number_str=None):
 
 @app.route('/period/<name>')
 def period(name=None):
-    if name == '1':
-        return render_template('periodLayout.html', name=name, period_num=name)
-    elif name == '2':
-        return render_template('periodLayout.html', name=name, period_num=name)
-    elif name == '3':
-        return render_template('periodLayout.html', name=name, period_num=name)    
-    if name == '4':
-        return render_template('periodLayout.html', name=name, period_num=name)
-    elif name == '5':
-        return render_template('periodLayout.html', name=name, period_num=name)
-    elif name == '6':
-        return render_template('periodLayout.html', name=name, period_num=name)    
-    if name == '7':
-        return render_template('periodLayout.html', name=name, period_num=name)
-    elif name == '8':
-        return render_template('periodLayout.html', name=name, period_num=name)
-    else:
-        return "Page not found!"
-
+    period_num = int(name)
+    p = Period.query.get(period_num)
+    elements = list(Element.query.filter_by(period_number=period_num).all())
+    image_dict = {}
+    for e in elements:
+        image_dict[e] = Image.query.filter_by(element_number=e.atomic_number, image_type="default").first()
+    return render_template('periodLayout.html', period=p, image_dict=image_dict)
 
 @app.route('/tests/')
 def run_tests_executor():
