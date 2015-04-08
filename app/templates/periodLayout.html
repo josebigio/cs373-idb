@@ -8,7 +8,7 @@
 {% endblock %}
 {#---------Content---------#}
 {% block content %}
-<div class="bg" style="background: url('/static/images/period{{period.period_number}}/period{{period.period_number}}background.jpg') no-repeat center center;"></div>
+<div class="bg" style="background: url('/static/images/period{{p.period_number}}/period{{p.period_number}}background.jpg') no-repeat center center;"></div>
 <div class="jumbotron">
   <h1 style="text-align:center">Period {{period.period_number}}</h1>
 </div>
@@ -30,7 +30,7 @@
                     <p>{{period.description}}</p>
                     </div>
                     <div class="col-md-6">
-                        <img src="/static/images/period{{period.period_number}}/period{{period.period_number}}.png" style="margin-top:20px;" class="img-responsive" alt="images">
+                        <img src="/static/images/period{{p.period_number}}/period{{p.period_number}}.png" style="margin-top:20px;" class="img-responsive" alt="images">
                     </div>
                     
                 </div>
