@@ -23,7 +23,7 @@ def main():
         try:
             desc_file = ''
             for filename in os.listdir(curdir + generalinfo):
-                if filename.startswith(symbol.strip()):
+                if filename.startswith(symbol.strip()+".txt"):
                     desc_file = filename
             if desc_file == '':
                 desc = open(curdir + generalinfo + "%s%s" % (symbol.strip(), ".txt"))
@@ -41,7 +41,7 @@ def main():
         try:
             triv_file = ''
             for filename in os.listdir(curdir + triviapath):
-                if filename.startswith(symbol.strip()):
+                if filename.startswith(symbol.strip()+".txt"):
                     triv_file = filename
             if triv_file == '':
                 trivia = open(curdir + triviapath + "%s%s" % (symbol.strip(), ".txt"))
