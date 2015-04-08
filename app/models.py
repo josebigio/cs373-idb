@@ -57,6 +57,7 @@ class Element(db.Model):
     period_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'))
     
     images = db.relationship('Image',backref='element',lazy='dynamic')
+    trivias = db.relationship('Trivia',backref='element',lazy='dynamic')
 
     def __repr__(self):
         """
