@@ -79,13 +79,13 @@ body {
 @media (min-width: 979px) {
   #sidebar.affix-top {
     position: static;
-  	margin-top:30px;
+  	margin-top:130px;
   	width:228px;
   }
   
   #sidebar.affix {
     position: fixed;
-    top:160px;
+    top:200px;
     width:228px;
   }
 }
