@@ -8,9 +8,9 @@
 {% endblock %}
 {#---------Content---------#}
 {% block content %}
-<div class="bg" style="background: url('/static/images/{{group.name}}/group{{group.group_number}}_background.jpg') no-repeat center center;"></div>
+<div class="bg" style="background: url('/static/images/groups/{{group.group_number}}/group{{group.group_number}}_background.jpg') no-repeat center center;"></div>
 <div class="jumbotron">
-  <h1 style="text-align:center">{{name}}</h1>
+  <h1 style="text-align:center">{{group.name}}</h1>
 </div>
 <div class="container">
 	<div class="row">
@@ -30,7 +30,7 @@
                     <h2 id="sec0">Group {{group.group_number}}</h2>
                     <p>{{group.description}}</p>
                     <div class="col-md-12">
-                        <img src="/static/images/{{group.name}}/group{{group.group_number}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
+                        <img src="/static/images/groups/{{group.group_number}}/group{{group.group_number}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
                     </div>
                 </div>
                 <hr>
@@ -40,7 +40,7 @@
                     <p>{{group.properties}}</p>
                     </div>
                     <div class="col-md-6">
-                        <img src="/static/images/{{group.name}}/sodium_water.jpg" style="margin-top:20px;" class="img-responsive" alt="images">
+                        <img src="/static/images/groups/{{group.group_number}}/sodium_water.jpg" style="margin-top:20px;" class="img-responsive" alt="images">
                     </div>
                     
                 </div>
