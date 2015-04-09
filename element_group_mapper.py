@@ -21,7 +21,7 @@ def main():
         atom_num = e.atomic_number #Collecting atomic number for each element
         col_num = e.column_number
 
-        if col_num != 1 and atom_num != 1:
+        if col_num == 1 and atom_num != 1:
             e.group_number = 1
             db.session.add(e)
             db.session.commit()
