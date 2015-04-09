@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {#---------Title---------#}
-{% block title %}{{g.name}}{% endblock %}
+{% block title %}{{group.name}}{% endblock %}
 {#---------Header---------#}
 {% block head %}
   {{ super() }}
@@ -8,7 +8,7 @@
 {% endblock %}
 {#---------Content---------#}
 {% block content %}
-<div class="bg" style="background: url('/static/images/{{g.name}}/group{{g.group_number}}_background.jpg') no-repeat center center;"></div>
+<div class="bg" style="background: url('/static/images/{{group.name}}/group{{group.group_number}}_background.jpg') no-repeat center center;"></div>
 <div class="jumbotron">
   <h1 style="text-align:center">{{name}}</h1>
 </div>
@@ -17,7 +17,7 @@
   			<div class="col-md-3" id="leftCol">
               
               	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="#sec0">Group {{g.group_number}}</a></li>
+                  <li><a href="#sec0">Group {{group.group_number}}</a></li>
                   <li><a href="#sec1">Properties</a></li>
                   <li><a href="#sec2">Elements</a></li>
                   <li><a href="#sec3">Applications</a></li>
@@ -27,20 +27,20 @@
       		</div>  
       		<div class="col-md-9">
                 <div class="row">
-                    <h2 id="sec0">Group {{g.group_number}}</h2>
-                    <p>{{g.description}}</p>
+                    <h2 id="sec0">Group {{group.group_number}}</h2>
+                    <p>{{group.description}}</p>
                     <div class="col-md-12">
-                        <img src="/static/images/{{g.name}}/group{{g.group_number}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
+                        <img src="/static/images/{{group.name}}/group{{group.group_number}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
                     </div>
                 </div>
                 <hr>
               	<h2 id="sec1">Properties</h2>
                 <div class="row">
                     <div class="col-md-6">
-                    <p>{{g.properties}}</p>
+                    <p>{{group.properties}}</p>
                     </div>
                     <div class="col-md-6">
-                        <img src="/static/images/{{g.name}}/sodium_water.jpg" style="margin-top:20px;" class="img-responsive" alt="images">
+                        <img src="/static/images/{{group.name}}/sodium_water.jpg" style="margin-top:20px;" class="img-responsive" alt="images">
                     </div>
                     
                 </div>
@@ -58,7 +58,7 @@
               	<hr>
               
               	<h2 id="sec3">Applications</h2>
-      			{{g.applications}}
+      			{{group.applications}}
               
               	<h2 id="sec4">Trivia</h2>
 
