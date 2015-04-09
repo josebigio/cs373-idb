@@ -252,7 +252,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data, {'error': 'Not found'})
 
     ######Logan's Additions        
-     def test_api_groups_1(self):
+    def test_api_groups_1(self):
         with self.app as c:
             group = Group(group_number=1, name='Alkali', description="Explosions!")
             db.session.add(group)
@@ -333,6 +333,83 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data['group_number'], 3)
             self.assertEqual(data['name'], 'Halogens')
             self.assertEqual(data['description'], 'Highly reactive, very poisonous')
+            
+    def test_api_period_1(self):
+        with self.app as c:
+            period = Period(period_number = 1, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+            db.sessiona.add(period)
+            db.session.commit()
+            resp = c.get('/api/period/1')
+            data = json.loads(resp.data)
+            self.assertEqual(data['description'], "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+
+    def test_api_period_2(self):
+        with self.app as c:
+            period = Period(period_number = 2, description = "description of period 2")
+            db.session.add(period)
+            db.session.commit()
+            resp = c.get('api/period/2')
+            data = json.loads(resp.data)
+            self.assertEqual(data['description'], "description of period of 2")
+
+
+    def test_api_period_3(self):
+        with self.app as c:
+            period = Period(group_number = 3, description = "description of period 3")
+            db.session.add(period)
+            db.session.commit()
+            resp = c.get('api/period/3')
+            data = json.loads(resp.data)
+            self.assertEqual(data['description'], "properties of period 3")
+
+    def test_api_periods_1(self):
+        with self.app as c:
+            period1 = Period(group_number = 1, description = "description of period 1")
+            period2 = Period(group_number = 2, description = "description of period 2")
+            period3 = Period(group_number = 3, description = "description of period 3")
+            period4 = Period(group_number = 4, description = "description of period 4")
+            db.session.add(period1)
+            db.session.add(period2)
+            db.session.add(period3)
+            db.session.add(period4)
+            db.session.commit()
+            resp = c.get('api/period')
+            data = json.loads(resp.data)
+            self.assertEqual(len(data), 4)
+
+    def test_api_periods_2(self):
+        with self.app as c:
+            period1 = Period(group_number = 1, description = "description of period 1")
+            period2 = Period(group_number = 2, description = "description of period 2")
+            period3 = Period(group_number = 3, description = "description of period 3")
+            period4 = Period(group_number = 4, description = "description of period 4")
+            db.session.add(period1)
+            db.session.add(period2)
+            db.session.add(period3)
+            db.session.add(period4)
+            db.session.commit()
+            resp = c.get('api/period/5')
+            data = json.loads(resp.data)
+            self.assertEqual(data, {'error': 'Not found'})
+
+
+    def test_api_periods_3(self):
+        with self.app as c:
+            period1 = Period(group_number = 1, description = "description of period 1")
+            period2 = Period(group_number = 2, description = "description of period 2")
+            period3 = Period(group_number = 3, description = "description of period 3")
+            period4 = Period(group_number = 4, description = "description of period 4")
+            db.session.add(period1)
+            db.session.add(period2)
+            db.session.add(period3)
+            db.session.add(period4)
+            db.session.commit()
+            resp = c.get('api/period')
+            data = json.loads(resp.data)
+            self.assertEqual(data[0]['description'], "description of period 1")
+            self.assertEqual(data[1]['description'], "description of period 2")
+            self.assertEqual(data[2]['description'], "description of period 3")
+            self.assertEqual(data[3]['description'], "description of period 4")
 def main():
     unittest.main()
 
