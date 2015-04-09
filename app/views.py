@@ -155,8 +155,6 @@ def element(atomic_number_str=None):
     default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
     return render_template('element.html', element=e, images=images, default_image=default_image, trivias=trivias)
 
-
-
 @app.route('/period/<name>')
 def period(name=None):
     period_num = int(name)
