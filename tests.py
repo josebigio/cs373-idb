@@ -2,6 +2,7 @@
 import os
 import unittest
 
+from flask import json
 from config import basedir
 from app import app, db
 from app.models import Element, Period, Group, Trivia
@@ -175,7 +176,7 @@ class TestCase(unittest.TestCase):
             element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
             db.session.add(element)
             db.session.commit()
-            resp = c.get('/api/element/Hi')
+            resp = c.get('/api/element/H')
             data = json.loads(resp.data)[0]
             self.assert_equal(data['element'], 'Hydrogen')
             self.assert_equal(data['atomic_number'], 1)
