@@ -178,9 +178,9 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('/api/element/H')
             data = json.loads(resp.data)[0]
-            self.assert_equal(data['element'], 'Hydrogen')
-            self.assert_equal(data['atomic_number'], 1)
-            self.assert_equal(data['symbol'], 'H')
+            self.assertEqual(data['element'], 'Hydrogen')
+            self.assertEqual(data['atomic_number'], 1)
+            self.assertEqual(data['symbol'], 'H')
 
     def test_api_elements(self):
         with self.app as c:
@@ -189,7 +189,7 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('/api/element/')
             data = json.loads(resp.data)
-            self.assert_equal(len(data), 1)
+            self.assertEqual(len(data), 1)
 
 
 def main():
