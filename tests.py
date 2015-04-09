@@ -350,7 +350,7 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('api/period/2')
             data = json.loads(resp.data)
-            self.assertEqual(data['description'], u"description of period of 2")
+            self.assertEqual(data['description'], u"description of period 2")
 
 
     def test_api_period_3(self):
@@ -360,7 +360,7 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('api/period/3')
             data = json.loads(resp.data)
-            self.assertEqual(data['description'], u"properties of period 3")
+            self.assertEqual(data['description'], u"description of period 3")
 
     def test_api_periods_1(self):
         with self.app as c:
