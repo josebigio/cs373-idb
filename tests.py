@@ -177,7 +177,7 @@ class TestCase(unittest.TestCase):
             db.session.add(element)
             db.session.commit()
             resp = c.get('/api/element/1')
-            data = json.loads(resp.data)[0]
+            data = json.loads(resp.data)
             self.assertEqual(data['element'], 'Hydrogen')
             self.assertEqual(data['atomic_number'], 1)
             self.assertEqual(data['symbol'], 'H')
@@ -191,7 +191,7 @@ class TestCase(unittest.TestCase):
             db.session.add(element2)
             db.session.add(element3)
             resp = c.get('/api/element/3')
-            data = json.loads(resp.data)[0]
+            data = json.loads(resp.data)
             self.assertEqual(data['element'], 'Lithium')
             self.assertEqual(data['atomic_number'], 3)
             self.assertEqual(data['symbol'], 'Li')
@@ -208,7 +208,7 @@ class TestCase(unittest.TestCase):
             data = json.loads(resp.data)
             self.assertEqual(data, {'error': 'Not found'})
 
-    def test_api_elements_1(self):
+    def test_api_elements_4(self):
         with self.app as c:
             element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
             db.session.add(element)
@@ -219,7 +219,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data['1']['symbol'], 'H')
             self.assertEqual(data['1']['element'], "Hydrogen")
 
-    def test_api_elements_2(self):
+    def test_api_elements_5(self):
         with self.app as c:
             element = Element(atomic_number=1,symbol='H',element="Hydrogen")
             element2 = Element(atomic_number=2,symbol='He',element="Helium")
@@ -238,7 +238,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data['3']['symbol'], 'Li')
             self.assertEqual(data['3']['element'], "Lithium")
 
-    def test_api_elements_3(self):
+    def test_api_elements_6(self):
         with self.app as c:
             element = Element(atomic_number=1,symbol='H',element="Hydrogen")
             element2 = Element(atomic_number=2,symbol='He',element="Helium")
@@ -251,6 +251,89 @@ class TestCase(unittest.TestCase):
             data = json.loads(resp.data)
             self.assertEqual(data, {'error': 'Not found'})
 
+    ######Logan's Additions
+    #Group(Number, name, description)        
+     def test_api_groups_1(self):
+        with self.app as c:
+            group = Group(group_number=1, name='Alkali', description="Explosions!")
+            db.session.add(group)
+            db.session.commit()
+            resp = c.get('/api/group')
+            data = json.loads(resp.data)
+            self.assertEqual(len(data), 1)
+            self.assertEqual(data['1']['group_number'], '1')
+            self.assertEqual(data['1']['name'], "Alkali")
+
+    def test_api_groups_2(self):
+        with self.app as c:
+            group = Group(group_number=1, name='Alkali', description="Explosions!")
+            group2 = Group(group_number=2, name='Alkaline Earth', description="Common Salt Cation")
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            db.session.add(group)
+            db.session.add(group2)
+            db.session.add(group3)
+            db.session.commit()
+            resp = c.get('/api/group')
+            data = json.loads(resp.data)
+            self.assertEqual(len(data), 3)
+            self.assertEqual(data['1']['group_number'], '1')
+            self.assertEqual(data['1']['name'], "Alkali")
+            self.assertEqual(data['2']['group_number'], '2')
+            self.assertEqual(data['2']['name'], "Alkaline Earth")
+            self.assertEqual(data['3']['group_number'], '3')
+            self.assertEqual(data['3']['name'], "Halogens")
+
+    def test_api_groups_3(self):
+        with self.app as c:
+            group = Group(group_number=1, name='Alkali', description="Explosions!")
+            group2 = Group(group_number=2, name='Alkaline Earth', description="Common Salt Cation")
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            db.session.add(group)
+            db.session.add(group2)
+            db.session.add(group3)
+            db.session.commit()
+            resp = c.get('/api/group/')
+            data = json.loads(resp.data)
+            self.assertEqual(data, {'error': 'Not found'})
+
+    def test_api_element_4(self):
+        with self.app as c:
+            group = Group(group_number=1, name='Alkali', description="Explosions!")
+            db.session.add(group)
+            db.session.commit()
+            resp = c.get('/api/group/1')
+            data = json.loads(resp.data)
+            self.assertEqual(data['group_number'], 1)
+            self.assertEqual(data['name'], 'Alkali')
+            self.assertEqual(data['description'], 'Explosions!')
+
+    def test_api_groups_5(self):
+        with self.app as c:
+            group = Group(group_number=1, name='Alkali', description="Explosions!")
+            group2 = Group(group_number=2, name='Alkaline Earth', description="Common Salt Cation")
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            db.session.add(group)
+            db.session.add(group2)
+            db.session.add(group3)
+            db.session.commit()
+            resp = c.get('/api/group/4')
+            data = json.loads(resp.data)
+            self.assertEqual(data, {'error': 'Not found'})
+
+    def test_api_groups_6(self):
+        with self.app as c:
+            group = Group(group_number=1, name='Alkali', description="Explosions!")
+            group2 = Group(group_number=2, name='Alkaline Earth', description="Common Salt Cation")
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            db.session.add(group)
+            db.session.add(group2)
+            db.session.add(group3)
+            db.session.commit()
+            resp = c.get('/api/group')
+            data = json.loads(resp.data)
+            self.assertEqual(data['group_number'], 3)
+            self.assertEqual(data['name'], 'Halogens')
+            self.assertEqual(data['description'], 'Highly reactive, very poisonous')
 def main():
     unittest.main()
 
