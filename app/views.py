@@ -1,4 +1,4 @@
-from flask import render_template, json, make_response, jsonify
+from flask import render_template, json, make_response, jsonify, abort
 from app import app, db, models
 from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
@@ -35,9 +35,11 @@ def handle_individual_period(name):
     try:
         period_id = int(name)
     except:
-        return "Invalid period id"
+        rabort(404)
 
     period = Period.query.get(period_id)
+    if period is None:
+        abort(404)
     result_list = []    
 
     column_names = []
@@ -57,9 +59,11 @@ def handle_individual_group(name):
     try:
         group_id = int(name)
     except:
-        return "Invalid group id"
+        abort(404)
 
     group = Group.query.get(group_id)
+    if group is None:
+        abort(404)
     result_list = []    
 
     column_names = []
@@ -75,8 +79,13 @@ def handle_individual_group(name):
 
 @app.route('/api/element/<atomic_number_str>')
 def handle_individual_element(atomic_number_str):
-    atomic_number = str(atomic_number_str)
+    try:
+        atomic_number = str(atomic_number_str)
+    except:
+        abort(404)
     element = Element.query.get(atomic_number)
+    if element is None:
+        abort(404)
     result_list = []    
 
     column_names = []
@@ -97,9 +106,11 @@ def handle_individual_trivia(name):
     try:
         trivia_id = int(name)
     except:
-        return "Invalid trivia id"
+        abort(404)
 
     trivia = Trivia.query.get(trivia_id)
+    if trivia is None:
+        abort(404)
     result_list = []    
 
     column_names = []
