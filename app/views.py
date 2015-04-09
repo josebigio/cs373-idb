@@ -1,4 +1,4 @@
-from flask import render_template, json, make_response
+from flask import render_template, json, make_response, jsonify
 from app import app, db, models
 from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
@@ -24,6 +24,8 @@ def api_handling(name):
         return handle_period()
     elif name == 'group':
         return handle_group()
+    elif name == 'trivia':
+        return handle_trivia()
     else:
         return "Invalid API call"
 
@@ -88,6 +90,27 @@ def handle_individual_element(name):
 
     return json.dumps(result_list)
 
+@app.route('/api/trivia/<name>')
+def handle_individual_trivia(name):    
+    trivia_id = 0
+    try:
+        trivia_id = int(name)
+    except:
+        return "Invalid trivia id"
+
+    trivia = Trivia.query.get(trivia_id)
+    result_list = []    
+
+    column_names = []
+    for c in Trivia.__table__.columns:
+        column_names.append(str(c).split("trivia.")[1])
+        
+    d = dict()
+    for c_name in column_names:
+        d[c_name] = trivia.__dict__[c_name]
+
+    result_list.append(d)
+    return json.dumps(result_list)
 
 
 @app.route('/models/<name>')
@@ -190,6 +213,22 @@ def handle_group():
         d = dict()
         for c_name in column_names:
             d[c_name] = group.__dict__[c_name]
+        result_list.append(d)
+ 
+
+    return json.dumps(result_list)
+
+def handle_trivia():
+    trivias = list(Trivia.query.all())
+    result_list = []
+    column_names = []
+    for c in Trivia.__table__.columns:
+        column_names.append(str(c).split("trivia.")[1])
+
+    for trivia in trivias:
+        d = dict()
+        for c_name in column_names:
+            d[c_name] = trivia.__dict__[c_name]
         result_list.append(d)
  
 

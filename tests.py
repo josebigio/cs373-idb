@@ -2,6 +2,7 @@
 import os
 import unittest
 
+from flask import json
 from config import basedir
 from app import app, db
 from app.models import Element, Period, Group, Trivia
@@ -22,25 +23,25 @@ class TestCase(unittest.TestCase):
         group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
         db.session.add(group)
         db.session.commit()
-        assert(group.group_number == 1)
-        assert(group.description == "They are awesome")
-        assert(group.properties == "It has many properties")
-        assert(group.applications == "has bunch of applications")
-        assert(group.name == "Super name")
+        self.assertTrue(group.group_number == 1)
+        self.assertTrue(group.description == "They are awesome")
+        self.assertTrue(group.properties == "It has many properties")
+        self.assertTrue(group.applications == "has bunch of applications")
+        self.assertTrue(group.name == "Super name")
 
     def test_change_variables_group(self):
         group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
         group.applications = "They have different applications"
         db.session.add(group)
         db.session.commit()
-        assert(group.applications == "They have different applications")
+        self.assertTrue(group.applications == "They have different applications")
     
     def test_create_period(self):
          period = Period(period_number=1,description="description")
          db.session.add(period)
          db.session.commit()
-         assert(period.period_number == 1)
-         assert(period.description == "description")
+         self.assertTrue(period.period_number == 1)
+         self.assertTrue(period.description == "description")
 
 
     def test_change_variables_period(self):
@@ -50,31 +51,31 @@ class TestCase(unittest.TestCase):
 
         period.description = "different"
         db.session.commit()
-        assert(period.description == "different")
+        self.assertTrue(period.description == "different")
 
     def test_create_element(self):  
         element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
         db.session.add(element)
         db.session.commit()
-        assert(element.atomic_number == 1)
-        assert(element.symbol == 'H')
-        assert(element.element == "Hydrogen")
-        assert(element.phase == "phase")
-        assert(element.most_stable_crystal == "msc")
-        assert(element.type == "type")
-        assert(element.ionic_radius == 1.1)
-        assert(element.atomic_radius == 1.2)
-        assert(element.electronegativity == 2.0)
-        assert(element.first_ionization_potential == 3.0)
-        assert(element.density == 1.0)
-        assert(element.melting_point_k == 100.100)
-        assert(element.boiling_point_k == 100.100)
-        assert(element.isotopes == 4)
-        assert(element.discoverer == "Downing")
-        assert(element.year_of_discovery == 100)
-        assert(element.specific_heat_capacity == 100.100)
-        assert(element.electron_configuration == "electron_configuration")
-        assert(element.description == "description")
+        self.assertTrue(element.atomic_number == 1)
+        self.assertTrue(element.symbol == 'H')
+        self.assertTrue(element.element == "Hydrogen")
+        self.assertTrue(element.phase == "phase")
+        self.assertTrue(element.most_stable_crystal == "msc")
+        self.assertTrue(element.type == "type")
+        self.assertTrue(element.ionic_radius == 1.1)
+        self.assertTrue(element.atomic_radius == 1.2)
+        self.assertTrue(element.electronegativity == 2.0)
+        self.assertTrue(element.first_ionization_potential == 3.0)
+        self.assertTrue(element.density == 1.0)
+        self.assertTrue(element.melting_point_k == 100.100)
+        self.assertTrue(element.boiling_point_k == 100.100)
+        self.assertTrue(element.isotopes == 4)
+        self.assertTrue(element.discoverer == "Downing")
+        self.assertTrue(element.year_of_discovery == 100)
+        self.assertTrue(element.specific_heat_capacity == 100.100)
+        self.assertTrue(element.electron_configuration == "electron_configuration")
+        self.assertTrue(element.description == "description")
 
 
     def test_add_elements_to_period(self):
@@ -93,7 +94,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         elements = list(period.elements) 
-        assert(elements == [element1,element2])  
+        self.assertTrue(elements == [element1,element2])  
     
     def test_add_elements_to_group(self):
         group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
@@ -117,8 +118,8 @@ class TestCase(unittest.TestCase):
         trivia = Trivia(description="Very hard trivia")
         db.session.add(trivia)
         db.session.commit()
-        assert(trivia.description == "Very hard trivia")
-<<<<<<< HEAD
+        self.assertTrue(trivia.description == "Very hard trivia")
+
     
     def test_add_trivias_to_group(self):
         group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
@@ -128,21 +129,13 @@ class TestCase(unittest.TestCase):
         trivia1 = Trivia(description="Very hard trivia",group=group)
         db.session.add(trivia1)
         db.session.commit()
-=======
-
-
-    # def test_add_trivias_to_group(self):
-    #     group = Group(1,"Alkali","They are awesome","It has many properties")
-    #     db.session.add(group)
-    #     db.session.commit()
->>>>>>> de6d5fc08219649301220661a1727644425a626b
 
         trivia2 = Trivia(description="very hard trivia 2",group=group)
         db.session.add(trivia2)
         db.session.commit()
 
         trivias = group.trivias
-        assert (list(trivias)==[trivia1,trivia2])
+        self.assertTrue(list(trivias)==[trivia1,trivia2])
 
 
     def test_add_trivias_to_period(self):
@@ -159,7 +152,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         trivias = period.trivias
-        assert (list(trivias)==[trivia1,trivia2])
+        self.assertTrue(list(trivias)==[trivia1,trivia2])
 
 
     def test_add_trivias_to_element(self):
@@ -176,7 +169,27 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         trivias = element.trivias
-        assert (list(trivias)==[trivia1,trivia2])
+        self.assertTrue(list(trivias)==[trivia1,trivia2])
+
+    def test_api_element(self):
+        with self.app as c:
+            element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+            db.session.add(element)
+            db.session.commit()
+            resp = c.get('/api/element/H')
+            data = json.loads(resp.data)[0]
+            self.assertEqual(data['element'], 'Hydrogen')
+            self.assertEqual(data['atomic_number'], 1)
+            self.assertEqual(data['symbol'], 'H')
+
+    def test_api_elements(self):
+        with self.app as c:
+            element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+            db.session.add(element)
+            db.session.commit()
+            resp = c.get('/api/element/')
+            data = json.loads(resp.data)
+            self.assertEqual(len(data), 1)
 
 
 def main():
