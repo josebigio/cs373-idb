@@ -329,7 +329,7 @@ class TestCase(unittest.TestCase):
             db.session.add(group3)
             db.session.commit()
             resp = c.get('/api/group')
-            data = json.loads(resp.data)[2]
+            data = json.loads(resp.data)['3']
             self.assertEqual(data['group_number'], 3)
             self.assertEqual(data['name'], 'Halogens')
             self.assertEqual(data['description'], 'Highly reactive, very poisonous')
