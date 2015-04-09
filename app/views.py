@@ -203,7 +203,7 @@ def handle_period():
 
 def handle_group():
     groups = list(Group.query.all())
-    result_dict = []
+    result_dict = {}
     column_names = []
     for c in Group.__table__.columns:
         column_names.append(str(c).split("groups.")[1])
