@@ -8,7 +8,7 @@
 {% endblock %}
 {#---------Content---------#}
 {% block content %}
-<div class="bg" style="background: url('/static/images/{{g.name}}/group{{g.group_num}}_background.jpg') no-repeat center center;"></div>
+<div class="bg" style="background: url('/static/images/{{g.name}}/group{{g.group_number}}_background.jpg') no-repeat center center;"></div>
 <div class="jumbotron">
   <h1 style="text-align:center">{{name}}</h1>
 </div>
@@ -17,7 +17,7 @@
   			<div class="col-md-3" id="leftCol">
               
               	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="#sec0">Group {{g.group_num}}</a></li>
+                  <li><a href="#sec0">Group {{g.group_number}}</a></li>
                   <li><a href="#sec1">Properties</a></li>
                   <li><a href="#sec2">Elements</a></li>
                   <li><a href="#sec3">Applications</a></li>
@@ -27,10 +27,10 @@
       		</div>  
       		<div class="col-md-9">
                 <div class="row">
-                    <h2 id="sec0">Group {{g.group_num}}</h2>
+                    <h2 id="sec0">Group {{g.group_number}}</h2>
                     <p>{{g.description}}</p>
                     <div class="col-md-12">
-                        <img src="/static/images/{{g.name}}/group{{g.group_num}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
+                        <img src="/static/images/{{g.name}}/group{{g.group_number}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
                     </div>
                 </div>
                 <hr>
