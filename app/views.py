@@ -185,11 +185,11 @@ def handle_element():
             d[c_name] = element.__dict__[c_name]
         result_dict[element.atomic_number] = d
     
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
         
 def handle_period():
     periods = list(Period.query.all())
-    result_list = []
+    result_dict = {}
     column_names = []
     for c in Period.__table__.columns:
         column_names.append(str(c).split("periods.")[1])
@@ -198,14 +198,14 @@ def handle_period():
         d = dict()
         for c_name in column_names:
             d[c_name] = period.__dict__[c_name]
-        result_list.append(d)
+        result_dict[period.period_number] = d
  
 
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
 
 def handle_group():
     groups = list(Group.query.all())
-    result_list = []
+    result_dict = []
     column_names = []
     for c in Group.__table__.columns:
         column_names.append(str(c).split("groups.")[1])
@@ -214,14 +214,14 @@ def handle_group():
         d = dict()
         for c_name in column_names:
             d[c_name] = group.__dict__[c_name]
-        result_list.append(d)
+        result_dict[group.group_number] = d
  
 
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
 
 def handle_trivia():
     trivias = list(Trivia.query.all())
-    result_list = []
+    result_dict = {}
     column_names = []
     for c in Trivia.__table__.columns:
         column_names.append(str(c).split("trivia.")[1])
@@ -230,8 +230,8 @@ def handle_trivia():
         d = dict()
         for c_name in column_names:
             d[c_name] = trivia.__dict__[c_name]
-        result_list.append(d)
+        result_dict[trivia.id] = d
  
 
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
 
