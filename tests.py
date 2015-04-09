@@ -193,12 +193,22 @@ class TestCase(unittest.TestCase):
 
     def test_api_elements_2(self):
         with self.app as c:
-            element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+            element = Element(atomic_number=1,symbol='H',element="Hydrogen")
+            element2 = Element(atomic_number=2,symbol='He',element="Helium")
+            element3 = Element(atomic_number=3,symbol='Li',element="Lithium")
             db.session.add(element)
+            db.session.add(element2)
+            db.session.add(element3)
             db.session.commit()
             resp = c.get('/api/element/')
             data = json.loads(resp.data)
-            self.assertEqual(len(data), 1)
+            self.assertEqual(len(data), 3)
+            self.assertEqual(data['1']['symbol'], 'H')
+            self.assertEqual(data['1']['element'], "Hydrogen")
+            self.assertEqual(data['2']['symbol'], 'He')
+            self.assertEqual(data['2']['element'], "Helium")
+            self.assertEqual(data['3']['symbol'], 'Li')
+            self.assertEqual(data['3']['element'], "Lithium")
 
 def main():
     unittest.main()
