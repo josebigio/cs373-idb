@@ -118,7 +118,7 @@ class TestCase(unittest.TestCase):
         db.session.add(trivia)
         db.session.commit()
         assert(trivia.description == "Very hard trivia")
-<<<<<<< HEAD
+
     
     def test_add_trivias_to_group(self):
         group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
@@ -128,14 +128,6 @@ class TestCase(unittest.TestCase):
         trivia1 = Trivia(description="Very hard trivia",group=group)
         db.session.add(trivia1)
         db.session.commit()
-=======
-
-
-    # def test_add_trivias_to_group(self):
-    #     group = Group(1,"Alkali","They are awesome","It has many properties")
-    #     db.session.add(group)
-    #     db.session.commit()
->>>>>>> de6d5fc08219649301220661a1727644425a626b
 
         trivia2 = Trivia(description="very hard trivia 2",group=group)
         db.session.add(trivia2)
