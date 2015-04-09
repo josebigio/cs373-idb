@@ -251,8 +251,7 @@ class TestCase(unittest.TestCase):
             data = json.loads(resp.data)
             self.assertEqual(data, {'error': 'Not found'})
 
-    ######Logan's Additions
-    #Group(Number, name, description)        
+    ######Logan's Additions        
      def test_api_groups_1(self):
         with self.app as c:
             group = Group(group_number=1, name='Alkali', description="Explosions!")
