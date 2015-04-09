@@ -37,9 +37,10 @@ function onClick(element){
     return function () {
         var substring = element.innerHTML.split('<span>');
         var elementName = substring[1];
+        var eleem
         elementName = elementName.replace("</span>", "").toLowerCase();
 
-    window.open("element/"+ elementName, "_self");
+    window.open("element/"+ element.getAttribute("data-pos"), "_self");
     }
 
 }
