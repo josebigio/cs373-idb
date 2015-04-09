@@ -1,6 +1,6 @@
-from flask import render_template, json
+from flask import render_template, json, make_response
 from app import app, db, models
-from .models import Element, Period, Group, Image, Trivia, make_response
+from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
 import subprocess
 
