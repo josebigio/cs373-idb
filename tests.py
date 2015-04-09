@@ -260,7 +260,7 @@ class TestCase(unittest.TestCase):
             resp = c.get('/api/group')
             data = json.loads(resp.data)
             self.assertEqual(len(data), 1)
-            self.assertEqual(data['1']['group_number'], '1')
+            self.assertEqual(data['1']['group_number'], 1)
             self.assertEqual(data['1']['name'], "Alkali")
 
     def test_api_groups_2(self):
@@ -275,11 +275,11 @@ class TestCase(unittest.TestCase):
             resp = c.get('/api/group')
             data = json.loads(resp.data)
             self.assertEqual(len(data), 3)
-            self.assertEqual(data['1']['group_number'], '1')
+            self.assertEqual(data['1']['group_number'], 1)
             self.assertEqual(data['1']['name'], "Alkali")
-            self.assertEqual(data['2']['group_number'], '2')
+            self.assertEqual(data['2']['group_number'], 2)
             self.assertEqual(data['2']['name'], "Alkaline Earth")
-            self.assertEqual(data['3']['group_number'], '3')
+            self.assertEqual(data['3']['group_number'], 3)
             self.assertEqual(data['3']['name'], "Halogens")
 
     def test_api_groups_3(self):
@@ -329,7 +329,7 @@ class TestCase(unittest.TestCase):
             db.session.add(group3)
             db.session.commit()
             resp = c.get('/api/group')
-            data = json.loads(resp.data)
+            data = json.loads(resp.data)[2]
             self.assertEqual(data['group_number'], 3)
             self.assertEqual(data['name'], 'Halogens')
             self.assertEqual(data['description'], 'Highly reactive, very poisonous')
@@ -337,7 +337,7 @@ class TestCase(unittest.TestCase):
     def test_api_period_1(self):
         with self.app as c:
             period = Period(period_number = 1, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
-            db.sessiona.add(period)
+            db.session.add(period)
             db.session.commit()
             resp = c.get('/api/period/1')
             data = json.loads(resp.data)
@@ -355,7 +355,7 @@ class TestCase(unittest.TestCase):
 
     def test_api_period_3(self):
         with self.app as c:
-            period = Period(group_number = 3, description = "description of period 3")
+            period = Period(period_number = 3, description = "description of period 3")
             db.session.add(period)
             db.session.commit()
             resp = c.get('api/period/3')
@@ -364,10 +364,10 @@ class TestCase(unittest.TestCase):
 
     def test_api_periods_1(self):
         with self.app as c:
-            period1 = Period(group_number = 1, description = "description of period 1")
-            period2 = Period(group_number = 2, description = "description of period 2")
-            period3 = Period(group_number = 3, description = "description of period 3")
-            period4 = Period(group_number = 4, description = "description of period 4")
+            period1 = Period(period_number = 1, description = "description of period 1")
+            period2 = Period(period_number = 2, description = "description of period 2")
+            period3 = Period(period_number = 3, description = "description of period 3")
+            period4 = Period(period_number = 4, description = "description of period 4")
             db.session.add(period1)
             db.session.add(period2)
             db.session.add(period3)
@@ -379,10 +379,10 @@ class TestCase(unittest.TestCase):
 
     def test_api_periods_2(self):
         with self.app as c:
-            period1 = Period(group_number = 1, description = "description of period 1")
-            period2 = Period(group_number = 2, description = "description of period 2")
-            period3 = Period(group_number = 3, description = "description of period 3")
-            period4 = Period(group_number = 4, description = "description of period 4")
+            period1 = Period(period_number = 1, description = "description of period 1")
+            period2 = Period(period_number = 2, description = "description of period 2")
+            period3 = Period(period_number = 3, description = "description of period 3")
+            period4 = Period(period_number = 4, description = "description of period 4")
             db.session.add(period1)
             db.session.add(period2)
             db.session.add(period3)
@@ -395,10 +395,10 @@ class TestCase(unittest.TestCase):
 
     def test_api_periods_3(self):
         with self.app as c:
-            period1 = Period(group_number = 1, description = "description of period 1")
-            period2 = Period(group_number = 2, description = "description of period 2")
-            period3 = Period(group_number = 3, description = "description of period 3")
-            period4 = Period(group_number = 4, description = "description of period 4")
+            period1 = Period(period_number = 1, description = "description of period 1")
+            period2 = Period(period_number = 2, description = "description of period 2")
+            period3 = Period(period_number = 3, description = "description of period 3")
+            period4 = Period(period_number = 4, description = "description of period 4")
             db.session.add(period1)
             db.session.add(period2)
             db.session.add(period3)
