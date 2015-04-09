@@ -158,7 +158,7 @@ class TestCase(unittest.TestCase):
             element = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e")
             db.session.add(element)
             db.session.commit()
-            resp = c.get('/api/element/Li')
+            resp = c.get('/api/element/')
             data = json.loads(resp.data)[0]
             self.assert_equal(data['element'].lower(), 'hydrogen')
             self.assert_equal(data['atomic_number'], 1)

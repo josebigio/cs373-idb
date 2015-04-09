@@ -176,13 +176,13 @@ class TestCase(unittest.TestCase):
             element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
             db.session.add(element)
             db.session.commit()
-            resp = c.get('/api/element/H')
+            resp = c.get('/api/element/1')
             data = json.loads(resp.data)[0]
             self.assertEqual(data['element'], 'Hydrogen')
             self.assertEqual(data['atomic_number'], 1)
             self.assertEqual(data['symbol'], 'H')
 
-    def test_api_elements(self):
+    def test_api_elements_1(self):
         with self.app as c:
             element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
             db.session.add(element)
@@ -191,6 +191,14 @@ class TestCase(unittest.TestCase):
             data = json.loads(resp.data)
             self.assertEqual(len(data), 1)
 
+    def test_api_elements_2(self):
+        with self.app as c:
+            element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+            db.session.add(element)
+            db.session.commit()
+            resp = c.get('/api/element/')
+            data = json.loads(resp.data)
+            self.assertEqual(len(data), 1)
 
 def main():
     unittest.main()

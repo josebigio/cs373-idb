@@ -73,9 +73,10 @@ def handle_individual_group(name):
     result_list.append(d)
     return json.dumps(result_list)
 
-@app.route('/api/element/<name>')
-def handle_individual_element(name):
-    element = Element.query.filter(func.lower(Element.symbol)==func.lower(name)).first()
+@app.route('/api/element/<atomic_number_str>')
+def handle_individual_element(atomic_number_str):
+    atomic_number = str(atomic_number_str)
+    element = Element.query.get(atomic_number)
     result_list = []    
 
     column_names = []
@@ -173,7 +174,7 @@ def run_tests():
 #api handlers
 def handle_element():
     elements = list(Element.query.all())
-    result_list = []
+    result_dict = {}
     column_names = []
     for c in Element.__table__.columns:
         column_names.append(str(c).split("elements.")[1])    
@@ -182,7 +183,7 @@ def handle_element():
         d = dict()
         for c_name in column_names:
             d[c_name] = element.__dict__[c_name]
-        result_list.append(d)
+        result_dict[element.atomic_number] = d
     
     return json.dumps(result_list)
         
