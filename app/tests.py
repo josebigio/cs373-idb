@@ -153,6 +153,20 @@ class TestCase(unittest.TestCase):
         trivias = list(element.trivias)
         assert trivias == [trivia1,trivia2]
 
+    def test_api_element(self):
+        with self.app as c:
+            resp = c.get('/api/element/1')
+            data = json.loads(resp.data)[0]
+            self.assert_equal(data['element'].lower(), 'hydrogen')
+            self.assert_equal(data['atomic_number'], 1)
+            self.assert_equal(data['symbol'], 'H')
+
+    def test_api_elements(self):
+        with self.app as c:
+            resp = c.get('/api/element/')
+            data = json.loads(resp.data)
+            self.assert_equal(len(data), 118)
+
 
 if __name__ == '__main__':
     unittest.main()

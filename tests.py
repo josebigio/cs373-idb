@@ -118,8 +118,9 @@ class TestCase(unittest.TestCase):
         db.session.add(trivia)
         db.session.commit()
         assert(trivia.description == "Very hard trivia")
-    
-    # def test_add_trivias_to_group(self):   
+
+
+    # def test_add_trivias_to_group(self):
     #     group = Group(1,"Alkali","They are awesome","It has many properties")
     #     db.session.add(group)
     #     db.session.commit()
