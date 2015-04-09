@@ -119,54 +119,57 @@ class TestCase(unittest.TestCase):
         db.session.commit()
         assert(trivia.description == "Very hard trivia")
 
+    
+    def test_add_trivias_to_group(self):
+        group = Group(group_number=1,description="They are awesome",properties="It has many properties", applications="has bunch of applications",name="Super name")
+        db.session.add(group)
+        db.session.commit()
+        
+        trivia1 = Trivia(description="Very hard trivia",group=group)
+        db.session.add(trivia1)
+        db.session.commit()
 
-    # def test_add_trivias_to_group(self):
-    #     group = Group(1,"Alkali","They are awesome","It has many properties")
-    #     db.session.add(group)
-    #     db.session.commit()
+        trivia2 = Trivia(description="very hard trivia 2",group=group)
+        db.session.add(trivia2)
+        db.session.commit()
 
-    #     trivia1 = Trivia(title="Super Hard",description="Very hard trivia",group=group)
-    #     db.session.add(trivia1)
-    #     db.session.commit()
+        trivias = group.trivias
+        assert (list(trivias)==[trivia1,trivia2])
 
-    #     trivia2 = Trivia(title="Super Easy",description="Very easy trivia",group=group)
-    #     db.session.add(trivia2)
-    #     db.session.commit()
 
-    #     trivias = list(group.trivias)
-    #     assert trivias == [trivia1,trivia2]
+    def test_add_trivias_to_period(self):
+        period = Period(period_number=1,description="They are awesome")
+        db.session.add(period)
+        db.session.commit()
+        
+        trivia1 = Trivia(description="Very hard trivia",period=period)
+        db.session.add(trivia1)
+        db.session.commit()
 
-    # def test_add_trivias_to_period(self):   
-    #     period = Period(1,"They are awesome","It has many properties")
-    #     db.session.add(period)
-    #     db.session.commit()
+        trivia2 = Trivia(description="very hard trivia 2",period=period)
+        db.session.add(trivia2)
+        db.session.commit()
 
-    #     trivia1 = Trivia(title="Super Hard",description="Very hard trivia",period=period)
-    #     db.session.add(trivia1)
-    #     db.session.commit()
+        trivias = period.trivias
+        assert (list(trivias)==[trivia1,trivia2])
 
-    #     trivia2 = Trivia(title="Super Easy",description="Very easy trivia",period=period)
-    #     db.session.add(trivia2)
-    #     db.session.commit()
 
-    #     trivias = list(period.trivias)
-    #     assert trivias == [trivia1,trivia2]
+    def test_add_trivias_to_element(self):
+        element = Element(atomic_number=1,symbol='H',element="Hydrogen",phase="phase",most_stable_crystal="msc",type="type",ionic_radius=1.1,atomic_radius=1.2,electronegativity=2.0,first_ionization_potential=3.0,density=1.0,melting_point_k=100.100,boiling_point_k=100.100,isotopes=4,discoverer="Downing",year_of_discovery=100,specific_heat_capacity=100.100,electron_configuration="electron_configuration",description="description")
+        db.session.add(element)
+        db.session.commit()       
+ 
+        trivia1 = Trivia(description="Very hard trivia",element=element)
+        db.session.add(trivia1)
+        db.session.commit()
 
-    # def test_add_trivias_to_element(self):   
-    #     element = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e")
-    #     db.session.add(element)
-    #     db.session.commit()
+        trivia2 = Trivia(description="very hard trivia 2",element=element)
+        db.session.add(trivia2)
+        db.session.commit()
 
-    #     trivia1 = Trivia(title="Super Hard",description="Very hard trivia",element=element)
-    #     db.session.add(trivia1)
-    #     db.session.commit()
+        trivias = element.trivias
+        assert (list(trivias)==[trivia1,trivia2])
 
-    #     trivia2 = Trivia(title="Super Easy",description="Very easy trivia",element=element)
-    #     db.session.add(trivia2)
-    #     db.session.commit()
-
-    #     trivias = list(element.trivias)
-    #     assert trivias == [trivia1,trivia2]
 
 def main():
     unittest.main()
