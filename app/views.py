@@ -52,7 +52,7 @@ def handle_individual_period(name):
     for c_name in column_names:
         result_dict[c_name] = period.__dict__[c_name]
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
 @app.route('/api/group/<name>')
 def handle_individual_group(name):    
@@ -76,7 +76,7 @@ def handle_individual_group(name):
     for c_name in column_names:
         result_dict[c_name] = group.__dict__[c_name]
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
 @app.route('/api/element/<atomic_number_str>')
 def handle_individual_element(atomic_number_str):
@@ -119,7 +119,7 @@ def handle_individual_trivia(name):
     for c_name in column_names:
         result_dict[c_name] = trivia.__dict__[c_name]
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
 
 @app.route('/about')
@@ -199,7 +199,7 @@ def handle_period():
         result_dict[period.period_number] = d
  
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
 def handle_group():
     groups = list(Group.query.all())
@@ -215,7 +215,7 @@ def handle_group():
         result_dict[group.group_number] = d
  
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
 def handle_trivia():
     trivias = list(Trivia.query.all())
@@ -231,5 +231,5 @@ def handle_trivia():
         result_dict[trivia.id] = d
  
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
