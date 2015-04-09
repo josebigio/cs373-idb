@@ -24,6 +24,8 @@
 });
 
 var l = document.getElementById('periodic-table').getElementsByTagName('li');
+var l2 = document.getElementById('lanthanide-actinide').getElementsByTagName('li');
+l = l + l2;
 for(var i=0; i< l.length; i++){
     var element = l[i];
     if (element.className == 'empty'){
