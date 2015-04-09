@@ -1,8 +1,13 @@
 from flask import render_template, json
 from app import app, db, models
-from .models import Element, Period, Group, Image, Trivia
+from .models import Element, Period, Group, Image, Trivia, make_response
 from sqlalchemy import func
 import subprocess
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)
 
 @app.route('/')
 @app.route('/index')
@@ -10,8 +15,8 @@ def index():
     return render_template('Index.html')
 
 
-@app.route('/api/<name>')
-@app.route('/api/element/<name>')
+@app.route('/api/<name>', methods=['GET'])
+@app.route('/api/element/<name>', methods=['GET'])
 def api_handling(name):
     if name == 'element':
         return handle_element()
