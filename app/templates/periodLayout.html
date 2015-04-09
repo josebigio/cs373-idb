@@ -39,8 +39,10 @@
                 <div class = "row">
                 <!--images go here-->
                 {% for element, image in image_dict.items() %}
+                    <a href="/element/{{element.atomic_number}}">
                       <div class="col-md-4"><img src={{image.image_path}} class="img-responsive"><p>{{element.element}}</p></div>
-                {% endfor %}
+                    </a>
+               {% endfor %}
                 </div>
               
               	<hr>
