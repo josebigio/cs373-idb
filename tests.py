@@ -260,7 +260,7 @@ class TestCase(unittest.TestCase):
             resp = c.get('/api/group')
             data = json.loads(resp.data)
             self.assertEqual(len(data), 1)
-            self.assertEqual(data['1']['group_number'], '1')
+            self.assertEqual(data['1']['group_number'], 1)
             self.assertEqual(data['1']['name'], "Alkali")
 
     def test_api_groups_2(self):
@@ -275,11 +275,11 @@ class TestCase(unittest.TestCase):
             resp = c.get('/api/group')
             data = json.loads(resp.data)
             self.assertEqual(len(data), 3)
-            self.assertEqual(data['1']['group_number'], '1')
+            self.assertEqual(data['1']['group_number'], 1)
             self.assertEqual(data['1']['name'], "Alkali")
-            self.assertEqual(data['2']['group_number'], '2')
+            self.assertEqual(data['2']['group_number'], 2)
             self.assertEqual(data['2']['name'], "Alkaline Earth")
-            self.assertEqual(data['3']['group_number'], '3')
+            self.assertEqual(data['3']['group_number'], 3)
             self.assertEqual(data['3']['name'], "Halogens")
 
     def test_api_groups_3(self):
@@ -329,7 +329,7 @@ class TestCase(unittest.TestCase):
             db.session.add(group3)
             db.session.commit()
             resp = c.get('/api/group')
-            data = json.loads(resp.data)
+            data = json.loads(resp.data)[2]
             self.assertEqual(data['group_number'], 3)
             self.assertEqual(data['name'], 'Halogens')
             self.assertEqual(data['description'], 'Highly reactive, very poisonous')
