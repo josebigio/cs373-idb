@@ -208,7 +208,7 @@ class TestCase(unittest.TestCase):
             db.session.add(element3)
             resp = c.get('/api/element/4')
             data = json.loads(resp.data)
-            self.assertEqual(resp.status, 404)
+            self.assertEqual(resp.status, '404 NOT FOUND')
             self.assertEqual(data, {'error': 'Not found'})
 
     def test_api_elements_4(self):
@@ -254,7 +254,7 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('/api/element/')
             data = json.loads(resp.data)
-            self.assertEqual(resp.status, 404)
+            self.assertEqual(resp.status, '404 NOT FOUND')
             self.assertEqual(data, {'error': 'Not found'})
 
     ######Logan's Additions        
@@ -301,7 +301,7 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('/api/group/')
             data = json.loads(resp.data)
-            self.assertEqual(resp.status, 404)
+            self.assertEqual(resp.status, '404 NOT FOUND')
             self.assertEqual(data, {'error': 'Not found'})
 
     def test_api_element_4(self):
@@ -405,7 +405,7 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('api/period/5')
             data = json.loads(resp.data)
-            self.assertEqual(resp.status, 404)
+            self.assertEqual(resp.status, '404 NOT FOUND')
             self.assertEqual(data, {'error': 'Not found'})
 
 
