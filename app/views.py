@@ -17,7 +17,6 @@ def index():
 
 
 @app.route('/api/<name>', methods=['GET'])
-@app.route('/api/element/<name>', methods=['GET'])
 def api_handling(name):
     if name == 'element':
         return handle_element()
@@ -73,8 +72,8 @@ def handle_individual_group(name):
     return json.dumps(result_list)
 
 @app.route('/api/element/<name>')
-def handle_individual_element(element_symbol):
-    element = Element.query.filter(func.lower(Element.symbol)==func.lower(element_symbol)).first()
+def handle_individual_element(name):
+    element = Element.query.filter(func.lower(Element.symbol)==func.lower(name)).first()
     result_list = []    
 
     column_names = []
