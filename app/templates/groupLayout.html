@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {#---------Title---------#}
-{% block title %}Alkaline Metals{% endblock %}
+{% block title %}{{g.name}}{% endblock %}
 {#---------Header---------#}
 {% block head %}
   {{ super() }}
@@ -8,16 +8,16 @@
 {% endblock %}
 {#---------Content---------#}
 {% block content %}
-<div class="bg" style="background: url('/static/images/Alkali/CsCrystals2k.jpg') no-repeat center center;"></div>
+<div class="bg" style="background: url('/static/images/{{g.name}}/group{{g.group_num}}_background.jpg') no-repeat center center;"></div>
 <div class="jumbotron">
-  <h1 style="text-align:center">Alkali Metals</h1>
+  <h1 style="text-align:center">{{name}}</h1>
 </div>
 <div class="container">
 	<div class="row">
   			<div class="col-md-3" id="leftCol">
               
               	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="#sec0">Group {{group_num}}</a></li>
+                  <li><a href="#sec0">Group {{g.group_num}}</a></li>
                   <li><a href="#sec1">Properties</a></li>
                   <li><a href="#sec2">Elements</a></li>
                   <li><a href="#sec3">Applications</a></li>
@@ -27,17 +27,17 @@
       		</div>  
       		<div class="col-md-9">
                 <div class="row">
-                    <h2 id="sec0">Group {{group_num}}</h2>
-                    <p>The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this electron configuration results in their characteristic properties. The alkali metals provide the best example of group trends in properties in the periodic table, with elements exhibiting well-characterized homologous behaviour.</p>
+                    <h2 id="sec0">Group {{g.group_num}}</h2>
+                    <p>{{g.description}}</p>
                     <div class="col-md-12">
-                        <img src="/static/images/Alkali/Group1metals.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
+                        <img src="/static/images/{{g.name}}/group{{g.group_num}}.jpg" class="img-responsive" alt="Group 1 metals" width="100%">
                     </div>
                 </div>
                 <hr>
               	<h2 id="sec1">Properties</h2>
                 <div class="row">
                     <div class="col-md-6">
-                    <p>The alkali metals have very similar properties: they are all shiny, soft, highly reactive metals at standard temperature and pressure and readily lose their outermost electron to form cations with charge +1. They can all be cut easily with a knife due to their softness, exposing a shiny surface that tarnishes rapidly in air due to oxidation by atmospheric moisture and oxygen. </p><p>Because of their high reactivity, they must be stored under oil to prevent reaction with air, and are found naturally only in salts and never as the free element. In the modern IUPAC nomenclature, the alkali metals comprise the group 1 elements, excluding hydrogen (H), which is nominally a group 1 element but not normally considered to be an alkali metal as it rarely exhibits behaviour comparable to that of the alkali metals. All the alkali metals react with water, with the heavier alkali metals reacting more vigorously than the lighter ones.</p>
+                    <p>{{g.properties}}</p>
                     </div>
                     <div class="col-md-6">
                         <img src="/static/images/Alkali/sodium_water.jpg" style="margin-top:20px;" class="img-responsive" alt="images">
@@ -47,20 +47,18 @@
                 <hr>
               	<h2 id="sec2">Elements</h2>
                 <div class="row">
-              		<div class="col-md-4"><img src="/static/images/Alkali/Lithium.jpg" class="img-responsive"> <p>(Li) Lithium</p></div>
-                    <div class="col-md-4"><img src="/static/images/Alkali/Sodium.jpg" class="img-responsive"><p>(Na) Sodium</p></div>
-                  	<div class="col-md-4"><img src="/static/images/Alkali/Potassium.jpg" class="img-responsive"><p>(K) Potassium</p></div>
-                    <div class="col-md-4"><img src="/static/images/Alkali/Rubidium.JPG" class="img-responsive"><p>(Rb) Rubidium</p></div>
-                    <div class="col-md-4"><img src="/static/images/Alkali/Cesium.jpg" class="img-responsive"><p>(Cs) Cesium</p></div>
-                    <div class="col-md-4"><img src="/static/images/Alkali/Francium.jpg" class="img-responsive" height="300px" width="300px"><p>(Fr) Francium</p></div>
-                  	
+                  {% for element, image in image_dict.items() %}
+                    <a href="/element/{{element.atomic_number}}">
+                      <div class="col-md-4"><img src={{image.image_path}} class="img-responsive"><p>{{element.element}}</p></div>
+                    </a>
+                  {% endfor %}
               	</div>
 
               
               	<hr>
               
               	<h2 id="sec3">Applications</h2>
-      			Most alkali metals have many different applications. Two of the most well-known applications of the pure elements are rubidium and caesium atomic clocks, of which caesium atomic clocks are the most accurate and precise representation of time. A common application of the compounds of sodium is the sodium-vapour lamp, which emits very efficient light. Table salt, or sodium chloride, has been used since antiquity. Sodium and potassium are also essential elements, having major biological roles as electrolytes, and although the other alkali metals are not essential, they also have various effects on the body, both beneficial and harmful.
+      			{{g.applications}}
               
               	<h2 id="sec4">Trivia</h2>
 

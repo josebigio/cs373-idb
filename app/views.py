@@ -138,15 +138,13 @@ def about():
 
 @app.route('/group/<name>')
 def group(name=None):
-    if name == 'alkali':
-        return render_template('alkaliLayout.html', name=name)
-    elif name == 'alkaline-earth':
-        return render_template('alkalinearthLayout.html', name=name)
-    elif name == 'halogen':
-        return render_template('halogenLayout.html', name=name)
-    else:
-        return "Page not found!"
-
+    group_num = int(name)
+    g = Period.query.get(group_num)
+    elements = list(Element.query.filter_by(group_number=group_num).all())
+    image_dict = {}
+    for e in elements:
+        image_dict[e] = Image.query.filter_by(element_number=e.atomic_number, image_type="default").first()
+    return render_template('groupLayout.html', group=g, image_dict=image_dict)
 
 @app.route('/element/<atomic_number_str>')
 def element(atomic_number_str=None):
