@@ -155,7 +155,10 @@ class TestCase(unittest.TestCase):
 
     def test_api_element(self):
         with self.app as c:
-            resp = c.get('/api/element/1')
+            element = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e")
+            db.session.add(element)
+            db.session.commit()
+            resp = c.get('/api/element/Li')
             data = json.loads(resp.data)[0]
             self.assert_equal(data['element'].lower(), 'hydrogen')
             self.assert_equal(data['atomic_number'], 1)
@@ -163,9 +166,12 @@ class TestCase(unittest.TestCase):
 
     def test_api_elements(self):
         with self.app as c:
+            element = Element(atomic_number=3,symbol='Li',name="Lithium")
+            db.session.add(element)
+            db.session.commit()
             resp = c.get('/api/element/')
             data = json.loads(resp.data)
-            self.assert_equal(len(data), 118)
+            self.assert_equal(len(data), 1)
 
 
 if __name__ == '__main__':

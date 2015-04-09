@@ -1,4 +1,4 @@
-from flask import render_template, json, make_response
+from flask import render_template, json, make_response, jsonify
 from app import app, db, models
 from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
