@@ -2,28 +2,6 @@
 Object oriented representation of our data base structure. We will have 4 interweed entities: elements,
 periods, groups and trivias
 """
-class MockElement():
-    atomic_number = 1
-    element = "TestElement"
-    symbol = "Te"
-    period_number = 1
-    phase = "l"
-    most_stable_crystal = "none"
-    type = "stuff"
-    ionic_radius = 123
-    atomic_radius = 123
-    electronegativity = -2.34
-    first_ionization_potential = 1.3
-    density = 1.3
-    melting_point_k = -124.5
-    boiling_point_k = -123.3
-    isotopes = 5
-    discoverer = "Colin Murray"
-    year_of_discovery = 1992
-    specific_heat_capacity = 123.4
-    electron_configuration = "sp3"
-    description = "The best element ever!"
-    # group_number = db.Column(db.Integer, db.ForeignKey('groups.group_number'))
 
 from app import db
 
@@ -52,7 +30,7 @@ class Element(db.Model):
     specific_heat_capacity = db.Column(db.Float)
     electron_configuration = db.Column(db.String(50))
     description = db.Column(db.Text)
-    
+    column_number = db.Column(db.Integer)
     group_number = db.Column(db.Integer, db.ForeignKey('groups.group_number'))
     period_number = db.Column(db.Integer, db.ForeignKey('periods.period_number'))
     

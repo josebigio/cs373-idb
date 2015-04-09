@@ -37,21 +37,22 @@ def handle_individual_period(name):
     except:
         rabort(404)
 
-    period = Period.query.get(period_id)
+    try:
+        period = Period.query.get(period_id)
+    except:
+        abort(404)
     if period is None:
         abort(404)
-    result_list = []    
 
     column_names = []
     for c in Period.__table__.columns:
         column_names.append(str(c).split("periods.")[1])
         
-    d = dict()
+    result_dict = dict()
     for c_name in column_names:
-        d[c_name] = period.__dict__[c_name]
+        result_dict[c_name] = period.__dict__[c_name]
 
-    result_list.append(d)
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
 
 @app.route('/api/group/<name>')
 def handle_individual_group(name):    
@@ -60,22 +61,22 @@ def handle_individual_group(name):
         group_id = int(name)
     except:
         abort(404)
-
-    group = Group.query.get(group_id)
+    try:
+        group = Group.query.get(group_id)
+    except:
+        abort(404)
     if group is None:
         abort(404)
-    result_list = []    
 
     column_names = []
     for c in Group.__table__.columns:
         column_names.append(str(c).split("groups.")[1])
         
-    d = dict()
+    result_dict = dict()
     for c_name in column_names:
-        d[c_name] = group.__dict__[c_name]
+        result_dict[c_name] = group.__dict__[c_name]
 
-    result_list.append(d)
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
 
 @app.route('/api/element/<atomic_number_str>')
 def handle_individual_element(atomic_number_str):
@@ -86,19 +87,17 @@ def handle_individual_element(atomic_number_str):
     element = Element.query.get(atomic_number)
     if element is None:
         abort(404)
-    result_list = []    
 
     column_names = []
     for c in Element.__table__.columns:
         column_names.append(str(c).split("elements.")[1])
         
-    d = dict()
+    result_dict = dict()
     for c_name in column_names:
-        d[c_name] = element.__dict__[c_name]
+        result_dict[c_name] = element.__dict__[c_name]
 
-    result_list.append(d)
 
-    return json.dumps(result_list)
+    return json.dumps(result_dict)
 
 @app.route('/api/trivia/<name>')
 def handle_individual_trivia(name):    
@@ -111,24 +110,16 @@ def handle_individual_trivia(name):
     trivia = Trivia.query.get(trivia_id)
     if trivia is None:
         abort(404)
-    result_list = []    
 
     column_names = []
     for c in Trivia.__table__.columns:
         column_names.append(str(c).split("trivia.")[1])
         
-    d = dict()
+    result_dict = dict()
     for c_name in column_names:
-        d[c_name] = trivia.__dict__[c_name]
+        result_dict[c_name] = trivia.__dict__[c_name]
 
-    result_list.append(d)
-    return json.dumps(result_list)
-
-
-@app.route('/models/<name>')
-def models(name=1):
-    e = Element.query.get(1)
-    return e.element
+    return json.dumps(result_dict)
 
 
 @app.route('/about')
