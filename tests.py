@@ -379,10 +379,10 @@ class TestCase(unittest.TestCase):
 
     def test_api_periods_2(self):
         with self.app as c:
-            period1 = Period(period_number = 1, description = "description of period 1")
-            period2 = Period(period_number = 2, description = "description of period 2")
-            period3 = Period(period_number = 3, description = "description of period 3")
-            period4 = Period(period_number = 4, description = "description of period 4")
+            period1 = Period(period_number = 1, description = u"description of period 1")
+            period2 = Period(period_number = 2, description = u"description of period 2")
+            period3 = Period(period_number = 3, description = u"description of period 3")
+            period4 = Period(period_number = 4, description = u"description of period 4")
             db.session.add(period1)
             db.session.add(period2)
             db.session.add(period3)
@@ -395,10 +395,10 @@ class TestCase(unittest.TestCase):
 
     def test_api_periods_3(self):
         with self.app as c:
-            period1 = Period(period_number = 1, description = "description of period 1")
-            period2 = Period(period_number = 2, description = "description of period 2")
-            period3 = Period(period_number = 3, description = "description of period 3")
-            period4 = Period(period_number = 4, description = "description of period 4")
+            period1 = Period(period_number = 1, description = u"description of period 1")
+            period2 = Period(period_number = 2, description = u"description of period 2")
+            period3 = Period(period_number = 3, description = u"description of period 3")
+            period4 = Period(period_number = 4, description = u"description of period 4")
             db.session.add(period1)
             db.session.add(period2)
             db.session.add(period3)
@@ -406,10 +406,10 @@ class TestCase(unittest.TestCase):
             db.session.commit()
             resp = c.get('api/period')
             data = json.loads(resp.data)
-            self.assertEqual(data[0]['description'], "description of period 1")
-            self.assertEqual(data[1]['description'], "description of period 2")
-            self.assertEqual(data[2]['description'], "description of period 3")
-            self.assertEqual(data[3]['description'], "description of period 4")
+            self.assertEqual(data[0]['description'], u"description of period 1")
+            self.assertEqual(data[1]['description'], u"description of period 2")
+            self.assertEqual(data[2]['description'], u"description of period 3")
+            self.assertEqual(data[3]['description'], u"description of period 4")
 def main():
     unittest.main()
 
