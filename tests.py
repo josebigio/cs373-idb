@@ -206,7 +206,7 @@ class TestCase(unittest.TestCase):
             db.session.add(element3)
             resp = c.get('/api/element/4')
             data = json.loads(resp.data)
-            self.assertEqual(data, [])
+            self.assertEqual(data, {'error': 'Not found'})
 
     def test_api_elements_1(self):
         with self.app as c:
