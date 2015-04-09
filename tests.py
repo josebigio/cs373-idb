@@ -506,7 +506,7 @@ class TestCase(unittest.TestCase):
             data = json.loads(resp.data)
             self.assertEqual(data['1826']['description'], u"description of trivia of element 2")
             self.assertEqual(data['1845']['description'], u"description of trivia of group 3")
-            self.assertEqual(data['1836']['description'], u"description of trivia group 4")
+            self.assertEqual(data['1836']['description'], u"description of trivia of group 4")
 
 def main():
     unittest.main()
