@@ -97,7 +97,7 @@ def handle_individual_element(atomic_number_str):
         result_dict[c_name] = element.__dict__[c_name]
 
 
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
 
 @app.route('/api/trivia/<name>')
 def handle_individual_trivia(name):    
@@ -183,7 +183,7 @@ def handle_element():
             d[c_name] = element.__dict__[c_name]
         result_dict[element.atomic_number] = d
     
-    return json.dumps(result_dict)
+    return jsonify(result_dict)
         
 def handle_period():
     periods = list(Period.query.all())
