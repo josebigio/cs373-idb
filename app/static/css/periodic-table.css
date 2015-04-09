@@ -12,6 +12,10 @@ div.container {
 
 }
 
+.table{
+    margin-right: 0px;
+    margin-left: 0px;
+}
 .wrapper {
  	width:1550px;
   margin:20px auto;
