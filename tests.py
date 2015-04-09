@@ -410,6 +410,103 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data['2']['description'], u"description of period 2")
             self.assertEqual(data['3']['description'], u"description of period 3")
             self.assertEqual(data['4']['description'], u"description of period 4")
+
+
+    def test_api_trivia_1(self):
+        with self.app as c:
+            element = Element(atomic_number=2,symbol='e',element="Helioum")
+            trivia = Trivia(description="description of trivia of element 2", element_number = 2, id = 1826)
+            db.session.add(element)
+            db.session.add(trivia)
+            db.session.commit()
+            resp = c.get('api/trivia/1826')
+            data = json.loads(resp.data)
+            self.assertEqual(data['description'], u"description of element 2")
+            self.assertEqual(data['element_number'], 2)
+
+    def test_api_trivia_2(self):
+        with self.app as c:
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            trivia = Trivia(description="description of group 3", group_number = 3, id = 1845)
+            db.session.add(group3)
+            db.session.add(trivia)
+            db.session.commit()
+            resp = c.get('api/trivia/1845')
+            data = json.loads(resp.data)
+            self.assertEqual(data['description'], u"description of group 3")
+            self.assertEqual(data['element_number'], null)
+            self.assertEqual(data['group_number'], 3)
+
+    def test_api_trivia_3(self):
+        with self.app as c:
+            group4 = Group(group_number=4, name='Halogens', description="Highly reactive, very poisonous")
+            trivia = Trivia(description="description of trivia of group 4", group_number = 4, id = 1826)
+            db.session.add(group4)
+            db.session.add(trivia)
+            db.session.commit()
+            resp = c.get('api/trivia/1826')
+            data = json.loads(resp.data)
+            self.assertEqual(data['description'], u"description of trivia of group 4")
+            self.assertEqual(data['element_number'], null)
+            self.assertEqual(data['group_number'], 4)
+
+    def test_api_trivias_1(self):
+        with self.app as c:
+            element = Element(atomic_number=2,symbol='e',element="Helioum")
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            group4 = Group(group_number=4, name='Halogens', description="Highly reactive, very poisonous")
+            trivia1 = Trivia(description="description of trivia of element 2", element_number = 2, id = 1826)
+            trivia2 = Trivia(description="description of group 3", group_number = 3, id = 1845)
+            trivia3 = Trivia(description="description of trivia of group 4", group_number = 4, id = 1836)
+            db.session.add(element)
+            db.session.add(group3)
+            db.session.add(group4)
+            db.session.add(trivia1)
+            db.session.add(trivia2)
+            db.session.add(trivia3)
+            db.session.commit()
+            resp = c.get('api/trivia')
+            data = json.loads(resp.data)
+            self.assertEqual(len(data), 3)
+
+
+    def test_api_trivias_2(self):
+        with self.app as c:
+            element = Element(atomic_number=2,symbol='e',element="Helioum")
+            group3 = Group(group_number=3, name='Halogens', description="Highly reactive, very poisonous")
+            group4 = Group(group_number=4, name='Halogens', description="Highly reactive, very poisonous")
+            trivia1 = Trivia(description="description of trivia of element 2", element_number = 2, id = 1826)
+            trivia2 = Trivia(description="description of group 3", group_number = 3, id = 1845)
+            trivia3 = Trivia(description="description of trivia of group 4", group_number = 4, id = 1836)
+            db.session.add(element)
+            db.session.add(group3)
+            db.session.add(group4)
+            db.session.add(trivia1)
+            db.session.add(trivia2)
+            db.session.add(trivia3)
+            db.session.commit()
+            resp = c.get('api/trivia/18')
+            data = json.loads(resp.data)
+            self.assertEqual(data, {'error': 'Not found'})
+
+    def test_api_trivias_3(self):
+        with self.app as c:
+            trivia1 = Trivia(description="description of trivia of element 4", element_number = 4, id = 1826)
+            trivia2 = Trivia(description="description of trivia of group 3", group_number = 3, id = 1845)
+            trivia3 = Trivia(description="description of trivia of group 4", group_number = 4, id = 1836)
+            db.session.add(element)
+            db.session.add(group3)
+            db.session.add(group4)
+            db.session.add(trivia1)
+            db.session.add(trivia2)
+            db.session.add(trivia3)
+            db.session.commit()
+            resp = c.get('api/trivia')
+            data = json.loads(resp.data)
+            self.assertEqual(data['1826']['description'], u"description of trivia of element 4")
+            self.assertEqual(data['1845']['description'], u"description of trivia of group 3")
+            self.assertEqual(data['1836']['description'], u"description of trivia group 4")
+
 def main():
     unittest.main()
 
