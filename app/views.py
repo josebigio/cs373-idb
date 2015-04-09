@@ -34,9 +34,9 @@ def handle_individual_period(name):
     try:
         period_id = int(name)
     except:
-        return "Invalid period_id"
+        return "Invalid period id"
 
-    period = Element.query.get(period_id)
+    period = Period.query.get(period_id)
     result_list = []    
 
     column_names = []
@@ -48,6 +48,45 @@ def handle_individual_period(name):
         d[c_name] = period.__dict__[c_name]
 
     result_list.append(d)
+    return json.dumps(result_list)
+
+@app.route('/api/group/<name>')
+def handle_individual_group(name):    
+    group_id = 0
+    try:
+        group_id = int(name)
+    except:
+        return "Invalid group id"
+
+    group = Group.query.get(group_id)
+    result_list = []    
+
+    column_names = []
+    for c in Group.__table__.columns:
+        column_names.append(str(c).split("groups.")[1])
+        
+    d = dict()
+    for c_name in column_names:
+        d[c_name] = period.__dict__[c_name]
+
+    result_list.append(d)
+    return json.dumps(result_list)
+
+@app.route('/api/element/<name>')
+def handle_individual_element(element_symbol):
+    element = Element.query.filter(func.lower(Element.symbol)==func.lower(element_symbol)).first()
+    result_list = []    
+
+    column_names = []
+    for c in Element.__table__.columns:
+        column_names.append(str(c).split("elements.")[1])
+        
+    d = dict()
+    for c_name in column_names:
+        d[c_name] = element.__dict__[c_name]
+
+    result_list.append(d)
+
     return json.dumps(result_list)
 
 
@@ -125,22 +164,6 @@ def handle_element():
     
     return json.dumps(result_list)
         
-def handle_individual_element(element_symbol):
-    element = Element.query.filter(func.lower(Element.symbol)==func.lower(element_symbol)).first()
-    result_list = []    
-
-    column_names = []
-    for c in Element.__table__.columns:
-        column_names.append(str(c).split("elements.")[1])
-        
-    d = dict()
-    for c_name in column_names:
-        d[c_name] = element.__dict__[c_name]
-
-    result_list.append(d)
-
-    return json.dumps(result_list)
-
 def handle_period():
     periods = list(Period.query.all())
     result_list = []
