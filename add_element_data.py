@@ -34,7 +34,7 @@ def main():
             print("Missing descrption on element: " + symbol)
             # print(e)
         else:
-            desc_text = stripWikiCitations(desc.read())
+            desc_text = stripWikiCitations(desc.read().decode('utf-8', 'ignore'))
             e.description = desc_text
             db.session.add(e)
             db.session.commit()
@@ -53,7 +53,7 @@ def main():
             print("Missing trivia for element: " + symbol)
             # print(e)
         else:
-            trivia_text = stripWikiCitations(trivia.read())
+            trivia_text = stripWikiCitations(trivia.read().decode('utf-8', 'ignore'))
             if trivia_text is not None and trivia_text != "":
                 trivia_list = getTrivia(trivia_text)
                 for trivia_snippet in trivia_list:
