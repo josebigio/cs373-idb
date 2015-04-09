@@ -66,7 +66,7 @@ def handle_individual_group(name):
         
     d = dict()
     for c_name in column_names:
-        d[c_name] = period.__dict__[c_name]
+        d[c_name] = group.__dict__[c_name]
 
     result_list.append(d)
     return json.dumps(result_list)
