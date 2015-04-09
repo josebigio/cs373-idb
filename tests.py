@@ -252,7 +252,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data, {'error': 'Not found'})
 
     ######Logan's Additions        
-     def test_api_groups_1(self):
+    def test_api_groups_1(self):
         with self.app as c:
             group = Group(group_number=1, name='Alkali', description="Explosions!")
             db.session.add(group)
