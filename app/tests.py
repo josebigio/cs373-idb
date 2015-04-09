@@ -22,48 +22,48 @@ class TestCase(unittest.TestCase):
         group = Group(1,"Alkali","They are awesome","It has many properties")
         db.session.add(group)
         db.session.commit()
-        assert(group.column == 1)
-        assert(group.description == "They are awesome")
-        assert(group.properties == "It has many properties")
+        self.assert_equal(group.column, 1)
+        self.assert_equal(group.description, "They are awesome")
+        self.assert_equal(group.properties, "It has many properties")
 
     def test_change_variables_group(self):
         group = Group(1,"Alkali","They are awesome","It has many properties")
         group.information = "They have many informations"
         db.session.add(group)
         db.session.commit()
-        assert(group.information == "They have many informations")
+        self.assert_equal(group.information, "They have many informations")
         
     def test_create_period(self):
         period = Period(1,"They are awesome","It has many properties")
         db.session.add(period)
         db.session.commit()
-        assert(period.row == 1)
-        assert(period.description == "They are awesome")
-        assert(period.properties == "It has many properties")
+        self.assert_equal(period.row, 1)
+        self.assert_equal(period.description, "They are awesome")
+        self.assert_equal(period.properties, "It has many properties")
 
     def test_change_variables_period(self):
         period = Period(1,"They are awesome","It has many properties")
         period.row = 2
         db.session.add(period)
         db.session.commit()
-        assert(period.row == 2)
+        self.assert_equal(period.row, 2)
 
     def test_change_variables_period(self):
         period = Period(1,"They are awesome","It has many properties")
         period.row = 2
         db.session.add(period)
         db.session.commit()
-        assert(period.row == 2)
+        self.assert_equal(period.row, 2)
 
     def test_create_element(self):        
         element = Element(atomic_number=1,symbol='H',name="Hydrogen",atomic_mass=1.001,history="it is forged in the sun")
         db.session.add(element)
         db.session.commit()
-        assert(element.atomic_number == 1)
-        assert(element.symbol == 'H')
-        assert(element.name == "Hydrogen")
-        assert(element.atomic_mass == 1.001)
-        assert(element.history == "it is forged in the sun")
+        self.assert_equal(element.atomic_number, 1)
+        self.assert_equal(element.symbol, 'H')
+        self.assert_equal(element.name, "Hydrogen")
+        self.assert_equal(element.atomic_mass, 1.001)
+        self.assert_equal(element.history, "it is forged in the sun")
 
     def test_add_elements_to_period(self):
         period = Period(1,"They are awesome","It has many properties")
@@ -79,7 +79,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         elements = list(period.elements)
-        assert elements == [element1,element2]
+        self.assert_equal(elements, [element1,element2])
 
     def test_add_elements_to_group(self):
         group = Group(1,"Alkali","They are awesome","It has many properties")
@@ -95,18 +95,18 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         elements = list(group.elements)
-        assert elements == [element1,element2]
+        self.assert_equal(elements, [element1, element2])
 
 
     def test_create_trivia(self):   
         trivia = Trivia(title="Super Hard",description="Very hard trivia")
         db.session.add(trivia)
         db.session.commit()
-        assert(trivia.title == "Super Hard")
-        assert(trivia.description == "Very hard trivia")
+        self.assert_equal(trivia.title, "Super Hard")
+        self.assert_equal(trivia.description, "Very hard trivia")
     
     def test_add_trivias_to_group(self):   
-        group = Group(1,"Alkali","They are awesome","It has many properties")
+        group = Group(1, "Alkali", "They are awesome", "It has many properties")
         db.session.add(group)
         db.session.commit()
 
@@ -119,7 +119,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         trivias = list(group.trivias)
-        assert trivias == [trivia1,trivia2]
+        self.assert_equal(trivias, [trivia1, trivia2])
 
     def test_add_trivias_to_period(self):   
         period = Period(1,"They are awesome","It has many properties")
@@ -135,7 +135,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         trivias = list(period.trivias)
-        assert trivias == [trivia1,trivia2]
+        aself.assert_equal(trivias, [trivia1, trivia2])
 
     def test_add_trivias_to_element(self):   
         element = Element(atomic_number=3,symbol='Li',name="Lithium",atomic_mass=6.94,history="w/e")
@@ -151,7 +151,7 @@ class TestCase(unittest.TestCase):
         db.session.commit()
 
         trivias = list(element.trivias)
-        assert trivias == [trivia1,trivia2]
+        self.assert_equal(trivias, [trivia1, trivia2])
 
     def test_api_element(self):
         with self.app as c:
