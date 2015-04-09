@@ -17,7 +17,6 @@ def index():
 
 
 @app.route('/api/<name>', methods=['GET'])
-@app.route('/api/element/<name>', methods=['GET'])
 def api_handling(name):
     if name == 'element':
         return handle_element()
