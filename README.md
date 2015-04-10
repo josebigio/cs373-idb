@@ -30,15 +30,24 @@ https://github.com/josebigio/cs373-idb/wiki/4.-Project-Website-Set-up
 ##Important files:
 
 static html templates: app/static/templates
+
+
 css files: app/static/css
+
+
 javascript scripts: app/static/scripts
 
 
+
 tests: /tests.py
+
+
 output of tests: /tests.out
 
 
 views: /views.py
+
+
 models: /models.py
 
 
