@@ -74,6 +74,8 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>boiling_point_k</strong></dt>
 </dl>
+<dl><dt><strong>column_number</strong></dt>
+</dl>
 <dl><dt><strong>density</strong></dt>
 </dl>
 <dl><dt><strong>description</strong></dt>
@@ -89,6 +91,8 @@ Data descriptors defined here:<br>
 <dl><dt><strong>first_ionization_potential</strong></dt>
 </dl>
 <dl><dt><strong>group_number</strong></dt>
+</dl>
+<dl><dt><strong>images</strong></dt>
 </dl>
 <dl><dt><strong>ionic_radius</strong></dt>
 </dl>
@@ -106,15 +110,17 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>symbol</strong></dt>
 </dl>
+<dl><dt><strong>trivias</strong></dt>
+</dl>
 <dl><dt><strong>type</strong></dt>
 </dl>
 <dl><dt><strong>year_of_discovery</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea4ed50; Element&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e0153d0; Element&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('elements', MetaData(bind=None), Column('a...s.group_number'), table=&lt;elements&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('elements', MetaData(bind=None), Column('a....period_number'), table=&lt;elements&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'elements'</dl>
 
@@ -180,13 +186,17 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>group_number</strong></dt>
 </dl>
+<dl><dt><strong>images</strong></dt>
+</dl>
 <dl><dt><strong>name</strong></dt>
 </dl>
 <dl><dt><strong>properties</strong></dt>
 </dl>
+<dl><dt><strong>trivias</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea5c690; Group&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e01f390; Group&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('groups', MetaData(bind=None), Column('gro...umn('name', Text(), table=&lt;groups&gt;), schema=None)</dl>
 
@@ -243,23 +253,31 @@ Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
 attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
 for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
 
+<dl><dt><a name="Image-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;string&nbsp;with&nbsp;the&nbsp;row&nbsp;this&nbsp;period&nbsp;represents</tt></dd></dl>
+
 <hr>
 Data descriptors defined here:<br>
+<dl><dt><strong>element</strong></dt>
+</dl>
 <dl><dt><strong>element_number</strong></dt>
+</dl>
+<dl><dt><strong>group</strong></dt>
 </dl>
 <dl><dt><strong>group_number</strong></dt>
 </dl>
 <dl><dt><strong>image_path</strong></dt>
 </dl>
-<dl><dt><strong>period_number</strong></dt>
+<dl><dt><strong>image_type</strong></dt>
 </dl>
-<dl><dt><strong>type</strong></dt>
+<dl><dt><strong>period</strong></dt>
+</dl>
+<dl><dt><strong>period_number</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea66290; Image&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e027710; Image&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('images', MetaData(bind=None), Column('ima...number', Integer(), table=&lt;images&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('images', MetaData(bind=None), Column('ima...ts.atomic_number'), table=&lt;images&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'images'</dl>
 
@@ -319,11 +337,17 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 Data descriptors defined here:<br>
 <dl><dt><strong>description</strong></dt>
 </dl>
+<dl><dt><strong>elements</strong></dt>
+</dl>
+<dl><dt><strong>images</strong></dt>
+</dl>
 <dl><dt><strong>period_number</strong></dt>
+</dl>
+<dl><dt><strong>trivias</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea58a50; Period&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e01d4d0; Period&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('periods', MetaData(bind=None), Column('pe...cription', Text(), table=&lt;periods&gt;), schema=None)</dl>
 
@@ -386,19 +410,25 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 Data descriptors defined here:<br>
 <dl><dt><strong>description</strong></dt>
 </dl>
+<dl><dt><strong>element</strong></dt>
+</dl>
 <dl><dt><strong>element_number</strong></dt>
+</dl>
+<dl><dt><strong>group</strong></dt>
 </dl>
 <dl><dt><strong>group_number</strong></dt>
 </dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
+<dl><dt><strong>period</strong></dt>
+</dl>
 <dl><dt><strong>period_number</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10ea60490; Trivia&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10e024550; Trivia&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('trivia', MetaData(bind=None), Column('id'...number', Integer(), table=&lt;trivia&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('trivia', MetaData(bind=None), Column('id'...ts.atomic_number'), table=&lt;trivia&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'trivia'</dl>
 
@@ -435,5 +465,5 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__warningregistry__</strong> = {("Not importing directory './flask': missing __init__.py", &lt;type 'exceptions.ImportWarning'&gt;, 6): True}<br>
 <strong>app</strong> = &lt;Flask 'models'&gt;<br>
-<strong>db</strong> = &lt;SQLAlchemy engine='sqlite://'&gt;</td></tr></table>
+<strong>db</strong> = &lt;SQLAlchemy engine='postgresql:///elementalists'&gt;</td></tr></table>
 </body></html>
