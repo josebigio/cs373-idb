@@ -4,35 +4,66 @@ FORMAT: 1A
 The Elementalists' <b> Periodic Table API </b>provides information about standard periodic table elements, groups, and periods. 
 
 # Group Elements
-## Elements Collection [/element]
+## Elements Collection [/api/element]
 ### List all Elements [GET]
 + Response 200 (application/json)
 
-        [{
-          "id": 1, 
-          "symbol": "H",
-          "name": "Hydrogen",
-          "atomic_mass": 1.00794,
-          "history": "was discovered in 1867"
-          "group_id": 1,
-          "period_id": 1
-        }, {
-          "id": 2, 
-          "symbol": "He",
-          "name": "Helium",
-          "atomic_mass": 4.003,
-          "history": "was discovered in 1867"
-          "group_id": 18,
-          "period_id": 1          
-        }]
-        
-            
+        {
+            "1": {
+                    "atomic_number": 1, 
+                    "atomic_radius": 0.79, 
+                    "boiling_point_k": 20.28, 
+                    "column_number": 1, 
+                    "density": 8.988e-05, 
+                    "description": "Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the universe, constituting roughly 75% of all baryonic mass.[note 1] Non-remnant stars are mainly composed of hydrogen in its plasma state. The most common isotope of hydrogen, termed protium (name rarely used, symbol 1H), has a single proton and zero neutrons.\n\nThe universal emergence of atomic hydrogen first occurred during the recombination epoch. At standard temperature and pressure, hydrogen is a colorless, odorless, tasteless, non-toxic, nonmetallic, highly combustible diatomic gas with the molecular formula H2. Since hydrogen readily forms covalent compounds with most non-metallic elements, most of the hydrogen on Earth exists in molecular forms such as in the form of water or organic compounds. Hydrogen plays a particularly important role in acid\u2013base reactions as many acid-base reactions involve the exchange of protons between soluble molecules. In ionic compounds, hydrogen can take the form of a negative charge (i.e., anion) known as a hydride, or as a positively charged (i.e., cation) species denoted by the symbol H+. The hydrogen cation is written as though composed of a bare proton, but in reality, hydrogen cations in ionic compounds are always more complex species than that would suggest. As the only neutral atom for which the Schr\u00f6dinger equation can be solved analytically, study of the energetics and bonding of the hydrogen atom has played a key role in the development of quantum mechanics.\n\nHydrogen gas was first artificially produced in the early 16th century, via the mixing of metals with acids. In 1766\u201381, Henry Cavendish was the first to recognize that hydrogen gas was a discrete substance, and that it produces water when burned, a property which later gave it its name: in Greek, hydrogen means \"water-former\".\n\nIndustrial production is mainly from the steam reforming of natural gas, and less often from more energy-intensive hydrogen production methods like the electrolysis of water. Most hydrogen is employed near its production site, with the two largest uses being fossil fuel processing (e.g., hydrocracking) and ammonia production, mostly for the fertilizer market.\n\nHydrogen is a concern in metallurgy as it can embrittle many metals, complicating the design of pipelines and storage tanks.", 
+                    "discoverer": "Cavendish", 
+                    "electron_configuration": "1s1", 
+                    "electronegativity": 2.2, 
+                    "element": "Hydrogen", 
+                    "first_ionization_potential": 13.5984, 
+                    "group_number": 5, 
+                    "ionic_radius": 0.012, 
+                    "isotopes": 3, 
+                    "melting_point_k": 14.175, 
+                    "most_stable_crystal": null, 
+                    "period_number": 1, 
+                    "phase": "gas", 
+                    "specific_heat_capacity": 14.304, 
+                    "symbol": "H", 
+                    "type": "Nonmetal", 
+                    "year_of_discovery": 1766
+                }, 
+            "2": {
+                    "atomic_number": 2, 
+                    "atomic_radius": 0.49, 
+                    "boiling_point_k": 4.22, 
+                    "column_number": 18, 
+                    "density": 0.0001785, 
+                    "description": "Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas that heads the noble gas group in the periodic table. Its boiling and melting points are the lowest among the elements and it exists only as a gas except in extreme conditions.\n\nHelium is the second lightest element and is the second most abundant element in the observable universe, being present at about 24% of the total elemental mass, which is more than 12 times the mass of all the heavier elements combined. Its abundance is similar to this figure in the Sun and in Jupiter. This is due to the very high nuclear binding energy (per nucleon) of helium-4 with respect to the next three elements after helium. This helium-4 binding energy also accounts for why it is a product of both nuclear fusion and radioactive decay. Most helium in the universe is helium-4, and is believed to have been formed during the Big Bang. Large amounts of new helium are being created by nuclear fusion of hydrogen in stars.\n\nHelium is named for the Greek god of the Sun, Helios. It was first detected as an unknown yellow spectral line signature in sunlight during a solar eclipse in 1868 by French astronomer Jules Janssen. Janssen is jointly credited with detecting the element along with Norman Lockyer. Jannsen observed during the solar eclipse of 1868 while Lockyer observed from Britain. Lockyer was the first to propose that the line was due to a new element, which he named. The formal discovery of the element was made in 1895 by two Swedish chemists, Per Teodor Cleve and Nils Abraham Langlet, who found helium emanating from the uranium ore cleveite. In 1903, large reserves of helium were found in natural gas fields in parts of the United States, which is by far the largest supplier of the gas today.\n\nLiquid helium is used in cryogenics (its largest single use, absorbing about a quarter of production), particularly in the cooling of superconducting magnets, with the main commercial application being in MRI scanners. Helium's other industrial uses\u2014as a pressurizing and purge gas, as a protective atmosphere for arc welding and in processes such as growing crystals to make silicon wafers\u2014account for half of the gas produced. A well-known but minor use is as a lifting gas in balloons and airships. As with any gas whose density differs from that of air, inhaling a small volume of helium temporarily changes the timbre and quality of the human voice. In scientific research, the behavior of the two fluid phases of helium-4 (helium I and helium II) is important to researchers studying quantum mechanics (in particular the property of superfluidity) and to those looking at the phenomena, such as superconductivity, produced in matter near absolute zero.\n\nOn Earth it is relatively rare \u2014 5.2 ppm by volume in the atmosphere. Most terrestrial helium present today is created by the natural radioactive decay of heavy radioactive elements (thorium and uranium, although there are other examples), as the alpha particles emitted by such decays consist of helium-4 nuclei. This radiogenic helium is trapped with natural gas in concentrations up to 7% by volume, from which it is extracted commercially by a low-temperature separation process called fractional distillation. Helium is a finite resource, and once released into the atmosphere, it readily escapes into space.", 
+                    "discoverer": "Janssen", 
+                    "electron_configuration": "1s2", 
+                    "electronegativity": null, 
+                    "element": "Helium", 
+                    "first_ionization_potential": 24.5874, 
+                    "group_number": 7, 
+                    "ionic_radius": null, 
+                    "isotopes": 5, 
+                    "melting_point_k": null, 
+                    "most_stable_crystal": null, 
+                    "period_number": 1, 
+                    "phase": "gas", 
+                    "specific_heat_capacity": 5.193, 
+                    "symbol": "He", 
+                    "type": "Noble Gas", 
+                    "year_of_discovery": 1868
+                }
+        }   
 
-## Element [/element/{element_id}]
+## Element [/api/element/{atomic_number}]
 A single element with all of its details
 
 + Parameters
-    + element_id (required, int, `11`) ... Numeric `id` of the element representing atomic number. Has example value.
+    + atomic_number (required, int, `11`) ... Numeric `id` of the element representing atomic number. Has example value.
     
 ### Retrieve an Element [GET]
 + Response 200 (application/json)
@@ -42,13 +73,28 @@ A single element with all of its details
     + Body
 
             {
-                "id": 2, 
-                "symbol": "He",
-                "name": "Helium",
-                "atomic_mass": 4.003,
-                "history": "was discovered in 1867"
-                "group_id": 18,
-                "period_id": 1          
+                "atomic_number": 1, 
+                "atomic_radius": 0.79, 
+                "boiling_point_k": 20.28, 
+                "column_number": 1, 
+                "density": 8.988e-05, 
+                "description": "Hydrogen is a chemical element with chemical symbol H and atomic number 1. With an atomic weight of 1.00794 u, hydrogen is the lightest element on the periodic table. Its monatomic form (H) is the most abundant chemical substance in the universe, constituting roughly 75% of all baryonic mass.[note 1] Non-remnant stars are mainly composed of hydrogen in its plasma state. The most common isotope of hydrogen, termed protium (name rarely used, symbol 1H), has a single proton and zero neutrons.\n\nThe universal emergence of atomic hydrogen first occurred during the recombination epoch. At standard temperature and pressure, hydrogen is a colorless, odorless, tasteless, non-toxic, nonmetallic, highly combustible diatomic gas with the molecular formula H2. Since hydrogen readily forms covalent compounds with most non-metallic elements, most of the hydrogen on Earth exists in molecular forms such as in the form of water or organic compounds. Hydrogen plays a particularly important role in acid\u2013base reactions as many acid-base reactions involve the exchange of protons between soluble molecules. In ionic compounds, hydrogen can take the form of a negative charge (i.e., anion) known as a hydride, or as a positively charged (i.e., cation) species denoted by the symbol H+. The hydrogen cation is written as though composed of a bare proton, but in reality, hydrogen cations in ionic compounds are always more complex species than that would suggest. As the only neutral atom for which the Schr\u00f6dinger equation can be solved analytically, study of the energetics and bonding of the hydrogen atom has played a key role in the development of quantum mechanics.\n\nHydrogen gas was first artificially produced in the early 16th century, via the mixing of metals with acids. In 1766\u201381, Henry Cavendish was the first to recognize that hydrogen gas was a discrete substance, and that it produces water when burned, a property which later gave it its name: in Greek, hydrogen means \"water-former\".\n\nIndustrial production is mainly from the steam reforming of natural gas, and less often from more energy-intensive hydrogen production methods like the electrolysis of water. Most hydrogen is employed near its production site, with the two largest uses being fossil fuel processing (e.g., hydrocracking) and ammonia production, mostly for the fertilizer market.\n\nHydrogen is a concern in metallurgy as it can embrittle many metals, complicating the design of pipelines and storage tanks.", 
+                "discoverer": "Cavendish", 
+                "electron_configuration": "1s1", 
+                "electronegativity": 2.2, 
+                "element": "Hydrogen", 
+                "first_ionization_potential": 13.5984, 
+                "group_number": 5, 
+                "ionic_radius": 0.012, 
+                "isotopes": 3, 
+                "melting_point_k": 14.175, 
+                "most_stable_crystal": null, 
+                "period_number": 1, 
+                "phase": "gas", 
+                "specific_heat_capacity": 14.304, 
+                "symbol": "H", 
+                "type": "Nonmetal", 
+                "year_of_discovery": 1766
             }
 
 + Response 404 (application/json)
@@ -58,41 +104,35 @@ A single element with all of its details
     + Body
     
             {
-                "error": "the element does not exist"
+                error": "Not found"
             }
 
 
 # Group Groups
-## Groups Collection [/group]
+## Groups Collection [/api/group]
 ### List all Groups [GET]
 + Response 200 (application/json)
 
-        [{
-            "group_id": 1,
-            "name": "Alkali Metals",
-            "information": "The alkali metals, found in group 1 of the periodic table (formerly known as group IA), are very reactive metals that do not occur freely in nature. These metals have only one electron in their outer shell. Therefore, they are ready to lose that one electron in ionic bonding with other elements. As with all metals, the alkali metals are malleable, ductile, and are good conductors of heat and electricity. The alkali metals are softer than most other metals. Cesium and francium are the most reactive elements in this group. Alkali metals can explode if they are exposed to water.",
-            "properties" : "Lower densities than other metals, One loosely bound valence electron,
-                            Largest atomic radii in their periods, Low ionization energies,Low electronegativities,
-                            Highly reactive"
-        },
         {
-            "group_id": 3,
-            "name": "N/A",
-            "information": "Group 3 is a group of elements in the periodic table. This group, like other d-block groups, 
-                            should contain four elements, but it is not agreed what elements belong in the group. 
-                            Scandium (Sc) and yttrium  are always included, but the other two spaces are usually occupied by lanthanum (La) and actinium (Ac), 
-                            or by lutetium (Lu) and lawrencium (Lr); less frequently, it is considered the group should be expanded to 32 elements 
-                            (with all the lanthanides and actinides included) or contracted to contain only scandium and yttrium. 
-                            The group itself has not acquired a trivial name; however, scandium, yttrium and the lanthanides are sometimes called rare earth metals",
-            "properties": "They are usually oxidized to the +3 oxidation state, even through scandium, yttrium and lanthanum can form lower oxidation states. 
-                            The reactivity of the elements, especially yttrium, is not always obvious due to the formation of a stable oxide layer, 
-                            which prevents further reactions. Scandium(III) oxide, yttrium(III) oxide, lanthanum(III) oxide and lutetium(III) oxide are white high-temperature-melting solids. 
-                            Yttrium(III) oxide and lutetium(III) oxide exhibit weak basic character, but scandium(III) oxide is amphoteric.[35] Lanthanum(III) oxide is strongly basic"
-        }]
+            "1": {
+                    "applications": "Most alkali metals have many different applications. Two of the most well-known applications of the pure elements are rubidium and caesium atomic clocks, of which caesium atomic clocks are the most accurate and precise representation of time. A common application of the compounds of sodium is the sodium-vapour lamp, which emits very efficient light. Table salt, or sodium chloride, has been used since antiquity. Sodium and potassium are also essential elements, having major biological roles as electrolytes, and although the other alkali metals are not essential, they also have various effects on the body, both beneficial and harmful.", 
+                    "description": "The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this electron configuration results in their characteristic properties. The alkali metals provide the best example of group trends in properties in the periodic table, with elements exhibiting well-characterized homologous behaviour.", 
+                    "group_number": 1, 
+                    "name": "Alkali Metals", 
+                    "properties": "The alkali metals have very similar properties: they are all shiny, soft, highly reactive metals at standard temperature and pressure and readily lose their outermost electron to form cations with charge +1. They can all be cut easily with a knife due to their softness, exposing a shiny surface that tarnishes rapidly in air due to oxidation by atmospheric moisture and oxygen. Because of their high reactivity, they must be stored under oil to prevent reaction with air, and are found naturally only in salts and never as the free element. In the modern IUPAC nomenclature, the alkali metals comprise the group 1 elements, excluding hydrogen (H), which is nominally a group 1 element but not normally considered to be an alkali metal as it rarely exhibits behaviour comparable to that of the alkali metals. All the alkali metals react with water, with the heavier alkali metals reacting more vigorously than the lighter ones."
+                }, 
+            "2": {
+                    "applications": "Beryllium is used mostly for military applications, but there are other uses of beryllium, as well. In electronics, beryllium is used as a p-type dopant in some semiconductors, and beryllium oxide is used as a high-strength electrical insulator and heat conductor. Due to its light weight and other properties, beryllium is also used in mechanics when stiffness, light weight, and dimensional stability are required at wide temperature ranges.\n\t\t\t\n\t\t\tMagnesium has many different uses. One of its most common uses was in industry, where it has many structural advantages over other materials such as aluminium, although this usage has fallen out of favor recently due to magnesiums flammability. Magnesium is also often alloyed with aluminium or zinc to form materials with more desirable properties than any pure metal. Magnesium has many other uses in industrial applications, such as having a role in the production of iron and steel, and the production of titanium.\n\t\t\t\n\t\t\tCalcium also has many uses. One of its uses is as a reducing agent in the separation of other metals from ore, such as uranium. It is also used in the production of the alloys of many metals, such as aluminium and copper alloys, and is also used to deoxidize alloys as well. Calcium also has a role in the making of cheese, mortars, and cement.\n\n\t\t\tStrontium and barium do not have as many applications as the lighter alkaline earth metals, but still have uses. Strontium carbonate is often used in the manufacturing of red fireworks, and pure strontium is used in the study of neurotransmitter release in neurons. Barium has some use in vacuum tubes to remove gases, and barium sulfate has many uses in the petroleum industry, as well as other industries.\n\n\t\t\tDue to its radioactivity, radium no longer has many applications, but it used to have many. Radium used to be used often in luminous paints, although this use was stopped after workers got sick. As people used to think that radioactivity was a good thing, radium used to be added to drinking water, toothpaste, and many other products, although they are also not used anymore due to their health effects. Radium is no longer even used for its radioactive properties, as there are more powerful and safer emitters than radium.", 
+                    "description": "The alkaline earth metals are a group of chemical elements in the periodic table with very similar properties. They are all shiny, silvery-white, somewhat reactive metals at standard temperature and pressure and readily lose their two outermost electrons to form cations with charge 2+ and an oxidation state, or oxidation number of +2. In the modern IUPAC nomenclature, the alkaline earth metals comprise the group 2 elements.", 
+                    "group_number": 2, 
+                    "name": "Alkaline Earth Metals", 
+                    "properties": "The alkaline earth metals are all silver-colored and soft, and have relatively low densities, melting points, and boiling points. In chemical terms, all of the alkaline metals react with the halogens to form the alkaline earth metal halides, all of which being ionic crystalline compounds (except for beryllium chloride, which is covalent). All the alkaline earth metals except beryllium also react with water to form strongly alkaline hydroxides and, thus, should be handled with great care. The heavier alkaline earth metals react more vigorously than the lighter ones. The alkaline metals have the second-lowest first ionization energies in their respective periods of the periodic table because of their somewhat low effective nuclear charges and the ability to attain a full outer shell configuration by losing just two electrons. The second ionization energy of all of the alkaline metals is also somewhat low."
+                }
+        }
         
         
         
-## Group [/group/{group_id}]
+## Group [/api/group/{group_id}]
 A single group with all of its details
 
 + Parameters
@@ -106,12 +146,11 @@ A single group with all of its details
     + Body
 
             {
-                "group_id": 1,
-                "name": "Alkali Metals",
-                "information": "The alkali metals, found in group 1 of the periodic table (formerly known as group IA), are very reactive metals that do not occur freely in nature. These metals have only one electron in their outer shell. Therefore, they are ready to lose that one electron in ionic bonding with other elements. As with all metals, the alkali metals are malleable, ductile, and are good conductors of heat and electricity. The alkali metals are softer than most other metals. Cesium and francium are the most reactive elements in this group. Alkali metals can explode if they are exposed to water.",
-                "properties" : "Lower densities than other metals, One loosely bound valence electron,
-                                Largest atomic radii in their periods, Low ionization energies,Low electronegativities,
-                                Highly reactive"       
+                "applications": "Most alkali metals have many different applications. Two of the most well-known applications of the pure elements are rubidium and caesium atomic clocks, of which caesium atomic clocks are the most accurate and precise representation of time. A common application of the compounds of sodium is the sodium-vapour lamp, which emits very efficient light. Table salt, or sodium chloride, has been used since antiquity. Sodium and potassium are also essential elements, having major biological roles as electrolytes, and although the other alkali metals are not essential, they also have various effects on the body, both beneficial and harmful.", 
+                "description": "The alkali metals are a group (column) in the periodic table consisting of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). This group lies in the s-block of the periodic table as all alkali metals have their outermost electron in an s-orbital: this electron configuration results in their characteristic properties. The alkali metals provide the best example of group trends in properties in the periodic table, with elements exhibiting well-characterized homologous behaviour.", 
+                "group_number": 1, 
+                "name": "Alkali Metals", 
+                "properties": "The alkali metals have very similar properties: they are all shiny, soft, highly reactive metals at standard temperature and pressure and readily lose their outermost electron to form cations with charge +1. They can all be cut easily with a knife due to their softness, exposing a shiny surface that tarnishes rapidly in air due to oxidation by atmospheric moisture and oxygen. Because of their high reactivity, they must be stored under oil to prevent reaction with air, and are found naturally only in salts and never as the free element. In the modern IUPAC nomenclature, the alkali metals comprise the group 1 elements, excluding hydrogen (H), which is nominally a group 1 element but not normally considered to be an alkali metal as it rarely exhibits behaviour comparable to that of the alkali metals. All the alkali metals react with water, with the heavier alkali metals reacting more vigorously than the lighter ones."
             }
             
 + Response 404 (application/json)
@@ -121,13 +160,13 @@ A single group with all of its details
     + Body
     
             {
-                "error": "the group does not exist"
+                "error": "Not Found"
             }
         
         
             
 # Group Period
-## Periods Collection [/period]
+## Periods Collection [/api/period]
 ### List all periods [GET]
 + Response 200 (application/json)
 
@@ -135,37 +174,20 @@ A single group with all of its details
     
     + Body
     
-            [{
-               "period_id": 2,
-               "description": "The period 2 elements are the chemical elements in the second row (or period) of the periodic table. 
-                                Period 2 elements obey the octet rule in that they need eight electrons to complete their valence shell. 
-                                The maximum number of electrons that these elements can accommodate is ten, two in the 1s orbital, two in the 2s orbital and six in the 2p orbital. 
-                                All of the elements in the period can form diatomic molecules except beryllium and neon.",
-                "properties": "[1]Period 2 is the first period in the periodic table that periodic trends can be drawn from. 
-                                Period 1, which only contains two elements (hydrogen and helium) is too small to draw any conclusive trends from it, 
-                                especially because the two elements behave nothing like other s-block elements.
-                                [2]Period 2 has much more conclusive trends. For all elements in period 2, as the atomic number increases, the atomic radius of the elements decreases, 
-                                the electronegativity increases, and the ionization energy increases.Period 2 only has two metals (lithium and beryllium), 
-                                making it the least metallic period (period 1 has no metals, but as mentioned above, only has two elements, 
-                                so it would be impossible to have more metals) and the most nonmetals, with four. 
-                                The elements in period 2 often have the most extreme properties in their respective groups; for example, 
-                                fluorine is the most reactive halogen, neon is the most inert noble gas, and lithium is the least reactive alkali metal.
-                                [4]All period 2 elements completely obey the Madelung rule; in period 2s, lithium and beryllium fill the 2s subshell, and boron, carbon, nitrogen, oxygen, fluorine, and neon fill the 2p subshell. The period shares this trait with periods 1 and 3, none of which contain transition elements or inner transition elements, which often vary from the rule.[4]"
-            },
             {
-                "period_id": 3,
-                "description":" All period three elements occur in nature and have at least one stable isotope. 
-                                All but the noble gas argon are essential to basic geology and biology.", 
-                "properties": " The third period contains eight elements: sodium, magnesium, aluminium, silicon, phosphorus, sulfur, chlorine, and argon. 
-                                The first two, sodium and magnesium, are members of the s-block of the periodic table, while the others are members of the p-block. 
-                                Note that there is a 3d orbital, but it is not filled until Period 4, such giving the period table its characteristic shape of "two rows at a time". 
-                                All of the period 3 elements occur in nature and have at least one stable isotope"
-            }]
+                "1": {
+                        "description": "The first period contains fewer elements than any other, with only two, hydrogen and helium. They therefore do not follow the octet rule. Chemically, helium behaves as a noble gas, and thus is taken to be part of the group 18 elements. However, in terms of its nuclear structure it belongs to the s block, and is therefore sometimes classified as a group 2 element, or simultaneously both 2 and 18. Hydrogen readily loses and gains an electron, and so behaves chemically as both a group 1 and a group 17 element.", 
+                        "period_number": 1
+                    }, 
+                "2": {
+                        "description": "Period 2 elements involve the 2s and 2p orbitals. They include the biologically most essential elements besides hydrogen: carbon, nitrogen, and oxygen.", 
+                        "period_number": 2
+            }
             
             
 
 
-## Period [/period/{period_id}]
+## Period [/api/period/{period_id}]
 A single period and all of ots details
 
 + Parameters
@@ -179,11 +201,10 @@ A single period and all of ots details
     + Body
     
             {
-                "group_id": 2,
-                "description": ""
-                "properties":
+                "description": "The first period contains fewer elements than any other, with only two, hydrogen and helium. They therefore do not follow the octet rule. Chemically, helium behaves as a noble gas, and thus is taken to be part of the group 18 elements. However, in terms of its nuclear structure it belongs to the s block, and is therefore sometimes classified as a group 2 element, or simultaneously both 2 and 18. Hydrogen readily loses and gains an electron, and so behaves chemically as both a group 1 and a group 17 element.", 
+                "period_number": 1
             }
-
+    
 + Response 404 (application/json)
 
     + Header
@@ -191,13 +212,13 @@ A single period and all of ots details
     + Body
     
             {
-                "error": "period does not exist "
+                "error": "Not Found"
             }
 
 
 
 # Group Trivia
-## Trivia Collection [/trivia]
+## Trivia Collection [/api/trivia]
 ### List all trivias [GET]
 + Response 200 (application/json)
 
@@ -205,31 +226,27 @@ A single period and all of ots details
     
     + Body
     
-            [{
-                "trivia_id": 1,
-                "title": "Francium-223, the only naturally occurring isotope of francium.",
-                "description": "Francium-223 is the product of the alpha decay of actinium-227 and can be found in trace amounts in uranium and thorium minerals. 
-                                In a given sample of uranium, there is estimated to be only one francium atom for every 1018 uranium atoms. 
-                                It has been calculated that there is at most 30 g of francium in the earth's crust at any time, due to its extremely short half-life of 22 minutes.",
-                "element_id": 87,
-                "period_id": 7,
-                "group_id": 1
-            },
             {
-                "trivia_id": 2,
-                "title":"Pure potassium was first isolated in 1807 in England by Sir Humphry Davy.",
-                "description": "Sir Humphry Davy derived it from caustic potash (KOH, potassium hydroxide) by the use of electrolysis of the molten salt with the newly invented voltaic pile. 
-                                Previous attempts at electrolysis of the aqueous salt were unsuccessful due to potassium's extreme reactivity",
-                "element_id": 19,
-                "period_id": 4,
-                "group_id": 1
+                "1824": {
+                            "description": "Hydrogen was liquefied for the first time by James Dewar in 1898 by using regenerative cooling and his invention, the vacuum flask. He produced solid hydrogen the next year. Deuterium was discovered in December 1931 by Harold Urey, and tritium was prepared in 1934 by Ernest Rutherford, Mark Oliphant, and Paul Harteck. Heavy water, which consists of deuterium in the place of regular hydrogen, was discovered by Urey's group in 1932. Fran\u00e7ois Isaac de Rivaz built the first de Rivaz engine, an internal combustion engine powered by a mixture of hydrogen and oxygen in 1806. Edward Daniel Clarke invented the hydrogen gas blowpipe in 1819. The D\u00f6bereiner's lamp and limelight were invented in 1823.", 
+                            "element_number": 1, 
+                            "group_number": null, 
+                            "id": 1824, 
+                            "period_number": null
+                        }, 
+                "1825": {
+                            "description": "The first hydrogen-filled balloon was invented by Jacques Charles in 1783. Hydrogen provided the lift for the first reliable form of air-travel following the 1852 invention of the first hydrogen-lifted airship by Henri Giffard. German count Ferdinand von Zeppelin promoted the idea of rigid airships lifted by hydrogen that later were called Zeppelins; the first of which had its maiden flight in 1900. Regularly scheduled flights started in 1910 and by the outbreak of World War I in August 1914, they had carried 35,000 passengers without a serious incident. Hydrogen-lifted airships were used as observation platforms and bombers during the war.", 
+                            "element_number": 1, 
+                            "group_number": null, 
+                            "id": 1825, 
+                            "period_number": null
+                        }
             }
-            ]
             
 
 
-## Trivia [/trivia/{trivia_id}]
-A single period and all of ots details
+## Trivia [/api/trivia/{trivia_id}]
+A single period and all of its details
 
 + Parameters
     + trivia_id (required, int, `1`) ... Numeric `id` of the trivia representing trivia number. Has example value.
@@ -242,14 +259,11 @@ A single period and all of ots details
     + Body
     
             {
-                "trivia_id": 1,
-                "title": "Francium-223, the only naturally occurring isotope of francium.",
-                "description": "Francium-223 is the product of the alpha decay of actinium-227 and can be found in trace amounts in uranium and thorium minerals. 
-                                In a given sample of uranium, there is estimated to be only one francium atom for every 1018 uranium atoms. 
-                                It has been calculated that there is at most 30 g of francium in the earth's crust at any time, due to its extremely short half-life of 22 minutes.",
-                "element_id": 87,
-                "period_id": 7,
-                "group_id": 1
+                "description": "The first evidence of helium was observed on August 18, 1868 as a bright yellow line with a wavelength of 587.49 nanometers in the spectrum of the chromosphere of the Sun. The line was detected by French astronomer Jules Janssen during a total solar eclipse in Guntur, India. This line was initially assumed to be sodium. On October 20 of the same year, English astronomer Norman Lockyer observed a yellow line in the solar spectrum, which he named the D3 Fraunhofer line because it was near the known D1 and D2 lines of sodium. He concluded that it was caused by an element in the Sun unknown on Earth. Lockyer and English chemist Edward Frankland named the element with the Greek word for the Sun, \u1f25\u03bb\u03b9\u03bf\u03c2 (helios).", 
+                "element_number": 2, 
+                "group_number": null, 
+                "id": 1826, 
+                "period_number": null
             }
 
 + Response 404 (application/json)
@@ -259,5 +273,5 @@ A single period and all of ots details
     + Body
     
             {
-                "error": "trivia does not exist "
+                "error": "Not Found"
             }
