@@ -17,7 +17,7 @@ by
     Tehreem Syed
 
 ## Project site: 
-http://104.239.138.103/
+http://theperiodictableproject.me/
 
 The periodic table of Elements is an intricate part of teaching Chemistry at the High school and collegiate level. This can be a daunting task as the periodic table of elements contains a wealth of information for each element, often too much to be properly conveyed through paper medium. While there are several web accessible versions of the periodic table of elements, our website seeks to present this wealth of information in a well organized format that would encourage our websites use in the educational setting, especially at the formative ages when scientific education is the sparsest.
 
@@ -45,10 +45,10 @@ tests: /tests.py
 output of tests: /tests.out
 
 
-views: /views.py
+views: /app/views.py
 
 
-models: /models.py
+models: /app/models.py
 
 
 
