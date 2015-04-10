@@ -124,7 +124,7 @@ def handle_individual_trivia(name):
 
 @app.route('/about')
 def about():
-    return render_template('Groups.html')
+    return render_template('about.html')
 
 
 @app.route('/group/<name>')
@@ -144,7 +144,7 @@ def element(atomic_number_str=None):
     images = list(Image.query.filter_by(element_number=atomic_number).all())
     trivias = list(Trivia.query.filter_by(element_number=atomic_number).all())
     default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
-    return render_template('element.html', element=e, images=images, default_image=default_image, trivias=trivias)
+    return render_template('elementLayout.html', element=e, images=images, default_image=default_image, trivias=trivias)
 
 @app.route('/period/<name>')
 def period(name=None):
