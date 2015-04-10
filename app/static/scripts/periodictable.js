@@ -37,19 +37,28 @@ for(var i=0; i< l2.length; i++){
     var element = l2[i];
     if (element.className == 'empty'){
         continue;
-    } else {
+    }
+
+    else {
         element.onclick = onClick(element);
     }
 }
+
 
 function onClick(element){
     return function () {
         var substring = element.innerHTML.split('<span>');
         var elementName = substring[1];
-        var eleem
         elementName = elementName.replace("</span>", "").toLowerCase();
 
-    window.open("element/"+ element.getAttribute("data-pos"), "_self");
+        var dataPosition = element.getAttribute("data-pos");
+        if(dataPosition == '57-71')
+             window.open("group/8", "_self");
+        else if(dataPosition == '89-103')
+            window.open("group/9","_self");
+        else
+            window.open("element/"+ dataPosition, "_self");
     }
+
 
 }
