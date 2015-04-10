@@ -1,3 +1,1448 @@
+commit 6a527b22bbdd837803bf2da11c577a4f1dc07b29
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:35:41 2015 -0500
+
+    Delete element_group_mapper.py
+
+commit 4b5c6e6fdc27ce83ea02815b745a2e0f773cbf4d
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:35:29 2015 -0500
+
+    Delete create_groups
+
+commit 9906a8a218a94d0cd0d44c5d2c77d75d25ac74b3
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:35:16 2015 -0500
+
+    Delete add_picture_data.py
+
+commit cec5b6266defd1d27cd2b59927e47c5e1f170233
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:35:03 2015 -0500
+
+    Delete add_element_data.py
+
+commit 4c854a7ca7afffafa8b160e11e48481965d68e14
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:34:25 2015 -0500
+
+    Delete Create_elements.sql
+
+commit 2fa635a0253e7c2a8d7e20bbca7f2af9761d4a6c
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:33:04 2015 -0500
+
+    changed directory structure
+
+commit 311c334bc264fc809e87e30b4065c66c0e99aba5
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:28:59 2015 -0500
+
+    Delete models.pyc
+
+commit d45b49305d00c5b0b6516c067309eef5b023f072
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:28:49 2015 -0500
+
+    Delete models.py
+
+commit 68c60953335906a70258742d300021f2b1ec7c5f
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 20:28:46 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit aa2756613d12cb9edbc34b42f67ad0c42fbf9212
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:27:37 2015 -0500
+
+    Delete out.txt
+
+commit 0d4c1ec37c1ae31a8db6bb47eb903c88478e4c17
+Author: Jose Bigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 20:27:21 2015 -0500
+
+    Delete output.txt
+
+commit 9fd67045bb79e15aa4a32e14880bf78e131bca3c
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 20:25:31 2015 -0500
+
+    Update README.md
+
+commit 9c696f6352164b6d00fbf44a8fdf1b69e58e30ec
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 20:24:39 2015 -0500
+
+    Update README.md
+
+commit ce6aa0aa64537a451d2bd05817389fedcc4bdab2
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 20:24:20 2015 -0500
+
+    Update README.md
+
+commit 5e9d8ad400c1c93b43f95fa63bf8882d940cf355
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 20:23:42 2015 -0500
+
+    Update README.md
+
+commit b0fa37e333df4a3422945ffa1133f883a96b09ea
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 19:52:52 2015 -0500
+
+    updated models.html
+
+commit b0ed7c86470c4697bfebe682ab618379f4e48dbc
+Merge: b5b9f04 1cfe374
+Author: tfsyed <tehreemsyed@wireless-10-147-223-148.public.utexas.edu>
+Date:   Thu Apr 9 19:24:32 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit b5b9f04fa79c225c81885dfc1101327dd323d65d
+Author: tfsyed <tehreemsyed@wireless-10-147-223-148.public.utexas.edu>
+Date:   Thu Apr 9 19:24:28 2015 -0500
+
+    Fixed Actinides and Lanthenides to respective group pages
+
+commit 1cfe37464625dd2aa74d1c18d76c661fc9d4f094
+Author: Aizhuldyz Gabbassova <aigabbass90@gmail.com>
+Date:   Thu Apr 9 19:18:56 2015 -0500
+
+    update about page
+
+commit 8d5757d212628db8d1c19241a7c60fe639df18de
+Merge: af02a4e bbb31a3
+Author: tfsyed <tehreemsyed@wireless-10-147-223-148.public.utexas.edu>
+Date:   Thu Apr 9 19:09:38 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit bbb31a37cc9618437c855939ed092fde1e5565ae
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 18:39:42 2015 -0500
+
+    removed trivia from group pages
+
+commit a2814943267cbd1efa790fdf022ed092b5cad0a7
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 18:35:10 2015 -0500
+
+    cleaned up templates a bit
+
+commit a79c9c74299b5d794f63556597bc4e44782ef348
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 18:23:07 2015 -0500
+
+    rename properties to property
+
+commit 663432621c2c63bee0f99cbc4dff0d77ba9e6a59
+Merge: 91dd579 acdf3ce
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 18:17:32 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 91dd579459483349a031cc9ff73ded5e32005b2b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 18:17:22 2015 -0500
+
+    added group property images
+
+commit acdf3ce69d98b0e5cfdff3635845b465c0e70feb
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 18:15:47 2015 -0500
+
+    Update tests.py
+
+commit fb54bab20936c8daa9b216edb2e555841bd57ea1
+Merge: 47fad57 a93fd57
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 16:13:57 2015 -0700
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 47fad57a98a836a434bd7e30ead2f14d700cb9ef
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 16:13:43 2015 -0700
+
+    Added UML Diagrams
+
+commit a93fd57dfa6fbbb3bdfc66af8195f03307b5066a
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 18:13:20 2015 -0500
+
+    Update tests.py
+
+commit af02a4e5fd2fa9c7fa3603fd688f264320f853bf
+Author: tfsyed <tehreemsyed@wireless-10-147-223-148.public.utexas.edu>
+Date:   Thu Apr 9 18:00:25 2015 -0500
+
+    Side column of periodic table not cutting off
+
+commit ccb62a57c6ce06c11f93ce3e885e31633dd5e8c3
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 17:01:27 2015 -0500
+
+    Update tests.py
+
+commit 80c42d6da040f719c5bac05924e2d2a5c7a811d7
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 17:00:32 2015 -0500
+
+    Update tests.py
+
+commit d39c9bc061caac5f6cf8d1f0cf6463de2bc12e2a
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 16:57:36 2015 -0500
+
+    Update tests.py
+
+commit b0d2fa744d0d80b3b8f057040c36d9a87b69a8fa
+Merge: ca6986a 6381ed4
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 16:52:06 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit ca6986afb19349a9e8c3789215f18cf02c9ea126
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 16:52:03 2015 -0500
+
+    added properties images
+
+commit 6381ed4de6d401f63c3c6c58b074c84670e74d21
+Author: Aizhuldyz Gabbassova <aigabbass90@gmail.com>
+Date:   Thu Apr 9 16:48:32 2015 -0500
+
+    unit tests trivia added
+
+commit bea5a5329141e2b849d0926bacdc3c2de4936900
+Author: Aizhuldyz Gabbassova <aigabbass90@gmail.com>
+Date:   Thu Apr 9 16:38:01 2015 -0500
+
+    unit tests done
+
+commit ed1d9f56f2489dd54f4ecacc78014a5c9144634d
+Merge: f428290 262a81b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 16:12:27 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit f4282903716ab4b34cf0dd1dc1506aa3a1b307ab
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 16:12:14 2015 -0500
+
+    using jsonify now
+
+commit 262a81b512b54e80339e2803f49d425e4149a0d4
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 16:12:08 2015 -0500
+
+    Update tests.py
+
+commit 032dc2ddad465341334b47c7aff9a5713c94a1e4
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 16:09:31 2015 -0500
+
+    Update tests.py
+
+commit 52cb0f9dc94721e4ad60dcd6a4cb898b3c4ef7c4
+Merge: 2d03940 45bfc1b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 16:08:42 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 2d039402f59489491679af6fe1ba6b0c02d25bc7
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 16:08:31 2015 -0500
+
+    using jsonify
+
+commit 45bfc1b27a7004948e9f9c7133dbb435cd1c9a2c
+Merge: 26f138f ab7febe
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 21:03:14 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 26f138f9df6de329b0739d6865e37250d4bbf2e0
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 21:03:02 2015 +0000
+
+    Fixed group unit tests
+
+commit ab7febe61d4a1510f0f4795ec2298aed734a85e1
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 15:59:41 2015 -0500
+
+    Update tests.py
+
+commit 058bdb8995c600ed6763333e45dcff28ac397472
+Merge: c6bf05b dd57245
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 15:55:38 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit c6bf05bf91a143cca59829ed4b461604862d8825
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 15:55:04 2015 -0500
+
+    changed periodic table css a bit
+
+commit dd57245f63f52fe3d5a70953640aa7a1485388ac
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 15:54:55 2015 -0500
+
+    Update tests.py
+
+commit 3c301c1643b730b4cf4c359709a6487549dc2968
+Merge: 6615ebc d252710
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 13:53:35 2015 -0700
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 6615ebc631595d8e794e8bddd2b555f4a0a059a2
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 13:53:30 2015 -0700
+
+    Changed tabs to spaces
+
+commit d25271008becaeacb6bc65cc4806fab088919ba9
+Merge: 61c0922 3c5f086
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 15:50:20 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 61c0922b5d5dc77a4e822bbce70058e4a9895f9e
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 15:50:07 2015 -0500
+
+    fixed whitespace issue
+
+commit 3c5f08655ecc77632efb1877cf722ef45cf60392
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 15:49:41 2015 -0500
+
+    Update tests.py
+
+commit 4b0cedd0fc5b5311f24aa79e3c735f1aebb3c82f
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 13:48:35 2015 -0700
+
+    Changed tabs to spaces
+
+commit 600a0c30c968885e5e3f67d00aaaa45214c0590e
+Merge: 804d644 98ff0f8
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 13:45:33 2015 -0700
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 804d644094b3f05f38b02c1ab660461ba893e5aa
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Thu Apr 9 13:45:16 2015 -0700
+
+    Added group unit tests
+
+commit 98ff0f89328679952ad665fd7733eba2424433b5
+Merge: 16613ab 8538dcf
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 15:15:48 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 16613ab52138b699872c7f245e0a787ec4333dc1
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 15:15:43 2015 -0500
+
+    updated home page to include halogens group
+
+commit 8538dcf886be5906f337d2d2ccb4b911be7e32ec
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Thu Apr 9 15:06:29 2015 -0500
+
+    Update Groups.html
+
+commit f05a6b9ae7b8be008b1c2e41c718b7944a620c8b
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 14:15:22 2015 -0500
+
+    Corrected some group images
+
+commit 1c864d082beeaee0ef1000dc75f414ae18989093
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 14:09:06 2015 -0500
+
+    Updated group layout, group images
+
+commit dc8388d1788ce6203e1139d638dcaa3bf79ccbd1
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 13:26:29 2015 -0500
+
+    reformatting how group images are done
+
+commit c910f57c16a520fd023780e59873486229ced2f6
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 13:14:43 2015 -0500
+
+    added links to group pages from index
+
+commit d5d01ae6b5aec48b379149c6f2acab10f4b9d48a
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 13:09:36 2015 -0500
+
+    revised group layout, should work properly
+
+commit af59a8a7814f01b4b41dd9413db9e3bd23cc6aa8
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 12:56:49 2015 -0500
+
+    added fixes to group mapper script
+
+commit 1a7ae6048ec1c220d793e84f817e7bd68eaeee8a
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 12:40:15 2015 -0500
+
+    fix for group api
+
+commit b152bdb5c34519f14f89999221f4755f7074a626
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 12:38:46 2015 -0500
+
+    added column_number to elements model, revised api to return dicts
+
+commit 180d388d8566457b522f239ed0f3239cb8959ab7
+Merge: 2b5f809 119ba26
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Wed Apr 8 12:22:52 2015 -0700
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 119ba26a6f09748bbe04248ee1cdfd3cf30c27fd
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 02:00:41 2015 -0500
+
+    Further changes to groupLayout
+
+commit b8cd388839d0e535154dc52967e5a671ee2b81ff
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 01:51:52 2015 -0500
+
+    Guess what I'm still working on
+
+commit e0694f45cfb24dd62a0da820b2710c1890a61a60
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 01:45:23 2015 -0500
+
+    More group dynamic progress
+
+commit 52a0e50368ecd157d3eeb73dadb2d3a8e32e3f27
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 01:28:34 2015 -0500
+
+    More group dynamic work
+
+commit 99940b244333d79ae7b7cf1fcbae487ea49dfac3
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 01:21:53 2015 -0500
+
+    Further group dynamic progress
+
+commit affaa1536504c34c48dd1b3ef814f5789eb137b9
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 01:12:25 2015 -0500
+
+    Progress on dynamic group layout
+
+commit f9f84b26cc71f709c89b4955b6f0211a71061272
+Merge: 05d3125 6ca4554
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 00:56:47 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 05d312543526255a1a7d100b95a588048d85e8f6
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 00:54:04 2015 -0500
+
+    Images for super atomic elements
+
+commit 6ca455445e40bf82689190f6939ca02a328e8a03
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:47:49 2015 -0500
+
+    reverting element changes
+
+commit de20296fa350ac5b7958e70744d9399b06d1c3ae
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:45:44 2015 -0500
+
+    updated unit tests to reflect 404 error changes in api
+
+commit 15def163e19c6a244ec34238defb1e7ff42802fa
+Merge: b0055ab e907f63
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:44:37 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit b0055abfd81a5eff3613e24d837711fd2851b713
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:44:13 2015 -0500
+
+    testing new elements changes, error handling in views.py
+
+commit e907f632af6e3420ec2841b2ad27f962f86f9f71
+Merge: 3791997 2cdddde
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 00:25:46 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 37919975a6414141f86db5f1ad3a5395b1fb760c
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Apr 9 00:25:41 2015 -0500
+
+    Renamed homium image folder to holmium
+
+commit 2cdddde6a780900ad5388fe73259a59b52fb055f
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:06:35 2015 -0500
+
+    adding link to view images on element pages
+
+commit 7439f8455bf48489d26895ec9e409481e62a0984
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:03:56 2015 -0500
+
+    seeing if I can link images to elements
+
+commit 1f68913988a22ad6fad556dc6b80232a311e6166
+Merge: d02db7b 06cdcaa
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:48:57 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit d02db7b0a5c4fa81e3dfc0d6d37493c36005ed64
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:48:54 2015 -0500
+
+    added more api tests
+
+commit 06cdcaad472cac4c5883fe25c78a58d2d105ac16
+Merge: 876497e 34f582a
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Wed Apr 8 23:34:19 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 876497e9d526c4fd298ead129cfd6a8a6294faad
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Wed Apr 8 23:34:15 2015 -0500
+
+    Renamed molbdenum folder to molybdenum
+
+commit 34f582a74433c8c16dc4f0c7a14174a3984a3fc6
+Merge: eaef576 bc8ef33
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:31:42 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit eaef576fe4b41904c44470e18c87b233189c16c4
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:31:30 2015 -0500
+
+    new unit tests for api
+
+commit bc8ef330ef3e65ed6cd8894e326140d500824303
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Wed Apr 8 23:27:59 2015 -0500
+
+    Changed a couple period background images
+
+commit 21b41e41d72d0d3e77c4dedcbfdb19c6dc62a5e8
+Merge: ae301de 0d3d661
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:01:47 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit ae301de9184210d9834a6008ed821589b907415e
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:01:43 2015 -0500
+
+    minor change to api
+
+commit 0d3d6617ae21c890d063a035eaccf63878baee8c
+Merge: 669881f d347141
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Wed Apr 8 22:29:02 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 669881f08ca74cf14045e13679f1275a1cf62092
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Wed Apr 8 22:28:57 2015 -0500
+
+    Adding more images for period pages
+
+commit d3471410354b50df88f488d838ae2464a582f751
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 22:16:47 2015 -0500
+
+    for reals this time
+
+commit 68839639541dea8635181a317a9d8f93b3fdd163
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 22:15:19 2015 -0500
+
+    I hope this fixes it!
+
+commit 452cc5f16adfa6e86e8d77c003256bd68163b220
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 22:13:56 2015 -0500
+
+    added elements correctly to tests
+
+commit 327fda11d1b6633e30d59f7c2819b64f56ddc734
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 22:11:11 2015 -0500
+
+    added elements before making api call in unit tests
+
+commit 443855e2e3d17372a6531932c24cd3758bbb0ecf
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 22:04:28 2015 -0500
+
+    revised correct tests.py
+
+commit dd12346e82109a3f2eb7388db2d85d79a12681b7
+Merge: cb916ee a56f7de
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 21:51:59 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit cb916eed94b5bf495d61e019bbda8fa45e712bb4
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 21:51:46 2015 -0500
+
+    added new tests
+
+commit a56f7de96fdcb73db5f5eb6c024e9dc863cabad6
+Merge: 623ab9a d8da352
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 21:45:33 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 623ab9a3149db626e5c7443c1bc3ab571ccd713f
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 21:45:18 2015 -0500
+
+    quick error
+
+commit d8da3523bec264c2596566827204f1dbbc2535d7
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:44:16 2015 +0000
+
+    added the trivia api
+
+commit 1fcad6bf23822a7e9042aee560fc4a8ab803c175
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 21:37:34 2015 -0500
+
+    quick error
+
+commit ca7a4c2e9ba90bcc9a3ebe3b009f5b788fe170d8
+Merge: e942f84 1fcad6b
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:37:31 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 0febbf374d935ee9422f31c68cd3486d93f6953c
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 21:32:20 2015 -0500
+
+    quick error
+
+commit e942f84aa6482059a9eb23ebaab7f07103d6fc10
+Merge: 0b3bb2d 0febbf3
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:32:17 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 0b3bb2d72cfab749fbe210a90b313135f178bb77
+Merge: 58ea762 6935cab
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:30:20 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 58ea762854d50cddc056d1e55b520c20a9001513
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:30:03 2015 +0000
+
+    merging
+
+commit 6935cabacbde8f599c5232f73ccc545c6ac7d631
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 21:29:56 2015 -0500
+
+    quick error
+
+commit 166f14b981d53006b3b63188bd7976b8b0cb5b77
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 21:23:55 2015 -0500
+
+    hopefully finished all the api's
+
+commit e739d8956c9f86fc13006a07666ceb4c59d354ea
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:18:26 2015 +0000
+
+    fixed conflicts
+
+commit 4b6d3ffc644658657951edc64979ee1b37cdf806
+Merge: d23763a de6d5fc
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 02:14:14 2015 +0000
+
+    mergegit add .1
+
+commit d23763aa89a7d49d25e2823fd9f823c112d45255
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Thu Apr 9 01:57:11 2015 +0000
+
+    added more api calls
+
+commit de6d5fc08219649301220661a1727644425a626b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 20:55:58 2015 -0500
+
+    added api unit tests
+
+commit a147d8726365e02c0a4f41195f299c3c4e9cd5d2
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 20:13:55 2015 -0500
+
+    fixed nav-bar, removed elements dropdown
+
+commit 8b3bf6720e5a0c3dd4825def93237bd2eb05f7fe
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 20:11:04 2015 -0500
+
+    added methods to api
+
+commit 1489b4a6e2bbb6578947f8ec93d9eafce636504e
+Merge: 72772d3 20e612c
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:22:33 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 20e612c4511d42928989919bd49ebe719634746a
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 19:22:28 2015 -0500
+
+    doing it the silly way
+
+commit 72772d36c9433ad294a0a9c6c4d8cfea1e2a35af
+Merge: 51f15c5 e9c4872
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:15:56 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit e9c48724c5675f4d08d08dd6d15ff18651e9d3ce
+Merge: fe1dca8 edd1104
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 19:15:43 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit fe1dca81a003b438d0fb02955a2a84ae05af3e87
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 19:15:41 2015 -0500
+
+    modified javascript for homepage
+
+commit 51f15c5bf7fc976973b207870ed92be158575a2e
+Merge: 139149f edd1104
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:08:45 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit edd1104e88a6d4975ae1c78b553507302041e82a
+Merge: c7ac47d b2c883d
+Author: tfsyed <tehreemsyed@wireless-10-147-182-232.public.utexas.edu>
+Date:   Wed Apr 8 19:08:42 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit c7ac47dd8631800ad71c8a1baa374d7037a47e3c
+Author: tfsyed <tehreemsyed@wireless-10-147-182-232.public.utexas.edu>
+Date:   Wed Apr 8 19:08:27 2015 -0500
+
+    periodic table eleemnts linked to pages
+
+commit 139149f4dd020fc026f1c5484b264c622fcc60bb
+Merge: 649706d b2c883d
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Thu Apr 9 00:00:43 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit b2c883d69124f33beeee6637df964f2b8958d445
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 19:00:35 2015 -0500
+
+    decoding for utf-8 before inserting to database
+
+commit 649706d6ee8a47aa67024cce662baccb1797bce4
+Merge: eb45a96 a8aae55
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:52:31 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit eb45a96f1a95a0ce3d219a726ffa5f7e292bde97
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 23:52:05 2015 +0000
+
+    aika's stuff
+
+commit a8aae557a26e872fb501f4573f58b5673af05f31
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 18:44:41 2015 -0500
+
+    made a few changes to index
+
+commit ef5e584986797d7814cd82eb8f80ef59ba5530d7
+Merge: eccfa95 decb9c3
+Author: tfsyed <tehreemsyed@wireless-10-147-182-232.public.utexas.edu>
+Date:   Wed Apr 8 18:29:48 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit eccfa95122b7f557d35378bc1f6a8489377dbed3
+Author: tfsyed <tehreemsyed@wireless-10-147-182-232.public.utexas.edu>
+Date:   Wed Apr 8 18:29:44 2015 -0500
+
+    EVEN MORE FANCIEST PERIODIC TABLE
+
+commit decb9c394b186317e5e6004a29dcf3f483804306
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Wed Apr 8 18:24:56 2015 -0500
+
+    hopefully fixed issue with getting descriptions wrong
+
+commit 5c34ac0c64a4b7a4d1b71f6698fd2f8a3a466936
+Merge: bddb500 77e57a1
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 20:21:59 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit bddb500f26b06219ab02291161dc1a05df4f43a9
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 20:21:22 2015 +0000
+
+    m
+
+commit 2b5f80920172df91cce8d0631b32a9ddbee3f198
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Wed Apr 8 12:22:33 2015 -0700
+
+    Addedelement to group mapping script
+
+commit 77e57a1c4a62d7d8d1994212db1b2955e25b156a
+Author: tfsyed <tehreemsyed@Tehreems-MacBook-Pro.local>
+Date:   Wed Apr 8 00:13:59 2015 -0500
+
+    FANCIEST PERIODIC TABLE EVER
+
+commit 25752af6c0ad31a15cae39eb342c3a6ed7c6ccae
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 21:46:35 2015 -0500
+
+    Adjusting period background images
+
+commit 49069ac171212fb7c1e6e5a7ab0a343746d0c283
+Merge: 92de9c4 55744c1
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 21:41:13 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 92de9c47abbbc235691be1f37d41c1c43a4387af
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 21:41:01 2015 -0500
+
+    Background images for periods
+
+commit 55744c1a676d83ddb17f2705b0989daf27a0e062
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Wed Apr 8 02:33:35 2015 +0000
+
+    added tests and fixed models to match our db
+
+commit 71870edaa694677a6d55ac9efece847052d75dda
+Merge: d0ef798 777d06c
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 21:24:28 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 777d06cba7db2a300db2f421f524f6d7b920c50c
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Tue Apr 7 19:24:09 2015 -0700
+
+    Groups should finally work
+
+commit d0ef798e72cdd83e3170d6cce7679b5867c643de
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 21:24:08 2015 -0500
+
+    Further changes for period dynamic
+
+commit ead94c06ea54935a2eddb63ffeeb7878d983228a
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Tue Apr 7 19:19:14 2015 -0700
+
+    Fixed Group SQL file
+
+commit dd3bc693b2563684cd9af5187715d09cd539f853
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Tue Apr 7 19:09:54 2015 -0700
+
+    Adding GRP sql file
+
+commit 9fd363c5b4aa335784cd2295bcf91143a3f663b2
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 21:02:45 2015 -0500
+
+    Testing further period changes
+
+commit be1fc2fdfc6b3c20f30d424cb54f1a6f72160ebb
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 20:57:04 2015 -0500
+
+    Further dynamic period update
+
+commit 385aa2aad39f68f9401705da7de0ca5250aa7a9b
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 20:48:19 2015 -0500
+
+    added insert file for periods
+
+commit 727bc313afbbd2c1006c684f2852ff74c2e571b4
+Author: Aizhuldyz Gabbassova <aigabbass90@gmail.com>
+Date:   Tue Apr 7 19:47:40 2015 -0500
+
+    update element.html
+
+commit c33c3c8ff14c26bebe826dca43a075f00065d45e
+Merge: 9ebc741 0d530e0
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 19:20:22 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 9ebc741e45c58a06c2a6de7c502ba078ed2255cc
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 19:18:38 2015 -0500
+
+    Progress to dynamic for group/period
+
+commit 0d530e00ae16040c9bdedfc5ce0568b4ec702f0d
+Author: Aizhuldyz Gabbassova <aigabbass90@gmail.com>
+Date:   Tue Apr 7 19:00:01 2015 -0500
+
+    dynamic elements page done
+
+commit 638850b1047e907dca66a62af7ec76ea479061e7
+Author: Aizhuldyz Gabbassova <aigabbass90@gmail.com>
+Date:   Tue Apr 7 18:56:29 2015 -0500
+
+    dynamic elements
+
+commit ee003d87aebb737f7a2086c1f264250b6ef3a637
+Author: Aizhuldyz <aigabbass90@gmail.com>
+Date:   Tue Apr 7 18:40:52 2015 -0500
+
+    Create element.html
+
+commit 690e4a50de5e506a9a502a81abcc803eddf68f6c
+Merge: 502d956 b118a23
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 18:33:30 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 502d9567d594c657a67a50fd7e99fbeaee667ccb
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 18:33:27 2015 -0500
+
+    added groups
+
+commit b118a23ee5a7f6c2658bee00e37e0f9729e595b8
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Tue Apr 7 18:20:06 2015 -0500
+
+    Updated general info and trivia for elements in actinide series
+
+commit fa3b5376445cb8ba08d741d11008666d228cb0fd
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 17:14:04 2015 -0500
+
+    finished with elements routing function
+
+commit 8d109068b454cd5b2c23a4956c1cd8ed7687ee1f
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 17:10:51 2015 -0500
+
+    final test!
+
+commit 13fd1b5b16579e2d68534597a1a116c9334c9f65
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 17:03:57 2015 -0500
+
+    testing more stuff for getting images
+
+commit b1ee25678aa80e2506c96f9fa79f731893853179
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 16:25:13 2015 -0500
+
+    testing getting image paths using queries
+
+commit d30f23c890fff4669331c51d9137868d090e574b
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 13:51:29 2015 -0500
+
+    stuff
+
+commit 2a2fe999d1e70f358873c2429391a3ed6dcec6fa
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 11:45:40 2015 -0500
+
+    forgot to including element directory in path
+
+commit cce8353f957e44237b09648f37090d44fe9ab03a
+Merge: 6c7255d d55fbce
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 11:42:30 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 6c7255df84499ecbf9888ee24c9254d985ab4113
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 11:42:15 2015 -0500
+
+    seems to almost work, doing a commit after every image has been added now
+
+commit d55fbce210c2009e1274eabc5f6e0c2a78fc4246
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 16:38:20 2015 +0000
+
+    made add_picture_data.py executable
+
+commit e85dc1e36c341650d33adccf89dd6283b6b66c27
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 11:36:57 2015 -0500
+
+    fixed issue with not stripping image name, may need to fix database
+
+commit bc0400e216c642df9cffa773d1d330809781ad03
+Merge: 66808ca acaf977
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 11:26:01 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 66808caf923d0a67e8ab1e9edc431bf6d0c4d994
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 7 11:25:53 2015 -0500
+
+    updated models, added script to push picture data into database
+
+commit acaf97770acf8a6f7d42f235d3ba7c36eff755b0
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Mon Apr 6 21:29:25 2015 -0700
+
+    All the lanthanide series data
+
+commit 30db734af4f2db1390518c90aa74073e97f1d16f
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Tue Apr 7 03:30:08 2015 +0000
+
+    added the api/element and api/element/<name>
+
+commit 4db00c9cda693495e79a6f80c7827cdff88a4541
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Mon Apr 6 20:49:43 2015 -0500
+
+    quick test
+
+commit e89648b9ec90579d9d6cd693cc6e8617bf03892f
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Mon Apr 6 20:48:42 2015 -0500
+
+    quick test
+
+commit bcdc990462eba86281aa0fcbaa2a31e7f93fc9a7
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Mon Apr 6 20:40:18 2015 -0500
+
+    quick test
+
+commit 26c6bb161cd69f29bcb5294074317126a4bc3212
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Mon Apr 6 20:35:02 2015 -0500
+
+    quick test
+
+commit 6ac66f67612bb7f96ae18bb6f19b936cf2333a52
+Merge: edf7f8f bdbe724
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Sun Apr 5 23:21:47 2015 -0700
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit edf7f8f0473fd94f69fe3b838ffff8bb89041907
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Sun Apr 5 23:21:26 2015 -0700
+
+    Finished first part of Lanthanides
+
+commit bdbe724363c791d4a7a73c4309cab27c1e898b29
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Mon Apr 6 00:55:58 2015 -0500
+
+    Incomplete changes for dynamic period loading
+
+commit bc24c33d28f5364738ca51fbdb3396691ae73c66
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Mon Apr 6 00:07:07 2015 -0500
+
+    removed print statements
+
+commit 0d20dad7fb759b1daf9685d200c380dc90be469d
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Mon Apr 6 00:02:59 2015 -0500
+
+    final revision hopefully, fixed issue where multi digit numbers in citations were not matched for removal
+
+commit c43b5ea18d4b9a65dc6a4fe5f076c738b447e7e7
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:56:55 2015 -0500
+
+    oops, stripWikicitations removed all text from strings passed in
+
+commit ee3ebef108b58c052d339f9ca38282f506c80303
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:46:11 2015 -0500
+
+    fixed it I think!
+
+commit 10d7e6c6c23f927a9da210df8f2ee0defd0a8ddc
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:32:44 2015 -0500
+
+    added some logging
+
+commit 89b229ffc18bcf949c7fcc1f5ec72bf75c1d2627
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:26:43 2015 -0500
+
+    one last error, swearsies
+
+commit 161f93c8b24f0295080eab62d98935e14b700e60
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:25:46 2015 -0500
+
+    fixed typo
+
+commit 8b4d14b983aa324d7de8321345c85861b82d4e2f
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:23:54 2015 -0500
+
+    added supper duper good tollerance for odd things in the file names
+
+commit 3537db867e8aea007e2e7923496eaa951e8828c3
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 23:08:14 2015 -0500
+
+    added code to strip wiki bracket citations
+
+commit 5b566adf6b44d4337868efb7f4ddaade887bd425
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 22:58:23 2015 -0500
+
+    modified script to tollerate some odd spaces at the end of .txt in some files
+
+commit fcf25dad1b0a02fc9e19d37793797b581348dc90
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 22:49:22 2015 -0500
+
+    modified data loading tool to do more error checking
+
+commit 9d1c37db6b621cd21b9dc3fb82ef379881409e53
+Author: tfsyed <tehreemsyed@Tehreems-MacBook-Pro.local>
+Date:   Sun Apr 5 21:18:40 2015 -0500
+
+    Added eleemnts from Fr to Uuo
+
+commit e2c1740d993fe147f1a99718cbfa0b92e81076d6
+Merge: 78df790 0de4ecc
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Mon Apr 6 01:20:33 2015 +0000
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 78df7901786e09f3e31a85ecfa8967c8227afcc8
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Mon Apr 6 01:20:12 2015 +0000
+
+    changed insert script
+
+commit 0de4eccec51dbfe7ac099ba856a407232b8e4c6c
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 20:14:06 2015 -0500
+
+    updated our models.html
+
+commit 84f541250c6789337707bf92a0a02b554916798b
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 20:07:37 2015 -0500
+
+    fixed hopefully
+
+commit 75daa9f47144ab3cc79d4d49f4fbbe183ef7c6f5
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 20:04:50 2015 -0500
+
+    hopefully this fixed error 4
+
+commit e6dbbc72bce62bcc5592ea915b0652ad0b2c4c32
+Merge: 1368fc3 6e69bd0
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 19:52:55 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 1368fc33a5075c57aa4288a7bd9011e0065a7895
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 19:52:42 2015 -0500
+
+    fixed more errors on tests.py
+
+commit 6e69bd09572a45959356d2e870c34cb2758931a3
+Merge: fd9dc70 96f8dc0
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 19:45:21 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit fd9dc700c225774003adb1014155ffdd9ff2d0e8
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 19:45:01 2015 -0500
+
+    tentatively got script working to add info to elements and trivia
+
+commit 96f8dc01bc5ddc62159f933ca72ca5dc3a9a9843
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 19:43:59 2015 -0500
+
+    fixed another error
+
+commit 32c5152b28e143fd6ca093b8f8669ad73cd049cf
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 19:40:28 2015 -0500
+
+    fixed an error
+
+commit 4d77f48f3532683990abd77a18f1b8955bd91fdd
+Merge: 06b9a80 664d8e5
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 19:34:21 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 06b9a803080807d2342ce11fea7eed83ad94cda2
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 19:34:06 2015 -0500
+
+    added some tests
+
+commit 664d8e5a983a886d7dcd9921b131da8500e31ac3
+Author: tfsyed <tehreemsyed@wireless-10-147-103-28.public.utexas.edu>
+Date:   Sun Apr 5 19:21:11 2015 -0500
+
+    Elements from Rb to Rn
+
+commit b1cc663f52965210c07a15da237cefba45fdf641
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 18:59:57 2015 -0500
+
+    created a relation and going to test it
+
+commit ea2312034abaeedd578b0383cc8c55b3b956104a
+Merge: e784405 f08ea33
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 18:42:20 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit e7844050f9c632609a88c48d8bd0fcfb6feaa9a8
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 18:42:06 2015 -0500
+
+    modified models.py to mach our new data base model
+
+commit f08ea33eb6ef1c429ea22ca0871a53ee1a8abde9
+Merge: 7536e80 5a289cd
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Sun Apr 5 16:30:42 2015 -0700
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 7536e8009f5b93c7844bba71b22874f2b6101530
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Sun Apr 5 16:30:27 2015 -0700
+
+    The rest of the top elemental info
+
+commit 5a289cd69dbd0af9a377d6504d929e6c75aa7228
+Merge: eaa095e 2c40684
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Sun Apr 5 18:17:21 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit eaa095e356294639152426b1662c3a570112632b
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Sun Apr 5 18:14:56 2015 -0500
+
+    Group and period descriptions ripped from wikipedia
+
+commit 2c4068485da60d530b58e5c6389fe22ecaca9f73
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 18:10:24 2015 -0500
+
+    quick change
+
+commit 1609a3be9d2e9ca2fae1056e3642fdb31a6cc8e9
+Merge: 7193f63 9204dfe
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 18:06:43 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 7193f637b7bd4131c7536907af51bf8410c33db3
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 18:06:33 2015 -0500
+
+    pushing changes to model
+
+commit 9204dfeafa29f1a9e14f04f6ebb1dc8d9798d098
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Sun Apr 5 16:03:16 2015 -0700
+
+    Most elemental info added
+
+commit 00a361170ac22a82a5c7ecec1e72c5c0887068d3
+Merge: 8851475 4fa20b8
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 17:36:18 2015 -0500
+
+    Merge branch 'master' of https://github.com/josebigio/cs373-idb
+
+commit 4fa20b854bdaf6a2f75ffed26e5cec8e4bc66b9e
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 22:17:35 2015 +0000
+
+    the server is working again the elements table base is working
+
+commit 8851475a898ced165bd05bd46223c66955a84dc0
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 16:00:05 2015 -0500
+
+    added info about some lements
+
+commit 21d5dddebf4b347811b0f0a664ff2414d9d31ad1
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sun Apr 5 15:56:12 2015 -0500
+
+    added all images of elements
+
+commit 9d40121ce6d61bd37f95e760cf788d3e10af3351
+Author: Logan Bishop <ldcbishop@gmail.com>
+Date:   Sun Apr 5 13:51:50 2015 -0700
+
+    Added ALOT of element pictures
+
+commit 0eaaa80ea43de8e63a77157523e66a7a99eb8cf4
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 15:40:39 2015 -0500
+
+    added txt
+
+commit fed9366fb36b3227318500e8e0db9ba549741548
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sun Apr 5 00:55:20 2015 -0500
+
+    got views.py to pull from db
+
+commit ba5ced0ab9f59141d3af720f0a1a7f874a993077
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Sat Apr 4 19:31:12 2015 -0500
+
+    alks;djf
+
+commit 1ce1506a0579a1652270d4c353d570bb910e9ee7
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sat Apr 4 19:16:18 2015 -0500
+
+    linked it with our db
+
+commit d775af54c35c5aaa9f4f9a69c8e7683dafe2e765
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sat Apr 4 17:19:54 2015 -0500
+
+    right before modigying models.py
+
+commit 1cdf41b154c2d99cd31db25b45278faa29b1efe7
+Author: josebigio <sirownsalot@gmail.com>
+Date:   Sat Mar 28 22:21:39 2015 -0500
+
+    updating the readme
+
+commit 42292c22d7c5c8d3b09d3b4fa9387225ae869426
+Author: tfsyed <fatima.tehreem@gmail.com>
+Date:   Thu Mar 26 21:00:47 2015 -0500
+
+    Rename.d file
+
+commit 0523421f055ef8d7ae475130eeccc7ba19bb0415
+Author: Nathan Giles <nathanrgiles@gmail.com>
+Date:   Thu Mar 26 20:56:42 2015 -0500
+
+    Added UML.pdf, updated log. Final final push
+
 commit 0ebb97e7c4b03cacbf5fc64f37ae01bf21b104d8
 Author: Nathan Giles <nathanrgiles@gmail.com>
 Date:   Thu Mar 26 20:44:16 2015 -0500
