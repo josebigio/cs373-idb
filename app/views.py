@@ -126,6 +126,9 @@ def handle_individual_trivia(name):
 def about():
     return render_template('about.html')
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html')
 
 @app.route('/group/<name>')
 def group(name=None):
