@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {#---------Title---------#}
-{% block title %}Team Members{% endblock %}
+{% block title %}{{Timeline}}{% endblock %}
 {#---------Header---------#}
 {% block head %}
   {{ super() }}
@@ -14,82 +14,130 @@
 {% block content %}
 
 	<section id="cd-timeline" class="cd-container">
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="/static/images/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 1</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
+        <script>
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img src="/static/images/cd-icon-movie.svg" alt="Movie">
-			</div> <!-- cd-timeline-img -->
+                var container = document.getElementById("cd-timeline");
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 2</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="/static/images/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
+                for(var i=0; i< 100; i++)
+                {
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 3</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 24</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
+                    var block = document.createElement("div");
+                    block.className = "cd-timeline-block";
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="/static/images/cd-icon-location.svg" alt="Location">
-			</div> <!-- cd-timeline-img -->
+                    var picture = document.createElement("div");
+                    picture.className = "cd-timeline-img cd-picture";
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 4</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="/static/images/cd-icon-location.svg" alt="Location">
-			</div> <!-- cd-timeline-img -->
+                    var image = document.createElement("img");
+                    image.alt = "Picture";
+                    image.src = "/static/images/cd-icon-picture.svg";
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 5</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
+                    picture.appendChild(image);
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img src="/static/images/cd-icon-movie.svg" alt="Movie">
-			</div> <!-- cd-timeline-img -->
+                    var content = document.createElement("div");
+                    content.className = "cd-timeline-content";
 
-			<div class="cd-timeline-content">
-				<h2>Final Section</h2>
-				<p>This is the content of the last section</p>
-				<span class="cd-date">Feb 26</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
+                    var title  = document.createElement("h2");
+                    title.innerText = "Title";
+
+                    var paragraph = document.createElement("p");
+                    paragraph.innerText = "paragraph";
+
+                    var span = document.createElement("span");
+                    span.className = "cd-date";
+                    span.innerText ="1984";
+
+                    content.appendChild(title);
+                    content.appendChild(paragraph);
+                    content.appendChild(span);
+
+                    block.appendChild(picture);
+                    block.appendChild(content);
+
+                    container.appendChild(block);
+                }
+
+        </script>
+
+
+		<!--<div class="cd-timeline-block">-->
+			<!--<div class="cd-timeline-img cd-picture">-->
+				<!--<img src="/static/images/cd-icon-picture.svg" alt="Picture">-->
+			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
+
+			<!--<div class="cd-timeline-content">-->
+				<!--<h2>Title of section 1</h2>-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>-->
+				<!--<a href="#0" class="cd-read-more">Read more</a>-->
+				<!--<span class="cd-date">Jan 14</span>-->
+			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
+		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
+
+		<!--<div class="cd-timeline-block">-->
+			<!--<div class="cd-timeline-img cd-movie">-->
+				<!--<img src="/static/images/cd-icon-movie.svg" alt="Movie">-->
+			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
+
+			<!--<div class="cd-timeline-content">-->
+				<!--<h2>Title of section 2</h2>-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>-->
+				<!--<a href="#0" class="cd-read-more">Read more</a>-->
+				<!--<span class="cd-date">Jan 18</span>-->
+			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
+		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
+
+		<!--<div class="cd-timeline-block">-->
+			<!--<div class="cd-timeline-img cd-picture">-->
+				<!--<img src="/static/images/cd-icon-picture.svg" alt="Picture">-->
+			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
+
+			<!--<div class="cd-timeline-content">-->
+				<!--<h2>Title of section 3</h2>-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>-->
+				<!--<a href="#0" class="cd-read-more">Read more</a>-->
+				<!--<span class="cd-date">Jan 24</span>-->
+			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
+		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
+
+		<!--<div class="cd-timeline-block">-->
+			<!--<div class="cd-timeline-img cd-location">-->
+				<!--<img src="/static/images/cd-icon-location.svg" alt="Location">-->
+			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
+
+			<!--<div class="cd-timeline-content">-->
+				<!--<h2>Title of section 4</h2>-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>-->
+				<!--<a href="#0" class="cd-read-more">Read more</a>-->
+				<!--<span class="cd-date">Feb 14</span>-->
+			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
+		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
+
+		<!--<div class="cd-timeline-block">-->
+			<!--<div class="cd-timeline-img cd-location">-->
+				<!--<img src="/static/images/cd-icon-location.svg" alt="Location">-->
+			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
+
+			<!--<div class="cd-timeline-content">-->
+				<!--<h2>Title of section 5</h2>-->
+				<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>-->
+				<!--<a href="#0" class="cd-read-more">Read more</a>-->
+				<!--<span class="cd-date">Feb 18</span>-->
+			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
+		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
+
+		<!--<div class="cd-timeline-block">-->
+			<!--<div class="cd-timeline-img cd-movie">-->
+				<!--<img src="/static/images/cd-icon-movie.svg" alt="Movie">-->
+			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
+
+			<!--<div class="cd-timeline-content">-->
+				<!--<h2>Final Section</h2>-->
+				<!--<p>This is the content of the last section</p>-->
+				<!--<span class="cd-date">Feb 26</span>-->
+			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
+		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
 	</section> <!-- cd-timeline -->
 
 {% endblock %}
