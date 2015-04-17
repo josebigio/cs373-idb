@@ -78,6 +78,7 @@ def handle_individual_group(name):
 
     return jsonify(result_dict)
 
+
 @app.route('/api/element/<atomic_number_str>')
 def handle_individual_element(atomic_number_str):
     try:
@@ -128,7 +129,10 @@ def about():
 
 @app.route('/timeline')
 def timeline():
-    return render_template('timeline.html')
+    # list = list(Element.query.all())
+    element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
+    return render_template('timeline.html', dict=element_dict)
+
 
 @app.route('/group/<name>')
 def group(name=None):

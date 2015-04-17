@@ -1,5 +1,5 @@
 """
-Object oriented representation of our data base structure. We will have 4 interweed entities: elements,
+Object oriented representation of our data base structure. We will have 4 intervened entities: elements,
 periods, groups and trivias
 """
 
