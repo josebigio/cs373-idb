@@ -129,10 +129,11 @@ def about():
 
 @app.route('/timeline')
 def timeline():
-    # list = list(Element.query.all())
-    element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
-    return render_template('timeline.html', dict=element_dict)
-
+    elem_list = list(Element.query.all().order_by(Element.year_of_discovery.asc()))
+    #element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
+    #return render_template('timeline.html')
+    print(elem_list)
+    return str(elem_list)
 
 @app.route('/group/<name>')
 def group(name=None):
