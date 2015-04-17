@@ -16,52 +16,67 @@
 
 	<section id="cd-timeline" class="cd-container">
 
+       {% for element in elements %}
 
-        <script>
+        <div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="/static/images/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
 
-                var container = document.getElementById("cd-timeline");
+			<div class="cd-timeline-content">
+				<h2>element.eleeent</h2>
+				<p> element.discoverer</p>
+				<span class="element.date_of_discovery"> </span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+        {% end for%}
+
+        <!--<script>-->
+
+                <!--var container = document.getElementById("cd-timeline");-->
 
 
-                for(var i=0; i< 100; i++)
-                {
+                <!--for(var i=0; i< 100; i++)-->
+                <!--{-->
 
-                    var block = document.createElement("div");
-                    block.className = "cd-timeline-block";
+                    <!--var block = document.createElement("div");-->
+                    <!--block.className = "cd-timeline-block";-->
 
-                    var picture = document.createElement("div");
-                    picture.className = "cd-timeline-img cd-picture";
+                    <!--var picture = document.createElement("div");-->
+                    <!--picture.className = "cd-timeline-img cd-picture";-->
 
 
-                    var image = document.createElement("img");
-                    image.alt = "Picture";
-                    image.src = "/static/images/cd-icon-picture.svg";
+                    <!--var image = document.createElement("img");-->
+                    <!--image.alt = "Picture";-->
+                    <!--image.src = "/static/images/cd-icon-picture.svg";-->
 
-                    picture.appendChild(image);
+                    <!--picture.appendChild(image);-->
 
-                    var content = document.createElement("div");
-                    content.className = "cd-timeline-content";
+                    <!--var content = document.createElement("div");-->
+                    <!--content.className = "cd-timeline-content";-->
 
-                    var title  = document.createElement("h2");
-                    title.innerText = "Title";
+                    <!--var title  = document.createElement("h2");-->
+                    <!--title.innerText = "Title";-->
 
-                    var paragraph = document.createElement("p");
-                    paragraph.innerText = "paragraph";
+                    <!--var paragraph = document.createElement("p");-->
+                    <!--paragraph.innerText = "paragraph";-->
 
-                    var span = document.createElement("span");
-                    span.className = "cd-date";
-                    span.innerText ="1984";
+                    <!--var span = document.createElement("span");-->
+                    <!--span.className = "cd-date";-->
+                    <!--span.innerText ="1984";-->
 
-                    content.appendChild(title);
-                    content.appendChild(paragraph);
-                    content.appendChild(span);
+                    <!--content.appendChild(title);-->
+                    <!--content.appendChild(paragraph);-->
+                    <!--content.appendChild(span);-->
 
-                    block.appendChild(picture);
-                    block.appendChild(content);
+                    <!--block.appendChild(picture);-->
+                    <!--block.appendChild(content);-->
 
-                    container.appendChild(block);
-                }
+                    <!--container.appendChild(block);-->
+                <!--}-->
 
-        </script>
+        <!--</script>-->
 
 		<!--<div class="cd-timeline-block">-->
 			<!--<div class="cd-timeline-img cd-picture">-->
