@@ -78,6 +78,7 @@ def handle_individual_group(name):
 
     return jsonify(result_dict)
 
+
 @app.route('/api/element/<atomic_number_str>')
 def handle_individual_element(atomic_number_str):
     try:
@@ -128,19 +129,9 @@ def about():
 
 @app.route('/timeline')
 def timeline():
-    list = list(Element.query.all())
-    result_dict = {}
-    column_names = []
-    for c in Element.__table__.columns:
-        if (c == u'elements.year_of_discovery' || c == u'elements.element' || c == u'elements.discoverer'):
-            column_names.append(str(c).split("elements.")[1])
-
-    for element in elements:
-        d = dict()
-        for c_name in column_names:
-            d[c_name] = element.__dict__[c_name]
-        result_dict[element.atomic_number] = d
-    return render_template('timeline.html', dict = result_dict)
+    # list = list(Element.query.all())
+    element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
+    return render_template('timeline.html', dict=element_dict)
 
 
 @app.route('/group/<name>')
