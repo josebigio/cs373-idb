@@ -128,7 +128,20 @@ def about():
 
 @app.route('/timeline')
 def timeline():
-    return render_template('timeline.html')
+    list = list(Element.query.all())
+    result_dict = {}
+    column_names = []
+    for c in Element.__table__.columns:
+        if (c == u'elements.year_of_discovery' || c == u'elements.element' || c == u'elements.discoverer'):
+            column_names.append(str(c).split("elements.")[1])
+
+    for element in elements:
+        d = dict()
+        for c_name in column_names:
+            d[c_name] = element.__dict__[c_name]
+        result_dict[element.atomic_number] = d
+    return render_template('timeline.html', dict = result_dict)
+
 
 @app.route('/group/<name>')
 def group(name=None):
