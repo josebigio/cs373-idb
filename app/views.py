@@ -129,7 +129,13 @@ def about():
 
 @app.route('/timeline')
 def timeline():
-    elem_list = list(Element.query.all().order_by(Element.year_of_discovery.asc()))
+    elem_list = list(Element.query.all())
+    result_list =[]
+    for i in elem_list:
+        result_list += [(i.year_of_discovery, i)]
+
+    sorted(result_list, key=(lambda x: x[0]))
+
     #element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
     #return render_template('timeline.html')
     print(elem_list)
