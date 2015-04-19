@@ -2,7 +2,10 @@ from flask import render_template, json, make_response, jsonify, abort, request
 from app import app, db, models
 from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
+
+import urllib2
 import subprocess
+import re
 
 
 @app.errorhandler(404)
@@ -165,6 +168,32 @@ def timeline():
 
   #element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
     #return render_template('timeline.html')
+
+
+def getLatLonFromMapUrl(map_url):
+    lat = 0
+    lon = 0
+    lat_pattern = re.compile(r'2d(.+?)!', flags=re.DOTALL)
+    lon_pattern = re.compile(r'3d(.+?)!', flags=re.DOTALL)
+    try:
+        lon = float(lat_pattern.findall(map_url)[0])
+        lat = float(lon_pattern.findall(map_url)[0])
+    except ValueError as e:
+        print("Error processing lat, lon: " + str(e))
+    return lat, lon
+
+
+@app.route('/funRun')
+def funRunApi():
+
+    response = urllib2.urlopen('http://104.239.139.43:8000/api/funruns')
+    data = json.load(response)
+    fun_run_arr = data.get('funruns')
+    result = []
+    for fun_run in fun_run_arr:
+        lat, lon = getLatLonFromMapUrl(fun_run['map_url'])
+        result.append([lat, lon, fun_run['name'].encode('ascii','ignore'), fun_run['website'].encode('ascii','ignore')])
+    return render_template("funRunApi.html", funRunArr=result)
 
 @app.route('/group/<name>')
 def group(name=None):
