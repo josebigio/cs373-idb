@@ -73,6 +73,8 @@
   </nav>
 
   <body>
+  {% block body %}
+  {% endblock %}
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
       {% block footer %}
