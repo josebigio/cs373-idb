@@ -18,24 +18,32 @@ def index():
 
 @app.route('/api/<name>', methods=['GET'])
 def api_handling(name):
+    columns = request.args.get('columns')
+    column_set = set()
+    if columns is not None:
+        column_set = set(columns.split(','))
     if name == 'element':
-        return handle_element()
+        return handle_element(column_set)
     elif name == 'period':
-        return handle_period()
+        return handle_period(column_set)
     elif name == 'group':
-        return handle_group()
+        return handle_group(column_set)
     elif name == 'trivia':
-        return handle_trivia()
+        return handle_trivia(column_set)
     else:
         return "Invalid API call"
 
-@app.route('/api/period/<name>')
-def handle_individual_period(name):    
+@app.route('/api/period/<name>', methods=['GET'])
+def handle_individual_period(name):
     period_id = 0
+    columns = request.args.get('columns')
+    column_set = set()
+    if columns is not None:
+        column_set = set(columns.split(','))
     try:
         period_id = int(name)
     except:
-        rabort(404)
+        abort(404)
 
     try:
         period = Period.query.get(period_id)
@@ -47,16 +55,21 @@ def handle_individual_period(name):
     column_names = []
     for c in Period.__table__.columns:
         column_names.append(str(c).split("periods.")[1])
-        
+
     result_dict = dict()
     for c_name in column_names:
-        result_dict[c_name] = period.__dict__[c_name]
+        if columns is None or c_name in column_set:
+            result_dict[c_name] = period.__dict__[c_name]
 
     return jsonify(result_dict)
 
-@app.route('/api/group/<name>')
-def handle_individual_group(name):    
+@app.route('/api/group/<name>', methods=['GET'])
+def handle_individual_group(name):
     group_id = 0
+    columns = request.args.get('columns')
+    column_set = set()
+    if columns is not None:
+        column_set = set(columns.split(','))
     try:
         group_id = int(name)
     except:
@@ -71,10 +84,11 @@ def handle_individual_group(name):
     column_names = []
     for c in Group.__table__.columns:
         column_names.append(str(c).split("groups.")[1])
-        
+
     result_dict = dict()
     for c_name in column_names:
-        result_dict[c_name] = group.__dict__[c_name]
+        if columns is None or c_name in column_set:
+            result_dict[c_name] = group.__dict__[c_name]
 
     return jsonify(result_dict)
 
@@ -83,9 +97,7 @@ def handle_individual_group(name):
 def handle_individual_element(atomic_number_str):
     columns = request.args.get('columns')
     column_set = set()
-    print('Atomic_num = ' + atomic_number_str)
     if columns is not None:
-        print('columns = ' + str(columns))
         column_set = set(columns.split(','))
     try:
         atomic_number = str(atomic_number_str)
@@ -108,9 +120,13 @@ def handle_individual_element(atomic_number_str):
     return jsonify(result_dict)
 
 
-@app.route('/api/trivia/<name>')
-def handle_individual_trivia(name):    
+@app.route('/api/trivia/<name>', methods=['GET'])
+def handle_individual_trivia(name):
     trivia_id = 0
+    columns = request.args.get('columns')
+    column_set = set()
+    if columns is not None:
+        column_set = set(columns.split(','))
     try:
         trivia_id = int(name)
     except:
@@ -123,10 +139,11 @@ def handle_individual_trivia(name):
     column_names = []
     for c in Trivia.__table__.columns:
         column_names.append(str(c).split("trivia.")[1])
-        
+
     result_dict = dict()
     for c_name in column_names:
-        result_dict[c_name] = trivia.__dict__[c_name]
+        if columns is None or c_name in column_set:
+            result_dict[c_name] = trivia.__dict__[c_name]
 
     return jsonify(result_dict)
 
@@ -197,21 +214,6 @@ def handle_element():
     result_dict = {}
     column_names = []
     for c in Element.__table__.columns:
-        column_names.append(str(c).split("elements.")[1])    
-
-    for element in elements:
-        d = dict()
-        for c_name in column_names:
-            d[c_name] = element.__dict__[c_name]
-        result_dict[element.atomic_number] = d
-    
-    return jsonify(result_dict)
-
-def handle_element_project():
-    elements = list(Element.query.all())
-    result_dict = {}
-    column_names = []
-    for c in Element.__table__.columns:
         column_names.append(str(c).split("elements.")[1])
 
     for element in elements:
@@ -221,8 +223,24 @@ def handle_element_project():
         result_dict[element.atomic_number] = d
 
     return jsonify(result_dict)
-        
-def handle_period():
+
+def handle_element_project(column_set):
+    elements = list(Element.query.all())
+    result_dict = {}
+    column_names = []
+    for c in Element.__table__.columns:
+        column_names.append(str(c).split("elements.")[1])
+
+    for element in elements:
+        d = dict()
+        for c_name in column_names:
+            if len(column_set) == 0 or c_name in column_set:
+                d[c_name] = element.__dict__[c_name]
+        result_dict[element.atomic_number] = d
+
+    return jsonify(result_dict)
+
+def handle_period(column_set):
     periods = list(Period.query.all())
     result_dict = {}
     column_names = []
@@ -232,13 +250,14 @@ def handle_period():
     for period in periods:
         d = dict()
         for c_name in column_names:
-            d[c_name] = period.__dict__[c_name]
+            if len(column_set) == 0 or c_name in column_set:
+                d[c_name] = period.__dict__[c_name]
         result_dict[period.period_number] = d
- 
+
 
     return jsonify(result_dict)
 
-def handle_group():
+def handle_group(column_set):
     groups = list(Group.query.all())
     result_dict = {}
     column_names = []
@@ -248,13 +267,14 @@ def handle_group():
     for group in groups:
         d = dict()
         for c_name in column_names:
-            d[c_name] = group.__dict__[c_name]
+            if len(column_set) == 0 or c_name in column_set:
+                d[c_name] = group.__dict__[c_name]
         result_dict[group.group_number] = d
- 
+
 
     return jsonify(result_dict)
 
-def handle_trivia():
+def handle_trivia(column_set):
     trivias = list(Trivia.query.all())
     result_dict = {}
     column_names = []
@@ -264,9 +284,9 @@ def handle_trivia():
     for trivia in trivias:
         d = dict()
         for c_name in column_names:
-            d[c_name] = trivia.__dict__[c_name]
+            if len(column_set) == 0 or c_name in column_set:
+                d[c_name] = trivia.__dict__[c_name]
         result_dict[trivia.id] = d
- 
 
     return jsonify(result_dict)
 
