@@ -28,12 +28,7 @@
     </script>
 {% endblock %}
 {#---------Content---------#}
-{% block content %}
 <div id="map-canvas"></div>
-{% autoescape false %}
-<script>
-    arr = {{ funRunArr }};
-    document.write(arr);
-</script>
-{% endautoescape %}
+{% block content %}
+
 {% endblock %}
