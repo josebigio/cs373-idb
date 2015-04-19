@@ -23,7 +23,9 @@
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
+        {% autoescape false %}
         var groupAPIArr = {{ funRunArr }};
+        {% endautoescape %}
         var firstFunRun = groupAPIArr[0];
         var myLatlng = new google.maps.LatLng(firstFunRun[0],firstFunRun[1]);
         var marker = new google.maps.Marker({
