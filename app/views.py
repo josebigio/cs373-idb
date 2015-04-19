@@ -1,4 +1,4 @@
-from flask import render_template, json, make_response, jsonify, abort
+from flask import render_template, json, make_response, jsonify, abort, request
 from app import app, db, models
 from .models import Element, Period, Group, Image, Trivia
 from sqlalchemy import func
@@ -79,26 +79,32 @@ def handle_individual_group(name):
     return jsonify(result_dict)
 
 
-@app.route('/api/element/<atomic_number_str>')
+@app.route('/api/element/<atomic_number_str>', methods=['GET'])
 def handle_individual_element(atomic_number_str):
+    columns = request.args.get('columns')
+    column_set = set()
+    if columns is not None:
+        column_set = set(columns.split(','))
     try:
         atomic_number = str(atomic_number_str)
     except:
         abort(404)
+        return
     element = Element.query.get(atomic_number)
     if element is None:
         abort(404)
-
+        return
     column_names = []
     for c in Element.__table__.columns:
-        column_names.append(str(c).split("elements.")[1])
-        
+        if columns is None or c in column_set:
+            column_names.append(str(c).split("elements.")[1])
+
     result_dict = dict()
     for c_name in column_names:
         result_dict[c_name] = element.__dict__[c_name]
 
-
     return jsonify(result_dict)
+
 
 @app.route('/api/trivia/<name>')
 def handle_individual_trivia(name):    
@@ -197,6 +203,21 @@ def handle_element():
             d[c_name] = element.__dict__[c_name]
         result_dict[element.atomic_number] = d
     
+    return jsonify(result_dict)
+
+def handle_element_project():
+    elements = list(Element.query.all())
+    result_dict = {}
+    column_names = []
+    for c in Element.__table__.columns:
+        column_names.append(str(c).split("elements.")[1])
+
+    for element in elements:
+        d = dict()
+        for c_name in column_names:
+            d[c_name] = element.__dict__[c_name]
+        result_dict[element.atomic_number] = d
+
     return jsonify(result_dict)
         
 def handle_period():
