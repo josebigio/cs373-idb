@@ -83,7 +83,9 @@ def handle_individual_group(name):
 def handle_individual_element(atomic_number_str):
     columns = request.args.get('columns')
     column_set = set()
+    print('Atomic_num = ' + atomic_number_str)
     if columns is not None:
+        print('columns = ' + str(columns))
         column_set = set(columns.split(','))
     try:
         atomic_number = str(atomic_number_str)
@@ -96,12 +98,12 @@ def handle_individual_element(atomic_number_str):
         return
     column_names = []
     for c in Element.__table__.columns:
-        if columns is None or c in column_set:
-            column_names.append(str(c).split("elements.")[1])
+        column_names.append(str(c).split("elements.")[1])
 
     result_dict = dict()
     for c_name in column_names:
-        result_dict[c_name] = element.__dict__[c_name]
+        if columns is None or c_name in column_set:
+            result_dict[c_name] = element.__dict__[c_name]
 
     return jsonify(result_dict)
 
