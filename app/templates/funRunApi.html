@@ -23,7 +23,18 @@
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
+        var groupAPIArr = {{ funRunArr }};
+        var firstFunRun = groupAPIArr[0];
+        var myLatlng = new google.maps.LatLng(firstFunRun[0],firstFunRun[1]);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: firstFunRun[2]
+        });
+
       }
+
+
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 {% endblock %}
