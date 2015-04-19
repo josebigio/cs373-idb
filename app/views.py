@@ -209,7 +209,7 @@ def run_tests():
 
 
 #api handlers
-def handle_element():
+def handle_element(column_set):
     elements = list(Element.query.all())
     result_dict = {}
     column_names = []
@@ -219,7 +219,8 @@ def handle_element():
     for element in elements:
         d = dict()
         for c_name in column_names:
-            d[c_name] = element.__dict__[c_name]
+            if len(column_set) == 0 or c_name in column_set:
+                d[c_name] = element.__dict__[c_name]
         result_dict[element.atomic_number] = d
 
     return jsonify(result_dict)
