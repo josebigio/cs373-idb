@@ -1,6 +1,6 @@
 from flask import render_template, json, make_response, jsonify, abort, request
 from app import app, db, models
-from .models import Element, Period, Group, Image, Trivia
+from .models import Element, Period, Group, Image, Trivia, MockElement
 from sqlalchemy import func
 
 import urllib2
