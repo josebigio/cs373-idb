@@ -26,7 +26,8 @@
         {% autoescape false %}
         var groupAPIArr = {{ funRunArr }};
         {% endautoescape %}
-        for (var funRun in groupAPIArr) {
+        for (i = 0; i < groupAPIArr.length; i++) {
+            funRun = groupAPIArr[i];
               var marker = new google.maps.Marker({
                   position: new google.maps.LatLng(funRun[0], funRun[1]),
                   map: map,
