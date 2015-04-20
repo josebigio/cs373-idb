@@ -161,7 +161,8 @@ def timeline():
     result_list =[]
     for i in elem_list:
         if not (i.year_of_discovery == None or i.discoverer == None):
-            result_list += [(i.year_of_discovery, i)]
+            image_default = Image.query.filter_by(element_number = i.atomic_number, image_type ="default").first()
+            result_list += [(i.year_of_discovery, i, image_default)]
 
     result_list.sort(key= lambda x : x[0])
 
