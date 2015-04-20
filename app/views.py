@@ -164,11 +164,11 @@ def timeline():
 
     result_list.sort(key= lambda x : x[0])
     #sorted(result_list, key=(lambda x: x[0]))
-    print(result_list)
-    return str(result_list)
+    #print(result_list)
+    #return str(result_list)
 
   #element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
-    #return render_template('timeline.html')
+    return render_template('timeline.html', elements = result_list)
 
 
 def getLatLonFromMapUrl(map_url):

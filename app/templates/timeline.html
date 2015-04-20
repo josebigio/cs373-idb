@@ -16,7 +16,7 @@
 
 	<section id="cd-timeline" class="cd-container">
 
-       {% for date,element in elements %}
+       {% for tuple in elements %}
 
         <div class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
@@ -24,9 +24,9 @@
 			</div> <!-- cd-timeline-img -->
 
 			<div class="cd-timeline-content">
-				<h2>{{element.element}}</h2>
-				<p> {{element.discoverer}}</p>
-				<span class="cd-date"> {{date}} </span>
+				<h2>{{tuple[1].element}}</h2>
+				<p> {{tuple[1].discoverer}}</p>
+				<span class="cd-date"> {{tuple[0]}} </span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
 
