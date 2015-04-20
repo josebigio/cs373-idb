@@ -162,7 +162,8 @@ def timeline():
     for i in elem_list:
         result_list += [(i.year_of_discovery, i)]
 
-    sorted(result_list, key=(lambda x: x[0]))
+    result_list.sort(key= lambda x : x[0])
+    #sorted(result_list, key=(lambda x: x[0]))
     print(result_list)
     return str(result_list)
 
