@@ -26,17 +26,17 @@
         {% autoescape false %}
         var groupAPIArr = {{ funRunArr }};
         {% endautoescape %}
-        for (var firstFunRun in groupAPIArr) {
-              var myLatlng = new google.maps.LatLng(firstFunRun[0], firstFunRun[1]);
+        for (var funRun in groupAPIArr) {
               var marker = new google.maps.Marker({
-                  position: myLatlng,
+                  position: new google.maps.LatLng(funRun[0], funRun[1]),
                   map: map,
-                  title: firstFunRun[2],
-                  url: firstFunRun[3]
+                  title: funRun[2],
+                  url: funRun[3]
               });
               google.maps.event.addListener(marker, 'click', function () {
                   window.location.href = this.url;
               });
+            break;
         }
       }
 
