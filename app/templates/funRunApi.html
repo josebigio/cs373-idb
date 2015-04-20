@@ -34,7 +34,9 @@
           title: firstFunRun[2],
         url: firstFunRun[3]
         });
-
+        google.maps.event.addListener(marker, 'click', function() {
+            window.location.href = this.url;
+        });
       }
 
 
