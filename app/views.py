@@ -160,14 +160,11 @@ def timeline():
     elem_list = list(Element.query.all())
     result_list =[]
     for i in elem_list:
-        result_list += [(i.year_of_discovery, i)]
+        if not (i.year_of_discovery == None or i.discoverer == None):
+            result_list += [(i.year_of_discovery, i)]
 
     result_list.sort(key= lambda x : x[0])
-    #sorted(result_list, key=(lambda x: x[0]))
-    #print(result_list)
-    #return str(result_list)
 
-  #element_dict = [(1995, MockElement()), (1997, MockElement()), (2000, MockElement())]
     return render_template('timeline.html', elements = result_list)
 
 
