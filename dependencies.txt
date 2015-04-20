@@ -1,0 +1,29 @@
+Cheetah         - 2.4.4        - active 
+Flask           - 0.10.1       - active development (/usr/local/lib/python2.7/dist-packages)
+Jinja2          - 2.7.3        - active development (/usr/local/lib/python2.7/dist-packages)
+MarkupSafe      - 0.23         - active development (/usr/local/lib/python2.7/dist-packages)
+PyYAML          - 3.10         - active 
+Python          - 2.7.6        - active development (/usr/lib/python2.7/lib-dynload)
+Werkzeug        - 0.10.1       - active development (/usr/local/lib/python2.7/dist-packages)
+argparse        - 1.2.1        - active development (/usr/lib/python2.7)
+chardet         - 2.0.1        - active 
+cloud-init      - 0.7.5        - active 
+colorama        - 0.2.5        - active 
+configobj       - 4.7.2        - active 
+html5lib        - 0.999        - active 
+itsdangerous    - 0.24         - active development (/usr/local/lib/python2.7/dist-packages)
+jsonpatch       - 1.3          - active 
+jsonpointer     - 1.0          - active 
+oauth           - 1.0.1        - active 
+pip             - 1.5.4        - active 
+prettytable     - 0.7.2        - active 
+psycopg2        - 2.4.5        - active 
+pyinotify       - 0.9.4        - active 
+pyserial        - 2.6          - active 
+requests        - 2.2.1        - active 
+setuptools      - 3.3          - active 
+six             - 1.5.2        - active 
+urllib3         - 1.7.1        - active 
+virtualenv      - 1.11.4       - active 
+wsgiref         - 0.1.2        - active development (/usr/lib/python2.7)
+yolk            - 0.4.3        - active development (/usr/local/lib/python2.7/dist-packages/yolk-0.4.3-py2.7.egg)
