@@ -19,9 +19,14 @@
        {% for tuple in elements %}
 
         <div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="/static/images/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
+            {% if loop.index/2 is 0  %}
+			    <div class="cd-timeline-img cd-picture">
+                    <img src="/static/images/orbital.svg" alt="Picture"></div>
+             {%else %}
+                 <div class="cd-timeline-img cd-movie">
+                     <img src="/static/images/orbital.svg" alt="Picture"></div>
+              {% endif %}
+                      <!-- cd-timeline-img -->
 
 
 			<div class="cd-timeline-content">
