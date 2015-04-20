@@ -167,13 +167,13 @@ header h1 {
   margin-top: -12px;
 }
 .cd-timeline-img.cd-picture {
-  background: #1F7872;
+  background:#65E0CB;
 }
 .cd-timeline-img.cd-movie {
-  background: #72B095;
+  background: #006D5B;
 }
 .cd-timeline-img.cd-location {
-  background: #DEDBA7;
+  background: #38BAA4;
 }
 
 .cd-timeline-img.cd-element{

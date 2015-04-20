@@ -19,7 +19,7 @@
        {% for tuple in elements %}
         <div class="cd-timeline-block">
             {% if loop.index % 4 == 0 %}
-			    <div class="cd-timeline-img cd-picture">
+			    <div class="cd-timeline-img cd-element">
 				<img src="/static/images/orbital.svg" alt="Picture">
 			</div> <!-- cd-timeline-img -->
             {% elif loop.index % 2 == 0 %}
@@ -27,7 +27,7 @@
 				<img src="/static/images/orbital.svg" alt="Picture">
 			</div>
             {%else%}
-            <div class="cd-timeline-img cd-element">
+            <div class="cd-timeline-img cd-picture">
 				<img src="/static/images/orbital.svg" alt="Picture">
 			</div>
             {% endif%}
