@@ -10,14 +10,35 @@ check_file () {
     fi
 }
 
+check_all_files () {
+    (IFS=' ';
+    for file in $1;
+    do
+      check_file "$(echo -e "$file" | tr -d '[[:space:]]')"
+    done)
+}
+
 echo "Checking for all files"
 
-check_file "UML.pdf"
-check_file "apiary.apib"
-check_file "IDB.log"
-check_file "tests.py"
-check_file "tests.out"
-check_file "file_dne.test"
+check_all_files "UML.pdf apiary.apib IDB.log tests.py tests.out config.py models.html README.md"
+
+cd app/
+
+check_file "models.py"
+check_file "views.py"
+
+cd templates/
+
+check_all_files "
+about.html funRunApi.html Index.html periodLayout.html tests.html elementLayout.html groupLayout.html layout.html tests_executor.html timeline.html"
+
+cd ../static/css
+
+check_all_files "elements.css  group.css  groups.css  index.css  periodic-table.css  reset.css  style.css"
+
+cd ../scripts/ "carousel.js  jumbotron.js  main.js  modernizr.js  periodictable.js"
+
+cd ../../../
 
 echo "Running tests"
 
@@ -39,8 +60,6 @@ echo "https://${GITHUB_KEY}:x-oauth-basic@github.com" >> ~/.git-credentials
 git checkout travis-ci
 git log > IDB.log
 git add -A
-#git commit -m "Added IDB.log (Travis CI)"
-#git reset --soft HEAD~1
 git commit -m "$commit_message"
 git push -f "https://github.com/josebigio/cs373-idb.git" HEAD:travis-ci
 
