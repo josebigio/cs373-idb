@@ -1,3 +1,21 @@
+commit 4e36498676dbd86e8ae33cc023aaba535ce5e206
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:50:51 2015 +0000
+
+    trying travis pushes to master
+
+commit 34f0c85a80d418afdbca233a1f37eb99d9907bf0
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:48:29 2015 +0000
+
+    trying travis pushes to master
+
+commit 011e600ec1b373352ed46593c0d7005fa46532ee
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:46:56 2015 +0000
+
+    trying travis pushes to master
+
 commit 1380946a7b4a2f8a8b86796e2b036451fa462595
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:45:44 2015 +0000
@@ -300,27 +318,3 @@ Author: Aizhuldyz <aigabbass90@gmail.com>
 Date:   Mon Apr 20 16:22:28 2015 -0500
 
     Update groups.css
-
-commit beb69f7a40e38a48e646cb4be891936f2898344b
-Author: Aizhuldyz <aigabbass90@gmail.com>
-Date:   Mon Apr 20 16:20:20 2015 -0500
-
-    Update about.html
-
-commit ae19012fd7ad1cf5bc6264727a9d921cdaa02dd5
-Author: josebigio <sirownsalot@gmail.com>
-Date:   Sun Apr 19 19:20:26 2015 -0500
-
-    added the link to the funrun api
-
-commit e45960c875b2e44f296b907185dda6a0b11263a3
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 19:16:13 2015 -0500
-
-    removed break
-
-commit 9e88484ed74d5ce12b7da64ce455865f1bcdbe04
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 19:15:29 2015 -0500
-
-    trying normal for loop
