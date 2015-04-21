@@ -1,3 +1,9 @@
+commit 4e36498676dbd86e8ae33cc023aaba535ce5e206
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:50:51 2015 +0000
+
+    trying travis pushes to master
+
 commit 34f0c85a80d418afdbca233a1f37eb99d9907bf0
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:48:29 2015 +0000
@@ -312,15 +318,3 @@ Author: Aizhuldyz <aigabbass90@gmail.com>
 Date:   Mon Apr 20 16:22:28 2015 -0500
 
     Update groups.css
-
-commit beb69f7a40e38a48e646cb4be891936f2898344b
-Author: Aizhuldyz <aigabbass90@gmail.com>
-Date:   Mon Apr 20 16:20:20 2015 -0500
-
-    Update about.html
-
-commit ae19012fd7ad1cf5bc6264727a9d921cdaa02dd5
-Author: josebigio <sirownsalot@gmail.com>
-Date:   Sun Apr 19 19:20:26 2015 -0500
-
-    added the link to the funrun api
