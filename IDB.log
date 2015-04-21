@@ -1,3 +1,9 @@
+commit 0bf5254dd2ca63002da490e58e3856aa99358a19
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:37:05 2015 +0000
+
+    trying travis pushes to master
+
 commit df893f16ba446676590dfcf1fa884687c70e8c1c
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Mon Apr 20 20:35:44 2015 -0500
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 18:43:14 2015 -0500
 
     centering map on USA
-
-commit 17f5985b11060e3539d411aef73401e79f24d24c
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 18:36:18 2015 -0500
-
-    modified canvas to appread in body rather than container
