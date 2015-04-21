@@ -1,3 +1,9 @@
+commit 7a8aa8d78c45d50d9297f305b8ea521552b5053c
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:44:27 2015 +0000
+
+    trying travis pushes to master
+
 commit 4cfe92744cd23f06497dd7a556383728e2002b86
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:42:44 2015 +0000
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 19:11:53 2015 -0500
 
     testing map markers
-
-commit f8a776337668f4cd451f834eef027b31ef07e393
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 19:05:51 2015 -0500
-
-    added loop for funruns
