@@ -4,8 +4,9 @@ python:
 install: pip install -r requirements.txt
 before_script:
   - psql -c 'create database testing_db;' -U postgres
-script: bash travis.bash
-script: nosetests tests.py
+script:
+  - nosetests tests.py
+  - bash travis.bash
 branches:
   except:
     - travis-ci
