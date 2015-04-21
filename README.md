@@ -1,3 +1,4 @@
+[![Build Status](https://api.travis-ci.org/josebigio/cs373-idb.svg?branch=master)](https://travis-ci.org/josebigio/cs373-idb)
 # The Periodic Table Project
 
 by
