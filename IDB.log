@@ -1,3 +1,9 @@
+commit 4338c87dc7fc0605f24c1961e0368c71aefd15bb
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:38:09 2015 +0000
+
+    trying travis pushes to master
+
 commit 0bf5254dd2ca63002da490e58e3856aa99358a19
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:37:05 2015 +0000
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 18:49:01 2015 -0500
 
     testing adding a marker
-
-commit 6cbc6fad470aaf028d34752aa4d5b4755112bb61
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 18:43:14 2015 -0500
-
-    centering map on USA
