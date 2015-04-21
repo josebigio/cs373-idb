@@ -1,3 +1,9 @@
+commit cbd9c7574d12a9aaaa6a4122277be48764a309b6
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:40:26 2015 +0000
+
+    trying travis pushes to master
+
 commit a9ef07dd2a80ef78b16725afe3388cd343f38ff0
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:39:11 2015 +0000
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 18:59:20 2015 -0500
 
     added url to marker
-
-commit 4fa8a35b6b408a9bab12a2cef43af84bc76d6cab
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 18:52:16 2015 -0500
-
-    forgot to escape characters in jinja
