@@ -1,3 +1,9 @@
+commit 34f0c85a80d418afdbca233a1f37eb99d9907bf0
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:48:29 2015 +0000
+
+    trying travis pushes to master
+
 commit 011e600ec1b373352ed46593c0d7005fa46532ee
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:46:56 2015 +0000
@@ -318,9 +324,3 @@ Author: josebigio <sirownsalot@gmail.com>
 Date:   Sun Apr 19 19:20:26 2015 -0500
 
     added the link to the funrun api
-
-commit e45960c875b2e44f296b907185dda6a0b11263a3
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 19:16:13 2015 -0500
-
-    removed break
