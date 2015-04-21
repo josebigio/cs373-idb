@@ -1,3 +1,9 @@
+commit 1380946a7b4a2f8a8b86796e2b036451fa462595
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:45:44 2015 +0000
+
+    trying travis pushes to master
+
 commit 7a8aa8d78c45d50d9297f305b8ea521552b5053c
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:44:27 2015 +0000
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 19:15:29 2015 -0500
 
     trying normal for loop
-
-commit 810e4e3410fe147fff473a0f75caa29b4636ed07
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 19:11:53 2015 -0500
-
-    testing map markers
