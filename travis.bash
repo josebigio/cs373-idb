@@ -51,8 +51,8 @@ echo "https://${GITHUB_KEY}:x-oauth-basic@github.com" >> ~/.git-credentials
 git checkout travis-ci
 git log > IDB.log
 git add -A
-git commit -m "Added IDB.log (Travis CI)"
-git reset --soft HEAD~1
+#git commit -m "Added IDB.log (Travis CI)"
+#git reset --soft HEAD~1
 git commit -m "$commit_message"
 git push -f "https://github.com/josebigio/cs373-idb.git" HEAD:travis-ci
 
