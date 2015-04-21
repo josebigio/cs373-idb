@@ -57,10 +57,11 @@ git config --global push.default simple
 git config --global credential.helper store
 echo "https://${GITHUB_KEY}:x-oauth-basic@github.com" >> ~/.git-credentials
 
+git branch travis-ci
 git checkout travis-ci
 git log > IDB.log
 git add -A
 git commit -m "$commit_message"
-git push -f "https://github.com/josebigio/cs373-idb.git" origin travis-ci
+git push -f "https://github.com/josebigio/cs373-idb.git" HEAD:travis-ci
 
 echo "Done."
