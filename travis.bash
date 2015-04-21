@@ -17,6 +17,7 @@ check_file "apiary.apib"
 check_file "IDB.log"
 check_file "tests.py"
 check_file "tests.out"
+check_file "file_dne.test"
 
 echo "Running tests"
 
