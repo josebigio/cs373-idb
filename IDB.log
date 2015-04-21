@@ -1,3 +1,9 @@
+commit c9c1b326850c2f2a95c341d6a619fa404d1d72a9
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:41:25 2015 +0000
+
+    trying travis pushes to master
+
 commit cbd9c7574d12a9aaaa6a4122277be48764a309b6
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:40:26 2015 +0000
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 19:01:45 2015 -0500
 
     added click listener to marker
-
-commit 65eb34c2cabda55332d8f45e185c8071aa90e9a7
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 18:59:20 2015 -0500
-
-    added url to marker
