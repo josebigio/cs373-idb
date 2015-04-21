@@ -1,3 +1,9 @@
+commit a9ef07dd2a80ef78b16725afe3388cd343f38ff0
+Author: colindmurray <murray.colin43@gmail.com>
+Date:   Tue Apr 21 01:39:11 2015 +0000
+
+    trying travis pushes to master
+
 commit 4338c87dc7fc0605f24c1961e0368c71aefd15bb
 Author: colindmurray <murray.colin43@gmail.com>
 Date:   Tue Apr 21 01:38:09 2015 +0000
@@ -318,9 +324,3 @@ Author: colindmurray <murray.colin43@gmail.com>
 Date:   Sun Apr 19 18:52:16 2015 -0500
 
     forgot to escape characters in jinja
-
-commit 8e37bc5742061c589bffac2da4091b69aca0f430
-Author: colindmurray <murray.colin43@gmail.com>
-Date:   Sun Apr 19 18:49:01 2015 -0500
-
-    testing adding a marker
