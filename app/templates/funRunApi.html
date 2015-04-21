@@ -47,7 +47,16 @@
 {#---------Content---------#}
 
 {% block body %}
-<div class="container"><p>This is a map that displays all the "Fun Run's" across the United States of America.<br>Hover your mouse pointer over any of the markers to learn the name of the Fun Run. You can also click it to go to the Fun Run's website.<br>Fruendum!!!</p></div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Fun Run's API</h3>
+  </div>
+  <div class="panel-body">
+    <p>This is a map that displays all the "Fun Run's" across the United States of America.<br>Hover your mouse pointer over any of the markers to learn the name of the Fun Run. You can also click it to go to the Fun Run's website.<br>Fruendum!!!
+    </p>
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
 <div id="map-canvas"></div>
 {% endblock %}
 {% block content %}
