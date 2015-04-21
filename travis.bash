@@ -61,6 +61,6 @@ git checkout travis-ci
 git log > IDB.log
 git add -A
 git commit -m "$commit_message"
-git push -f "https://github.com/josebigio/cs373-idb.git" HEAD:travis-ci
+git push -f "https://github.com/josebigio/cs373-idb.git" origin travis-ci
 
 echo "Done."
