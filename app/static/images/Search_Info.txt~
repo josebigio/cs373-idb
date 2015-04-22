@@ -1,0 +1,38 @@
+
+--------
+SELECT to_tsvector('It''s kind of fun to do the impossible') @@ to_tsquery('impossible');
+----------
+
+to_tsvector: makes a set of lexeme items contained within the sentence.  Lexemes are sterilized word chunks (tense is removed, caps are switched to lower case, plurality is removed etc.)
+
+to_tsquery: takes the argument and creates an equivalent lexeme.  Thankfully this also stores and respects boolean (&&, ||, and nots)
+
+@@ Calls the system to test the former by the latter.  In this case, see if the later lexeme is contained within the former set of lexemes.
+
+The idea of a document joins all pertinent information together thereby allowing to_tsquery to search for accross all data.  Documents are built using the code below
+
+------
+SELECT to_tsvector(post.language::regconfig, post.title) || 
+       to_tsvector(post.language::regconfig, post.content) ||
+       to_tsvector('simple', author.name) ||
+       to_tsvector('simple', coalesce((string_agg(tag.name, ' ')), '')) as document
+------
+
+Usage of the 'simple' argument in to_tsvector stops the system from processing the argument into Lexeme's, preventing the breakdown of the author's name.  This is good when you would prefer to have an exact match rather than searching by root. 
+
+Ex.  David only matches with David.  Without simple David could be found by video as they both share a common stem 'vid'
+
+Ranking Implementation:
+two important functions, ts_rank() and setweight()
+
+-------
+setweight(to_tsvector(post.language::regconfig, post.title), 'A')
+-------
+
+The purpose of this statement is to place title matches at the top of the ranking list.  Think of it like saying anything with an A argument is more pertinent than with another value and therefore should appear first in the search. For this system, there are four essential arguments [A,B,C,D] with categorical improtance A>B>C>D.
+
+-------
+ORDER BY ts_rank(p_search.document, to_tsquery('english', 'Endangered & Species')) DESC;
+-------
+
+This takes all search results that matched the lexemes and orders them by relavency assigned as an arbitrary float.  As expected, matches in an A column have greater pertinence over matches in the B category.  As ranking is incredibly subjective and passed on a per application basis, it might be worthwhile writing a personal ranking system.  As long as it returns some numerical metric, it should work well.
