@@ -14,10 +14,10 @@
 		<p>
 		<canvas id="elements_chart" width="400" height="400"></canvas>
 
-			{{temp = 72}}
-			{{gas_count = 0}}
-			{{liquid_count = 0}}
-			{{solid_count = 0}}
+			{% set temp = 72 %}
+			{% set gas_count = 0 %}
+			{% set liquid_count = 0 %}
+			{% set solid_count = 0 %}
 
 			{% for atomic_number, element_tuple in elem_dict.items() %}
                 {% if temp > element_tuple[3] %}
