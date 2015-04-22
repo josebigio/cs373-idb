@@ -176,6 +176,15 @@ def timeline():
 
     return render_template('timeline.html', elements = result_list)
 
+@app.route('/charts')
+def charts():
+    elem_list = list(Element.query.all())
+    elem_dict = {}
+    for e in elem_list:
+        if(e.atomic_number!=None and e.element!=None and e.melting_point_k!=None and e.boiling_point_k!=None):
+            elem_dict[e.atomic_number] = (e.element, e.melting_point_k, e.boiling_point_k)
+
+    return render_template('charts.html', elem_dict = elem_dict)
 
 def getLatLonFromMapUrl(map_url):
     lat = 0
@@ -242,6 +251,14 @@ def run_tests():
     out,err = p.communicate()
     print(err)
     return render_template('tests.html', name=err)
+
+
+@app.route('/search')
+def search():
+    columns = request.args.get('columns')
+    query = request.args.get('q').strip('+')
+    results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
+    return render_template('search.html', query=query, results=results, size=len(results))
 
 
 #api handlers

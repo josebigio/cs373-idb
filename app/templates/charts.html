@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{#---------Title---------#}
+{% block title %}Charts{% endblock %}
+{#---------Header---------#}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/group.css">
+{% endblock %}
+{#---------Content---------#}
+{% block content %}
+<html>
+
+	<div class="container">
+		<canvas id="elements_chart" width="400" height="400"></canvas>
+	</div>
+
+</html>
+{% endblock %}
+
+{% block scripts %}
+	<script src="https://cdnjs.com/libraries/chart.js"></script>
+	<script src="/static/scripts/elements_chart.js"></script>	
+{% endblock %}
