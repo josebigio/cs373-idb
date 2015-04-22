@@ -11,10 +11,10 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-temp = 72;
-gas_count = 0;
-liquid_count = 0;
-solid_count = 0;
+var temp = 72;
+var gas_count = 0;
+var liquid_count = 0;
+var solid_count = 0;
 
 for (var atomic_number in elements_info) {
     if(elements_info.hasOwnProperty(atomic_number))
@@ -38,19 +38,19 @@ for (var atomic_number in elements_info) {
 
 var data = [
 {
-    value: var gas_count,
+    value: gas_count,
     color:"#F7464A",
     highlight: "#FF5A5E",
     label: "Gas"
 },
 {
-    value: var liquid_count,
+    value: liquid_count,
     color: "#46BFBD",
     highlight: "#5AD3D1",
     label: "Liquid"
 },
 {
-    value: var solid_count,
+    value: solid_count,
     color: "#FDB45C",
     highlight: "#FFC870",
     label: "Solid"
