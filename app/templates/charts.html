@@ -21,11 +21,11 @@
 
 			{% for atomic_number, element_tuple in elem_dict.items() %}
                 {% if temp > element_tuple[3] %}
-            		{{gas_count += 1}}
+            		{{set gas_count = gas_count + 1}}
             	{% elif temp > element_tuple[2] %}
-            		{{liquid_count += 1}}
+            		{{set liquid_count = liquid_count + 1}}
             	{% else %}
-            		{{solid_count += 1}}
+            		{{set solid_count = solid_count + 1}}
             	{% endif %}
            	{% endfor %}
 
