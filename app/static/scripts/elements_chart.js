@@ -2,6 +2,7 @@ var xmlhttp = new XMLHttpRequest();
 var url = "http://theperiodictableproject.me/api/element?columns=symbol,element,boiling_point_k,melting_point_k";
 
 xmlhttp.onreadystatechange = function() {
+    document.write("In function");
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         var elements_info = JSON.parse(xmlhttp.responseText);
     }
