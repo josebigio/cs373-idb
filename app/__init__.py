@@ -9,7 +9,7 @@ cwd = os.path.dirname(os.path.realpath(__file__))
 
 image_paths = []
 # Append all image folders to image path
-for dir in os.listdir(cwd + '/app/static/images'):
+for dir in os.listdir(cwd + '/static/images/'):
     if '.' not in dir:
         image_paths += 'static/images/' + dir
 app.config['IMAGES_PATH'] = image_paths
