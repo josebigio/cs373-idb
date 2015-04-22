@@ -26,6 +26,7 @@ cd app/
 
 check_file "models.py"
 check_file "views.py"
+check_file "__init__.py"
 
 cd templates/
 

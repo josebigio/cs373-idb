@@ -7,6 +7,9 @@ import urllib2
 import subprocess
 import re
 
+standard_image_width = 300
+standard_image_height = 300
+
 
 @app.errorhandler(404)
 def not_found(error):
@@ -155,14 +158,19 @@ def handle_individual_trivia(name):
 def about():
     return render_template('about.html')
 
+def getFileFromPath(filePath):
+    return filePath.split('/')[-1]
+
 @app.route('/timeline')
 def timeline():
     elem_list = list(Element.query.all())
-    result_list =[]
+    result_list = []
     for i in elem_list:
         if not (i.year_of_discovery == None or i.discoverer == None):
             image_default = Image.query.filter_by(element_number = i.atomic_number, image_type ="default").first()
-            result_list += [(i.year_of_discovery, i, image_default)]
+            image_default_path = resized_img_src(getFileFromPath(image_default),
+                                                 width=standard_image_width, height=standard_image_height)
+            result_list += [(i.year_of_discovery, i, image_default_path)]
 
     result_list.sort(key= lambda x : x[0])
 

@@ -35,7 +35,7 @@
 			<div class="cd-timeline-content">
 				<h2>{{tuple[1].element}}</h2>
 				<p> Discovered by {{tuple[1].discoverer}} </p>
-                <img src= {{tuple[2].image_path}} >
+                <img src= {{resized_img_src(tuple[2].image_path, width=400, height=300)}} >
 				<span class="cd-date"> {{tuple[0]}} </span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
