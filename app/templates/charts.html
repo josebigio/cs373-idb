@@ -14,59 +14,9 @@
 		<p>
 		<canvas id="elements_chart" width="400" height="400"></canvas>
 
-			{% set temp = 72 %}
-			{% set gas_count = 0 %}
-			{% set liquid_count = 0 %}
-			{% set solid_count = 0 %}
-
-			{% for atomic_number, element_tuple in elem_dict.items() %}
-                {% if temp > element_tuple[2] %}
-            		{% set gas_count = gas_count + 1 %}
-            	{% elif temp > element_tuple[1] %}
-            		{% set liquid_count = liquid_count + 1 %}
-            	{% else %}
-            		{% set solid_count = solid_count + 1 %}
-            	{% endif %}
-           	{% endfor %}
-
 			{% block scripts %}
 			<script src="/static/scripts/Chart.js"></script>
 			<script src="/static/scripts/elements_chart.js"></script>
-			<script>
-
-			
-
-			var data = [
-			    {
-			        value: 1,
-			        color:"#F7464A",
-			        highlight: "#FF5A5E",
-			        label: "Gas"
-			    },
-			    {
-			        value: 2,
-			        color: "#46BFBD",
-			        highlight: "#5AD3D1",
-			        label: "Liquid"
-			    },
-			    {
-			        value: 3,
-			        color: "#FDB45C",
-			        highlight: "#FFC870",
-			        label: "Solid"
-			    }
-			]
-
-			var options = {
-			    segmentShowStroke : false,
-			    animateScale : true
-			}
-
-			window.onload = function(){
-			                var ctx = document.getElementById("elements_chart").getContext("2d");
-			                window.elements_chart = new Chart(ctx).Doughnut(data, options);
-			            };
-			</script>
 			{% endblock %}
 		</p>
 	</div>
