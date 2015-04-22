@@ -38,19 +38,19 @@ for (var atomic_number in elements_info) {
 
 var data = [
 {
-    value: gas_count,
+    value: var gas_count,
     color:"#F7464A",
     highlight: "#FF5A5E",
     label: "Gas"
 },
 {
-    value: liquid_count,
+    value: var liquid_count,
     color: "#46BFBD",
     highlight: "#5AD3D1",
     label: "Liquid"
 },
 {
-    value: solid_count,
+    value: var solid_count,
     color: "#FDB45C",
     highlight: "#FFC870",
     label: "Solid"
