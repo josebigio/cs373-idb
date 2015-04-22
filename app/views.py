@@ -245,6 +245,14 @@ def run_tests():
     return render_template('tests.html', name=err)
 
 
+@app.route('/search')
+def search():
+    columns = request.args.get('columns')
+    query = request.args.get('q').strip('+')
+    results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
+    return render_template('search.html', query=query, results=results, size=len(results))
+
+
 #api handlers
 def handle_element(column_set):
     elements = list(Element.query.all())
