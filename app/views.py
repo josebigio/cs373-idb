@@ -231,7 +231,8 @@ def element(atomic_number_str=None):
     e = Element.query.get(atomic_number)
     images = list(Image.query.filter_by(element_number=atomic_number).all())
     for i in images:
-        i.image_path = resized_img_src(getFileFromPath(i.image_path),
+        if i.image_type != "default":
+            i.image_path = resized_img_src(getFileFromPath(i.image_path),
                                                  width=standard_image_width, height=standard_image_height)
 
     trivias = list(Trivia.query.filter_by(element_number=atomic_number).all())
