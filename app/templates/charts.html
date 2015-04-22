@@ -13,29 +13,47 @@
 	<div class="container">
 		<p>
 		<canvas id="elements_chart" width="400" height="400"></canvas>
+
+			{{temp = 72}}
+			{{gas_count = 0}}
+			{{liquid_count = 0}}
+			{{solid_count = 0}}
+
+			{% for atomic_number, element_tuple in elem_dict.items() %}
+                {% if temp > element_tuple[3] %}
+            		{{gas_count += 1}}
+            	{% elif temp > element_tuple[2] %}
+            		{{liquid_count += 1}}
+            	{% else %}
+            		{{solid_count += 1}}
+            	{% endif %}
+           	{% endfor %}
+
 			{% block scripts %}
 			<script src="/static/scripts/Chart.js"></script>
 			<!--<script src="/static/scripts/elements_chart.js"></script>-->
 			<script>
 
+			
+
 			var data = [
 			    {
-			        value: 300,
+			        value: {{gas_count}},
 			        color:"#F7464A",
 			        highlight: "#FF5A5E",
-			        label: "Red"
+			        label: "Gas"
 			    },
 			    {
-			        value: 50,
+			        value: {{liquid_count}},
 			        color: "#46BFBD",
 			        highlight: "#5AD3D1",
-			        label: "Green"
+			        label: "Liquid"
 			    },
 			    {
-			        value: 100,
+			        value: {{solid_count}},
 			        color: "#FDB45C",
 			        highlight: "#FFC870",
-			        label: "Yellow"
+			        label: "Solid"
 			    }
 			]
 
