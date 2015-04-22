@@ -1,4 +1,4 @@
-var data = [
+/*var data = [
     {
         value: 300,
         color:"#F7464A",
@@ -21,5 +21,6 @@ var data = [
 
 var ctx = document.getElementById("elements_chart").getContext("2d");
 var elements_chart = new Chart(ctx[1]).Doughnut(data);
+*/
 
 document.write("Hello world");
