@@ -15,7 +15,7 @@ liquid_count = 0;
 solid_count = 0;
 
 for (var atomic_number in elements_info) {
-    if elements_info.hasOwnProperty(atomic_number)
+    if(elements_info.hasOwnProperty(atomic_number))
     {
         for (var element_info in elements_info[atomic_number])
         {
