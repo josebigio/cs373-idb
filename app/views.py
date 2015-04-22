@@ -168,6 +168,15 @@ def timeline():
 
     return render_template('timeline.html', elements = result_list)
 
+@app.route('/charts')
+def charts():
+    elem_list = list(Element.query.all())
+    elem_dict = {}
+    for e in elem_list:
+        if(e.atomic_number!=None and e.element!=None and e.melting_point!=None and e.boiling_point!=None):
+            elem_dict[e.atomic_number] = (e.element, e.melting_point, e.boiling_point)
+
+    return render_template('charts.html', elem_dict = elem_dict)
 
 def getLatLonFromMapUrl(map_url):
     lat = 0
