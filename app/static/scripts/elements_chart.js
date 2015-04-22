@@ -1,11 +1,13 @@
 var xmlhttp = new XMLHttpRequest();
 var url = "http://theperiodictableproject.me/api/element?columns=symbol,element,boiling_point_k,melting_point_k";
 
+var elements_info;
+
 xmlhttp.onreadystatechange = function() {
     document.write("In function");
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         document.write("Success");
-        var elements_info = JSON.parse(xmlhttp.responseText);
+        elements_info = JSON.parse(xmlhttp.responseText);
     }
 }
 xmlhttp.open("GET", url, true);
