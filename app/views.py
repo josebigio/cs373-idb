@@ -8,8 +8,8 @@ import urllib2
 import subprocess
 import re
 
-standard_image_width = 300
-standard_image_height = 300
+standard_image_width = 500
+standard_image_height = 500
 
 
 @app.errorhandler(404)
@@ -219,7 +219,10 @@ def group(name=None):
     elements = list(Element.query.filter_by(group_number=group_num).all())
     image_dict = {}
     for e in elements:
-        image_dict[e] = Image.query.filter_by(element_number=e.atomic_number, image_type="default").first()
+        image_default = Image.query.filter_by(element_number=e.atomic_number, image_type="default").first()
+        image_default.image_path = resized_img_src(getFileFromPath(image_default.image_path),
+                                                 width=standard_image_width, height=standard_image_height)
+        image_dict[e] = image_default
     return render_template('groupLayout.html', group=g, image_dict=image_dict)
 
 @app.route('/element/<atomic_number_str>')
@@ -227,9 +230,15 @@ def element(atomic_number_str=None):
     atomic_number = int(atomic_number_str)
     e = Element.query.get(atomic_number)
     images = list(Image.query.filter_by(element_number=atomic_number).all())
+    for i in images:
+        i.image_path = resized_img_src(getFileFromPath(i.image_path),
+                                                 width=standard_image_width, height=standard_image_height)
+
     trivias = list(Trivia.query.filter_by(element_number=atomic_number).all())
-    default_image = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
-    return render_template('elementLayout.html', element=e, images=images, default_image=default_image, trivias=trivias)
+    image_default = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
+    image_default.image_path = resized_img_src(getFileFromPath(image_default.image_path),
+                                                 width=standard_image_width, height=standard_image_height)
+    return render_template('elementLayout.html', element=e, images=images, default_image=image_default, trivias=trivias)
 
 @app.route('/period/<name>')
 def period(name=None):
@@ -238,7 +247,10 @@ def period(name=None):
     elements = list(Element.query.filter_by(period_number=period_num).all())
     image_dict = {}
     for e in elements:
-        image_dict[e] = Image.query.filter_by(element_number=e.atomic_number, image_type="default").first()
+        image_default = Image.query.filter_by(element_number=e.atomic_number, image_type="default").first()
+        image_default.image_path = resized_img_src(getFileFromPath(image_default.image_path),
+                                                 width=standard_image_width, height=standard_image_height)
+        image_dict[e] = image_default
     return render_template('periodLayout.html', period=p, image_dict=image_dict)
 
 @app.route('/tests/')
