@@ -236,8 +236,6 @@ def element(atomic_number_str=None):
 
     trivias = list(Trivia.query.filter_by(element_number=atomic_number).all())
     image_default = Image.query.filter_by(element_number=atomic_number, image_type="default").first()
-    image_default.image_path = resized_img_src(getFileFromPath(image_default.image_path),
-                                                 width=standard_image_width, height=standard_image_height)
     return render_template('elementLayout.html', element=e, images=images, default_image=image_default, trivias=trivias)
 
 @app.route('/period/<name>')
