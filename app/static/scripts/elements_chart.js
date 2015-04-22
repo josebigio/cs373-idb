@@ -1,9 +1,9 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "myTutorials.txt";
+var url = "http://theperiodictableproject.me/api/element?columns=symbol,element,boiling_point_k,melting_point_k";
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var element_info = JSON.parse(xmlhttp.responseText);
+        var elements_info = JSON.parse(xmlhttp.responseText);
     }
 }
 xmlhttp.open("GET", url, true);
@@ -14,16 +14,22 @@ gas_count = 0;
 liquid_count = 0;
 solid_count = 0;
 
-for (var key in element_info) {
-    if(element_info.hasOwnProperty(key)) {
-        if(temp > key[boiling_point_k]) {
-            gas_count++;
-        }
-        else if(temp > key[melting_point_k]) {
-            liquid_count++;
-        }
-        else {
-            solid_count++;
+for (var atomic_number in elements_info) {
+    if elements_info.hasOwnProperty(atomic_number)
+    {
+        for (var element_info in elements_info[atomic_number])
+        {
+            if(elements_info.hasOwnProperty(element_info)) {
+                if(temp > element_info["boiling_point_k"]) {
+                    gas_count++;
+                }
+                else if(temp > element_info["melting_point_k"]) {
+                    liquid_count++;
+                }
+                else {
+                    solid_count++;
+                }
+            }
         }
     }
 }
