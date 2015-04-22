@@ -13,36 +13,34 @@
 {#---------Content---------#}
 
 {% block content %}
-    <p>{{test}}</p>
-    <img src= {{resized_img_src('hydrogen.jpg', width=400, height=300)}} >
 
-	<!--<section id="cd-timeline" class="cd-container">-->
+	<section id="cd-timeline" class="cd-container">
 
-       <!--{% for tuple in elements %}-->
-        <!--<div class="cd-timeline-block">-->
-            <!--{% if loop.index % 4 == 0 %}-->
-			    <!--<div class="cd-timeline-img cd-location">-->
-				<!--<img src="/static/images/orbital.svg" alt="Picture">-->
-			<!--</div> &lt;!&ndash; cd-timeline-img &ndash;&gt;-->
-            <!--{% elif loop.index % 2 == 0 %}-->
-                <!--<div class="cd-timeline-img cd-movie">-->
-				<!--<img src="/static/images/orbital.svg" alt="Picture">-->
-			<!--</div>-->
-            <!--{%else%}-->
-            <!--<div class="cd-timeline-img cd-picture">-->
-				<!--<img src="/static/images/orbital.svg" alt="Picture">-->
-			<!--</div>-->
-            <!--{% endif%}-->
+       {% for tuple in elements %}
+        <div class="cd-timeline-block">
+            {% if loop.index % 4 == 0 %}
+			    <div class="cd-timeline-img cd-location">
+				<img src="/static/images/orbital.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+            {% elif loop.index % 2 == 0 %}
+                <div class="cd-timeline-img cd-movie">
+				<img src="/static/images/orbital.svg" alt="Picture">
+			</div>
+            {%else%}
+            <div class="cd-timeline-img cd-picture">
+				<img src="/static/images/orbital.svg" alt="Picture">
+			</div>
+            {% endif%}
 
-			<!--<div class="cd-timeline-content">-->
-				<!--<h2>{{tuple[1].element}}</h2>-->
-				<!--<p> Discovered by {{tuple[1].discoverer}} </p>-->
-                <!--<img src= {{resized_img_src(tuple[2].image_path, width=400, height=300)}} >-->
-				<!--<span class="cd-date"> {{tuple[0]}} </span>-->
-			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
-		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
+			<div class="cd-timeline-content">
+				<h2>{{tuple[1].element}}</h2>
+				<p> Discovered by {{tuple[1].discoverer}} </p>
+                <img src= {{tuple[2].image_path}} >
+				<span class="cd-date"> {{tuple[0]}} </span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
 
-        <!--{%endfor%}-->
+        {%endfor%}
         <!--<script>-->
 
                 <!--var container = document.getElementById("cd-timeline");-->
@@ -165,7 +163,7 @@
 				<!--<span class="cd-date">Feb 26</span>-->
 			<!--</div> &lt;!&ndash; cd-timeline-content &ndash;&gt;-->
 		<!--</div> &lt;!&ndash; cd-timeline-block &ndash;&gt;-->
-	<!--</section> &lt;!&ndash; cd-timeline &ndash;&gt;-->
+	</section> <!-- cd-timeline -->
 
 {% endblock %}
  {#---------Scripts---------#}

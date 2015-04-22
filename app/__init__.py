@@ -13,7 +13,6 @@ for dir in os.listdir(cwd + '/static/images/'):
     if '.' not in dir:
         image_paths.append('static/images/' + dir)
 
-print(image_paths)
 app.config['IMAGES_PATH'] = image_paths
 app.config['IMAGES_CACHE'] = '/tmp/flask-images/'
 app.secret_key = 'high_five'
