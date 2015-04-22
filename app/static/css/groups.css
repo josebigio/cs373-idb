@@ -4,6 +4,13 @@ a.api:hover{
     text-decoration: none;
 }
 
+a.api:link{
+    font-style: italic;
+    font-size: 20px;
+    padding-right: 400px;
+    color:#666666;
+}
+
 a.api:visited{
     color:#666666;
 }
@@ -107,3 +114,7 @@ span.bio{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
+.search_result{
+    text-align: left;
+
+}
