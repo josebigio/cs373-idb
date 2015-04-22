@@ -173,7 +173,7 @@ def charts():
     elem_list = list(Element.query.all())
     elem_dict = {}
     for e in elem_list:
-        if(e.atomic_number!=None and e.element!=None and e.melting_point!=None and e.boiling_point!=None):
+        if(e.atomic_number!=None and e.element!=None and e.melting_point_k!=None and e.boiling_point_k!=None):
             elem_dict[e.atomic_number] = (e.element, e.melting_point_k, e.boiling_point_k)
 
     return render_template('charts.html', elem_dict = elem_dict)
