@@ -171,7 +171,7 @@ def timeline():
             image_default = Image.query.filter_by(element_number = i.atomic_number, image_type ="default").first()
             image_default.image_path = resized_img_src(getFileFromPath(image_default.image_path),
                                                  width=standard_image_width, height=standard_image_height)
-            result_list += [(i.year_of_discovery, i, image_default_path)]
+            result_list += [(i.year_of_discovery, i, image_default)]
 
     result_list.sort(key= lambda x : x[0])
 
