@@ -4,9 +4,7 @@ var url = "http://theperiodictableproject.me/api/element?columns=symbol,element,
 var elements_info;
 
 xmlhttp.onreadystatechange = function() {
-    document.write("In function");
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        document.write("Success");
         elements_info = JSON.parse(xmlhttp.responseText);
     }
 }
