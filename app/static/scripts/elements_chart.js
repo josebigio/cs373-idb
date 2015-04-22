@@ -36,6 +36,10 @@ for (var atomic_number in elements_info) {
     }
 }
 
+document.write(gas_count.toString());
+document.write(liquid_count.toString());
+document.write(solid_count.toString());
+
 var data = [
 {
     value: gas_count,
