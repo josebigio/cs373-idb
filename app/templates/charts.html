@@ -20,9 +20,9 @@
 			{% set solid_count = 0 %}
 
 			{% for atomic_number, element_tuple in elem_dict.items() %}
-                {% if temp > element_tuple[3] %}
+                {% if temp > element_tuple[2] %}
             		{% set gas_count = gas_count + 1 %}
-            	{% elif temp > element_tuple[2] %}
+            	{% elif temp > element_tuple[1] %}
             		{% set liquid_count = liquid_count + 1 %}
             	{% else %}
             		{% set solid_count = solid_count + 1 %}
