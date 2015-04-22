@@ -175,7 +175,7 @@ def timeline():
 
     result_list.sort(key= lambda x : x[0])
 
-    return render_template('timeline.html', elements = result_list)
+    return render_template('timeline.html', elements=result_list, test=app.config['IMAGES_PATH'])
 
 @app.route('/charts')
 def charts():
