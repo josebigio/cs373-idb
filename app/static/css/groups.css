@@ -107,3 +107,7 @@ span.bio{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
+.search_result{
+    text-align: left;
+
+}
