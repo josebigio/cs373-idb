@@ -24,5 +24,10 @@ var options = {
     animateScale : true
 }
 
-var ctx = document.getElementById("elements_chart").getContext("2d");
-var elements_chart = new Chart(ctx).Doughnut(data, options);
+window.onload = function(){
+                var ctx = document.getElementById("elements_chart").getContext("2d");
+                window.elements_chart = new Chart(ctx).Doughnut(data, options);
+            };
+
+
+
