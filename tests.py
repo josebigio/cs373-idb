@@ -530,6 +530,51 @@ class TestCase(unittest.TestCase):
             self.assertEqual(data['1845']['description'], u"description of trivia of group 3")
             self.assertEqual(data['1836']['description'], u"description of trivia of group 4")
 
+    def test_perform_search1(self):
+        with self.app as c:
+            element1 = Element(atomic_number=2, symbol='e', element='Hydrogen', phase = '13',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Colin',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1856, I think it is a good description',
+                        column_number = 4)
+            element2 = Element(atomic_number=3, symbol='r', element='Hydr', phase = '1r',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Meeee',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1886, I think it is a good description, do you think os too',
+                        column_number = 3)
+            db.session.add(element1)
+            db.session.add(element2)
+            db.session.commit()
+            query = '1856'
+            result = perform_seacrh(query)
+            self.assertEqual(len(result) == 1)
+            self.assertEqual(result[0][0] == 2)
+            self.assertEqual(result[0][1] == 'e')
+
 def main():
     unittest.main()
 
