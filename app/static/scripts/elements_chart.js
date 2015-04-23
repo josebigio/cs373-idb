@@ -70,10 +70,12 @@ function construct_chart(elements_info) {
                     window.elements_chart = new Chart(ctx).Doughnut(data, options);
                 };
 
+
+    document.write(gas_count.toString());
+    document.write(liquid_count.toString());
+    document.write(solid_count.toString());
+
 }
 
 
-//document.write(gas_count.toString());
-//document.write(liquid_count.toString());
-//document.write(solid_count.toString());
 
