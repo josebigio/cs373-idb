@@ -284,9 +284,12 @@ def search():
         d['url'] = '/element/' + str(row[0])
         d['title'] = row[2]
         snippet = getSnippet(row, query)
-        d['snippet'] = zip(snippet.split(' '), pattern.sub(' ', snippet).split(' '))
+        
+        d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
+        print(d['snippet'])
         results.append(d)
-    return render_template('search.html', query=query, results=results, size=len(results))
+    q = q.replace(' ', '|')
+    return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
 
 
 #api handlers
@@ -397,7 +400,7 @@ setweight(to_tsvector(CAST(first_ionization_potential AS VARCHAR)), 'C') ||
 setweight(to_tsvector(CAST(specific_heat_capacity AS VARCHAR)), 'B') ||
 setweight(to_tsvector(CAST(electron_configuration AS VARCHAR)), 'C') ||
 setweight(to_tsvector(discoverer), 'A') ||
-setweight(to_tsvector(elements.description), 'B')
+setweight(to_tsvector(elements.description), 'C')
     as document from elements
     JOIN groups g ON elements.column_number = g.group_number) p_search
     WHERE p_search.document @@ to_tsquery('{!s}')
@@ -418,6 +421,8 @@ def getSnippet(result, query):
         match = desc.find(q.lower())
         if(match != -1):
             match_indices.append(match)
+    if (len(match_indices) == 0):
+        return element.description[:100]
     min_index = min(match_indices)
     max_index = max(match_indices)
     left_index = min_index
@@ -430,6 +435,7 @@ def getSnippet(result, query):
         right_index = len(desc)-1
     else:
         right_index = right_index + 70 
+    desc = element.description
     description = desc[left_index:right_index]
     return description
 
