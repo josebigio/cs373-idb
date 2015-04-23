@@ -8,6 +8,7 @@ from app import app, db
 from app.models import Element, Period, Group, Trivia
 
 from app.views import perform_search
+from app.views import getSnippet
 
 class TestCase(unittest.TestCase):
     def setUp(self):
@@ -585,6 +586,14 @@ class TestCase(unittest.TestCase):
             self.assertEqual(len(result), 1)
             self.assertEqual(result[0][0], 3)
             self.assertEqual(result[0][1], 'r')
+
+
+    def test_get_snippet(self):
+        result = (1, 'He', 'helium', 4, 3, 12, 'sth', 'type', 1.45, 1.33, 1.443, 1.0, 1.66,
+ 1.34, 3, 1893, 1.3, 'sth', 'Colin', 'this is a good description and you cant change it')
+        query = 'He'
+        snippet = getSnippet(result, query)
+
 
 def main():
     unittest.main()
