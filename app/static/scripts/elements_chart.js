@@ -7,73 +7,78 @@ xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         document.write(xmlhttp.responseText);
         elements_info = JSON.parse(xmlhttp.responseText);
+        construct_chart(elements_info)
     }
 }
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-var temp = 72;
-var gas_count = 0;
-var liquid_count = 0;
-var solid_count = 0;
+function construct_chart(elements_info) {
 
-document.write(elements_info)
+    var temp = 72;
+    var gas_count = 0;
+    var liquid_count = 0;
+    var solid_count = 0;
 
-for (var atomic_number in elements_info) {
-    document.write("A");
-    if(elements_info.hasOwnProperty(atomic_number))
-    {
-        document.write("B");
-        for (var element_info in elements_info[atomic_number])
+    for (var atomic_number in elements_info) {
+        document.write("A");
+        if(elements_info.hasOwnProperty(atomic_number))
         {
-            document.write("C");
-            if(elements_info.hasOwnProperty(element_info)) {
-                document.write("D");
-                if(temp > element_info["boiling_point_k"]) {
-                    gas_count = gas_count + 1;
-                }
-                else if(temp > element_info["melting_point_k"]) {
-                    liquid_count = liquid_count + 1;
-                }
-                else {
-                    solid_count = solid_count + 1;
+            document.write("B");
+            for (var element_info in elements_info[atomic_number])
+            {
+                document.write("C");
+                if(elements_info.hasOwnProperty(element_info)) {
+                    document.write("D");
+                    if(temp > element_info["boiling_point_k"]) {
+                        gas_count = gas_count + 1;
+                    }
+                    else if(temp > element_info["melting_point_k"]) {
+                        liquid_count = liquid_count + 1;
+                    }
+                    else {
+                        solid_count = solid_count + 1;
+                    }
                 }
             }
         }
     }
+
+    var data = [
+    {
+        value: gas_count,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Gas"
+    },
+    {
+        value: liquid_count,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Liquid"
+    },
+    {
+        value: solid_count,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Solid"
+    }
+    ]
+
+    var options = {
+        segmentShowStroke : false,
+        animateScale : true
+    }
+
+    window.onload = function(){
+                    var ctx = document.getElementById("elements_chart").getContext("2d");
+                    window.elements_chart = new Chart(ctx).Doughnut(data, options);
+                };
+
 }
+
 
 //document.write(gas_count.toString());
 //document.write(liquid_count.toString());
 //document.write(solid_count.toString());
 
-var data = [
-{
-    value: gas_count,
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Gas"
-},
-{
-    value: liquid_count,
-    color: "#46BFBD",
-    highlight: "#5AD3D1",
-    label: "Liquid"
-},
-{
-    value: solid_count,
-    color: "#FDB45C",
-    highlight: "#FFC870",
-    label: "Solid"
-}
-]
-
-var options = {
-    segmentShowStroke : false,
-    animateScale : true
-}
-
-window.onload = function(){
-                var ctx = document.getElementById("elements_chart").getContext("2d");
-                window.elements_chart = new Chart(ctx).Doughnut(data, options);
-            };
