@@ -46,7 +46,7 @@ xmlhttp.send();
 var slider = new Slider(document.getElementById('temperature_slider'), {
     formatter: function(value) {
         return 'Current temperature: ' + value;
-    }
+    },
     change: function(event) {
         construct_chart(slider.data('slider').getValue());
     }
