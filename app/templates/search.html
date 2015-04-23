@@ -27,8 +27,6 @@
                 <p>
                     ...
                 {% for word in result['snippet'] %}
-                    {% pattern = re.compile("[^\w']") %}
-                    {% if pattern.sub(' ',word).strip() in query %}
                         <strong> {{word}} </strong>
                     {% else %}
                         {{word}}
