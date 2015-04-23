@@ -74,16 +74,14 @@ function construct_chart(elements_info) {
             }
             //}
         }
-        //}
+        //
     }
 
-    console.log(window.elements_chart.segments[0].value);
+    window.elements_chart.segments[0].value = gas_count;
+    window.elements_chart.segments[0].value = liquid_count;
+    window.elements_chart.segments[0].value = solid_count;
 
-    //window.elements_chart.data[0].value = gas_count;
-    //window.elements_chart.data[1].value = liquid_count;
-    //window.elements_chart.data[2].value = solid_count;
-
-    //indow.elements_chart.update();
+    window.elements_chart.update();
 
 }
 
