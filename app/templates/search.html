@@ -26,8 +26,8 @@
                 <a href = {{result['url']}}>{{result['title']}}</a>
                 <p>
                     ...
-                {% for word in result['snippet'] %}
-                    {%if word in query%}
+                {% for word, reg_word in result['snippet'] %}
+                    {%if reg_word in query%}
                         <strong> {{word}} </strong>
                     {% else %}
                         {{word}}

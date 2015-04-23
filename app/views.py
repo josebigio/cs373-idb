@@ -278,12 +278,13 @@ def search():
     q = q.replace(' ', '&')
     search_result = perform_search(q)
     results = []
+    pattern = re.compile("[^\w']")
     for row in search_result:
         d = {}
         d['url'] = '/element/' + str(row[0])
         d['title'] = row[2]
-        snippet = getSnippet(row, query).split(' ')
-        d['snippet'] = snippet
+        snippet = getSnippet(row, query)
+        d['snippet'] = zip(snippet.split(' '), pattern.sub(' ', snippet).split(' '))
         results.append(d)
     return render_template('search.html', query=query, results=results, size=len(results))
 
@@ -431,3 +432,5 @@ def getSnippet(result, query):
         right_index = right_index + 70 
     description = desc[left_index:right_index]
     return description
+
+
