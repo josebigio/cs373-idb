@@ -43,7 +43,7 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-var slider = new Slider('temperature_slider', {
+var slider = new Slider(document.getElementById('temperature_slider'), {
     formatter: function(value) {
         update_chart(temp);
         return 'Current temperature: ' + value;
