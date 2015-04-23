@@ -5,6 +5,7 @@ var elements_info;
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.write(xmlhttp.responseText);
         elements_info = JSON.parse(xmlhttp.responseText);
     }
 }
