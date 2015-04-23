@@ -159,6 +159,12 @@ def handle_individual_trivia(name):
 def about():
     return render_template('about.html')
 
+
+@app.route('/FunWithChemistry')
+def FunWithChemistry():
+    return render_template('FunWithChemistry.html')
+
+
 def getFileFromPath(filePath):
     return filePath.split('/')[-1]
 
