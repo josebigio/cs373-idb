@@ -273,10 +273,19 @@ def run_tests():
 
 @app.route('/search')
 def search():
-    query = request.args.get('q').split('+')
-    q = request.args.get('q').replace('+', '&&')
-    perform_search(q)
-    results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
+    query = request.args.get('q').strip().split(' ')
+    q = request.args.get('q').strip()
+    q = q.replace(' ', '&')
+    search_result = perform_search(q)
+    results = []
+    for row in search_result:
+        d = {}
+        d['url'] = '/element/' + str(row[0])
+        d['title'] = row[2]
+        snippet = getSnippet(row, query).split(' ')
+        d['snippet'] = snippet
+        results.append(d)
+    #results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
     return render_template('search.html', query=query, results=results, size=len(results))
 
 
@@ -395,7 +404,31 @@ setweight(to_tsvector(elements.description), 'B')
     ORDER BY ts_rank(p_search.document, to_tsquery('{!s}')) DESC;""".format(query, query)
 
 
-    result = db.engine.execute(statement)
-    for row in result:
-        print(row)
+    result = db.engine.execute(statement).fetchall()
+    return result
 
+
+
+def getSnippet(result, query):
+    number = result[0]
+    element = Element.query.get(number)
+    desc = element.description.lower()
+    match_indices = []
+    for q in query:
+        match = desc.find(q.lower())
+        if(match != -1):
+            match_indices.append(match)
+    min_index = min(match_indices)
+    max_index = max(match_indices)
+    left_index = min_index
+    right_index = max_index
+    if (min_index < 100):
+         left_index = 0
+    else:
+        left_index = left_index - 100
+    if (max_index > len(desc)-100):
+        right_index = len(desc)-1
+    else:
+        right_index = right_index + 100 
+    description = desc[left_index:right_index]
+    return description
