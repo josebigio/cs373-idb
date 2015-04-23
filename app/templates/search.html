@@ -27,9 +27,10 @@
                 <p>
                     ...
                 {% for word in result['snippet'] %}
-                    {% if word in query %}
+                    {% pattern = re.compile("[^\w']") %}
+                    {% if pattern.sub(' ',word).strip() in query %}
                         <strong> {{word}} </strong>
-                    {% else%}
+                    {% else %}
                         {{word}}
                     {% endif %}
                 {% endfor %}
