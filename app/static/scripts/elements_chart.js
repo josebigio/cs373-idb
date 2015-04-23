@@ -37,7 +37,7 @@ window.onload = function(){
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         elements_info = JSON.parse(xmlhttp.responseText);
-        construct_chart();
+        construct_chart(295);
     }
 }
 xmlhttp.open("GET", url, true);
@@ -45,14 +45,14 @@ xmlhttp.send();
 
 var slider = new Slider(document.getElementById('temperature_slider'), {
     formatter: function(value) {
-        update_chart(temp);
         return 'Current temperature: ' + value;
+    }
+    change: function(event) {
+        construct_chart(slider.data('slider').getValue());
     }
 });
 
-function construct_chart() {
-
-    var temp = 295;
+function construct_chart(temp) {
 
     var gas_count = 0;
     var liquid_count = 0;
@@ -81,9 +81,4 @@ function construct_chart() {
     window.elements_chart.update();
 
 }
-
-function update_chart(temp) {
-
-}
-
 
