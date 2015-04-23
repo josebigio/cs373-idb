@@ -31,14 +31,18 @@
 				<img src="/static/images/orbital.svg" alt="Picture">
 			</div>
             {% endif%}
-            <a href="/element/{{tuple[1].atomic_number}}">
+
 			<div class="cd-timeline-content">
+                <a href="/element/{{tuple[1].atomic_number}}">
 				<h2>{{tuple[1].element}}</h2>
+                    </a>
 				<p> Discovered by {{tuple[1].discoverer}} </p>
+                <a href="/element/{{tuple[1].atomic_number}}">
                 <img src= {{tuple[2].image_path}} >
+                     </a>
 				<span class="cd-date"> {{tuple[0]}} </span>
 			</div> <!-- cd-timeline-content -->
-                </a>
+
 		</div> <!-- cd-timeline-block -->
 
         {%endfor%}
