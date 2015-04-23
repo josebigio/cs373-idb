@@ -31,7 +31,7 @@ var data = [
 
     window.onload = function(){
                     var ctx = document.getElementById("elements_chart").getContext("2d");
-                    window.elements_chart = new Chart(ctx).Doughnut(data, options);
+                    window.elements_chart = new Chart(ctx).Pie(data, options);
                 };
 
 xmlhttp.onreadystatechange = function() {
@@ -52,38 +52,25 @@ function construct_chart(elements_info) {
 
     for (var atomic_number in elements_info) 
     {
-        //if(elements_info.hasOwnProperty(atomic_number))
-        //{
-        for (var element_info in elements_info[atomic_number.toString()])
+        if(temp > elements_info[atomic_number.toString()]["boiling_point_k"]) 
         {
-           // if(elements_info.hasOwnProperty(element_info)) {
-           // document.write(element_info);
-           // document.write("\n");
-            //document.write(element_info["melting_point_k"].toString()+"\n");
-            if(temp > elements_info[atomic_number.toString()]["boiling_point_k"]) 
-            {
-                gas_count = gas_count + 1;
-            }
-            else if(temp > elements_info[atomic_number.toString()]["melting_point_k"]) 
-            {
-                liquid_count = liquid_count + 1;
-            }
-            else 
-            {
-                solid_count = solid_count + 1;
-            }
-            //}
+            gas_count = gas_count + 1;
         }
-        //}
+        else if(temp > elements_info[atomic_number.toString()]["melting_point_k"]) 
+        {
+            liquid_count = liquid_count + 1;
+        }
+        else 
+        {
+            solid_count = solid_count + 1;
+        }
     }
 
-    console.log(window.elements_chart);
+    window.elements_chart.segments[0].value = gas_count;
+    window.elements_chart.segments[1].value = liquid_count;
+    window.elements_chart.segments[2].value = solid_count;
 
-    //window.elements_chart.data[0].value = gas_count;
-    //window.elements_chart.data[1].value = liquid_count;
-    //window.elements_chart.data[2].value = solid_count;
-
-    //indow.elements_chart.update();
+    window.elements_chart.update();
 
 }
 
