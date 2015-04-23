@@ -11,13 +11,13 @@ var data = [
         label: "Gas"
     },
     {
-        value: 2,
+        value: 1,
         color: "#46BFBD",
         highlight: "#5AD3D1",
         label: "Liquid"
     },
     {
-        value: 3,
+        value: 1,
         color: "#FDB45C",
         highlight: "#FFC870",
         label: "Solid"
@@ -45,7 +45,7 @@ xmlhttp.send();
 
 var slider = new Slider(document.getElementById('temperature_slider'), {
     formatter: function(value) {
-        return 'Current temperature: ' + value;
+        return 'Current temperature: ' + value + ' (' + (value/118).toFixed(2) + '%)';
     },
     change: function(event) {
         construct_chart(slider.data('slider').getValue());
