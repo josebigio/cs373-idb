@@ -280,20 +280,20 @@ def search():
         q2 = q.replace(' ', '|')
         search_result1 = perform_search(q1)
         search_result2 = perform_search(q2)
-        res1 = to_list(search_result1)
-        res2 = to_list(search_result2)
-        res3 = to_list_period(search_result1)
-        res4 = to_list_period(search_result2)
-        results = res1 + res2 + res3 + res4
+        res1 = to_list(search_result1, query)
+        res2 = to_list(search_result2, query)
+        #res3 = to_list_period(search_result1, query)
+        #res4 = to_list_period(search_result2, query)
+        results = res1 + res2# + res3 + res4
     else:
         results = perform_search(q)
-        results1 = to_list(results, query)
-        results2 = to_list_period(results, query)
-        results = result1 + result2
+        result1 = to_list(results, query)
+        #result2 = to_list_period(results, query)
+        results = result1# + result2
     return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
 
 #helper method to return list from search_result
-def to_list(search_result):
+def to_list(search_result, query):
     results = []
     pattern = re.compile('[^A-Za-z0-9/-]+')
     for row in search_result:
@@ -303,20 +303,20 @@ def to_list(search_result):
         snippet = getSnippet(row, query)
         d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
         results.append(d)
-    return result
+    return results
 
 #helper method to return list from search_result
-def to_list_period(search_result):
+def to_list_period(search_result, query):
     results = []
     pattern = re.compile('[^A-Za-z0-9/-]+')
     for row in search_result:
         d = {}
         d['url'] = '/period/' + str(row[4])
-        d['title'] = 'Group ' + row[4]
+        d['title'] = 'Period ' + str(row[4])
         snippet = getSnippetPeriod(row, query)
         d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
         results.append(d)
-    return result
+    return results
 
 #api handlers
 def handle_element(column_set):
@@ -476,7 +476,7 @@ def getSnippetPeriod(result, query):
         if(match != -1):
             match_indices.append(match)
     if (len(match_indices) == 0):
-        return element.description[:20]
+        return period.description[:(len(match_indices)-10)]
     min_index = min(match_indices)
     max_index = max(match_indices)
     left_index = min_index
@@ -489,6 +489,6 @@ def getSnippetPeriod(result, query):
         right_index = len(desc)-1
     else:
         right_index = right_index + 20
-    desc = element.description
+    desc = period.description
     description = desc[left_index:right_index]
     return description
