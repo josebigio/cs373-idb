@@ -22,8 +22,8 @@ var data = [
         highlight: "#FFC870",
         label: "Solid"
     }
-    ]
-
+    
+]
     var options = {
         segmentShowStroke : false,
         animateScale : true
@@ -45,11 +45,15 @@ xmlhttp.send();
 
 var slider = new Slider('temperature_slider', {
     formatter: function(value) {
-        update_chart(temp)
+        update_chart(temp);
+        return 'Current temperature: ' + value;
     }
 });
 
 function construct_chart() {
+
+    var temp = 295;
+
     var gas_count = 0;
     var liquid_count = 0;
     var solid_count = 0;
