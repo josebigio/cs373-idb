@@ -1,0 +1,22 @@
+    {% extends "layout.html" %}
+    {#---------Title---------#}
+    {% block title %}Home{% endblock %}
+    {#---------Header---------#}
+    {% block head %}
+      {{ super() }}
+      <link rel="stylesheet" href="/static/css/index.css">
+      <link rel="stylesheet" href="/static/css/periodic-table.css">
+
+    {% endblock %}
+    {#---------Content---------#}
+    {% block content %}
+    <!-- periodic table -->
+    <div class="container">
+        <iframe src="https://quizlet.com/58081537/flashcards/embedv2" height="410" width="100%" style="border:0;"></iframe>
+    </div>
+    {% endblock %}
+
+    {#---------Scripts---------#}
+{% block scripts %}
+<script src="/static/scripts/periodictable.js"></script>
+{% endblock %}
