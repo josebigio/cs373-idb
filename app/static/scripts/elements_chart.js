@@ -17,19 +17,23 @@ var liquid_count = 0;
 var solid_count = 0;
 
 for (var atomic_number in elements_info) {
+    document.write("A");
     if(elements_info.hasOwnProperty(atomic_number))
     {
+        document.write("B");
         for (var element_info in elements_info[atomic_number])
         {
+            document.write("C");
             if(elements_info.hasOwnProperty(element_info)) {
+                document.write("D");
                 if(temp > element_info["boiling_point_k"]) {
-                    gas_count++;
+                    gas_count = gas_count + 1;
                 }
                 else if(temp > element_info["melting_point_k"]) {
-                    liquid_count++;
+                    liquid_count = liquid_count + 1;
                 }
                 else {
-                    solid_count++;
+                    solid_count = solid_count + 1;
                 }
             }
         }
