@@ -285,7 +285,6 @@ def search():
         snippet = getSnippet(row, query).split(' ')
         d['snippet'] = snippet
         results.append(d)
-    #results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
     return render_template('search.html', query=query, results=results, size=len(results))
 
 
@@ -422,13 +421,13 @@ def getSnippet(result, query):
     max_index = max(match_indices)
     left_index = min_index
     right_index = max_index
-    if (min_index < 100):
+    if (min_index < 70):
          left_index = 0
     else:
-        left_index = left_index - 100
-    if (max_index > len(desc)-100):
+        left_index = left_index - 70
+    if (max_index > len(desc)-70):
         right_index = len(desc)-1
     else:
-        right_index = right_index + 100 
+        right_index = right_index + 70 
     description = desc[left_index:right_index]
     return description

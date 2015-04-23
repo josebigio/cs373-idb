@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {#---------Title---------#}
-{% block title %}Team Members{% endblock %}
+{% block title %}Search Results{% endblock %}
 {#---------Header---------#}
 {% block head %}
   {{ super() }}
@@ -27,10 +27,11 @@
                 <p>
                     ...
                 {% for word in result['snippet'] %}
+                    {%if word in query%}
                         <strong> {{word}} </strong>
                     {% else %}
                         {{word}}
-                    {% endif %}
+                    {%endif%}
                 {% endfor %}
                     ...
                 </p>
