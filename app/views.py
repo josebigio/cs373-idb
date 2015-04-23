@@ -281,10 +281,12 @@ def search():
     search_result2 = perform_search(q2)
     res1 = to_list(search_result1)
     res2 = to_list(search_result2)
-    results = res1 + res2
+    res3 = to_list_period(search_result1)
+    res4 = to_list_period(search_result2)
+    results = res1 + res2 + res3 + res4
     return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
 
-#helper method to return dict from search_result
+#helper method to return list from search_result
 def to_list(search_result):
     results = []
     pattern = re.compile('[^A-Za-z0-9/-]+')
@@ -293,6 +295,19 @@ def to_list(search_result):
         d['url'] = '/element/' + str(row[0])
         d['title'] = row[2]
         snippet = getSnippet(row, query)
+        d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
+        results.append(d)
+    return result
+
+#helper method to return list from search_result
+def to_list_period(search_result):
+    results = []
+    pattern = re.compile('[^A-Za-z0-9/-]+')
+    for row in search_result:
+        d = {}
+        d['url'] = '/period/' + str(row[4])
+        d['title'] = 'Group ' + row[4]
+        snippet = getSnippetPeriod(row, query)
         d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
         results.append(d)
     return result
@@ -427,7 +442,7 @@ def getSnippet(result, query):
         if(match != -1):
             match_indices.append(match)
     if (len(match_indices) == 0):
-        return element.description[:100]
+        return element.description[:70]
     min_index = min(match_indices)
     max_index = max(match_indices)
     left_index = min_index
@@ -445,3 +460,29 @@ def getSnippet(result, query):
     return description
 
 
+def getSnippetPeriod(result, query):
+    period_num= result[4]
+    period = Period.query.get(period_num)
+    desc = period.description.lower()
+    match_indices = []
+    for q in query:
+        match = desc.find(q.lower())
+        if(match != -1):
+            match_indices.append(match)
+    if (len(match_indices) == 0):
+        return element.description[:20]
+    min_index = min(match_indices)
+    max_index = max(match_indices)
+    left_index = min_index
+    right_index = max_index
+    if (min_index < 20):
+         left_index = 0
+    else:
+        left_index = left_index - 20
+    if (max_index > len(desc)-20):
+        right_index = len(desc)-1
+    else:
+        right_index = right_index + 20
+    desc = element.description
+    description = desc[left_index:right_index]
+    return description
