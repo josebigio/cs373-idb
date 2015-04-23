@@ -77,11 +77,11 @@ function construct_chart(elements_info) {
         //}
     }
 
-    document.write(window.elements_chart);
+    document.write(window.elements_chart.dataset[0]);
 
     //window.elements_chart.data[0].value = gas_count;
     //window.elements_chart.data[1].value = liquid_count;
-   // window.elements_chart.data[2].value = solid_count;
+    //window.elements_chart.data[2].value = solid_count;
 
     //indow.elements_chart.update();
 
