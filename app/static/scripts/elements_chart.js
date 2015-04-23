@@ -77,7 +77,7 @@ function construct_chart(elements_info) {
         //}
     }
 
-    console.log(window.elements_chart.segments);
+    console.log(window.elements_chart.segments[0].value);
 
     //window.elements_chart.data[0].value = gas_count;
     //window.elements_chart.data[1].value = liquid_count;
