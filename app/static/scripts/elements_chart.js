@@ -16,6 +16,8 @@ var gas_count = 0;
 var liquid_count = 0;
 var solid_count = 0;
 
+document.write(elements_info)
+
 for (var atomic_number in elements_info) {
     document.write("A");
     if(elements_info.hasOwnProperty(atomic_number))
