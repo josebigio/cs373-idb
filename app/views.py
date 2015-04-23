@@ -273,7 +273,7 @@ def run_tests():
 
 @app.route('/search')
 def search():
-    query = request.args.get('q').strip().split(' ')
+    query = request.args.get('q').lower().strip().split(' ')
     q = request.args.get('q').strip()
     q = q.replace(' ', '&')
     search_result = perform_search(q)
