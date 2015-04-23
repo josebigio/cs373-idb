@@ -7,6 +7,8 @@ from config import basedir
 from app import app, db
 from app.models import Element, Period, Group, Trivia
 
+from app.views import perform_search
+
 class TestCase(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
@@ -539,7 +541,7 @@ class TestCase(unittest.TestCase):
                         atomic_radius = 1.3,
                         electronegativity = 1.3,
                         first_ionization_potential = 1.3,
-                        density = 1.2
+                        density = 1.2,
                         melting_point_k = 66.0,
                         boiling_point_k = 324.0,
                         isotopes = 3,
@@ -548,7 +550,9 @@ class TestCase(unittest.TestCase):
                         specific_heat_capacity = 1.3,
                         electron_configuration = 'sth',
                         description = 'It was discovered in 1856, I think it is a good description',
-                        column_number = 4)
+                        column_number = 4,
+                        group_number = 1,
+                        period_number = 3)
             element2 = Element(atomic_number=3, symbol='r', element='Hydr', phase = '1r',
                         most_stable_crystal = 'sth',
                         type = 'type',
@@ -556,7 +560,7 @@ class TestCase(unittest.TestCase):
                         atomic_radius = 1.3,
                         electronegativity = 1.3,
                         first_ionization_potential = 1.3,
-                        density = 1.2
+                        density = 1.2,
                         melting_point_k = 66.0,
                         boiling_point_k = 324.0,
                         isotopes = 3,
@@ -565,15 +569,15 @@ class TestCase(unittest.TestCase):
                         specific_heat_capacity = 1.3,
                         electron_configuration = 'sth',
                         description = 'It was discovered in 1886, I think it is a good description, do you think os too',
-                        column_number = 3)
+                        column_number = 3, group_number = 1, period_number = 3)
             db.session.add(element1)
             db.session.add(element2)
             db.session.commit()
-            query = '1856'
-            result = perform_seacrh(query)
-            self.assertEqual(len(result) == 1)
-            self.assertEqual(result[0][0] == 2)
-            self.assertEqual(result[0][1] == 'e')
+            query = 'good'
+            result = perform_search(query)
+            self.assertEqual(len(result), 2)
+            self.assertEqual(result[0][0], 2)
+            self.assertEqual(result[0][1], 'e')
 
 def main():
     unittest.main()
