@@ -273,11 +273,8 @@ def run_tests():
 
 @app.route('/search')
 def search():
-    query = request.args.get('q').strip('+')
-    q = ""
-    for w in query:
-        q+=w
-        q+=" "
+    query = request.args.get('q').split('+')
+    q = request.args.get('q').replace('+', '&&')
     perform_search(q)
     results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
     return render_template('search.html', query=query, results=results, size=len(results))
@@ -394,11 +391,11 @@ setweight(to_tsvector(discoverer), 'A') ||
 setweight(to_tsvector(elements.description), 'B')
     as document from elements
     JOIN groups g ON elements.column_number = g.group_number) p_search
-    WHERE p_search.document @@ to_tsquery({!s})
-    ORDER BY ts_rank(p_search.document, to_tsquery({!s})) DESC;""".format(query, query)
+    WHERE p_search.document @@ to_tsquery('{!s}')
+    ORDER BY ts_rank(p_search.document, to_tsquery('{!s}')) DESC;""".format(query, query)
 
 
-    result = db.execute(statement).fetchall()
+    result = db.engine.execute(statement)
     for row in result:
         print(row)
 
