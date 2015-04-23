@@ -570,16 +570,19 @@ class TestCase(unittest.TestCase):
                         electron_configuration = 'sth',
                         description = 'It was discovered in 1886, I think it is a good description, do you think os too',
                         column_number = 3, group_number = 1, period_number = 3)
-            period = Period(period_number = 1, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+            period = Period(period_number = 3, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
             db.session.add(period)
-            group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous")
+            group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous", properties = "hey it is property", applications = "application is her etoo")
             db.session.add(group)
             db.session.add(element1)
             db.session.add(element2)
             db.session.commit()
-            query = 'good'
+            self.assertTrue(element1.element == 'Hydrogen')
+            elements =list( Element.query.all())
+            self.assertTrue(len(elements), 2)
+            query = 'Hydr'
             result = perform_search(query)
-            self.assertEqual(len(result), 2)
+            self.assertEqual(len(result), 1)
             self.assertEqual(result[0][0], 2)
             self.assertEqual(result[0][1], 'e')
 
