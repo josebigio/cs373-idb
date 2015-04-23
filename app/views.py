@@ -275,15 +275,21 @@ def run_tests():
 def search():
     query = request.args.get('q').lower().strip().split(' ')
     q = request.args.get('q').strip()
-    q1 = q.replace(' ', '&')
-    q2 = q.replace(' ', '|')
-    search_result1 = perform_search(q1)
-    search_result2 = perform_search(q2)
-    res1 = to_list(search_result1)
-    res2 = to_list(search_result2)
-    res3 = to_list_period(search_result1)
-    res4 = to_list_period(search_result2)
-    results = res1 + res2 + res3 + res4
+    if(len(query) > 1):
+        q1 = q.replace(' ', '&')
+        q2 = q.replace(' ', '|')
+        search_result1 = perform_search(q1)
+        search_result2 = perform_search(q2)
+        res1 = to_list(search_result1)
+        res2 = to_list(search_result2)
+        res3 = to_list_period(search_result1)
+        res4 = to_list_period(search_result2)
+        results = res1 + res2 + res3 + res4
+    else:
+        results = perform_search(q)
+        results1 = to_list(results, query)
+        results2 = to_list_period(results, query)
+        results = result1 + result2
     return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
 
 #helper method to return list from search_result
