@@ -22,6 +22,7 @@ setweight(to_tsvector('simple',coalesce(string_agg(CAST(first_ionization_potenti
 setweight(to_tsvector('simple', coalesce(string_agg(CAST(specific_heat_capacity AS VARCHAR), ' '), '')), 'B') || 
 setweight(to_tsvector('simple',coalesce(string_agg(CAST(electron_configuration AS VARCHAR), ' '), '')), 'C') ||
 setweight(to_tsvector('simple', coalesce(string_agg(discoverer, ' '), '')), 'A')  
+|| setweight(to_tsvector(description), 'B')
 	as document from elements
   group by atomic_number) p
 	WHERE p.document @@ to_tsquery('Helium')

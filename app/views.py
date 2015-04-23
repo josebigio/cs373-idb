@@ -407,8 +407,8 @@ def handle_trivia(column_set):
 #search query result
 def perform_search(query):
     statement = """SELECT atomic_number, symbol, element, period_number, column_number, phase, most_stable_crystal, type, ionic_radius, electronegativity, first_ionization_potential, density, melting_point_k,
- boiling_point_k, isotopes, year_of_discovery, specific_heat_capacity, electron_configuration, discoverer FROM (SELECT atomic_number, symbol, element, period_number, column_number, phase, most_stable_crystal, type, ionic_radius, electronegativity, first_ionization_potential, density, melting_point_k,
- boiling_point_k, isotopes, year_of_discovery, specific_heat_capacity, electron_configuration, discoverer,
+ boiling_point_k, isotopes, year_of_discovery, specific_heat_capacity, electron_configuration, discoverer, description FROM (SELECT atomic_number, symbol, element, period_number, column_number, phase, most_stable_crystal, type, ionic_radius, electronegativity, first_ionization_potential, density, melting_point_k,
+ boiling_point_k, isotopes, year_of_discovery, specific_heat_capacity, electron_configuration, discoverer, description, 
 	setweight(to_tsvector(CAST(atomic_number AS VARCHAR)),'A') ||
 			  setweight(to_tsvector(element), 'A' )||
 	  setweight(to_tsvector('simple', symbol), 'A')||
@@ -428,11 +428,12 @@ setweight(to_tsvector('simple',coalesce(string_agg(CAST(first_ionization_potenti
          setweight(to_tsvector('simple', coalesce(string_agg(CAST(year_of_discovery AS VARCHAR), ' '), '')), 'B') ||
 setweight(to_tsvector('simple', coalesce(string_agg(CAST(specific_heat_capacity AS VARCHAR), ' '), '')), 'B') ||
 setweight(to_tsvector('simple',coalesce(string_agg(CAST(electron_configuration AS VARCHAR), ' '), '')), 'C') ||
-setweight(to_tsvector('simple', coalesce(string_agg(discoverer, ' '), '')), 'A')
+setweight(to_tsvector('simple', coalesce(string_agg(discoverer, ' '), '')), 'A') ||
+setweight(to_tsvector(description), 'B')
 	as document from elements
   group by atomic_number) p
-	WHERE p.document @@ to_tsquery('{{!s}}')
-	ORDER BY ts_rank(p.document, to_tsquery('{{!s}}')) DESC;""".format(query, query)
+	WHERE p.document @@ to_tsquery('{!s}')
+	ORDER BY ts_rank(p.document, to_tsquery('{!s}')) DESC;""".format(query, query)
 
 
     result = db.engine.execute(statement).fetchall()
