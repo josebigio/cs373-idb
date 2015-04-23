@@ -305,6 +305,7 @@ def to_list(search_result, query):
         results.append(d)
     return results
 
+'''
 #helper method to return list from search_result
 def to_list_period(search_result, query):
     results = []
@@ -316,7 +317,7 @@ def to_list_period(search_result, query):
         snippet = getSnippetPeriod(row, query)
         d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
         results.append(d)
-    return results
+    return results'''
 
 #api handlers
 def handle_element(column_set):
@@ -437,7 +438,7 @@ setweight(to_tsvector(elements.description), 'C')
     return result
 
 
-
+#get snippet of the description of an element
 def getSnippet(result, query):
     number = result[0]
     element = Element.query.get(number)
@@ -466,6 +467,7 @@ def getSnippet(result, query):
     return description
 
 
+'''
 def getSnippetPeriod(result, query):
     period_num= result[4]
     period = Period.query.get(period_num)
@@ -491,4 +493,4 @@ def getSnippetPeriod(result, query):
         right_index = right_index + 20
     desc = period.description
     description = desc[left_index:right_index]
-    return description
+    return description'''
