@@ -3,6 +3,37 @@ var url = "http://theperiodictableproject.me/api/element?columns=symbol,element,
 
 var elements_info;
 
+var data = [
+    {
+        value: 1,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Gas"
+    },
+    {
+        value: 2,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Liquid"
+    },
+    {
+        value: 3,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Solid"
+    }
+    ]
+
+    var options = {
+        segmentShowStroke : false,
+        animateScale : true
+    }
+
+    window.onload = function(){
+                    var ctx = document.getElementById("elements_chart").getContext("2d");
+                    window.elements_chart = new Chart(ctx).Doughnut(data, options);
+                };
+
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         elements_info = JSON.parse(xmlhttp.responseText);
@@ -46,38 +77,12 @@ function construct_chart(elements_info) {
         //}
     }
 
-    var data = [
-    {
-        value: gas_count,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Gas"
-    },
-    {
-        value: liquid_count,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Liquid"
-    },
-    {
-        value: solid_count,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Solid"
-    }
-    ]
+    window.elements_chart.data[0].value = gas_count;
+    window.elements_chart.data[1].value = liquid_count;
+    window.elements_chart.data[2].value = solid_count;
 
-    var options = {
-        segmentShowStroke : false,
-        animateScale : true
-    }
-
-    window.onload = function(){
-                    var ctx = document.getElementById("elements_chart").getContext("2d");
-                    window.elements_chart = new Chart(ctx).Doughnut(data, options);
-                };
+    window.elements_chart.update();
 
 }
-
 
 
