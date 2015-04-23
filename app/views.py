@@ -275,22 +275,27 @@ def run_tests():
 def search():
     query = request.args.get('q').lower().strip().split(' ')
     q = request.args.get('q').strip()
-    q = q.replace(' ', '&')
-    search_result = perform_search(q)
+    q1 = q.replace(' ', '&')
+    q2 = q.replace(' ', '|')
+    search_result1 = perform_search(q1)
+    search_result2 = perform_search(q2)
+    res1 = to_list(search_result1)
+    res2 = to_list(search_result2)
+    results = res1 + res2
+    return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
+
+#helper method to return dict from search_result
+def to_list(search_result):
     results = []
-    pattern = re.compile("[^\w']")
+    pattern = re.compile('[^A-Za-z0-9/-]+')
     for row in search_result:
         d = {}
         d['url'] = '/element/' + str(row[0])
         d['title'] = row[2]
         snippet = getSnippet(row, query)
-        
         d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
-        print(d['snippet'])
         results.append(d)
-    q = q.replace(' ', '|')
-    return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
-
+    return result
 
 #api handlers
 def handle_element(column_set):
