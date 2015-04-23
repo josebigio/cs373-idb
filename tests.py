@@ -570,6 +570,10 @@ class TestCase(unittest.TestCase):
                         electron_configuration = 'sth',
                         description = 'It was discovered in 1886, I think it is a good description, do you think os too',
                         column_number = 3, group_number = 1, period_number = 3)
+            period = Period(period_number = 1, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+            db.session.add(period)
+            group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous")
+            db.session.add(group)
             db.session.add(element1)
             db.session.add(element2)
             db.session.commit()
