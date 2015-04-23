@@ -31,5 +31,5 @@ setweight(to_tsvector(discoverer), 'A') ||
 setweight(to_tsvector(elements.description), 'B')
     as document from elements
     JOIN groups g ON elements.column_number = g.group_number) p_search
-    WHERE p_search.document @@ to_tsquery('Alkali')
-    ORDER BY ts_rank(p_search.document, to_tsquery('Alkali')) DESC;
+    WHERE p_search.document @@ to_tsquery('Alali')
+    ORDER BY ts_rank(p_search.document, to_tsquery('Alali')) DESC;

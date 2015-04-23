@@ -273,15 +273,50 @@ def run_tests():
 
 @app.route('/search')
 def search():
-    query = request.args.get('q').strip('+')
-    q = ""
-    for w in query:
-        q+=w
-        q+=" "
-    perform_search(q)
-    results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
-    return render_template('search.html', query=query, results=results, size=len(results))
+    query = request.args.get('q').lower().strip().split(' ')
+    q = request.args.get('q').strip()
+    if(len(query) > 1):
+        q1 = q.replace(' ', '&')
+        q2 = q.replace(' ', '|')
+        search_result1 = perform_search(q1)
+        search_result2 = perform_search(q2)
+        res1 = to_list(search_result1)
+        res2 = to_list(search_result2)
+        res3 = to_list_period(search_result1)
+        res4 = to_list_period(search_result2)
+        results = res1 + res2 + res3 + res4
+    else:
+        results = perform_search(q)
+        results1 = to_list(results, query)
+        results2 = to_list_period(results, query)
+        results = result1 + result2
+    return render_template('search.html', query=query, title_query = ' '.join(query), results=results, size=len(results))
 
+#helper method to return list from search_result
+def to_list(search_result):
+    results = []
+    pattern = re.compile('[^A-Za-z0-9/-]+')
+    for row in search_result:
+        d = {}
+        d['url'] = '/element/' + str(row[0])
+        d['title'] = row[2]
+        snippet = getSnippet(row, query)
+        d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
+        results.append(d)
+    return result
+
+#helper method to return list from search_result
+def to_list_period(search_result):
+    results = []
+    pattern = re.compile('[^A-Za-z0-9/-]+')
+    for row in search_result:
+        d = {}
+        d['url'] = '/period/' + str(row[4])
+        d['title'] = 'Group ' + row[4]
+        snippet = getSnippetPeriod(row, query)
+        d['snippet'] = list(zip(snippet.split(), pattern.sub(' ', snippet.lower()).split()))
+        results.append(d)
+    return result
 
 #api handlers
 def handle_element(column_set):
@@ -391,14 +426,69 @@ setweight(to_tsvector(CAST(first_ionization_potential AS VARCHAR)), 'C') ||
 setweight(to_tsvector(CAST(specific_heat_capacity AS VARCHAR)), 'B') ||
 setweight(to_tsvector(CAST(electron_configuration AS VARCHAR)), 'C') ||
 setweight(to_tsvector(discoverer), 'A') ||
-setweight(to_tsvector(elements.description), 'B')
+setweight(to_tsvector(elements.description), 'C')
     as document from elements
     JOIN groups g ON elements.column_number = g.group_number) p_search
-    WHERE p_search.document @@ to_tsquery({!s})
-    ORDER BY ts_rank(p_search.document, to_tsquery({!s})) DESC;""".format(query, query)
+    WHERE p_search.document @@ to_tsquery('{!s}')
+    ORDER BY ts_rank(p_search.document, to_tsquery('{!s}')) DESC;""".format(query, query)
 
 
-    result = db.execute(statement).fetchall()
-    for row in result:
-        print(row)
+    result = db.engine.execute(statement).fetchall()
+    return result
 
+
+
+def getSnippet(result, query):
+    number = result[0]
+    element = Element.query.get(number)
+    desc = element.description.lower()
+    match_indices = []
+    for q in query:
+        match = desc.find(q.lower())
+        if(match != -1):
+            match_indices.append(match)
+    if (len(match_indices) == 0):
+        return element.description[:70]
+    min_index = min(match_indices)
+    max_index = max(match_indices)
+    left_index = min_index
+    right_index = max_index
+    if (min_index < 70):
+         left_index = 0
+    else:
+        left_index = left_index - 70
+    if (max_index > len(desc)-70):
+        right_index = len(desc)-1
+    else:
+        right_index = right_index + 70 
+    desc = element.description
+    description = desc[left_index:right_index]
+    return description
+
+
+def getSnippetPeriod(result, query):
+    period_num= result[4]
+    period = Period.query.get(period_num)
+    desc = period.description.lower()
+    match_indices = []
+    for q in query:
+        match = desc.find(q.lower())
+        if(match != -1):
+            match_indices.append(match)
+    if (len(match_indices) == 0):
+        return element.description[:20]
+    min_index = min(match_indices)
+    max_index = max(match_indices)
+    left_index = min_index
+    right_index = max_index
+    if (min_index < 20):
+         left_index = 0
+    else:
+        left_index = left_index - 20
+    if (max_index > len(desc)-20):
+        right_index = len(desc)-1
+    else:
+        right_index = right_index + 20
+    desc = element.description
+    description = desc[left_index:right_index]
+    return description
