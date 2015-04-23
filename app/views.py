@@ -267,8 +267,12 @@ def run_tests():
 
 @app.route('/search')
 def search():
-    columns = request.args.get('columns')
     query = request.args.get('q').strip('+')
+    q = ""
+    for w in query:
+        q+=w
+        q+=" "
+    perform_search(q)
     results=[{'url':'/element/2', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Helium'}, {'url':'/element/3', 'snippet':['Paramapagaga', 'He', 'jahajh'], 'title':'Paraaa'}]
     return render_template('search.html', query=query, results=results, size=len(results))
 
@@ -355,4 +359,40 @@ def handle_trivia(column_set):
         result_dict[trivia.id] = d
 
     return jsonify(result_dict)
+
+
+
+#search query result
+def perform_search(query):
+    statement = """SELECT atomic_number, symbol, element, name, period_number  FROM (SELECT atomic_number, symbol, element, g.name, period_number,
+    setweight(to_tsvector(CAST(atomic_number AS VARCHAR)),'A') ||
+              setweight(to_tsvector(element), 'A' )||
+      setweight(to_tsvector('simple', symbol), 'A')||
+    setweight(to_tsvector(CAST(period_number AS VARCHAR)), 'D') ||
+    setweight(to_tsvector(CAST(column_number AS VARCHAR)), 'D') ||
+                setweight(to_tsvector(phase), 'C') ||
+    setweight(to_tsvector('simple',most_stable_crystal),'C') ||
+                 setweight(to_tsvector(type), 'C') ||
+     setweight(to_tsvector(CAST(ionic_radius AS VARCHAR)), 'D') ||
+    setweight(to_tsvector(CAST(atomic_radius AS VARCHAR)), 'C') ||
+setweight(to_tsvector(CAST(electronegativity AS VARCHAR)), 'C') ||
+setweight(to_tsvector(CAST(first_ionization_potential AS VARCHAR)), 'C') ||
+          setweight(to_tsvector(CAST(density AS VARCHAR)), 'C') ||
+  setweight(to_tsvector(CAST(melting_point_k AS VARCHAR)), 'C') ||
+  setweight(to_tsvector(CAST(boiling_point_k AS VARCHAR)), 'C') ||
+         setweight(to_tsvector(CAST(isotopes AS VARCHAR)), 'C') ||
+            setweight(to_tsvector(CAST(year_of_discovery AS VARCHAR)), 'B') ||
+setweight(to_tsvector(CAST(specific_heat_capacity AS VARCHAR)), 'B') ||
+setweight(to_tsvector(CAST(electron_configuration AS VARCHAR)), 'C') ||
+setweight(to_tsvector(discoverer), 'A') ||
+setweight(to_tsvector(elements.description), 'B')
+    as document from elements
+    JOIN groups g ON elements.column_number = g.group_number) p_search
+    WHERE p_search.document @@ to_tsquery({!s})
+    ORDER BY ts_rank(p_search.document, to_tsquery({!s})) DESC;""".format(query, query)
+
+
+    result = db.execute(statement).fetchall()
+    for row in result:
+        print(row)
 
