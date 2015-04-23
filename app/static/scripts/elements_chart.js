@@ -29,23 +29,27 @@ var data = [
         animateScale : true
     }
 
-    window.onload = function(){
-                    var ctx = document.getElementById("elements_chart").getContext("2d");
-                    window.elements_chart = new Chart(ctx).Pie(data, options);
-                };
+window.onload = function(){
+                var ctx = document.getElementById("elements_chart").getContext("2d");
+                window.elements_chart = new Chart(ctx).Pie(data, options);
+            };
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         elements_info = JSON.parse(xmlhttp.responseText);
-        construct_chart(elements_info)
+        construct_chart();
     }
 }
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-function construct_chart(elements_info) {
+var slider = new Slider('temperature_slider', {
+    formatter: function(value) {
+        update_chart(temp)
+    }
+});
 
-    var temp = 72;
+function construct_chart() {
     var gas_count = 0;
     var liquid_count = 0;
     var solid_count = 0;
@@ -71,6 +75,10 @@ function construct_chart(elements_info) {
     window.elements_chart.segments[2].value = solid_count;
 
     window.elements_chart.update();
+
+}
+
+function update_chart(temp) {
 
 }
 
