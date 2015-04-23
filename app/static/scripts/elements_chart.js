@@ -20,24 +20,24 @@ function construct_chart(elements_info) {
     var solid_count = 0;
 
     for (var atomic_number in elements_info) {
-        if(elements_info.hasOwnProperty(atomic_number))
+        //if(elements_info.hasOwnProperty(atomic_number))
+        //{
+        for (var element_info in elements_info[atomic_number.toString()])
         {
-             for (var element_info in elements_info[atomic_number])
-            {
-                if(elements_info.hasOwnProperty(element_info)) {
-                    document.write(element_info["boiling_point_k"].toString()+"\n");
-                    document.write(element_info["melting_point_k"].toString()+"\n");
-                    if(temp > element_info["boiling_point_k"]) {
-                        gas_count = gas_count + 1;
-                    }
-                    else if(temp > element_info["melting_point_k"]) {
-                        liquid_count = liquid_count + 1;
-                    }
-                    else {
-                        solid_count = solid_count + 1;
-                    }
-                }
+           // if(elements_info.hasOwnProperty(element_info)) {
+            document.write(element_info["boiling_point_k"].toString()+"\n");
+            document.write(element_info["melting_point_k"].toString()+"\n");
+            if(temp > element_info["boiling_point_k"]) {
+                gas_count = gas_count + 1;
             }
+            else if(temp > element_info["melting_point_k"]) {
+                liquid_count = liquid_count + 1;
+            }
+            else {
+                solid_count = solid_count + 1;
+            }
+            //}
+        }
         }
     }
 
