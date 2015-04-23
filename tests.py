@@ -583,8 +583,8 @@ class TestCase(unittest.TestCase):
             query = 'Hydr'
             result = perform_search(query)
             self.assertEqual(len(result), 1)
-            self.assertEqual(result[0][0], 2)
-            self.assertEqual(result[0][1], 'e')
+            self.assertEqual(result[0][0], 3)
+            self.assertEqual(result[0][1], 'r')
 
 def main():
     unittest.main()
