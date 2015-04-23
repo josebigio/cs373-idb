@@ -78,8 +78,8 @@ function construct_chart(elements_info) {
     }
 
     window.elements_chart.segments[0].value = gas_count;
-    window.elements_chart.segments[0].value = liquid_count;
-    window.elements_chart.segments[0].value = solid_count;
+    window.elements_chart.segments[1].value = liquid_count;
+    window.elements_chart.segments[2].value = solid_count;
 
     window.elements_chart.update();
 
