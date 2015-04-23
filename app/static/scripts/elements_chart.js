@@ -26,14 +26,14 @@ function construct_chart(elements_info) {
         for (var element_info in elements_info[atomic_number.toString()])
         {
            // if(elements_info.hasOwnProperty(element_info)) {
-            document.write(element_info);
-            document.write("\n");
+           // document.write(element_info);
+           // document.write("\n");
             //document.write(element_info["melting_point_k"].toString()+"\n");
-            if(temp > element_info["boiling_point_k"]) 
+            if(temp > elements_info[atomic_number.toString()]["boiling_point_k"]) 
             {
                 gas_count = gas_count + 1;
             }
-            else if(temp > element_info["melting_point_k"]) 
+            else if(temp > elements_info[atomic_number.toString()]["melting_point_k"]) 
             {
                 liquid_count = liquid_count + 1;
             }
@@ -77,10 +77,12 @@ function construct_chart(elements_info) {
                     window.elements_chart = new Chart(ctx).Doughnut(data, options);
                 };
 
+
+    document.write(gas_count.toString());
+    document.write(liquid_count.toString());
+    document.write(solid_count.toString());
+
 }
 
 
-//document.write(gas_count.toString());
-//document.write(liquid_count.toString());
-//document.write(solid_count.toString());
 
