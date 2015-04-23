@@ -26,8 +26,9 @@ function construct_chart(elements_info) {
         for (var element_info in elements_info[atomic_number.toString()])
         {
            // if(elements_info.hasOwnProperty(element_info)) {
-            document.write(element_info["boiling_point_k"].toString()+"\n");
-            document.write(element_info["melting_point_k"].toString()+"\n");
+            document.write(element_info);
+            document.write("\n");
+            //document.write(element_info["melting_point_k"].toString()+"\n");
             if(temp > element_info["boiling_point_k"]) 
             {
                 gas_count = gas_count + 1;
