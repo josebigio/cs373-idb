@@ -51,5 +51,7 @@ views: /app/views.py
 
 models: /app/models.py
 
+documentation: /doc/_build/html/index.html
+
 
 
