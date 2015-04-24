@@ -639,7 +639,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(snippet, u'It was discovered in 1886, I think it is a good description, do you think os to')
 
 
-def test_perform_search2(self):
+    def test_perform_search2(self):
         with self.app as c:
             element1 = Element(atomic_number=14, symbol='N', element='Nitrogen', phase = '13',
                         most_stable_crystal = 'sth',
@@ -689,12 +689,12 @@ def test_perform_search2(self):
             self.assertTrue(len(elements), 2)
             query = 'Nitrogen|13'
             result = perform_search(query)
-            self.assertEqual(len(result), 2)
+            self.assertEqual(len(result), 1)
             self.assertEqual(result[0][3],'13')
             self.assertEqual(result[0][1], 'r')
+
 #end of performsearch2
-'''
-def test_perform_search3(self):
+    def test_perform_search3(self):
         with self.app as c:
             element1 = Element(atomic_number=14, symbol='N', element='Nitrogen', phase = '13',
                         most_stable_crystal = 'sth',
@@ -746,9 +746,9 @@ def test_perform_search3(self):
             query = 'Oxygen&1856'
             result = perform_search(query)
             self.assertEqual(len(result), 1)
-            self.assertEqual(result[0][0], 14)
+            self.assertEqual(result[0][0], 10)
             self.assertEqual(result[0][1], 'O')
-            '''
+            
 def main():
     unittest.main()
 
