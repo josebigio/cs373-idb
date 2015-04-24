@@ -690,7 +690,7 @@ class TestCase(unittest.TestCase):
             query = 'Nitrogen|13'
             result = perform_search(query)
             self.assertEqual(len(result), 1)
-            self.assertEqual(result[0][3],'3')
+            self.assertEqual(result[0][3],3)
             self.assertEqual(result[0][1], 'r')
 
 #end of performsearch2
