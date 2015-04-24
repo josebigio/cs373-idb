@@ -588,7 +588,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(result[0][1], 'r')
 
 
-    def test_get_snippet(self):
+    def test_get_snippet1(self):
         element1 = Element(atomic_number=2, symbol='e', element='Hydrogen', phase = '13',
                         most_stable_crystal = 'sth',
                         type = 'type',
@@ -633,6 +633,108 @@ class TestCase(unittest.TestCase):
         db.session.add(element2)
         db.session.commit()
         query = 'Hydr'
+        result = perform_search(query)
+        result = result[0]
+        snippet = getSnippet(result, query)
+        self.assertEqual(snippet, u'It was discovered in 1886, I think it is a good description, do you think os to')
+
+
+    def test_get_snippet2(self):
+        element1 = Element(atomic_number=2, symbol='e', element='Hydrogen', phase = '13',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Colin',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1856, I think it is a good description',
+                        column_number = 4,
+                        group_number = 1,
+                        period_number = 3)
+        element2 = Element(atomic_number=3, symbol='r', element='Hydr', phase = '1r',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Meeee',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1886, I think it is a good description, do you think os too',
+                        column_number = 3, group_number = 1, period_number = 3)
+        period = Period(period_number = 3, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+        db.session.add(period)
+        group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous", properties = "hey it is property", applications = "application is her etoo")
+        db.session.add(group)
+        db.session.add(element1)
+        db.session.add(element2)
+        db.session.commit()
+        query = 'e'
+        result = perform_search(query)
+        result = result[0]
+        snippet = getSnippet(result, query)
+        self.assertEqual(snippet, u'It was discovered in 1886, I think it is a good description, do you think os to')
+
+
+    def test_get_snippet3(self):
+        element1 = Element(atomic_number=2, symbol='e', element='Hydrogen', phase = '13',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Colin',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1856, I think it is a good description',
+                        column_number = 4,
+                        group_number = 1,
+                        period_number = 3)
+        element2 = Element(atomic_number=3, symbol='r', element='Hydr', phase = '1r',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Meeee',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1886, I think it is a good description, do you think os too',
+                        column_number = 3, group_number = 1, period_number = 3)
+        period = Period(period_number = 3, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+        db.session.add(period)
+        group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous", properties = "hey it is property", applications = "application is her etoo")
+        db.session.add(group)
+        db.session.add(element1)
+        db.session.add(element2)
+        db.session.commit()
+        query = 'Meeee'
         result = perform_search(query)
         result = result[0]
         snippet = getSnippet(result, query)
