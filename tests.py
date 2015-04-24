@@ -589,12 +589,167 @@ class TestCase(unittest.TestCase):
 
 
     def test_get_snippet(self):
-        result = (1, 'He', 'helium', 4, 3, 12, 'sth', 'type', 1.45, 1.33, 1.443, 1.0, 1.66,
- 1.34, 3, 1893, 1.3, 'sth', 'Colin', 'this is a good description and you cant change it')
-        query = 'He'
+        element1 = Element(atomic_number=2, symbol='e', element='Hydrogen', phase = '13',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Colin',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1856, I think it is a good description',
+                        column_number = 4,
+                        group_number = 1,
+                        period_number = 3)
+        element2 = Element(atomic_number=3, symbol='r', element='Hydr', phase = '1r',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Meeee',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1886, I think it is a good description, do you think os too',
+                        column_number = 3, group_number = 1, period_number = 3)
+        period = Period(period_number = 3, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+        db.session.add(period)
+        group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous", properties = "hey it is property", applications = "application is her etoo")
+        db.session.add(group)
+        db.session.add(element1)
+        db.session.add(element2)
+        db.session.commit()
+        query = 'Hydr'
+        result = perform_search(query)
+        result = result[0]
         snippet = getSnippet(result, query)
+        self.asserEqual(snippet, '... It was discovered in 1886, I think it is a good description, do you think os too ...')
 
 
+def test_perform_search2(self):
+        with self.app as c:
+            element1 = Element(atomic_number=14, symbol='N', element='Nitrogen', phase = '13',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Colin',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1856, I think it is a good description',
+                        column_number = 4,
+                        group_number = 1,
+                        period_number = 3)
+            element2 = Element(atomic_number=10, symbol='r', element='Oxygen', phase = '1r',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Tehreem',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1886, I think it is a good description, do you think os too',
+                        column_number = 3, group_number = 1, period_number = 3)
+            period = Period(period_number = 3, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+            db.session.add(period)
+            group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous", properties = "hey it is property", applications = "application is her etoo")
+            db.session.add(group)
+            db.session.add(element1)
+            db.session.add(element2)
+            db.session.commit()
+            self.assertTrue(element1.element == 'Nitrogen')
+            self.assertTrue(element2.element == 'Oxygen')
+            elements =list( Element.query.all())
+            self.assertTrue(len(elements), 2)
+            query = 'Nitrogen|Tehreem'
+            result = perform_search(query)
+            self.assertEqual(len(result), 2)
+            self.assertEqual(result[0][14], 'Colin')
+            self.assertEqual(result[0][1], 'r')
+#end of performsearch2
+
+
+def test_perform_search3(self):
+        with self.app as c:
+            element1 = Element(atomic_number=14, symbol='N', element='Nitrogen', phase = '13',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Colin',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1856, I think it is a good description',
+                        column_number = 4,
+                        group_number = 1,
+                        period_number = 3)
+            element2 = Element(atomic_number=10, symbol='O', element='Oxygen', phase = '1r',
+                        most_stable_crystal = 'sth',
+                        type = 'type',
+                        ionic_radius = 1.2,
+                        atomic_radius = 1.3,
+                        electronegativity = 1.3,
+                        first_ionization_potential = 1.3,
+                        density = 1.2,
+                        melting_point_k = 66.0,
+                        boiling_point_k = 324.0,
+                        isotopes = 3,
+                        discoverer = 'Tehreem',
+                        year_of_discovery = 1856,
+                        specific_heat_capacity = 1.3,
+                        electron_configuration = 'sth',
+                        description = 'It was discovered in 1886, I think it is a good description, do you think os too',
+                        column_number = 3, group_number = 1, period_number = 3)
+            period = Period(period_number = 3, description = "The first period contains fewer elements than any other, with only two, hydrogen and helium")
+            db.session.add(period)
+            group = Group(group_number=1, name='Halogens', description="Highly reactive, very poisonous", properties = "hey it is property", applications = "application is her etoo")
+            db.session.add(group)
+            db.session.add(element1)
+            db.session.add(element2)
+            db.session.commit()
+            self.assertTrue(element1.element == 'Nitrogen')
+            self.assertTrue(element2.element == 'Oxygen')
+            elements =list( Element.query.all())
+            self.assertTrue(len(elements), 2)
+            query = 'Oxygen&1856'
+            result = perform_search(query)
+            self.assertEqual(len(result), 1)
+            self.assertEqual(result[0][0], 14)
+            self.assertEqual(result[0][1], 'O')
 def main():
     unittest.main()
 
