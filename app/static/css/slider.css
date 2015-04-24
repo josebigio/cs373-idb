@@ -23,6 +23,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================= */
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
+#ex2Slider .slider-selection {
+	background: #BABABA;
+}
+
+#temperature_slider .slider-selection {
+	background: #BABABA;
+}
+
 .slider {
   display: inline-block;
   vertical-align: middle;
