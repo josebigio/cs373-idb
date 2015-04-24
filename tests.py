@@ -687,7 +687,7 @@ class TestCase(unittest.TestCase):
         result = perform_search(query)
         result = result[0]
         snippet = getSnippet(result, query)
-        self.assertEqual(snippet, u'It was discovered in 1886, I think it is a good description, do you think os to')
+        self.assertEqual(snippet, u'It was discovered in 1856, I think it is a good descriptio')
 
 
     def test_get_snippet3(self):
