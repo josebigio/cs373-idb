@@ -82,15 +82,17 @@ function construct_chart(temp) {
 
 }
 
-// With JQuery
-$('#ex1').slider({
+
+// Without JQuery
+var slider = new Slider('#ex1', {
 	formatter: function(value) {
 		return 'Current value: ' + value;
 	}
 });
 
+
 // Without JQuery
-var slider = new Slider('#ex1', {
+var slider = new Slider('#temperature_slider', {
 	formatter: function(value) {
 		return 'Current value: ' + value;
 	}
