@@ -745,8 +745,8 @@ class TestCase(unittest.TestCase):
             self.assertTrue(len(elements), 2)
             query = 'Oxygen&1856'
             result = perform_search(query)
-            self.assertEqual(len(result), 1)
-            self.assertEqual(result[0][0], 14)
+            self.assertEqual(len(result), 2)
+            self.assertEqual(result[0][0], 10)
             self.assertEqual(result[0][1], 'O')
             
 def main():
