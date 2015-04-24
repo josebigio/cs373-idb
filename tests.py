@@ -691,7 +691,7 @@ class TestCase(unittest.TestCase):
             result = perform_search(query)
             self.assertEqual(len(result), 1)
             self.assertEqual(result[0][3],3)
-            self.assertEqual(result[0][1], 'r')
+            self.assertEqual(result[0][1], 'N')
 
 #end of performsearch2
     def test_perform_search3(self):
