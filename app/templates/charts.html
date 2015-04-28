@@ -24,28 +24,15 @@
 {% block scripts %}
 <script src="/static/scripts/bootstrap-slider.js"></script>
 <script>
-window.mySlider = $('#temperature_slider').slider({
-        formatter: function(value) {
-            return 'Current temperature: ' + value;
-        }
-    });
-
-$(document).ready(function() {
-  var self = this;
-  setInterval(function(){
-    var value = self.mySlider.getValue();
-    document.getElementById("cur_temp").innerHTML = value + "K";
-    construct_chart(value);
-  }, 3000);
-});
-
-function updateChart() {
-    var value = window.mySlider.getValue();
-    document.getElementById("cur_temp").innerHTML = value + "K";
-                construct_chart(value);
+    function updateChart(event) {
+        document.getElementById("cur_temp").innerHTML = event.newValue + "K";
+        construct_chart(event.newValue);
     }
-
-
+    var mySlider = $('#temperature_slider').slider({
+            formatter: function(value) {
+                return 'Current temperature: ' + value;
+            }
+        }).on('slide', updateChart);
 </script>
 <script src="/static/scripts/Chart.js"></script>
 <script src="/static/scripts/elements_chart.js"></script>
