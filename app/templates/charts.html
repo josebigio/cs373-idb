@@ -24,13 +24,13 @@
 {% block scripts %}
 <script src="/static/scripts/bootstrap-slider.js"></script>
 <script>
-var mySlider = $('#temperature_slider').slider({
+window.mySlider = $('#temperature_slider').slider({
         formatter: function(value) {
             return 'Current temperature: ' + value;
         }
     });
 setInterval(function () {
-    var value = this.mySlider.getValue();
+    var value = window.mySlider.getValue();
     document.getElementById("cur_temp").innerHTML = value + "K";
                 construct_chart(value);
 }, 3000);
