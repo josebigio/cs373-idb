@@ -24,12 +24,8 @@
  * limitations under the License.
  * ========================================================= */
 
-#ex1Slider .slider-selection {
-	background: #BABABA;
-}
-
-#ex2Slider .slider-selection {
-	background: #BABABA;
+#currentTempValue {
+    margin-left: 45px;
 }
 
 #temperature_slider .slider-selection {
