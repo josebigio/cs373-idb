@@ -15,7 +15,7 @@
         <div class="well">
             <h4>Temperature (Kelvin)</h4>
             <input id="temperature_slider" data-slider-id='temperature_slider' type="text" data-slider-min="0" data-slider-max="6000" data-slider-step="20" data-slider-value="295"/>
-            <span id="currentSliderValLabel">Current Temperature: <span id="sliderVal">295</span>K</span>
+            <span id="currentSliderValLabel">Current Temperature: <span id="sliderVal">295K</span></span>
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@ var mySlider = $('#temperature_slider').slider({
         var red = Math.ceil((cur_temp/6000) * 255);
         var blue = 255 - red;
         var cssRgb = 'rgb('+red+','+'20'+','+blue+')';
-	    $("#sliderVal").text(cur_temp).css('color', cssRgb);
+	    $("#sliderVal").text(cur_temp + 'K').css('color', cssRgb);
         construct_chart(cur_temp);
 });
 </script>
