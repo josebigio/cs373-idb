@@ -25,15 +25,17 @@
 <script src="/static/scripts/bootstrap-slider.js"></script>
 <script>
 var mySlider = $('#temperature_slider').slider({
-        tooltip: 'always',
         formatter: function(value) {
             return 'Current temperature: ' + value;
-        },
-        change: function(oldValue, newValue) {
-            document.getElementById("cur_temp").innerHTML = newValue + "K";
-            construct_chart(newValue);
         }
     });
+</script>
+<script>
+    setInterval(function () {
+        var value = mySlider.getValue();
+        document.getElementById("cur_temp").innerHTML = value + "K";
+                    construct_chart(value);
+    }, 3000);
 </script>
 <script src="/static/scripts/Chart.js"></script>
 <script src="/static/scripts/elements_chart.js"></script>
