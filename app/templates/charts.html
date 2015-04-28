@@ -26,7 +26,7 @@
 <script>
 var mySlider = $('#temperature_slider').slider({
         formatter: function(value) {
-            return 'Current temperature: ' + value;
+            return 'Temperature: ' + value + 'K';
         }
     });
 
@@ -34,7 +34,7 @@ var mySlider = $('#temperature_slider').slider({
         var cur_temp = parseInt(slideEvt.value);
         var red = Math.ceil((cur_temp/6000) * 255);
         var blue = 255 - red;
-        var cssRgb = 'rgb(' + red + ', 20, ' + blue + ');';
+        var cssRgb = 'rgb('+red+','+'20'+','+blue+')';
 	    $("#sliderVal").text(cur_temp).css('color', cssRgb);
         construct_chart(cur_temp);
 });
