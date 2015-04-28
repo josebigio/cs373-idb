@@ -30,7 +30,7 @@ var mySlider = $('#temperature_slider').slider({
         }
     });
 setInterval(function () {
-    var value = mySlider.getValue();
+    var value = this.mySlider.getValue();
     document.getElementById("cur_temp").innerHTML = value + "K";
                 construct_chart(value);
 }, 3000);
