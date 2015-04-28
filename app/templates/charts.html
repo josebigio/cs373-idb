@@ -24,15 +24,7 @@
 {% block scripts %}
 <script src="/static/scripts/bootstrap-slider.js"></script>
 <script>
-    var updateChart  =  function(newValue) {
-        document.getElementById("cur_temp").innerHTML = newValue + "K";
-        construct_chart(newValue);
-    }
-$('#temperature_slider').slider({
-            formatter: function(value) {
-                return 'Current temperature: ' + value;
-            }
-        });
+$('#temperature_slider').slider();
 $('#temperature_slider').on("slide", function(slideEvt) {
     $("#tempValue").text(slideEvt.value);
 });
