@@ -56,9 +56,9 @@ var mySlider = $('#temperature_slider').slider({
         var blue = 255 - red;
         var cssRgb = 'rgb('+red+','+'20'+','+blue+')';
 	    $("#sliderVal").text(cur_temp + 'K').css('color', cssRgb);
-        $("#solid_id").text('Solid: ' + window.elements_chart.segments[2].value);
-        $("#liquid_id").text('Liquid: ' +  window.elements_chart.segments[1].value);
-        $("#gas_id").text('Gas: ' + window.elements_chart.segments[0].value);
+        $("#solid_id").text('<span class="solid"></span>Solid: ' + window.elements_chart.segments[2].value);
+        $("#liquid_id").text('<span class="liquid"></span>Liquid: ' +  window.elements_chart.segments[1].value);
+        $("#gas_id").text('<span class="gas"></span>Gas: ' + window.elements_chart.segments[0].value);
         construct_chart(cur_temp);
 });
 </script>
