@@ -24,6 +24,15 @@
  * limitations under the License.
  * ========================================================= */
 
+/* basic positioning */
+.legend { list-style: none; }
+.legend li { float: left; margin-right: 10px; }
+.legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+/* your colors */
+.legend .gas { background-color: #F7464A; }
+.legend .solid { background-color: #FDB45C; }
+.legend .liquid { background-color: #46BFBD; }
+
 #currentSliderValLabel {
     margin-left: 65px;
 }
