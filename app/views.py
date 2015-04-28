@@ -21,6 +21,10 @@ def not_found(error):
 def index():
     return render_template('Index.html')
 
+@app.route('/slider')
+def slider():
+    return render_template('slider.html')
+
 
 
 @app.route('/api/<name>', methods=['GET'])
@@ -183,15 +187,15 @@ def timeline():
 
     return render_template('timeline.html', elements=result_list, test=app.config['IMAGES_PATH'])
 
-# @app.route('/charts')
-# def charts():
-#     elem_list = list(Element.query.all())
-#     elem_dict = {}
-#     for e in elem_list:
-#         if(e.atomic_number!=None and e.element!=None and e.melting_point_k!=None and e.boiling_point_k!=None):
-#             elem_dict[e.atomic_number] = (e.element, e.melting_point_k, e.boiling_point_k)
-#
-#     return render_template('charts.html', elem_dict = elem_dict)
+@app.route('/charts')
+def charts():
+    # elem_list = list(Element.query.all())
+    elem_dict = {}
+    # for e in elem_list:
+    #     if(e.atomic_number!=None and e.element!=None and e.melting_point_k!=None and e.boiling_point_k!=None):
+    #         elem_dict[e.atomic_number] = (e.element, e.melting_point_k, e.boiling_point_k)
+
+    return render_template('charts.html', elem_dict = elem_dict)
 
 def getLatLonFromMapUrl(map_url):
     lat = 0

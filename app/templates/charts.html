@@ -8,27 +8,30 @@
   <link rel="stylesheet" href="/static/css/slider.css">
 {% endblock %}
 {#---------Content---------#}
-{% block body %}
-<div class="row">
-    <input id="temperature_slider" width="300" height="200" data-slider-id='temperature_slider' type="text" data-slider-min="0" data-slider-max="500" data-slider-step="1" data-slider-value="295"/>
-</div>
-<div class="row">
-    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6000" data-slider-step="1" data-slider-value="14"/>
-</div>
-<div class="row">
-    <input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-</div>
-{% endblock %}
 {% block content %}
 <div class="row">
-    <canvas id="elements_chart" width="400" height="400"></canvas>
+    <div class="span6 offset3">
+        <canvas id="elements_chart" width="400" height="400"></canvas>
+        <div class="well">
+            <input id="temperature_slider" width="100%" height="200" data-slider-id='temperature_slider' type="text" data-slider-min="0" data-slider-max="6000" data-slider-step="20" data-slider-value="295"/>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
-
 {% block scripts %}
-<script src="/static/scripts/Chart.js"></script>
 <script src="/static/scripts/bootstrap-slider.js"></script>
+<script>
+    $('#temperature_slider').slider({
+        formatter: function(value) {
+            return 'Current temperature: ' + value;
+        },
+        change: function(event) {
+            construct_chart(slider.data('slider').getValue());
+        }
+    });
+</script>
+<script src="/static/scripts/Chart.js"></script>
 <script src="/static/scripts/elements_chart.js"></script>
 {% endblock %}
 

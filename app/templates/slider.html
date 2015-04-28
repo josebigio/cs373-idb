@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{#---------Title---------#}
+{% block title %}Search Results{% endblock %}
+{#---------Header---------#}
+{% block head %}
+  {{ super() }}
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="/static/css/slider.css">
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+{% endblock %}
+{#---------Content---------#}
+{% block content %}
+<div class="well">
+    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6000" data-slider-step="20" data-slider-value="293"/>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/scripts/bootstrap-slider.js"></script>
+<script>
+    $('#ex1').slider({
+        formatter: function(value) {
+            return 'Current value: ' + value;
+        }
+    });
+</script>
+{% endblock %}

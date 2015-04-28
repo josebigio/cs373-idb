@@ -43,14 +43,6 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-var slider = new Slider(document.getElementById('temperature_slider'), {
-    formatter: function(value) {
-        return 'Current temperature: ' + value;
-    },
-    change: function(event) {
-        construct_chart(slider.data('slider').getValue());
-    }
-});
 
 function construct_chart(temp) {
 
@@ -81,19 +73,3 @@ function construct_chart(temp) {
     window.elements_chart.update();
 
 }
-
-
-// Without JQuery
-var slider = new Slider('#ex1', {
-	formatter: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
-
-// Without JQuery
-var slider = new Slider('#temperature_slider', {
-	formatter: function(value) {
-		return 'Current value: ' + value;
-	}
-});
