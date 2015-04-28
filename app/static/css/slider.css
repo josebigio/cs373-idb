@@ -24,8 +24,12 @@
  * limitations under the License.
  * ========================================================= */
 
-#currentTempValue {
+#currentSliderValLabel {
     margin-left: 45px;
+}
+
+#sliderVal {
+    color: green;
 }
 
 #temperature_slider .slider-selection {
