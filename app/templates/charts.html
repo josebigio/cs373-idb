@@ -34,7 +34,8 @@ var mySlider = $('#temperature_slider').slider({
         var cur_temp = parseInt(slideEvt.value);
         var red = Math.ceil((cur_temp/6000) * 255);
         var blue = 255 - red;
-	    $("#sliderVal").text(cur_temp).css('color', "rgb(" + red + "," + blue + ",20);");
+        var cssRgb = 'rgb(' + red + ', 20, ' + blue + ');';
+	    $("#sliderVal").text(cur_temp).css('color', cssRgb);
         construct_chart(cur_temp);
 });
 </script>
