@@ -24,9 +24,9 @@
 {% block scripts %}
 <script src="/static/scripts/bootstrap-slider.js"></script>
 <script>
-    function updateChart(event) {
-        document.getElementById("cur_temp").innerHTML = event.newValue + "K";
-        construct_chart(event.newValue);
+    var updateChart  =  function(newValue) {
+        document.getElementById("cur_temp").innerHTML = newValue + "K";
+        construct_chart(newValue);
     }
     var mySlider = $('#temperature_slider').slider({
             formatter: function(value) {
