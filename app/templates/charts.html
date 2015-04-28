@@ -32,7 +32,7 @@ var mySlider = $('#temperature_slider').slider({
 
     mySlider.on("slide", function(slideEvt) {
 	    $("#sliderVal").text(slideEvt.value);
-        construct_chart(parseInt(slideEvt));
+        construct_chart(parseInt(slideEvt.value));
 });
 </script>
 <script src="/static/scripts/Chart.js"></script>
