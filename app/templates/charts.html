@@ -13,7 +13,9 @@
     <div class="span6 offset3">
         <canvas id="elements_chart" width="400" height="400"></canvas>
         <div class="well">
+            <label for="temperature_slider">Temperature (Kelvin)</label>
             <input id="temperature_slider" width="100%" height="200" data-slider-id='temperature_slider' type="text" data-slider-min="0" data-slider-max="6000" data-slider-step="20" data-slider-value="295"/>
+            <p id="cur_temp">295K</p>
         </div>
     </div>
 </div>
@@ -24,6 +26,7 @@
 <script>
     $('#temperature_slider').slider({
         formatter: function(value) {
+            document.getElementById("cur_temp").innerHTML = value + "K";
             return 'Current temperature: ' + value;
         },
         change: function(event) {
