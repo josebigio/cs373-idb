@@ -29,11 +29,18 @@ window.mySlider = $('#temperature_slider').slider({
             return 'Current temperature: ' + value;
         }
     });
-setInterval(function () {
+
+$(document).ready(function() {
+  setInterval(updateChart, 3000);
+});
+
+function updateChart() {
     var value = window.mySlider.getValue();
     document.getElementById("cur_temp").innerHTML = value + "K";
                 construct_chart(value);
-}, 3000);
+    }
+
+
 </script>
 <script src="/static/scripts/Chart.js"></script>
 <script src="/static/scripts/elements_chart.js"></script>
